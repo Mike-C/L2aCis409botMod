@@ -385,7 +385,7 @@ index d3985051..a557133e 100644
 \ No newline at end of file
 +ShowServerNews = False
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java b/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
-index bf24b43b..a74edd0e 100644
+index bf24b43b..1f764b99 100644
 --- a/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
 @@ -28,6 +28,8 @@ import net.sf.l2j.gameserver.data.manager.ClanHallManager;
@@ -405,21 +405,24 @@ index bf24b43b..a74edd0e 100644
  import net.sf.l2j.gameserver.data.manager.SevenSignsManager;
  import net.sf.l2j.gameserver.data.manager.SpawnManager;
  import net.sf.l2j.gameserver.data.manager.ZoneManager;
-@@ -237,6 +240,14 @@ public class GameServer
+@@ -236,6 +239,17 @@ public class GameServer
+ 		ObserverGroupData.getInstance();
  		
  		CastleManager.getInstance().spawnEntities();
- 		
++
++		LOGGER.info("--------------------------------------------------------=[ Server statistics ]");
 +		ServerMetricsManager.getInstance();
 +		LOGGER.info("Total adena picked per server: " + ServerMetricsManager.getTotalAdenaDropped());
-+		
++
++		LOGGER.info("-------------------------------------------------------=[ Random bot traders ]");
++
 +		FakeNameManager.getInstance().load();
 +		
 +		LOGGER.info("Fake Trader System: Loading offline trade simulators...");
 +		FakeTraderManager.getInstance().load();
-+		
+ 		
  		StringUtil.printSection("Olympiads & Heroes");
  		OlympiadGameManager.getInstance();
- 		Olympiad.getInstance();
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java
 new file mode 100644
 index 00000000..452b03d6
@@ -536,10 +539,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..c3ee1fef
+index 00000000..56a86408
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1232 @@
+@@ -0,0 +1,1305 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -644,38 +647,65 @@ index 00000000..c3ee1fef
 +			{
 +				LOGGER.info("Error spawning dummy clan leaders: " + e.getMessage());
 +			}
-+			LOGGER.info("Loaded bot Clan: " + clan.getName());
++			//LOGGER.info("Loaded bot Clan: " + clan.getName());
 +		}
 +		
 +		for (int i = 0; i < 25; i++)
 +			spawnRndFakeTrader("Dark Elven Village");
-+		
++		LOGGER.info("Dark Elven Village: successfuly populated with trade bots.");
 +		for (int i = 0; i < 50; i++)
 +			spawnRndFakeTrader("Elven Village");
-+		
++		LOGGER.info("Elven Village: successfuly populated with trade bots.");
 +		for (int i = 0; i < 45; i++)
 +			spawnRndFakeTrader("Talking Island");
-+		
++		LOGGER.info("Talking Island: successfuly populated with trade bots.");
 +		for (int i = 0; i < 25; i++)
 +			spawnRndFakeTrader("Dwarven Village");
-+		
++		LOGGER.info("Dwarven Village: successfuly populated with trade bots.");
 +		for (int i = 0; i < 30; i++)
 +			spawnRndFakeTrader("Orc Village");
-+		
++		LOGGER.info("Orc Village: successfuly populated with trade bots.");
 +		for (int i = 0; i < 50; i++)
-+			spawnRndFakeTrader("Gludin Village");
-+		
++			spawnRndFakeTrader("Gludin");
++		LOGGER.info("Gludin: successfuly populated with trade bots.");
 +		for (int i = 0; i < 30; i++)
-+			spawnRndFakeTrader("Town of Gludio");
-+		
++			spawnRndFakeTrader("Gludio");
++		LOGGER.info("Gludio: successfuly populated with trade bots.");
 +		for (int i = 0; i < 22; i++)
-+			spawnRndFakeTrader("Town of Dion");
-+		
++			spawnRndFakeTrader("Dion");
++		LOGGER.info("Dion: successfuly populated with trade bots.");
 +		for (int i = 0; i < 135; i++)
-+			spawnRndFakeTrader("Town of Giran");
-+		
++			spawnRndFakeTrader("Giran");
++		LOGGER.info("Giran: successfuly populated with trade bots.");
 +		for (int i = 0; i < 25; i++)
-+			spawnRndFakeTrader("Town of Oren");
++			spawnRndFakeTrader("Oren");
++		LOGGER.info("Oren: successfuly populated with trade bots.");
++		for (int i = 0; i < 75; i++)
++			spawnRndFakeTrader("Aden");
++		LOGGER.info("Aden: successfuly populated with trade bots.");
++		for (int i = 0; i < 40; i++)
++			spawnRndFakeTrader("Goddard");
++		LOGGER.info("Goddard: successfuly populated with trade bots.");
++		for (int i = 0; i < 40; i++)
++			spawnRndFakeTrader("Schuttgart");
++		LOGGER.info("Schuttgart: successfuly populated with trade bots.");
++		for (int i = 0; i < 55; i++)
++			spawnRndFakeTrader("Heine");
++		LOGGER.info("Heine: successfuly populated with trade bots.");
++		for (int i = 0; i < 55; i++)
++			spawnRndFakeTrader("Rune");
++		LOGGER.info("Rune: successfuly populated with trade bots.");
++		for (int i = 0; i < 10; i++)
++			spawnRndFakeTrader("Floran Village");
++		LOGGER.info("Floran Village: successfuly populated with trade bots.");
++		for (int i = 0; i < 20; i++)
++			spawnRndFakeTrader("Monsters Derby");
++		for (int i = 0; i < 7; i++)
++			spawnRndFakeTrader("Monsters Derby 2");
++		LOGGER.info("Monsters Derby Track: successfuly populated with trade bots.");
++		for (int i = 0; i < 30; i++)
++			spawnRndFakeTrader("Hunters Village");
++		LOGGER.info("Hunters Village: successfuly populated with trade bots.");
 +		
 +		try (Connection con = ConnectionPool.getConnection();
 +			PreparedStatement ps = con.prepareStatement("SELECT * FROM fake_traders");
@@ -960,7 +990,7 @@ index 00000000..c3ee1fef
 +		while (findAllNearbyObjects(fakePlayer, 50));
 +	}
 +	
-+	private void moveRectangle2(Player fakePlayer, int locX, int locY, int LocZ, int a, int b, int r)
++	private void moveRectangle2(Player fakePlayer, int locX, int locY, int LocZ, int a, int b, int r, boolean s)
 +	{
 +		Random rndX = new Random(), rndY = new Random();
 +		boolean c1, c2;
@@ -979,7 +1009,10 @@ index 00000000..c3ee1fef
 +				}
 +				newX += rndX.nextInt(a << 1) - a;
 +				newY += rndY.nextInt(b << 1) - b;
-+				c1 = (Math.abs(newX - locX) < r) && (Math.abs(newY - locY) < r);
++				if(s)
++					c1 = (Math.abs(newX - locX) < r) || (Math.abs(newY - locY) < r);
++				else
++					c1 = (Math.abs(newX - locX) < r) && (Math.abs(newY - locY) < r);
 +				c2 = (Math.abs(newX - locX) > a) || (Math.abs(newY - locY) > b);
 +			}
 +			while (c1 || c2);
@@ -990,7 +1023,7 @@ index 00000000..c3ee1fef
 +		while (findAllNearbyObjects(fakePlayer, 50));
 +	}
 +	
-+	private void spawnRndFakeTrader(String location)
++	private void spawnRndFakeTrader(String loc)
 +	{
 +		List<Integer> classIdList = List.of(0, 10, 18, 31, 44, 53);
 +		int classId = 18;
@@ -1029,55 +1062,100 @@ index 00000000..c3ee1fef
 +		// Coordinates 45350, 49530-50283, -3064, radius 276-753
 +		
 +		int locX = 0, locY = 0, LocZ = 0;
-+		if (location.equals("Elven Village"))
++		if (loc.equals("Elven Village"))
 +		{
 +			fakePlayer.spawnMe(locX = 45350, locY = 49530/* 50283 */, LocZ = -3056);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 750, 276);
 +		}
-+		else if (location.equals("Dark Elven Village"))
++		else if (loc.equals("Dark Elven Village"))
 +		{
 +			fakePlayer.spawnMe(locX = 10123, locY = 17954, LocZ = -4568);
 +			moveRectangle(fakePlayer, locX, locY, LocZ, 250, 375);
 +		}
-+		else if (location.equals("Talking Island"))
++		else if (loc.equals("Talking Island"))
 +		{
 +			fakePlayer.spawnMe(locX = -82347, locY = 243170, LocZ = -3720);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 375, 0);
 +		}
-+		else if (location.equals("Dwarven Village"))
++		else if (loc.equals("Dwarven Village"))
 +		{
 +			fakePlayer.spawnMe(locX = 116551, locY = -182493, LocZ = -1512);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 375, 0);
 +		}
-+		else if (location.equals("Orc Village"))
++		else if (loc.equals("Orc Village"))
 +		{
 +			fakePlayer.spawnMe(locX = -44817, locY = -113608, LocZ = -192);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 550, 325);
 +		}
-+		else if (location.equals("Gludin Village"))
++		else if (loc.equals("Gludin"))
 +		{
 +			fakePlayer.spawnMe(locX = -82153, locY = 150869, LocZ = -3120);
 +			moveRectangle(fakePlayer, locX, locY, LocZ, 650, 375);
 +		}
-+		else if (location.equals("Town of Gludio"))
++		else if (loc.equals("Gludio"))
 +		{
 +			fakePlayer.spawnMe(locX = -14428, locY = 123093, LocZ = -3112);
 +			moveRectangle(fakePlayer, locX, locY, LocZ, 220, 400);
 +		}
-+		else if (location.equals("Town of Dion"))
++		else if (loc.equals("Dion"))
 +		{
 +			fakePlayer.spawnMe(locX = 15786, locY = 143671, LocZ = -2808);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 350, 0);
 +		}
-+		else if (location.equals("Town of Giran"))
++		else if (loc.equals("Giran"))
 +		{
 +			fakePlayer.spawnMe(locX = 81928, locY = 148609, LocZ = -3464);
-+			moveRectangle2(fakePlayer, locX, locY, LocZ, 800, 700, 250);
++			moveRectangle2(fakePlayer, locX, locY, LocZ, 800, 700, 250, false);
 +		}
-+		else if (location.equals("Town of Oren"))
++		else if (loc.equals("Oren"))
 +		{
 +			fakePlayer.spawnMe(locX = 82456, locY = 53706, LocZ = -1488);
 +			moveRectangle(fakePlayer, locX, locY, LocZ, 300, 300);
++		}
++		else if (loc.equals("Aden"))
++		{
++			fakePlayer.spawnMe(locX = 147449, locY = 27492, LocZ = -2200);
++			moveRectangle2(fakePlayer, locX, locY, LocZ, 750, 750, 250, true);
++		}
++		else if (loc.equals("Goddard"))
++		{
++			fakePlayer.spawnMe(locX = 146256, locY = -54740, LocZ = -2776);
++			moveCircle(fakePlayer, locX, locY, LocZ, 325, 0);
++		}
++		else if (loc.equals("Schuttgart"))
++		{
++			fakePlayer.spawnMe(locX = 89002, locY = -143879, LocZ = -1336);
++			moveCircle(fakePlayer, locX, locY, LocZ, 325, 0);
++		}
++		else if (loc.equals("Heine"))
++		{
++			fakePlayer.spawnMe(locX = 111384, locY = 220167, LocZ = -3672);
++			moveRectangle2(fakePlayer, locX, locY, LocZ, 800, 700, 350, true);
++		}
++		else if (loc.equals("Rune"))
++		{
++			fakePlayer.spawnMe(locX = 44070, locY = -50243, LocZ = -792);
++			moveCircle(fakePlayer, locX, locY, LocZ, 450, 0);
++		}
++		else if (loc.equals("Floran Village"))
++		{
++			fakePlayer.spawnMe(locX = 17560, locY = 170232, LocZ = -3504);
++			moveCircle(fakePlayer, locX, locY, LocZ, 250, 200);
++		}
++		else if (loc.equals("Monsters Derby"))
++		{
++			fakePlayer.spawnMe(locX = 13135, locY = 181772, LocZ = -3560);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 850, 25);
++		}
++		else if (loc.equals("Monsters Derby 2"))
++		{
++			fakePlayer.spawnMe(locX = 11801, locY = 182089, LocZ = -3560);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 25, 350);
++		}
++		else if (loc.equals("Hunters Village"))
++		{
++			fakePlayer.spawnMe(locX = 116589, locY = 76268, LocZ = -2728);
++			moveCircle(fakePlayer, locX, locY, LocZ, 350, 0);
 +		}
 +		
 +		fakePlayer.onPlayerEnter();
@@ -1160,7 +1238,7 @@ index 00000000..c3ee1fef
 +			String iName = "";
 +			do
 +			{
-+				if (location.equals("Town of Giran") || location.equals("Town of Oren"))
++				if (loc.equals("Giran") || loc.equals("Oren") || loc.equals("Aden") || loc.equals("Goddard") || loc.equals("Schuttgart")|| loc.equals("Heine")|| loc.equals("Rune"))
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomCGradeItemId() : getRandomDGradeItemId();
 +				else
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
@@ -1658,9 +1736,7 @@ index 00000000..c3ee1fef
 +		
 +		fakePlayer.getInventory().restore();
 +		
-+		// fakePlayer.getInventory().equipItemAndRecord(itemInst);
-+		
-+		LOGGER.info("Trade bot " + rs.getString("name") + " has in inventory: " + fakePlayer.getInventory().getItems());
++		//LOGGER.info("Trade bot " + rs.getString("name") + " has in inventory: " + fakePlayer.getInventory().getItems());
 +		
 +		if (storeType == 1)
 +		{
