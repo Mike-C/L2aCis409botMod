@@ -537,10 +537,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..cfd3d201
+index 00000000..7ec41943
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1324 @@
+@@ -0,0 +1,1288 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -559,6 +559,7 @@ index 00000000..cfd3d201
 +import net.sf.l2j.gameserver.enums.actors.Sex;
 +import net.sf.l2j.gameserver.enums.items.CrystalType;
 +import net.sf.l2j.gameserver.enums.items.EtcItemType;
++import net.sf.l2j.gameserver.enums.items.ItemType;
 +import net.sf.l2j.gameserver.geoengine.GeoEngine;
 +import net.sf.l2j.gameserver.model.actor.container.player.Appearance;
 +import net.sf.l2j.gameserver.model.trade.TradeList;
@@ -602,7 +603,7 @@ index 00000000..cfd3d201
 +	
 +	private static boolean[] SET_ITEMS = new boolean[9299];
 +	
-+	private static float[] REFFERENCE_PRICE_MULTIPLYER =
++	private static float[] REFERENCE_PRICE_MULTIPLIER =
 +	{
 +		1.1f,
 +		1.15f,
@@ -627,9 +628,7 @@ index 00000000..cfd3d201
 +	
 +	public void load()
 +	{
-+		loadNGradeItems();
-+		loadDGradeItems();
-+		loadCGradeItems();
++		loadItemsUpToGrade();
 +		excludeItems();
 +		logRareItems();
 +		logSetItems();
@@ -833,63 +832,10 @@ index 00000000..cfd3d201
 +		BANNED_ITEMS[1500] = true; // Totem of Hestui
 +	}
 +	
-+	public static void loadNGradeItems()
++	public static void loadItemsUpToGrade()
 +	{
 +		NO_GRADE_ITEM_IDS.clear();
-+		
-+		// Loop through every item template registered in the aCis core XML engine
-+		for (Item template : ItemData.getInstance().getTemplates())
-+		{
-+			if (template == null)
-+				continue;
-+			
-+			// Check if the item is explicitly NO-Grade
-+			if (template.getCrystalType() == CrystalType.NONE)
-+			{
-+				// Optional: Filter out quest items, adena, or arrows if desired
-+				if (template.isQuestItem())
-+					continue;
-+				
-+				// Check if the item template is an EtcItem, then retrieve its type
-+				if (template.getItemType() == EtcItemType.SEED || template.getItemType() == EtcItemType.SEED2)
-+				{
-+					// Skip seeds from the fake bot shop
-+					continue;
-+				}
-+				
-+				NO_GRADE_ITEM_IDS.add(template.getItemId());
-+			}
-+		}
-+		
-+		LOGGER.info("NOGradePicker: Cached " + NO_GRADE_ITEM_IDS.size() + " NO-Grade items.");
-+	}
-+	
-+	public static void loadDGradeItems()
-+	{
 +		D_GRADE_ITEM_IDS.clear();
-+		
-+		// Loop through every item template registered in the aCis core XML engine
-+		for (Item template : ItemData.getInstance().getTemplates())
-+		{
-+			if (template == null)
-+				continue;
-+			
-+			// Check if the item is explicitly D-Grade
-+			if (template.getCrystalType() == CrystalType.D)
-+			{
-+				// Optional: Filter out quest items, adena, or arrows if desired
-+				if (template.isQuestItem())
-+					continue;
-+				
-+				D_GRADE_ITEM_IDS.add(template.getItemId());
-+			}
-+		}
-+		
-+		LOGGER.info("DGradePicker: Cached " + D_GRADE_ITEM_IDS.size() + " D-Grade items.");
-+	}
-+	
-+	public static void loadCGradeItems()
-+	{
 +		C_GRADE_ITEM_IDS.clear();
 +		
 +		// Loop through every item template registered in the aCis core XML engine
@@ -897,19 +843,32 @@ index 00000000..cfd3d201
 +		{
 +			if (template == null)
 +				continue;
-+			
-+			// Check if the item is explicitly C-Grade
-+			if (template.getCrystalType() == CrystalType.C)
-+			{
-+				// Optional: Filter out quest items, adena, or arrows if desired
-+				if (template.isQuestItem())
-+					continue;
-+				
-+				C_GRADE_ITEM_IDS.add(template.getItemId());
++
++			switch(template.getCrystalType()) {
++				case CrystalType.NONE :
++					// Optional: Filter out quest items, adena, or arrows if desired
++					if (template.isQuestItem())
++						continue;
++					
++					// Check if the item template is an EtcItem, then retrieve its type
++					if (template.getItemType() == EtcItemType.SEED || template.getItemType() == EtcItemType.SEED2)
++					{
++						// Skip seeds from the fake bot shop
++						continue;
++					}
++					NO_GRADE_ITEM_IDS.add(template.getItemId());
++					break;
++				case CrystalType.D :
++					D_GRADE_ITEM_IDS.add(template.getItemId());
++					break;
++				case CrystalType.C :
++					C_GRADE_ITEM_IDS.add(template.getItemId());
++					break;
 +			}
 +		}
-+		
-+		LOGGER.info("CGradePicker: Cached " + C_GRADE_ITEM_IDS.size() + " C-Grade items.");
++		LOGGER.info("ItemsGradePicker: Cached " + NO_GRADE_ITEM_IDS.size() + " No-Grade items.");
++		LOGGER.info("ItemsGradePicker: Cached " + D_GRADE_ITEM_IDS.size() + " D-Grade items.");
++		LOGGER.info("ItemsGradePicker: Cached " + C_GRADE_ITEM_IDS.size() + " C-Grade items.");
 +	}
 +	
 +	/**
@@ -1244,6 +1203,7 @@ index 00000000..cfd3d201
 +		}
 +		
 +		// getRandomDGradeItemId
++		final float rndRefPriceMultiplier = REFERENCE_PRICE_MULTIPLIER[rnd.nextInt(4)];
 +		int j = rnd.nextInt(4), recipeLevel = 1;
 +		for (int rndItem, i = 0; i <= j; i++)
 +		{
@@ -1312,37 +1272,39 @@ index 00000000..cfd3d201
 +			} // throw out shadow, monster items, high level keys etc., only B,A,S grade crystals allowed, 1458 - 1459
 +			while (itemTemplate.getReferencePrice() == 0 || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone"));
 +			
-+			if (itemTemplate.getItemType() == EtcItemType.RECIPE)
++			ItemType iT = itemTemplate.getItemType();
++			String iN = itemTemplate.getName();
++			if (iT == EtcItemType.RECIPE)
 +				count = rnd.nextInt(10) + 1;
 +			
-+			if (itemTemplate.getItemType() == EtcItemType.CROP)
++			if (iT == EtcItemType.CROP)
 +				count = rnd.nextInt(800) + 1;
 +			
-+			if (itemTemplate.getItemType() == EtcItemType.POTION || itemTemplate.getItemType() == EtcItemType.ELIXIR)
++			if (iT == EtcItemType.POTION || iT == EtcItemType.ELIXIR)
 +				count = rnd.nextInt(100) + 1;
 +			
-+			if (itemTemplate.getItemType() == EtcItemType.SHOT)
++			if (iT == EtcItemType.SHOT)
 +				count = rnd.nextInt(5000) + 1;
 +			
 +			if (RARE_ITEMS[rndItem])
 +				count = rnd.nextInt(100) + 1;
 +			
-+			if (itemTemplate.getName().contains("Food"))
++			if (iN.contains("Food"))
 +				count = rnd.nextInt(1000) + 1;
 +			
-+			if (itemTemplate.getName().contains(" Fish"))
++			if (iN.contains(" Fish"))
 +				count = rnd.nextInt(100) + 1;
 +			
-+			if (itemTemplate.getName().contains("Scroll of Escape"))
++			if (iN.contains("Scroll of Escape"))
 +				count = rnd.nextInt(50) + 1;
 +			
-+			if (itemTemplate.getName().contains("Posting Ticket"))
++			if (iN.contains("Posting Ticket"))
 +				count = rnd.nextInt(15) + 1;
 +			
-+			if (itemTemplate.getName().contains(" Recovery"))
++			if (iN.contains(" Recovery"))
 +				count = rnd.nextInt(50) + 1;
 +			
-+			if (itemTemplate.getName().contains("Dye"))
++			if (iN.contains("Dye"))
 +				count = rnd.nextInt(10) + 1;
 +			
 +			if (rndItem >= 1458 && rndItem <= 1459) // D, C Crystals
@@ -1352,8 +1314,10 @@ index 00000000..cfd3d201
 +			
 +			if (storeType == 1)
 +			{
-+				price = (int) (REFFERENCE_PRICE_MULTIPLYER[rnd.nextInt(4)] * itemTemplate.getReferencePrice());
-+				if (itemTemplate.getItemType() == EtcItemType.SCROLL || itemTemplate.getItemType() == EtcItemType.SCRL_ENCHANT_WP || itemTemplate.getItemType() == EtcItemType.BLESS_SCRL_ENCHANT_WP || itemTemplate.getItemType() == EtcItemType.SCRL_ENCHANT_AM || itemTemplate.getItemType() == EtcItemType.BLESS_SCRL_ENCHANT_AM)
++				price = (int) (rndRefPriceMultiplier * itemTemplate.getReferencePrice());
++				if (iT == EtcItemType.SCROLL || iT == EtcItemType.SCRL_ENCHANT_WP || iT == EtcItemType.BLESS_SCRL_ENCHANT_WP || iT == EtcItemType.SCRL_ENCHANT_AM || iT == EtcItemType.BLESS_SCRL_ENCHANT_AM)
++					price <<= 1;
++				if(iN.contains("Blessed Scroll") || iN.contains("Crystal Scroll"))
 +					price <<= 1;
 +			}
 +			
