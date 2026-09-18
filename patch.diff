@@ -536,10 +536,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..386bab72
+index 00000000..0fab1d03
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1041 @@
+@@ -0,0 +1,1228 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -595,7 +595,7 @@ index 00000000..386bab72
 +
 +public class FakeTraderManager
 +{
-+	private static boolean[] BANNED_MONSTER_ITEMS = new boolean[9299];
++	private static boolean[] BANNED_ITEMS = new boolean[9299];
 +	
 +	private static boolean[] RARE_ITEMS = new boolean[9299];
 +	
@@ -615,6 +615,10 @@ index 00000000..386bab72
 +	
 +	private static final List<Integer> NO_GRADE_ITEM_IDS = new ArrayList<>();
 +	private static final List<Integer> D_GRADE_ITEM_IDS = new ArrayList<>();
++	private static final List<Integer> C_GRADE_ITEM_IDS = new ArrayList<>();
++
++	
++	Random rnd = new Random();
 +	
 +	public static final FakeTraderManager getInstance()
 +	{
@@ -625,7 +629,8 @@ index 00000000..386bab72
 +	{
 +		loadNGradeItems();
 +		loadDGradeItems();
-+		excludeMonsterItems();
++		loadCGradeItems();
++		excludeItems();
 +		logRareItems();
 +		logSetItems();
 +		
@@ -642,8 +647,35 @@ index 00000000..386bab72
 +			LOGGER.info("Loaded bot Clan: " + clan.getName());
 +		}
 +		
++		for (int i = 0; i < 25; i++)
++			spawnRndFakeTrader("Dark Elven Village");
++		
 +		for (int i = 0; i < 50; i++)
-+			spawnRndFakeTrader(null);
++			spawnRndFakeTrader("Elven Village");
++		
++		for (int i = 0; i < 45; i++)
++			spawnRndFakeTrader("Talking Island");
++		
++		for (int i = 0; i < 25; i++)
++			spawnRndFakeTrader("Dwarven Village");
++		
++		for (int i = 0; i < 30; i++)
++			spawnRndFakeTrader("Orc Village");
++		
++		for (int i = 0; i < 50; i++)
++			spawnRndFakeTrader("Gludin Village");
++		
++		for (int i = 0; i < 30; i++)
++			spawnRndFakeTrader("Town of Gludio");
++		
++		for (int i = 0; i < 22; i++)
++			spawnRndFakeTrader("Town of Dion");
++		
++		for (int i = 0; i < 135; i++)
++			spawnRndFakeTrader("Town of Giran");
++		
++		for (int i = 0; i < 25; i++)
++			spawnRndFakeTrader("Town of Oren");
 +		
 +		try (Connection con = ConnectionPool.getConnection();
 +			PreparedStatement ps = con.prepareStatement("SELECT * FROM fake_traders");
@@ -663,8 +695,8 @@ index 00000000..386bab72
 +	
 +	public static void logSetItems()
 +	{
-+		SET_ITEMS[398] = true;  // Plated Leather
-+		SET_ITEMS[418] = true;  // Plated Leather Gaiters
++		SET_ITEMS[398] = true; // Plated Leather
++		SET_ITEMS[418] = true; // Plated Leather Gaiters
 +		SET_ITEMS[1966] = true; // Plated Leather Fragment
 +		SET_ITEMS[1967] = true; // Plated Leather Gaiters Material
 +		SET_ITEMS[2411] = true; // Brigandine Helmet
@@ -719,33 +751,39 @@ index 00000000..386bab72
 +		RARE_ITEMS[3497] = true; // Manak's Silver Dryad
 +		RARE_ITEMS[3498] = true; // Nia's Silver Fairy
 +	}
-+
 +	
-+	public static void excludeMonsterItems()
++	public static void excludeItems()
 +	{
-+		BANNED_MONSTER_ITEMS[250] = true; // Dark Mystic Fist
-+		BANNED_MONSTER_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
-+		BANNED_MONSTER_ITEMS[6919] = true; // Monster Only (Shield of Ketra Orc)
++		BANNED_ITEMS[250] = true; // Dark Mystic Fist
++		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
++		BANNED_ITEMS[6919] = true; // Monster Only (Shield of Ketra Orc)
 +		
-+		BANNED_MONSTER_ITEMS[749] = true; // 0
-+		BANNED_MONSTER_ITEMS[1471] = true; // Silenos Blowgun
-+		BANNED_MONSTER_ITEMS[1472] = true; // Dreadbane
-+		BANNED_MONSTER_ITEMS[3937] = true; // Giant Bar
-+		BANNED_MONSTER_ITEMS[3938] = true; // Giant Rod
-+		BANNED_MONSTER_ITEMS[3939] = true; // Lady's Fan
-+		BANNED_MONSTER_ITEMS[4028] = true; // Giant Cannon
-+		BANNED_MONSTER_ITEMS[5128] = true; // Crokian Blade
-+		BANNED_MONSTER_ITEMS[5127] = true; // Dailaon Knife
-+		BANNED_MONSTER_ITEMS[5129] = true; // Doll Knife
-+		BANNED_MONSTER_ITEMS[5130] = true; // Nos Sword
-+		BANNED_MONSTER_ITEMS[5131] = true; // Parhit Staff
-+		BANNED_MONSTER_ITEMS[5132] = true; // Giant Trident
-+		BANNED_MONSTER_ITEMS[5791] = true; // Tomb Guard A
-+		BANNED_MONSTER_ITEMS[5792] = true; // Tomb Guard B
-+		BANNED_MONSTER_ITEMS[5795] = true; // Tomb Guard A
-+		BANNED_MONSTER_ITEMS[5796] = true; // Tomb Guard B
-+		BANNED_MONSTER_ITEMS[5799] = true; // Nephilim Lord
-+		BANNED_MONSTER_ITEMS[6723] = true; // Monster Only(Vampire Warrior)
++		BANNED_ITEMS[749] = true; // 0
++		BANNED_ITEMS[1471] = true; // Silenos Blowgun
++		BANNED_ITEMS[1472] = true; // Dreadbane
++		BANNED_ITEMS[3937] = true; // Giant Bar
++		BANNED_ITEMS[3938] = true; // Giant Rod
++		BANNED_ITEMS[3939] = true; // Lady's Fan
++		BANNED_ITEMS[4028] = true; // Giant Cannon
++		BANNED_ITEMS[5128] = true; // Crokian Blade
++		BANNED_ITEMS[5127] = true; // Dailaon Knife
++		BANNED_ITEMS[5129] = true; // Doll Knife
++		BANNED_ITEMS[5130] = true; // Nos Sword
++		BANNED_ITEMS[5131] = true; // Parhit Staff
++		BANNED_ITEMS[5132] = true; // Giant Trident
++		BANNED_ITEMS[5791] = true; // Tomb Guard A
++		BANNED_ITEMS[5792] = true; // Tomb Guard B
++		BANNED_ITEMS[5793] = true; // Tomb Savant A
++		BANNED_ITEMS[5794] = true; // Tomb Savant B
++		BANNED_ITEMS[5795] = true; // Tomb Guard A
++		BANNED_ITEMS[5796] = true; // Tomb Guard B
++		BANNED_ITEMS[5797] = true; // Tomb Savant A
++		BANNED_ITEMS[5798] = true; // Tomb Savant B
++		BANNED_ITEMS[5799] = true; // Nephilim Lord
++		BANNED_ITEMS[5802] = true; // Dawn Sword ?
++		BANNED_ITEMS[6723] = true; // Monster Only(Vampire Warrior)
++		
++		BANNED_ITEMS[1500] = true; // Totem of Hestui
 +	}
 +	
 +	public static void loadNGradeItems()
@@ -777,7 +815,7 @@ index 00000000..386bab72
 +			}
 +		}
 +		
-+		LOGGER.info("DGradePicker: Cached " + D_GRADE_ITEM_IDS.size() + " D-Grade items.");
++		LOGGER.info("DGradePicker: Cached " + NO_GRADE_ITEM_IDS.size() + " NO-Grade items.");
 +	}
 +	
 +	public static void loadDGradeItems()
@@ -804,8 +842,32 @@ index 00000000..386bab72
 +		LOGGER.info("DGradePicker: Cached " + D_GRADE_ITEM_IDS.size() + " D-Grade items.");
 +	}
 +	
++	public static void loadCGradeItems()
++	{
++		C_GRADE_ITEM_IDS.clear();
++		
++		// Loop through every item template registered in the aCis core XML engine
++		for (Item template : ItemData.getInstance().getTemplates())
++		{
++			if (template == null)
++				continue;
++			
++			// Check if the item is explicitly D-Grade
++			if (template.getCrystalType() == CrystalType.C)
++			{
++				// Optional: Filter out quest items, adena, or arrows if desired
++				if (template.isQuestItem())
++					continue;
++				
++				C_GRADE_ITEM_IDS.add(template.getItemId());
++			}
++		}
++		
++		LOGGER.info("DGradePicker: Cached " + C_GRADE_ITEM_IDS.size() + " C-Grade items.");
++	}
++	
 +	/**
-+	 * Picks a random D-Grade Item ID from the cached pool.
++	 * Picks a random NO-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
 +	 */
 +	public static int getRandomNGradeItemId()
@@ -818,7 +880,7 @@ index 00000000..386bab72
 +		// Use the native aCis core Rnd manager to fetch a random index
 +		return NO_GRADE_ITEM_IDS.get(Rnd.get(NO_GRADE_ITEM_IDS.size()));
 +	}
-+	
++		
 +	/**
 +	 * Picks a random D-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
@@ -834,10 +896,104 @@ index 00000000..386bab72
 +		return D_GRADE_ITEM_IDS.get(Rnd.get(D_GRADE_ITEM_IDS.size()));
 +	}
 +	
-+	private void spawnRndFakeTrader(String locationd)
++	/**
++	 * Picks a random C-Grade Item ID from the cached pool.
++	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
++	 */
++	public static int getRandomCGradeItemId()
 +	{
-+		Random rnd = new Random();
-+		List<Integer> classIdList = List.of(0, 10, 18, 31, 44 , 53);
++		if (C_GRADE_ITEM_IDS.isEmpty())
++		{
++			return 0; // Fallback or safety boundary check
++		}
++		
++		// Use the native aCis core Rnd manager to fetch a random index
++		return C_GRADE_ITEM_IDS.get(Rnd.get(C_GRADE_ITEM_IDS.size()));
++	}
++	
++	private void moveCircle(Player fakePlayer, int locX, int locY, int LocZ, int cir1, int cir2)
++	{
++		Random rndX = new Random(), rndY = new Random();
++		boolean c1, c2;
++		do
++		{
++			// fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
++			fakePlayer.getPosition().set(locX, /* 49530 */locY, LocZ, 0);
++			int newX = locX, newY = locY, counter = 0;
++			do
++			{
++				if (counter++ > 5)
++				{
++					newX = locX;
++					newY = locY;
++					counter = 0;
++				}
++				newX += rndX.nextInt(cir1 << 1) - cir1;
++				newY += rndY.nextInt(cir1 << 1) - cir1;
++				c1 = fakePlayer.isIn2DRadius(new Location(newX, newY, LocZ), cir1);
++				c2 = fakePlayer.isIn2DRadius(new Location(newX, newY, LocZ), cir2);
++			}
++			while (!c1 || c2);
++			// fakePlayer.teleportTo(newX, newY, -3064, rs.getInt("heading"));
++			
++			int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, LocZ);
++			fakePlayer.getPosition().set(newX, newY, absoluteZ, rnd.nextInt(65536));
++		}
++		while (findAllNearbyObjects(fakePlayer, 50));
++	}
++	
++	private void moveRectangle(Player fakePlayer, int locX, int locY, int LocZ, int a, int b)
++	{
++		Random rndX = new Random(), rndY = new Random();
++		do
++		{
++			// fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
++			fakePlayer.getPosition().set(locX, /* 49530 */locY, LocZ, 0);
++			int newX = locX, newY = locY;
++			
++			newX += rndX.nextInt(a << 1) - a;
++			newY += rndY.nextInt(b << 1) - b;
++			// fakePlayer.teleportTo(newX, newY, -3064, rs.getInt("heading"));
++			
++			int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, LocZ);
++			fakePlayer.getPosition().set(newX, newY, absoluteZ, rnd.nextInt(65536));
++		}
++		while (findAllNearbyObjects(fakePlayer, 50));
++	}
++	
++	private void moveRectangle2(Player fakePlayer, int locX, int locY, int LocZ, int a, int b, int r)
++	{
++		Random rndX = new Random(), rndY = new Random();
++		boolean c1, c2;
++		do
++		{
++			// fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
++			fakePlayer.getPosition().set(locX, /* 49530 */locY, LocZ, 0);
++			int newX = locX, newY = locY, counter = 0;
++			do
++			{
++				if (counter++ > 5)
++				{
++					newX = locX;
++					newY = locY;
++					counter = 0;
++				}
++				newX += rndX.nextInt(a << 1) - a;
++				newY += rndY.nextInt(b << 1) - b;
++				c1 = (Math.abs(newX - locX) < r) && (Math.abs(newY - locY) < r);
++				c2 = (Math.abs(newX - locX) > a) || (Math.abs(newY - locY) > b);
++			}
++			while (c1 || c2);
++			// fakePlayer.teleportTo(newX, newY, -3064, rs.getInt("heading"));
++			int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, LocZ);
++			fakePlayer.getPosition().set(newX, newY, absoluteZ, rnd.nextInt(65536));
++		}
++		while (findAllNearbyObjects(fakePlayer, 50));
++	}
++	
++	private void spawnRndFakeTrader(String location)
++	{
++		List<Integer> classIdList = List.of(0, 10, 18, 31, 44, 53);
 +		int classId = 18;
 +		
 +		// Always check if the list is empty first to avoid exceptions
@@ -849,12 +1005,12 @@ index 00000000..386bab72
 +			// Retrieve the item
 +			classId = classIdList.get(randomIndex);
 +		}
-+		//classId = 18;		
++		// classId = 18;
 +		PlayerTemplate template = PlayerData.getInstance().getTemplate(classId);
 +		
 +		int objectId = IdFactory.getInstance().getNextId();
 +		
-+		//final Appearance app = new Appearance((byte)0, (byte)0, (byte)1, Sex.MALE);
++		// final Appearance app = new Appearance((byte)0, (byte)0, (byte)1, Sex.MALE);
 +		final Appearance app = new Appearance((byte) rnd.nextInt(3), (byte) rnd.nextInt(4), (byte) rnd.nextInt(5), rnd.nextInt(2) == 1 ? Sex.MALE : Sex.FEMALE);
 +		
 +		Player fakePlayer = new Player(objectId, template, "", app);
@@ -872,37 +1028,58 @@ index 00000000..386bab72
 +		fakePlayer.setAccessLevel(Config.DEFAULT_ACCESS_LEVEL);
 +		
 +		// Coordinates 45350, 49530-50283, -3064, radius 276-753
-+		fakePlayer.getPosition().set(45350, 50283, -3056, 0);
 +		
-+		fakePlayer.spawnMe();
-+		
-+		Random rndX = new Random(), rndY = new Random();
-+		boolean c1, c2;
-+		do
++		int locX = 0, locY = 0, LocZ = 0;
++		if (location.equals("Elven Village"))
 +		{
-+			// fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
-+			fakePlayer.getPosition().set(45350, 49530, -3056, 0);
-+			int newX = 45350, newY = 49530, counter = 0;
-+			do
-+			{
-+				if (counter++ > 5)
-+				{
-+					newX = 45350;
-+					newY = 49530;
-+					counter = 0;
-+				}
-+				newX += rndX.nextInt(1500) - 750;
-+				newY += rndY.nextInt(1500) - 750;
-+				c1 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 750);
-+				c2 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 276);
-+			}
-+			while (!c1 || c2);
-+			// fakePlayer.teleportTo(newX, newY, -3064, rs.getInt("heading"));
-+			
-+			int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, -3064);
-+			fakePlayer.getPosition().set(newX, newY, /*-3064*/absoluteZ, rnd.nextInt(65536));
++			fakePlayer.spawnMe(locX = 45350, locY = 49530/* 50283 */, LocZ = -3056);
++			moveCircle(fakePlayer, locX, locY, LocZ, 750, 276);
 +		}
-+		while (findAllNearbyObjects(fakePlayer, 50));
++		else if (location.equals("Dark Elven Village"))
++		{
++			fakePlayer.spawnMe(locX = 10123, locY = 17954, LocZ = -4568);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 250, 375);
++		}
++		else if (location.equals("Talking Island"))
++		{
++			fakePlayer.spawnMe(locX = -82347, locY = 243170, LocZ = -3720);
++			moveCircle(fakePlayer, locX, locY, LocZ, 375, 0);
++		}
++		else if (location.equals("Dwarven Village"))
++		{
++			fakePlayer.spawnMe(locX = 116551, locY = -182493, LocZ = -1512);
++			moveCircle(fakePlayer, locX, locY, LocZ, 375, 0);
++		}
++		else if (location.equals("Orc Village"))
++		{
++			fakePlayer.spawnMe(locX = -44817, locY = -113608, LocZ = -192);
++			moveCircle(fakePlayer, locX, locY, LocZ, 550, 325);
++		}
++		else if (location.equals("Gludin Village"))
++		{
++			fakePlayer.spawnMe(locX = -82153, locY = 150869, LocZ = -3120);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 650, 375);
++		}
++		else if (location.equals("Town of Gludio"))
++		{
++			fakePlayer.spawnMe(locX = -14428, locY = 123093, LocZ = -3112);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 220, 400);
++		}
++		else if (location.equals("Town of Dion"))
++		{
++			fakePlayer.spawnMe(locX = 15786, locY = 143671, LocZ = -2808);
++			moveCircle(fakePlayer, locX, locY, LocZ, 350, 0);
++		}
++		else if (location.equals("Town of Giran"))
++		{
++			fakePlayer.spawnMe(locX = 81928, locY = 148609, LocZ = -3464);
++			moveRectangle2(fakePlayer, locX, locY, LocZ, 800, 700, 250);
++		}
++		else if (location.equals("Town of Oren"))
++		{
++			fakePlayer.spawnMe(locX = 82456, locY = 53706, LocZ = -1488);
++			moveRectangle(fakePlayer, locX, locY, LocZ, 300, 300);
++		}
 +		
 +		fakePlayer.onPlayerEnter();
 +		
@@ -935,7 +1112,7 @@ index 00000000..386bab72
 +			{
 +				fakePlayer.setClan(clan);
 +				clan.addClanMember(fakePlayer);
-+				//fakePlayer.sendPacket(new UserInfo(fakePlayer));
++				// fakePlayer.sendPacket(new UserInfo(fakePlayer));
 +				fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
 +				// Save player clan info to database
 +				// fakePlayer.store();
@@ -976,19 +1153,23 @@ index 00000000..386bab72
 +		int j = rnd.nextInt(4), recipeLevel = 1;
 +		for (int rndItem, i = 0; i <= j; i++)
 +		{
-+			int count = 1;// storeType == 3 ? itemTemplate.isStackable()?rnd.nextInt(1000):1:1;
++			int count = 1;
 +			
 +			Item itemTemplate = null;
 +			Recipe keyRecipe = null;
-+			boolean isKeyMat = false, isHighGradeScroll = false;
++			boolean isKeyMat = false;
++			String iName = "";
 +			do
 +			{
-+				rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
++				if (location.equals("Town of Giran") || location.equals("Town of Oren"))
++					rndItem = rnd.nextInt(2) == 1 ? getRandomCGradeItemId() : getRandomDGradeItemId();
++				else
++					rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
 +				
 +				itemTemplate = ItemData.getInstance().getTemplate(rndItem);
-+				count = storeType == 3 ? itemTemplate.isStackable() ? rnd.nextInt(1000) + 1 : 1 : 1;
-+				// if (!(itemTemplate.getReferencePrice() == 0) && BANNED_MONSTER_ITEMS[rndItem] == false)
-+				// 	LOGGER.info("BANNED_MONSTER_ITEMS[" + rndItem + "] = true; // " + itemTemplate.getName());
++				count = storeType <= 3 ? itemTemplate.isStackable() ? rnd.nextInt(100) + 1 : 1 : 1;
++//				if (!(itemTemplate.getReferencePrice() == 0) && BANNED_ITEMS[rndItem] == false)
++//					LOGGER.info("BANNED_ITEMS[" + rndItem + "] = true; // " + itemTemplate.getName());
 +				
 +				if (itemTemplate.getItemType() == EtcItemType.RECIPE)
 +				{
@@ -1033,20 +1214,9 @@ index 00000000..386bab72
 +					}
 +				}
 +				
-+				isHighGradeScroll = false;
-+				if (itemTemplate.getItemType() == EtcItemType.SCROLL || itemTemplate.getItemType() == EtcItemType.SCRL_ENCHANT_WP || itemTemplate.getItemType() == EtcItemType.BLESS_SCRL_ENCHANT_WP || itemTemplate.getItemType() == EtcItemType.SCRL_ENCHANT_AM || itemTemplate.getItemType() == EtcItemType.BLESS_SCRL_ENCHANT_AM)
-+				{
-+					String scrollName = itemTemplate.getName().toLowerCase();
-+					
-+					// Check if the scroll name mentions A-Grade or S-Grade
-+					if (scrollName.contains("grade b") || scrollName.contains("grade a") || scrollName.contains("grade s") || scrollName.contains("b-grade") || scrollName.contains("a-grade") || scrollName.contains("s-grade") || scrollName.contains("b grade") || scrollName.contains("a grade") || scrollName.contains("s grade"))
-+					{
-+						// Block the bot from listing high-grade scrolls
-+						isHighGradeScroll = true;
-+					}
-+				}
++				iName = itemTemplate.getName().toLowerCase();
 +			} // throw out shadow, monster items, high level keys etc., only B,A,S grade crystals allowed, 1458 - 1459
-+			while (itemTemplate.getReferencePrice() == 0 || BANNED_MONSTER_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || isHighGradeScroll || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462));
++			while (itemTemplate.getReferencePrice() == 0 || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone"));
 +			
 +			if (itemTemplate.getItemType() == EtcItemType.RECIPE)
 +				count = rnd.nextInt(10) + 1;
@@ -1071,6 +1241,9 @@ index 00000000..386bab72
 +			
 +			if (itemTemplate.getName().contains("Scroll of Escape"))
 +				count = rnd.nextInt(50) + 1;
++			
++			if (itemTemplate.getName().contains("Posting Ticket"))
++				count = rnd.nextInt(15) + 1;
 +			
 +			if (itemTemplate.getName().contains(" Recovery"))
 +				count = rnd.nextInt(50) + 1;
@@ -1097,42 +1270,54 @@ index 00000000..386bab72
 +		}
 +		
 +		fakePlayer.getInventory().restore();
-+				
++		
 +		// LOGGER.info("Trade bot " + fakePlayerName + " has in inventory: " + fakePlayer.getInventory().getItems());
 +		
-+		if (storeType == 1 && tradeList.size() > 0) // sell
++		if (storeType == 1 && tradeList != null && tradeList.size() > 0) // sell
 +		{
 +			// select item with max price overall
-+			int maxPrice =  tradeList.get(0).getPrice() * tradeList.get(0).getCount();
++			int maxPrice = tradeList.get(0).getPrice() * tradeList.get(0).getCount();
 +			String maxPriceName = tradeList.get(0).getItem().getName();
-+			for (int i=0; i<tradeList.size(); i++) {
-+				if (maxPrice < tradeList.get(i).getPrice() * tradeList.get(i).getCount()) {
++			for (int i = 0; i < tradeList.size(); i++)
++			{
++				if (maxPrice < tradeList.get(i).getPrice() * tradeList.get(i).getCount())
++				{
 +					maxPrice = tradeList.get(i).getPrice() * tradeList.get(i).getCount();
 +					maxPriceName = tradeList.get(i).getItem().getName();
 +				}
 +			}
 +			// cap the private store sell msg length at 29 characters maximum,
 +			// otherwise Fermata client disconnects
-+			String sellMsg = String.format("%1.25s", maxPriceName);
-+			fakePlayer.getSellList().setTitle("WTS " + sellMsg);
++			String sellMsg = "WTS";
++			if (maxPriceName.length() <= 25)
++				sellMsg = String.format("%1.29s", "WTS " + maxPriceName);
++			else
++				sellMsg = String.format("%1.29s", maxPriceName);
++			fakePlayer.getSellList().setTitle(sellMsg);
 +			fakePlayer.broadcastPacket(new PrivateStoreMsgSell(fakePlayer));
 +			fakePlayer.getSellList().updateItems(false);
 +		}
-+		else if (storeType == 3 && tradeList.size() > 0) // buy
++		else if (storeType == 3 && tradeList != null && tradeList.size() > 0) // buy
 +		{
 +			// select item with max price overall
-+			int maxPrice =  tradeList.get(0).getPrice() * tradeList.get(0).getCount();
++			int maxPrice = tradeList.get(0).getPrice() * tradeList.get(0).getCount();
 +			String maxPriceName = tradeList.get(0).getItem().getName();
-+			for (int i=0; i<tradeList.size(); i++) {
-+				if (maxPrice < tradeList.get(i).getPrice() * tradeList.get(i).getCount()) {
++			for (int i = 0; i < tradeList.size(); i++)
++			{
++				if (maxPrice < tradeList.get(i).getPrice() * tradeList.get(i).getCount())
++				{
 +					maxPrice = tradeList.get(i).getPrice() * tradeList.get(i).getCount();
 +					maxPriceName = tradeList.get(i).getItem().getName();
 +				}
 +			}
 +			// cap the private store buy msg length at 29 characters maximum,
 +			// otherwise Fermata client disconnects
-+			String buyMsg = String.format("%1.25s", maxPriceName);
-+			fakePlayer.getBuyList().setTitle("WTB " + buyMsg);
++			String buyMsg = "WTB";
++			if (maxPriceName.length() <= 25)
++				buyMsg = String.format("%1.29s", "WTB " + maxPriceName);
++			else
++				buyMsg = String.format("%1.29s", maxPriceName);
++			fakePlayer.getBuyList().setTitle(buyMsg);
 +			fakePlayer.getBuyList().updateItems(true);
 +		}
 +		else if (storeType == 5) // manufacture
@@ -1144,10 +1329,12 @@ index 00000000..386bab72
 +		// Force the offline/sitting posture
 +		fakePlayer.sitDown();
 +		
++		// fakePlayer.broadcastPacket(new CharInfo(fakePlayer));
++		
 +		// Force the server to broadcast the player's presence and store sign
 +		fakePlayer.broadcastUserInfo();
 +		
-+		fakePlayer.sendInfo(fakePlayer);
++		// fakePlayer.sendInfo(fakePlayer);
 +		fakePlayer.getAI().notifyEvent(AiEventType.SAT_DOWN, null, null);
 +		
 +	}
@@ -1174,7 +1361,7 @@ index 00000000..386bab72
 +		addAndEquip(fakePlayer, 39); // Boots
 +	}
 +	
-+	public void spawnFakeBots(Player player) throws Exception
++	public void spawnFakeBots(Player player)
 +	{
 +		Random rnd = new Random();
 +		int classId = rnd.nextInt(2) == 1 ? 25 : 18;
@@ -1353,31 +1540,31 @@ index 00000000..386bab72
 +		
 +		// Coordinates 45350, 49530-50283, -3064, radius 276-753
 +		fakePlayer.getPosition().set(rs.getInt("x"), rs.getInt("y"), rs.getInt("z"), rs.getInt("heading"));
-+//		 fakePlayer.getPosition().set(45350, 50283, -3064, rs.getInt("heading"));
-+
++		// fakePlayer.getPosition().set(45350, 50283, -3064, rs.getInt("heading"));
++		
 +		fakePlayer.spawnMe();
-+
-+//		Random rndX = new Random(), rndY = new Random();
-+//		boolean c1, c2;
-+//		do {
-+//			//fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
-+//			fakePlayer.getPosition().set(45350, 49530, -3064, rs.getInt("heading"));
-+//			int newX = 45350, newY = 49530, counter = 0;
-+//			do {
-+//				if(counter++>5) {
-+//					newX = 45350;
-+//					newY = 49530;
-+//					counter = 0;
-+//				}
-+//				newX+=rndX.nextInt(1500)-750;
-+//				newY+=rndY.nextInt(1500)-750;
-+//				c1 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 750);
-+//				c2 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 276);
-+//			} while (!c1 || c2);
-+//			int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, -3064);
-+//			fakePlayer.getPosition().set(newX, newY, absoluteZ, rs.getInt("heading"));
-+//			//fakePlayer.teleportTo(newX, newY, absoluteZ, rs.getInt("heading"));
-+//		} while(findAllNearbyObjects(fakePlayer, 50));
++		
++		// Random rndX = new Random(), rndY = new Random();
++		// boolean c1, c2;
++		// do {
++		// //fakePlayer.teleportTo(45350, 49530, -3064, rs.getInt("heading"));
++		// fakePlayer.getPosition().set(45350, 49530, -3064, rs.getInt("heading"));
++		// int newX = 45350, newY = 49530, counter = 0;
++		// do {
++		// if(counter++>5) {
++		// newX = 45350;
++		// newY = 49530;
++		// counter = 0;
++		// }
++		// newX+=rndX.nextInt(1500)-750;
++		// newY+=rndY.nextInt(1500)-750;
++		// c1 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 750);
++		// c2 = fakePlayer.isIn2DRadius(new Location(newX, newY, -3064), 276);
++		// } while (!c1 || c2);
++		// int absoluteZ = GeoEngine.getInstance().getHeight(newX, newY, -3064);
++		// fakePlayer.getPosition().set(newX, newY, absoluteZ, rs.getInt("heading"));
++		// //fakePlayer.teleportTo(newX, newY, absoluteZ, rs.getInt("heading"));
++		// } while(findAllNearbyObjects(fakePlayer, 50));
 +		
 +		fakePlayer.onPlayerEnter();
 +		
@@ -1410,7 +1597,7 @@ index 00000000..386bab72
 +			{
 +				fakePlayer.setClan(clan);
 +				clan.addClanMember(fakePlayer);
-+				//fakePlayer.sendPacket(new UserInfo(fakePlayer));
++				// fakePlayer.sendPacket(new UserInfo(fakePlayer));
 +				fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
 +				// Save player clan info to database
 +				// fakePlayer.store();
@@ -1883,7 +2070,7 @@ index f5a1be5f..46b7af1a 100644
  		
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java
 new file mode 100644
-index 00000000..a1d13226
+index 00000000..3f05eb1e
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java
 @@ -0,0 +1,415 @@
@@ -2034,7 +2221,7 @@ index 00000000..a1d13226
 +				
 +				useSkill(_bot, monster, 3); // Power Strike
 +				
-+				_bot.getAI().tryToAttack(monster); // .setIntention(IntentionType.ATTACK, monster);
++				_bot.getAI().tryToAttack(monster);
 +			}
 +			else
 +			{
