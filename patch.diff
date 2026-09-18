@@ -536,10 +536,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..25df66ac
+index 00000000..c3ee1fef
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1226 @@
+@@ -0,0 +1,1232 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -1358,6 +1358,12 @@ index 00000000..25df66ac
 +		
 +		addAndEquip(fakePlayer, 51); // Bracer
 +		addAndEquip(fakePlayer, 39); // Boots
++		
++		addAndEquip(fakePlayer, 909); // Blue Diamond Necklace
++		addAndEquip(fakePlayer, 846); // Coral Earring
++		addAndEquip(fakePlayer, 846); // Coral Earring
++		addAndEquip(fakePlayer, 878); // Blue Coral Ring
++		addAndEquip(fakePlayer, 878); // Blue Coral Ring
 +	}
 +	
 +	public void spawnFakeBots(Player player)
@@ -2068,10 +2074,10 @@ index f5a1be5f..46b7af1a 100644
  		
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java
 new file mode 100644
-index 00000000..7e38926b
+index 00000000..7b2b3d88
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/ai/type/FakePlayerAI.java
-@@ -0,0 +1,415 @@
+@@ -0,0 +1,407 @@
 +package net.sf.l2j.gameserver.model.actor.ai.type;
 +
 +import java.util.List;
@@ -2293,24 +2299,16 @@ index 00000000..7e38926b
 +		Weapon weapon = (Weapon) (weaponInstance.getItem());
 +		// aCis 409 uses weapon item templates to check magical vs physical
 +		// characteristics
-+		if (weapon.isMagical())
++		if (bot.isMageClass())
 +		{
 +			// Check if weapon is mage-oriented, assign Blessed Spiritshot (or regular)
-+			shotType = ShotType.BLESSED_SPIRITSHOT;
++			shotType = ShotType.SPIRITSHOT;
 +			shotId = getSpiritshotIdForGrade(weaponInstance.getItem().getCrystalType());
 +		}
 +		else
 +		{
-+			if (bot.isMageClass())
-+			{
-+				shotType = ShotType.SPIRITSHOT;
-+				shotId = getSpiritshotIdForGrade(weaponInstance.getItem().getCrystalType());
-+			}
-+			else
-+			{
-+				shotType = ShotType.SOULSHOT;
-+				shotId = getSoulshotIdForGrade(weaponInstance.getItem().getCrystalType());
-+			}
++			shotType = ShotType.SOULSHOT;
++			shotId = getSoulshotIdForGrade(weaponInstance.getItem().getCrystalType());
 +		}
 +		
 +		// 3. Check if the shot is already charged to prevent wasting items
