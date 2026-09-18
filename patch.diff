@@ -385,7 +385,7 @@ index d3985051..a557133e 100644
 \ No newline at end of file
 +ShowServerNews = False
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java b/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
-index bf24b43b..1f764b99 100644
+index bf24b43b..be25eccc 100644
 --- a/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/GameServer.java
 @@ -28,6 +28,8 @@ import net.sf.l2j.gameserver.data.manager.ClanHallManager;
@@ -405,24 +405,22 @@ index bf24b43b..1f764b99 100644
  import net.sf.l2j.gameserver.data.manager.SevenSignsManager;
  import net.sf.l2j.gameserver.data.manager.SpawnManager;
  import net.sf.l2j.gameserver.data.manager.ZoneManager;
-@@ -236,6 +239,17 @@ public class GameServer
- 		ObserverGroupData.getInstance();
+@@ -258,7 +261,15 @@ public class GameServer
  		
- 		CastleManager.getInstance().spawnEntities();
+ 		StringUtil.printSection("Spawns");
+ 		SpawnManager.getInstance().spawn();
 +
-+		LOGGER.info("--------------------------------------------------------=[ Server statistics ]");
++		StringUtil.printSection("Server statistics");
 +		ServerMetricsManager.getInstance();
 +		LOGGER.info("Total adena picked per server: " + ServerMetricsManager.getTotalAdenaDropped());
-+
-+		LOGGER.info("-------------------------------------------------------=[ Random bot traders ]");
-+
-+		FakeNameManager.getInstance().load();
-+		
-+		LOGGER.info("Fake Trader System: Loading offline trade simulators...");
-+		FakeTraderManager.getInstance().load();
  		
- 		StringUtil.printSection("Olympiads & Heroes");
- 		OlympiadGameManager.getInstance();
++		StringUtil.printSection("Bot traders");
++		//FakeNameManager.getInstance().load();
++		FakeTraderManager.getInstance().load();
++
+ 		StringUtil.printSection("Handlers");
+ 		LOGGER.info("Loaded {} admin command handlers.", AdminCommandHandler.getInstance().size());
+ 		LOGGER.info("Loaded {} chat handlers.", ChatHandler.getInstance().size());
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java
 new file mode 100644
 index 00000000..452b03d6
@@ -539,10 +537,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..56a86408
+index 00000000..cfd3d201
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1305 @@
+@@ -0,0 +1,1324 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -619,7 +617,6 @@ index 00000000..56a86408
 +	private static final List<Integer> NO_GRADE_ITEM_IDS = new ArrayList<>();
 +	private static final List<Integer> D_GRADE_ITEM_IDS = new ArrayList<>();
 +	private static final List<Integer> C_GRADE_ITEM_IDS = new ArrayList<>();
-+
 +	
 +	Random rnd = new Random();
 +	
@@ -647,74 +644,94 @@ index 00000000..56a86408
 +			{
 +				LOGGER.info("Error spawning dummy clan leaders: " + e.getMessage());
 +			}
-+			//LOGGER.info("Loaded bot Clan: " + clan.getName());
++			// LOGGER.info("Loaded bot Clan: " + clan.getName());
 +		}
 +		
 +		for (int i = 0; i < 25; i++)
 +			spawnRndFakeTrader("Dark Elven Village");
-+		LOGGER.info("Dark Elven Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Dark Elven Village");
++		
 +		for (int i = 0; i < 50; i++)
 +			spawnRndFakeTrader("Elven Village");
-+		LOGGER.info("Elven Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Elven Village");
++		
 +		for (int i = 0; i < 45; i++)
 +			spawnRndFakeTrader("Talking Island");
-+		LOGGER.info("Talking Island: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Talking Island");
++		
 +		for (int i = 0; i < 25; i++)
 +			spawnRndFakeTrader("Dwarven Village");
-+		LOGGER.info("Dwarven Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Dwarven Village");
++		
 +		for (int i = 0; i < 30; i++)
 +			spawnRndFakeTrader("Orc Village");
-+		LOGGER.info("Orc Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Orc Village");
++		
 +		for (int i = 0; i < 50; i++)
 +			spawnRndFakeTrader("Gludin");
-+		LOGGER.info("Gludin: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Gludin Village");
++		
 +		for (int i = 0; i < 30; i++)
 +			spawnRndFakeTrader("Gludio");
-+		LOGGER.info("Gludio: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Gludio");
++		
 +		for (int i = 0; i < 22; i++)
 +			spawnRndFakeTrader("Dion");
-+		LOGGER.info("Dion: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Dion");
++		
 +		for (int i = 0; i < 135; i++)
 +			spawnRndFakeTrader("Giran");
-+		LOGGER.info("Giran: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Giran");
++		
 +		for (int i = 0; i < 25; i++)
 +			spawnRndFakeTrader("Oren");
-+		LOGGER.info("Oren: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Oren");
++		
 +		for (int i = 0; i < 75; i++)
 +			spawnRndFakeTrader("Aden");
-+		LOGGER.info("Aden: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Aden Castle Town");
++		
 +		for (int i = 0; i < 40; i++)
 +			spawnRndFakeTrader("Goddard");
-+		LOGGER.info("Goddard: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Goddard");
++		
 +		for (int i = 0; i < 40; i++)
 +			spawnRndFakeTrader("Schuttgart");
-+		LOGGER.info("Schuttgart: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Town of Schuttgart");
++		
 +		for (int i = 0; i < 55; i++)
 +			spawnRndFakeTrader("Heine");
-+		LOGGER.info("Heine: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Heine");
++		
 +		for (int i = 0; i < 55; i++)
 +			spawnRndFakeTrader("Rune");
-+		LOGGER.info("Rune: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Rune Village");
++		
 +		for (int i = 0; i < 10; i++)
 +			spawnRndFakeTrader("Floran Village");
-+		LOGGER.info("Floran Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Floran Village");
++		
 +		for (int i = 0; i < 20; i++)
 +			spawnRndFakeTrader("Monsters Derby");
 +		for (int i = 0; i < 7; i++)
 +			spawnRndFakeTrader("Monsters Derby 2");
-+		LOGGER.info("Monsters Derby Track: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Monsters Derby Track");
++		
 +		for (int i = 0; i < 30; i++)
 +			spawnRndFakeTrader("Hunters Village");
-+		LOGGER.info("Hunters Village: successfuly populated with trade bots.");
++		LOGGER.info("Successfuly populated with random trade bots: Hunters Village");
 +		
 +		try (Connection con = ConnectionPool.getConnection();
 +			PreparedStatement ps = con.prepareStatement("SELECT * FROM fake_traders");
 +			ResultSet rs = ps.executeQuery())
 +		{
++			int dbBotsCount = 0;
 +			while (rs.next())
 +			{
 +				spawnFakeTraderDB(rs);
++				dbBotsCount++;
 +			}
++			LOGGER.info("Loaded additional: " + dbBotsCount + " trade bots from database.");
 +		}
 +		catch (Exception e)
 +		{
@@ -909,7 +926,7 @@ index 00000000..56a86408
 +		// Use the native aCis core Rnd manager to fetch a random index
 +		return NO_GRADE_ITEM_IDS.get(Rnd.get(NO_GRADE_ITEM_IDS.size()));
 +	}
-+		
++	
 +	/**
 +	 * Picks a random D-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
@@ -1009,7 +1026,7 @@ index 00000000..56a86408
 +				}
 +				newX += rndX.nextInt(a << 1) - a;
 +				newY += rndY.nextInt(b << 1) - b;
-+				if(s)
++				if (s)
 +					c1 = (Math.abs(newX - locX) < r) || (Math.abs(newY - locY) < r);
 +				else
 +					c1 = (Math.abs(newX - locX) < r) && (Math.abs(newY - locY) < r);
@@ -1238,15 +1255,15 @@ index 00000000..56a86408
 +			String iName = "";
 +			do
 +			{
-+				if (loc.equals("Giran") || loc.equals("Oren") || loc.equals("Aden") || loc.equals("Goddard") || loc.equals("Schuttgart")|| loc.equals("Heine")|| loc.equals("Rune"))
++				if (loc.equals("Giran") || loc.equals("Oren") || loc.equals("Aden") || loc.equals("Goddard") || loc.equals("Schuttgart") || loc.equals("Heine") || loc.equals("Rune"))
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomCGradeItemId() : getRandomDGradeItemId();
 +				else
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
 +				
 +				itemTemplate = ItemData.getInstance().getTemplate(rndItem);
 +				count = storeType <= 3 ? itemTemplate.isStackable() ? rnd.nextInt(100) + 1 : 1 : 1;
-+//				if (!(itemTemplate.getReferencePrice() == 0) && BANNED_ITEMS[rndItem] == false)
-+//					LOGGER.info("BANNED_ITEMS[" + rndItem + "] = true; // " + itemTemplate.getName());
++				// if (!(itemTemplate.getReferencePrice() == 0) && BANNED_ITEMS[rndItem] == false)
++				// LOGGER.info("BANNED_ITEMS[" + rndItem + "] = true; // " + itemTemplate.getName());
 +				
 +				if (itemTemplate.getItemType() == EtcItemType.RECIPE)
 +				{
@@ -1736,7 +1753,7 @@ index 00000000..56a86408
 +		
 +		fakePlayer.getInventory().restore();
 +		
-+		//LOGGER.info("Trade bot " + rs.getString("name") + " has in inventory: " + fakePlayer.getInventory().getItems());
++		// LOGGER.info("Trade bot " + rs.getString("name") + " has in inventory: " + fakePlayer.getInventory().getItems());
 +		
 +		if (storeType == 1)
 +		{
