@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..5bb3ced9
+index 00000000..731a4fff
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,174 @@
+@@ -0,0 +1,218 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -100,8 +100,43 @@ index 00000000..5bb3ced9
 +Officinalis
 +Melissa
 +Hypericum
++Achillea
 +Eikov
 +Rent
++Calendula
++Origanum
++Rosmarinus
++Lavandula
++Angustifolia
++Arnica
++Montana
++Gentiana
++Lutea
++Pulsatilla
++Cypripedium
++Drosera
++Agrimonia
++Hederacea
++Ebony
++Ivory
++Rhodiola
++Rosea
++Primula
++Caltha
++Valeriana
++Convallaria
++Menyanthes
++Sanguisorba
++Ythraea
++Arctostaphylos
++Dictamnus
++Adonis
++Asarum
++Aconitum
++Napellus
++Alchemilla
++Nobilis
++Thymus
 +Quercus
 +Acer
 +Tilia
@@ -162,6 +197,7 @@ index 00000000..5bb3ced9
 +Blackcap
 +Pesser
 +Alcedo
++Alnifrons
 +Atthis
 +Aythya
 +Ferina
@@ -178,6 +214,14 @@ index 00000000..5bb3ced9
 +Curlews
 +Numenius
 +Onyx
++Legolas
++Gawain
++Bors
++Bedivere
++Percival
++Galahad
++Lancelot
++Nectarius
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
 index 0021f33a..3c12dfd4 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
@@ -537,10 +581,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..32cf0580
+index 00000000..9532202c
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1360 @@
+@@ -0,0 +1,1386 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -693,12 +737,16 @@ index 00000000..32cf0580
 +			spawnRndFakeTrader("Aden");
 +		LOGGER.info("Successfuly populated with random trade bots: Aden Castle Town");
 +		
-+		for (int i = 0; i < 40; i++)
++		for (int i = 0; i < 35; i++)
 +			spawnRndFakeTrader("Goddard");
++		for (int i = 0; i < 25; i++)
++			spawnRndFakeTrader("Goddard 2");
 +		LOGGER.info("Successfuly populated with random trade bots: Town of Goddard");
 +		
-+		for (int i = 0; i < 40; i++)
++		for (int i = 0; i < 35; i++)
 +			spawnRndFakeTrader("Schuttgart");
++		for (int i = 0; i < 25; i++)
++			spawnRndFakeTrader("Schuttgart 2");
 +		LOGGER.info("Successfuly populated with random trade bots: Town of Schuttgart");
 +		
 +		for (int i = 0; i < 55; i++)
@@ -888,8 +936,8 @@ index 00000000..32cf0580
 +		DESIRED_ITEMS[1887] = true; // Varnish of Purity
 +		DESIRED_ITEMS[1888] = true; // Synthetic Cokes
 +		DESIRED_ITEMS[1889] = true; // Compound Braid
-+//		DESIRED_ITEMS[1890] = true; // Mithril Alloy
-+//		DESIRED_ITEMS[1893] = true; // Oriharukon
++		// DESIRED_ITEMS[1890] = true; // Mithril Alloy
++		// DESIRED_ITEMS[1893] = true; // Oriharukon
 +		DESIRED_ITEMS[1894] = true; // Crafted Leather
 +		DESIRED_ITEMS[1895] = true; // Metallic Fiber
 +	}
@@ -944,7 +992,7 @@ index 00000000..32cf0580
 +	 * Picks a random NO-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
 +	 */
-+	public static int getRandomNGradeItemId()
++	public static int getRndNGradeItemId()
 +	{
 +		if (NO_GRADE_ITEM_IDS.isEmpty())
 +		{
@@ -959,7 +1007,7 @@ index 00000000..32cf0580
 +	 * Picks a random D-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
 +	 */
-+	public static int getRandomDGradeItemId()
++	public static int getRndDGradeItemId()
 +	{
 +		if (D_GRADE_ITEM_IDS.isEmpty())
 +		{
@@ -974,7 +1022,7 @@ index 00000000..32cf0580
 +	 * Picks a random C-Grade Item ID from the cached pool.
 +	 * @return a valid item ID, or 0 if something went wrong or cache is empty.
 +	 */
-+	public static int getRandomCGradeItemId()
++	public static int getRndCGradeItemId()
 +	{
 +		if (C_GRADE_ITEM_IDS.isEmpty())
 +		{
@@ -1167,10 +1215,20 @@ index 00000000..32cf0580
 +			fakePlayer.spawnMe(locX = 146256, locY = -54740, LocZ = -2776);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 325, 0);
 +		}
++		else if (loc.equals("Goddard 2"))
++		{
++			fakePlayer.spawnMe(locX = 146950, locY = -55800, LocZ = -2776);
++			moveCircle(fakePlayer, locX, locY, LocZ, 275, 0);
++		}
 +		else if (loc.equals("Schuttgart"))
 +		{
 +			fakePlayer.spawnMe(locX = 89002, locY = -143879, LocZ = -1336);
 +			moveCircle(fakePlayer, locX, locY, LocZ, 325, 0);
++		}
++		else if (loc.equals("Schuttgart 2"))
++		{
++			fakePlayer.spawnMe(locX = 88127, locY = -142846, LocZ = -1336);
++			moveCircle(fakePlayer, locX, locY, LocZ, 275, 0);
 +		}
 +		else if (loc.equals("Heine"))
 +		{
@@ -1284,10 +1342,12 @@ index 00000000..32cf0580
 +			String iName = "";
 +			do
 +			{
-+				if (loc.equals("Giran") || loc.equals("Oren") || loc.equals("Aden") || loc.equals("Goddard") || loc.equals("Schuttgart") || loc.equals("Heine") || loc.equals("Rune"))
-+					rndItem = rnd.nextInt(2) == 1 ? getRandomCGradeItemId() : getRandomDGradeItemId();
++				if (loc.equals("Giran") || loc.equals("Schuttgart")  || loc.equals("Schuttgart 2") || loc.equals("Hunters Village") || loc.equals("Heine") || loc.equals("Monsters Derby")|| loc.equals("Monsters Derby 2"))
++					rndItem = rnd.nextInt(4) <= 1 ? getRndCGradeItemId() : rnd.nextInt(2) == 0 ? getRndDGradeItemId() : getRndNGradeItemId();
++				else if (loc.equals("Oren") || loc.equals("Aden") || loc.equals("Goddard") || loc.equals("Goddard 2") || loc.equals("Rune"))
++					rndItem = rnd.nextInt(2) == 1 ? getRndCGradeItemId() : getRndDGradeItemId();
 +				else
-+					rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
++					rndItem = rnd.nextInt(2) == 1 ? getRndNGradeItemId() : getRndDGradeItemId();
 +								
 +				itemTemplate = ItemData.getInstance().getTemplate(rndItem);
 +				count = storeType <= 3 ? itemTemplate.isStackable() ? rnd.nextInt(100) + 1 : 1 : 1;
@@ -1302,7 +1362,9 @@ index 00000000..32cf0580
 +					{
 +						// 2. Extract the parsed craft level requirements
 +						recipeLevel = recipe.level();
-+					} else recipeLevel = 10; // itemId 2245, recipeId?
++					}
++					else
++						recipeLevel = 10; // itemId 2245, recipeId?
 +				}
 +				
 +				int k = 1;
@@ -1329,7 +1391,7 @@ index 00000000..32cf0580
 +					
 +					if (isKeyMat && keyRecipe.level() <= 4)
 +					{
-+						if (itemTemplate.getReferencePrice() > 1500)
++//						if (itemTemplate.getReferencePrice() > 1500)
 +						{
 +							count = rnd.nextInt(20) + 1;
 +							// LOGGER.info("Is key mat[" + rndItem + "] keyRecipe.lvl: " + keyRecipe.level()+" : " + k + " "+keyRecipe.recipeId()+" price: "+ itemTemplate.getReferencePrice()+" "+itemTemplate.getName());
@@ -1350,9 +1412,10 @@ index 00000000..32cf0580
 +			{
 +				price = (int) (rndRefPriceMultiplier * itemTemplate.getReferencePrice());
 +				if (iT == EtcItemType.SCROLL || iT == EtcItemType.SCRL_ENCHANT_WP || iT == EtcItemType.BLESS_SCRL_ENCHANT_WP || iT == EtcItemType.SCRL_ENCHANT_AM || iT == EtcItemType.BLESS_SCRL_ENCHANT_AM)
-+					price <<= 1;
++					if (!iN.contains("Scroll of Escape"))
++						price <<= 1;
 +				if (iN.contains("Blessed Scroll") || iN.contains("Crystal Scroll"))
-+					price <<= 1;
++					price *= 3;
 +			}
 +			
 +			if (iT == EtcItemType.RECIPE)
@@ -1361,22 +1424,29 @@ index 00000000..32cf0580
 +			if (iT == EtcItemType.CROP)
 +				count = rnd.nextInt(800) + 1;
 +			
++			if (iT == EtcItemType.ARROW)
++				count = rnd.nextInt(3999) + 1;
++			
 +			if (iT == EtcItemType.POTION || iT == EtcItemType.ELIXIR)
 +				count = rnd.nextInt(100) + 1;
 +			
 +			if (iT == EtcItemType.SHOT)
 +				count = rnd.nextInt(5000) + 1;
-+			else if(DESIRED_ITEMS[itemTemplate.getItemId()])
-+				price <<= 1;
++			else {
++				if (DESIRED_ITEMS[itemTemplate.getItemId()])
++					price <<= 1;
++				if (DESIRED_ITEMS[itemTemplate.getItemId()] && iT == EtcItemType.MATERIAL)
++					count = rnd.nextInt(1000) + 1;
++			}
 +			
 +			if (RARE_ITEMS[rndItem])
 +				count = rnd.nextInt(100) + 1;
 +			
 +			if (iN.contains("Food"))
-+				count = rnd.nextInt(1000) + 1;
++				count = rnd.nextInt(2000) + 1;
 +			
 +			if (iN.contains(" Fish"))
-+				count = rnd.nextInt(100) + 1;
++				count = rnd.nextInt(200) + 1;
 +			
 +			if (iN.contains("Scroll of Escape"))
 +				count = rnd.nextInt(50) + 1;

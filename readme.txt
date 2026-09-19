@@ -1,8 +1,19 @@
-Lineage 2 aCis 409 modified java server with Fake Players, Traders & bots; (c) 2026 rdavidian71@gmail.com v0.02
+Lineage 2 aCis 409 modified java server with Fake Players, Traders & bots; (c) 2026 rdavidian71@gmail.com v0.03
 
 You are using this software at your own risk. Author does not bear any responsibility for potential damage concerning it's use.
 
 Version notes:
+
+L2aCis409botMod v0.03
+* Random fake player shops have been added to all villages and cities. (just Buy & Sell).
+  Random shops have been tuned to be more realistic.
+  They sell only No, D & C grade at the moment.
+* Fixed disconnect bug with Fermata client.
+* You need to recompile whole project, so the changes take effect.
+  Including recreating database if so, "sudo mariadb" and than
+  "drop database l2aCismoddb;" And re-create it again with the new patch.diff applied.
+  If you don't want to recreate database, you can just drop tables fake_traders
+  and fake_traders_items and apply again new scrips fake_traders.sql & fake_traders_items.sql
 
 L2aCis409botMod v0.02
 * Random fake player shops have been added to Elven village. (just Buy & Sell).

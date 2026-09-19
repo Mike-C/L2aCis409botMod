@@ -92,6 +92,17 @@ You can see the login/ and gameserver/logs server directories, if there are any 
 
 **Release notes**
 
+**L2aCis409botMod v0.03**
+* Random fake player shops have been added to all villages and cities. (just Buy & Sell).
+  Random shops have been tuned to be more realistic.
+  They sell only No, D & C grade at the moment.
+* Fixed disconnect bug with Fermata client.
+* You need to recompile whole project, so the changes take effect.
+  Including recreating database if so, "sudo mariadb" and than
+  "drop database l2aCismoddb;" And re-create it again with the new patch.diff applied.
+  If you don't want to recreate database, you can just drop tables fake_traders
+  and fake_traders_items and apply again new scrips fake_traders.sql & fake_traders_items.sql
+
 **L2aCis409botMod v0.02**
 * Random fake player shops have been added to Elven village. (just Buy & Sell).
   Fake players have random names, from gameserver/data/fake_names.txt
