@@ -537,10 +537,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..7ec41943
+index 00000000..32cf0580
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1288 @@
+@@ -0,0 +1,1360 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -603,6 +603,8 @@ index 00000000..7ec41943
 +	
 +	private static boolean[] SET_ITEMS = new boolean[9299];
 +	
++	private static boolean[] DESIRED_ITEMS = new boolean[9299];
++	
 +	private static float[] REFERENCE_PRICE_MULTIPLIER =
 +	{
 +		1.1f,
@@ -628,6 +630,7 @@ index 00000000..7ec41943
 +	
 +	public void load()
 +	{
++		logDesiredItems();
 +		loadItemsUpToGrade();
 +		excludeItems();
 +		logRareItems();
@@ -832,6 +835,65 @@ index 00000000..7ec41943
 +		BANNED_ITEMS[1500] = true; // Totem of Hestui
 +	}
 +	
++	public static void logDesiredItems()
++	{
++		DESIRED_ITEMS[729] = true; // Scroll: Enchant Weapon (Grade A)
++		DESIRED_ITEMS[730] = true; // Scroll: Enchant Armor (Grade A)
++		DESIRED_ITEMS[947] = true; // Scroll: Enchant Weapon (Grade B)
++		DESIRED_ITEMS[948] = true; // Scroll: Enchant Armor (Grade B)
++		DESIRED_ITEMS[951] = true; // Scroll: Enchant Weapon (Grade C)
++		DESIRED_ITEMS[952] = true; // Scroll: Enchant Armor (Grade C)
++		DESIRED_ITEMS[955] = true; // Scroll: Enchant Weapon (Grade D)
++		DESIRED_ITEMS[956] = true; // Scroll: Enchant Armor (Grade D)
++		DESIRED_ITEMS[959] = true; // Scroll: Enchant Weapon (Grade S)
++		DESIRED_ITEMS[960] = true; // Scroll: Enchant Armor (Grade S)
++		DESIRED_ITEMS[5575] = true; // Ancient Adena
++		DESIRED_ITEMS[1463] = true; // Soulshot: D-grade
++		DESIRED_ITEMS[1464] = true; // Soulshot: C-grade
++		DESIRED_ITEMS[1465] = true; // Soulshot: B-grade
++		DESIRED_ITEMS[1466] = true; // Soulshot: A-grade
++		DESIRED_ITEMS[1467] = true; // Soulshot: S-grade
++		DESIRED_ITEMS[2510] = true; // Spiritshot: D-Grade
++		DESIRED_ITEMS[2511] = true; // Spiritshot: C-Grade
++		DESIRED_ITEMS[2512] = true; // Spiritshot: B-Grade
++		DESIRED_ITEMS[2513] = true; // Spiritshot: A-Grade
++		DESIRED_ITEMS[2514] = true; // Spiritshot: S-Grade
++		DESIRED_ITEMS[3948] = true; // Blessed Spiritshot: D-Grade
++		DESIRED_ITEMS[3949] = true; // Blessed Spiritshot: C-Grade
++		DESIRED_ITEMS[3950] = true; // Blessed Spiritshot: B-Grade
++		DESIRED_ITEMS[3951] = true; // Blessed Spiritshot: A-Grade
++		DESIRED_ITEMS[3952] = true; // Blessed Spiritshot: S-Grade
++		DESIRED_ITEMS[2508] = true; // Cursed Bone
++		DESIRED_ITEMS[1864] = true; // Stem
++		DESIRED_ITEMS[1865] = true; // Varnish
++		DESIRED_ITEMS[1866] = true; // Suede
++		DESIRED_ITEMS[1867] = true; // Animal Skin
++		DESIRED_ITEMS[1868] = true; // Thread
++		DESIRED_ITEMS[1869] = true; // Iron Ore
++		DESIRED_ITEMS[1870] = true; // Coal
++		DESIRED_ITEMS[1871] = true; // Charcoal
++		DESIRED_ITEMS[1872] = true; // Animal Bone
++		DESIRED_ITEMS[1873] = true; // Silver Nugget
++		DESIRED_ITEMS[1874] = true; // Oriharukon Ore
++		DESIRED_ITEMS[1875] = true; // Stone of Purity
++		DESIRED_ITEMS[1876] = true; // Mithril Ore
++		DESIRED_ITEMS[1877] = true; // Adamantite Nugget
++		DESIRED_ITEMS[1878] = true; // Braided Hemp
++		DESIRED_ITEMS[1879] = true; // Cokes
++		DESIRED_ITEMS[1880] = true; // Steel
++		DESIRED_ITEMS[1881] = true; // Coarse Bone Powder
++		DESIRED_ITEMS[1882] = true; // Leather
++		DESIRED_ITEMS[1884] = true; // Cord
++		DESIRED_ITEMS[1885] = true; // High Grade Suede
++		DESIRED_ITEMS[1887] = true; // Varnish of Purity
++		DESIRED_ITEMS[1888] = true; // Synthetic Cokes
++		DESIRED_ITEMS[1889] = true; // Compound Braid
++//		DESIRED_ITEMS[1890] = true; // Mithril Alloy
++//		DESIRED_ITEMS[1893] = true; // Oriharukon
++		DESIRED_ITEMS[1894] = true; // Crafted Leather
++		DESIRED_ITEMS[1895] = true; // Metallic Fiber
++	}
++	
 +	public static void loadItemsUpToGrade()
 +	{
 +		NO_GRADE_ITEM_IDS.clear();
@@ -843,9 +905,10 @@ index 00000000..7ec41943
 +		{
 +			if (template == null)
 +				continue;
-+
-+			switch(template.getCrystalType()) {
-+				case CrystalType.NONE :
++			
++			switch (template.getCrystalType())
++			{
++				case CrystalType.NONE:
 +					// Optional: Filter out quest items, adena, or arrows if desired
 +					if (template.isQuestItem())
 +						continue;
@@ -856,12 +919,18 @@ index 00000000..7ec41943
 +						// Skip seeds from the fake bot shop
 +						continue;
 +					}
++					
 +					NO_GRADE_ITEM_IDS.add(template.getItemId());
++					if (DESIRED_ITEMS[template.getItemId()])
++					{
++						for (int i = 0; i < 1 << 6; i++)
++							NO_GRADE_ITEM_IDS.add(template.getItemId());
++					}
 +					break;
-+				case CrystalType.D :
++				case CrystalType.D:
 +					D_GRADE_ITEM_IDS.add(template.getItemId());
 +					break;
-+				case CrystalType.C :
++				case CrystalType.C:
 +					C_GRADE_ITEM_IDS.add(template.getItemId());
 +					break;
 +			}
@@ -1219,7 +1288,7 @@ index 00000000..7ec41943
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomCGradeItemId() : getRandomDGradeItemId();
 +				else
 +					rndItem = rnd.nextInt(2) == 1 ? getRandomNGradeItemId() : getRandomDGradeItemId();
-+				
++								
 +				itemTemplate = ItemData.getInstance().getTemplate(rndItem);
 +				count = storeType <= 3 ? itemTemplate.isStackable() ? rnd.nextInt(100) + 1 : 1 : 1;
 +				// if (!(itemTemplate.getReferencePrice() == 0) && BANNED_ITEMS[rndItem] == false)
@@ -1233,7 +1302,7 @@ index 00000000..7ec41943
 +					{
 +						// 2. Extract the parsed craft level requirements
 +						recipeLevel = recipe.level();
-+					}
++					} else recipeLevel = 10; // itemId 2245, recipeId?
 +				}
 +				
 +				int k = 1;
@@ -1270,10 +1339,22 @@ index 00000000..7ec41943
 +				
 +				iName = itemTemplate.getName().toLowerCase();
 +			} // throw out shadow, monster items, high level keys etc., only B,A,S grade crystals allowed, 1458 - 1459
-+			while (itemTemplate.getReferencePrice() == 0 || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone"));
++			while (itemTemplate.getReferencePrice() == 0 || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone"));
 +			
 +			ItemType iT = itemTemplate.getItemType();
 +			String iN = itemTemplate.getName();
++			
++			int price = itemTemplate.getReferencePrice();
++			
++			if (storeType == 1)
++			{
++				price = (int) (rndRefPriceMultiplier * itemTemplate.getReferencePrice());
++				if (iT == EtcItemType.SCROLL || iT == EtcItemType.SCRL_ENCHANT_WP || iT == EtcItemType.BLESS_SCRL_ENCHANT_WP || iT == EtcItemType.SCRL_ENCHANT_AM || iT == EtcItemType.BLESS_SCRL_ENCHANT_AM)
++					price <<= 1;
++				if (iN.contains("Blessed Scroll") || iN.contains("Crystal Scroll"))
++					price <<= 1;
++			}
++			
 +			if (iT == EtcItemType.RECIPE)
 +				count = rnd.nextInt(10) + 1;
 +			
@@ -1285,6 +1366,8 @@ index 00000000..7ec41943
 +			
 +			if (iT == EtcItemType.SHOT)
 +				count = rnd.nextInt(5000) + 1;
++			else if(DESIRED_ITEMS[itemTemplate.getItemId()])
++				price <<= 1;
 +			
 +			if (RARE_ITEMS[rndItem])
 +				count = rnd.nextInt(100) + 1;
@@ -1309,17 +1392,6 @@ index 00000000..7ec41943
 +			
 +			if (rndItem >= 1458 && rndItem <= 1459) // D, C Crystals
 +				count = rnd.nextInt(5000) + 1;
-+			
-+			int price = itemTemplate.getReferencePrice();
-+			
-+			if (storeType == 1)
-+			{
-+				price = (int) (rndRefPriceMultiplier * itemTemplate.getReferencePrice());
-+				if (iT == EtcItemType.SCROLL || iT == EtcItemType.SCRL_ENCHANT_WP || iT == EtcItemType.BLESS_SCRL_ENCHANT_WP || iT == EtcItemType.SCRL_ENCHANT_AM || iT == EtcItemType.BLESS_SCRL_ENCHANT_AM)
-+					price <<= 1;
-+				if(iN.contains("Blessed Scroll") || iN.contains("Crystal Scroll"))
-+					price <<= 1;
-+			}
 +			
 +			if (SET_ITEMS[rndItem])
 +				price <<= 1;
