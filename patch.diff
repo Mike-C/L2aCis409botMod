@@ -357,10 +357,10 @@ index 0015929e..fb8f3064 100644
 +
 diff --git a/aCis_datapack/sql/fake_traders.sql b/aCis_datapack/sql/fake_traders.sql
 new file mode 100644
-index 00000000..2bb19abb
+index 00000000..c612feef
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders.sql
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,26 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders` (
 +  `id` INT NOT NULL AUTO_INCREMENT,
 +  `name` VARCHAR(35) NOT NULL,
@@ -383,13 +383,16 @@ index 00000000..2bb19abb
 +INSERT INTO `fake_traders` (`id`, `name`, `class_id`, `face`, `hairStyle`, `hairColor`, `sex`, `x`, `y`, `z`, `heading`, `store_type`, `store_msg`, `level`, `clanName`) VALUES
 +(1, 'KyrieElei', 18, 0, 1, 0, 0, 45472, 48283, -3056, 0, 1, 'WTS Top NG weapons, Dx', 18, 'KyrieElei'),
 +(2, 'Keturah', 18, 0, 1, 0, 1, 45549, 48313, -3056, 0, 3, 'WTB mats', 18, 'TradeEmpire'),
-+(3, 'Bobika', 53, 0, 1, 0, 1, 45381, 48288, -3056, 0, 5, 'crafting D shots', 18, 'TradeEmpire');
++(3, 'Bobika', 53, 0, 1, 0, 1, 45381, 48288, -3056, 0, 5, 'crafting D shots', 18, 'TradeEmpire'),
++(4, 'Mata', 53, 0, 0, 1, 1, 82561, 147621, -3464, 0, 1, 'Shots & Crystals', 40, 'TradeEmpire'),
++(5, 'Matare', 53, 1, 6, 2, 1, 82559, 147547, -3464, 0, 5, 'Crafting Shots', 40, 'TradeEmpire');
++
 diff --git a/aCis_datapack/sql/fake_traders_items.sql b/aCis_datapack/sql/fake_traders_items.sql
 new file mode 100644
-index 00000000..e4970166
+index 00000000..35bb75d2
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders_items.sql
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,30 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders_items` (
 +  `trader_id` INT NOT NULL AUTO_INCREMENT,
 +  `item_id` INT NOT NULL,
@@ -404,11 +407,22 @@ index 00000000..e4970166
 +(1, 219, 1, 270000),   -- Sword Breaker
 +(1, 1458, 5000, 650),  -- Crystal: D-grade
 +(2, 1458, 2400, 620),  -- Crystal: D-grade
-+(2, 1874, 100, 14999), -- Oriharukon Ore
-+(2, 1876, 100, 11000), -- Mithril Ore
++(2, 1874, 199, 9999),  -- Oriharukon Ore
++(2, 1876, 199, 5999),  -- Mithril Ore
 +(3, 1804, 1, 20),      -- Recipe: Soulshot: D-grade
 +(3, 3032, 1, 30),      -- Recipe: Spiritshot D
-+(3, 3953, 1, 70);      -- Recipe: Blessed Spiritshot D
++(3, 3953, 1, 70),      -- Recipe: Blessed Spiritshot D
++(4, 1458, 5000, 649),  -- Crystal: D-grade
++(4, 1459, 4000, 3050), -- Crystal: C-grade
++(4, 1464, 25000, 16),  -- Soulshot: C-grade
++(4, 2511, 7000, 38),   -- Spiritshot: C-Grade
++(5, 1804, 1, 20),      -- Recipe: Soulshot: D-grade
++(5, 3032, 1, 30),      -- Recipe: Spiritshot D
++(5, 3953, 1, 70),      -- Recipe: Blessed Spiritshot D
++(5, 1805, 1, 70),      -- Recipe: Soulshot: C-grade
++(5, 3033, 1, 100),     -- Recipe: Spiritshot C
++(5, 3954, 1, 200);     -- Recipe: Blessed Spiritshot C
++
 diff --git a/aCis_gameserver/config/server.properties b/aCis_gameserver/config/server.properties
 index d3985051..a557133e 100644
 --- a/aCis_gameserver/config/server.properties
