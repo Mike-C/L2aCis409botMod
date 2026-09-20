@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..731a4fff
+index 00000000..16a5a494
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,218 @@
+@@ -0,0 +1,219 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -222,6 +222,7 @@ index 00000000..731a4fff
 +Galahad
 +Lancelot
 +Nectarius
++Laurentius
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
 index 0021f33a..3c12dfd4 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
@@ -581,10 +582,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..9532202c
+index 00000000..a51728b4
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1386 @@
+@@ -0,0 +1,1403 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -645,7 +646,7 @@ index 00000000..9532202c
 +	
 +	private static boolean[] RARE_ITEMS = new boolean[9299];
 +	
-+	private static boolean[] SET_ITEMS = new boolean[9299];
++	private static boolean[] RARE_ARMOR_ITEMS = new boolean[9299];
 +	
 +	private static boolean[] DESIRED_ITEMS = new boolean[9299];
 +	
@@ -678,7 +679,7 @@ index 00000000..9532202c
 +		loadItemsUpToGrade();
 +		excludeItems();
 +		logRareItems();
-+		logSetItems();
++		logRareArmorItems();
 +		
 +		for (BotClan clan : _botClans)
 +		{
@@ -790,32 +791,46 @@ index 00000000..9532202c
 +		
 +	}
 +	
-+	public static void logSetItems()
++	// Includes items, that are not part of the set, i.e. Manticore Skin Gloves, 
++	// Brigandine Gauntlets etc. the final price is two times reference price.
++	public static void logRareArmorItems()
 +	{
-+		SET_ITEMS[398] = true; // Plated Leather
-+		SET_ITEMS[418] = true; // Plated Leather Gaiters
-+		SET_ITEMS[1966] = true; // Plated Leather Fragment
-+		SET_ITEMS[1967] = true; // Plated Leather Gaiters Material
-+		SET_ITEMS[2411] = true; // Brigandine Helmet
-+		SET_ITEMS[2414] = true; // Full Plate Helmet
-+		SET_ITEMS[2424] = true; // Manticore Skin Boots
-+		SET_ITEMS[2425] = true; // Brigandine Boots
-+		SET_ITEMS[2431] = true; // Plated Leather Boots
-+		SET_ITEMS[2436] = true; // Theca Leather Boots
-+		SET_ITEMS[2449] = true; // Brigandine Gauntlets
-+		SET_ITEMS[2454] = true; // Karmian Gloves
-+		SET_ITEMS[2493] = true; // Brigandine Shield
-+		SET_ITEMS[2497] = true; // Full Plate Shield
-+		SET_ITEMS[2922] = true; // Brigandine Helmet Design
-+		SET_ITEMS[2923] = true; // Manticore Skin Boot Lining
-+		SET_ITEMS[2924] = true; // Brigandine Boots Design
-+		SET_ITEMS[2927] = true; // Brigandine Gauntlets Pattern
-+		SET_ITEMS[2929] = true; // Brigandine Shield Fragment
-+		SET_ITEMS[2939] = true; // Plate Leather Boot Lining
-+		SET_ITEMS[2944] = true; // Karmian Gloves Fabric
-+		SET_ITEMS[2954] = true; // Theca Leather Boots Texture
-+		SET_ITEMS[2959] = true; // Full Plate Helmet Design
-+		SET_ITEMS[2966] = true; // Full Plate Shield Fragment
++		RARE_ARMOR_ITEMS[398] = true; // Plated Leather
++		RARE_ARMOR_ITEMS[418] = true; // Plated Leather Gaiters
++		RARE_ARMOR_ITEMS[486] = true; // Tattoo of Fire
++		RARE_ARMOR_ITEMS[492] = true; // Tattoo of Soul
++		RARE_ARMOR_ITEMS[607] = true; // Ogre Power Gauntlets
++		RARE_ARMOR_ITEMS[1963] = true; // Ogre Power Gauntlets Part
++		RARE_ARMOR_ITEMS[1966] = true; // Plated Leather Fragment
++		RARE_ARMOR_ITEMS[1967] = true; // Plated Leather Gaiters Material
++		RARE_ARMOR_ITEMS[2411] = true; // Brigandine Helmet
++		RARE_ARMOR_ITEMS[2414] = true; // Full Plate Helmet
++		RARE_ARMOR_ITEMS[2423] = true; // Boots of Knowledge
++		RARE_ARMOR_ITEMS[2424] = true; // Manticore Skin Boots
++		RARE_ARMOR_ITEMS[2425] = true; // Brigandine Boots
++		RARE_ARMOR_ITEMS[2427] = true; // Salamander Skin Boots
++		RARE_ARMOR_ITEMS[2431] = true; // Plated Leather Boots
++		RARE_ARMOR_ITEMS[2436] = true; // Theca Leather Boots
++		RARE_ARMOR_ITEMS[2447] = true; // Gloves of Knowledge
++		RARE_ARMOR_ITEMS[2448] = true; // Manticore Skin Gloves
++		RARE_ARMOR_ITEMS[2449] = true; // Brigandine Gauntlets
++		RARE_ARMOR_ITEMS[2450] = true; // Elven Mithril Gloves
++		RARE_ARMOR_ITEMS[2454] = true; // Karmian Gloves
++		RARE_ARMOR_ITEMS[2493] = true; // Brigandine Shield
++		RARE_ARMOR_ITEMS[2497] = true; // Full Plate Shield
++		RARE_ARMOR_ITEMS[2922] = true; // Brigandine Helmet Design
++		RARE_ARMOR_ITEMS[2923] = true; // Manticore Skin Boot Lining
++		RARE_ARMOR_ITEMS[2924] = true; // Brigandine Boots Design
++		RARE_ARMOR_ITEMS[2926] = true; // Manticore Skin Gloves Lining
++		RARE_ARMOR_ITEMS[2927] = true; // Brigandine Gauntlets Pattern
++		RARE_ARMOR_ITEMS[2928] = true; // Elven Mithril Gloves Design
++		RARE_ARMOR_ITEMS[2929] = true; // Brigandine Shield Fragment
++		RARE_ARMOR_ITEMS[2931] = true; // Salamander Skin Boot Lining
++		RARE_ARMOR_ITEMS[2939] = true; // Plate Leather Boot Lining
++		RARE_ARMOR_ITEMS[2944] = true; // Karmian Gloves Fabric
++		RARE_ARMOR_ITEMS[2954] = true; // Theca Leather Boots Texture
++		RARE_ARMOR_ITEMS[2959] = true; // Full Plate Helmet Design
++		RARE_ARMOR_ITEMS[2966] = true; // Full Plate Shield Fragment
 +	}
 +	
 +	public static void logRareItems()
@@ -851,8 +866,11 @@ index 00000000..9532202c
 +	
 +	public static void excludeItems()
 +	{
++		BANNED_ITEMS[245] = true; // Dark Fighter Fist
++		BANNED_ITEMS[248] = true; // Orc Fighter Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
 +		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
++		BANNED_ITEMS[6721] = true; // Monster Only(Shield of Imperial Warlord Zombie)
 +		BANNED_ITEMS[6919] = true; // Monster Only (Shield of Ketra Orc)
 +		
 +		BANNED_ITEMS[749] = true; // 0
@@ -1463,7 +1481,7 @@ index 00000000..9532202c
 +			if (rndItem >= 1458 && rndItem <= 1459) // D, C Crystals
 +				count = rnd.nextInt(5000) + 1;
 +			
-+			if (SET_ITEMS[rndItem])
++			if (RARE_ARMOR_ITEMS[rndItem])
 +				price <<= 1;
 +			
 +			genFakeTraderItems(fakePlayer, rndItem, price, count, storeType, tradeList, manufactureList);
