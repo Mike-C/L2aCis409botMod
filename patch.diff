@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..16a5a494
+index 00000000..37e9e0a6
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,219 @@
+@@ -0,0 +1,235 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -201,13 +201,12 @@ index 00000000..16a5a494
 +Atthis
 +Aythya
 +Ferina
++Tringa
 +Pseudonymus
 +Twain
 +Sandpiper
 +Pugnax
 +Nebularia
-+Tringa
-+Flavipes
 +Scolopax
 +Gallinago
 +Phalaropus
@@ -223,6 +222,23 @@ index 00000000..16a5a494
 +Lancelot
 +Nectarius
 +Laurentius
++Aliquot
++Quaedam
++Absque
++Quis
++Mihi
++Timere
++Ipsi
++Fabri
++Malleis
++Lassescet
++Artifex
++Runcina
++Quasi
++Saltus
++Nutrivit
++Eius
++Dixit
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
 index 0021f33a..3c12dfd4 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
@@ -357,10 +373,10 @@ index 0015929e..fb8f3064 100644
 +
 diff --git a/aCis_datapack/sql/fake_traders.sql b/aCis_datapack/sql/fake_traders.sql
 new file mode 100644
-index 00000000..c612feef
+index 00000000..1dc615ca
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders.sql
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,28 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders` (
 +  `id` INT NOT NULL AUTO_INCREMENT,
 +  `name` VARCHAR(35) NOT NULL,
@@ -385,14 +401,16 @@ index 00000000..c612feef
 +(2, 'Keturah', 18, 0, 1, 0, 1, 45549, 48313, -3056, 0, 3, 'WTB mats', 18, 'TradeEmpire'),
 +(3, 'Bobika', 53, 0, 1, 0, 1, 45381, 48288, -3056, 0, 5, 'crafting D shots', 18, 'TradeEmpire'),
 +(4, 'Mata', 53, 0, 0, 1, 1, 82561, 147621, -3464, 0, 1, 'Shots & Crystals', 40, 'TradeEmpire'),
-+(5, 'Matare', 53, 1, 6, 2, 1, 82559, 147547, -3464, 0, 5, 'Crafting Shots', 40, 'TradeEmpire');
++(5, 'Matare', 53, 1, 6, 2, 1, 82559, 147547, -3464, 0, 5, 'Crafting Shots', 40, 'TradeEmpire'),
++(6, 'Cirmus', 53, 1, 6, 2, 1, 82495, 147619, -3464, 0, 1, 'WTS AA 3a', 40, 'TradeEmpire'),
++(7, 'Rarae', 53, 1, 6, 2, 1, 80419, 145625, -3528, 0, 1, 'Crystals Dx, Cx', 40, 'TradeEmpire');
 +
 diff --git a/aCis_datapack/sql/fake_traders_items.sql b/aCis_datapack/sql/fake_traders_items.sql
 new file mode 100644
-index 00000000..35bb75d2
+index 00000000..e28eaef2
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders_items.sql
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,33 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders_items` (
 +  `trader_id` INT NOT NULL AUTO_INCREMENT,
 +  `item_id` INT NOT NULL,
@@ -407,8 +425,8 @@ index 00000000..35bb75d2
 +(1, 219, 1, 270000),   -- Sword Breaker
 +(1, 1458, 5000, 650),  -- Crystal: D-grade
 +(2, 1458, 2400, 620),  -- Crystal: D-grade
-+(2, 1874, 199, 9999),  -- Oriharukon Ore
-+(2, 1876, 199, 5999),  -- Mithril Ore
++(2, 1874, 199, 7999),  -- Oriharukon Ore
++(2, 1876, 199, 4000),  -- Mithril Ore
 +(3, 1804, 1, 20),      -- Recipe: Soulshot: D-grade
 +(3, 3032, 1, 30),      -- Recipe: Spiritshot D
 +(3, 3953, 1, 70),      -- Recipe: Blessed Spiritshot D
@@ -421,7 +439,10 @@ index 00000000..35bb75d2
 +(5, 3953, 1, 70),      -- Recipe: Blessed Spiritshot D
 +(5, 1805, 1, 70),      -- Recipe: Soulshot: C-grade
 +(5, 3033, 1, 100),     -- Recipe: Spiritshot C
-+(5, 3954, 1, 200);     -- Recipe: Blessed Spiritshot C
++(5, 3954, 1, 200),     -- Recipe: Blessed Spiritshot C
++(6, 5575, 1999999, 3), -- Ancient Adena
++(7, 1458, 5000, 649),  -- Crystal: D-grade
++(7, 1459, 4000, 3049); -- Crystal: C-grade
 +
 diff --git a/aCis_gameserver/config/server.properties b/aCis_gameserver/config/server.properties
 index d3985051..a557133e 100644
@@ -596,10 +617,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..604eb2f4
+index 00000000..78c2b95a
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1419 @@
+@@ -0,0 +1,1420 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -884,6 +905,7 @@ index 00000000..604eb2f4
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
++		BANNED_ITEMS[6719] = true; // Monster Only(Ketra Orc Chieftain)
 +		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
 +		BANNED_ITEMS[6721] = true; // Monster Only(Shield of Imperial Warlord Zombie)
 +		BANNED_ITEMS[6919] = true; // Monster Only (Shield of Ketra Orc)
@@ -1001,15 +1023,15 @@ index 00000000..604eb2f4
 +						continue;
 +					}
 +					
-+					int tId = template.getItemId();
-+					NO_GRADE_ITEM_IDS.add(tId);
-+					if (DESIRED_ITEMS[tId])
++					int tIId = template.getItemId();
++					NO_GRADE_ITEM_IDS.add(tIId);
++					if (DESIRED_ITEMS[tIId])
 +					{
 +						int j = 6;
-+						if (tId == 730 || tId == 948 || tId == 952 || tId == 956 || tId == 960)
++						if (tIId == 730 || tIId == 948 || tIId == 952 || tIId == 956 || tIId == 960)
 +							j = 7; // enchants more probable
 +						for (int i = 0; i < 1 << j; i++)
-+							NO_GRADE_ITEM_IDS.add(tId);
++							NO_GRADE_ITEM_IDS.add(tIId);
 +					}
 +					break;
 +				case CrystalType.D:
@@ -1385,7 +1407,7 @@ index 00000000..604eb2f4
 +					rndItem = rnd.nextInt(2) == 1 ? getRndCGradeItemId() : getRndDGradeItemId();
 +				else
 +					rndItem = rnd.nextInt(2) == 1 ? getRndNGradeItemId() : getRndDGradeItemId();
-+												
++				
 +				itemTemplate = ItemData.getInstance().getTemplate(rndItem);
 +				count = storeType <= 3 ? itemTemplate.isStackable() ? rnd.nextInt(100) + 1 : 1 : 1;
 +				// if (!(itemTemplate.getReferencePrice() == 0) && BANNED_ITEMS[rndItem] == false)
