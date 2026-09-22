@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..37e9e0a6
+index 00000000..1a3638d5
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,235 @@
+@@ -0,0 +1,237 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -239,6 +239,8 @@ index 00000000..37e9e0a6
 +Nutrivit
 +Eius
 +Dixit
++Garland
++Aelius
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
 index 0021f33a..3c12dfd4 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
@@ -617,10 +619,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..78c2b95a
+index 00000000..a6ff5279
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1420 @@
+@@ -0,0 +1,1433 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -830,16 +832,21 @@ index 00000000..78c2b95a
 +	// Brigandine Gauntlets etc. the final price is two times reference price.
 +	public static void logRareArmorItems()
 +	{
++		RARE_ARMOR_ITEMS[62] = true; // Mithril Boots
++		RARE_ARMOR_ITEMS[107] = true; // Composite Shield
 +		RARE_ARMOR_ITEMS[398] = true; // Plated Leather
 +		RARE_ARMOR_ITEMS[418] = true; // Plated Leather Gaiters
 +		RARE_ARMOR_ITEMS[486] = true; // Tattoo of Fire
 +		RARE_ARMOR_ITEMS[487] = true; // Tattoo of Resolve
 +		RARE_ARMOR_ITEMS[492] = true; // Tattoo of Soul
++		RARE_ARMOR_ITEMS[517] = true; // Composite Helmet
 +		RARE_ARMOR_ITEMS[607] = true; // Ogre Power Gauntlets
++		RARE_ARMOR_ITEMS[1958] = true; // Mithril Boots Design
 +		RARE_ARMOR_ITEMS[1963] = true; // Ogre Power Gauntlets Part
 +		RARE_ARMOR_ITEMS[1966] = true; // Plated Leather Fragment
 +		RARE_ARMOR_ITEMS[1967] = true; // Plated Leather Gaiters Material
 +		RARE_ARMOR_ITEMS[2411] = true; // Brigandine Helmet
++		RARE_ARMOR_ITEMS[2413] = true; // Chain Hood
 +		RARE_ARMOR_ITEMS[2414] = true; // Full Plate Helmet
 +		RARE_ARMOR_ITEMS[2423] = true; // Boots of Knowledge
 +		RARE_ARMOR_ITEMS[2424] = true; // Manticore Skin Boots
@@ -853,6 +860,7 @@ index 00000000..78c2b95a
 +		RARE_ARMOR_ITEMS[2450] = true; // Elven Mithril Gloves
 +		RARE_ARMOR_ITEMS[2454] = true; // Karmian Gloves
 +		RARE_ARMOR_ITEMS[2493] = true; // Brigandine Shield
++		RARE_ARMOR_ITEMS[2495] = true; // Chain Shield
 +		RARE_ARMOR_ITEMS[2497] = true; // Full Plate Shield
 +		RARE_ARMOR_ITEMS[2922] = true; // Brigandine Helmet Design
 +		RARE_ARMOR_ITEMS[2923] = true; // Manticore Skin Boot Lining
@@ -862,11 +870,15 @@ index 00000000..78c2b95a
 +		RARE_ARMOR_ITEMS[2928] = true; // Elven Mithril Gloves Design
 +		RARE_ARMOR_ITEMS[2929] = true; // Brigandine Shield Fragment
 +		RARE_ARMOR_ITEMS[2931] = true; // Salamander Skin Boot Lining
++		RARE_ARMOR_ITEMS[2936] = true; // Chain Hood Pattern
 +		RARE_ARMOR_ITEMS[2939] = true; // Plate Leather Boot Lining
 +		RARE_ARMOR_ITEMS[2944] = true; // Karmian Gloves Fabric
++		RARE_ARMOR_ITEMS[2945] = true; // Chain Shield Fragment
 +		RARE_ARMOR_ITEMS[2954] = true; // Theca Leather Boots Texture
++		RARE_ARMOR_ITEMS[2957] = true; // Composite Helmet Design
 +		RARE_ARMOR_ITEMS[2959] = true; // Full Plate Helmet Design
 +		RARE_ARMOR_ITEMS[2966] = true; // Full Plate Shield Fragment
++		RARE_ARMOR_ITEMS[4055] = true; // Composite Shield Fragment
 +	}
 +	
 +	public static void logRareItems()
@@ -1328,38 +1340,41 @@ index 00000000..78c2b95a
 +		
 +		fakePlayer.getStatus().setMp(fakePlayer.getStatus().getMaxMp());
 +		
-+		try
++		if (rnd.nextInt(2) == 0) // 50% chance that fake trader has a clan
 +		{
-+			final String clanName = "TradeEmpire";
-+			final long cet = fakePlayer.getClanCreateExpiryTime();
-+			
-+			fakePlayer.setClanCreateExpiryTime(0);
-+			
-+			Clan clan = ClanTable.getInstance().getClanByName(clanName);
-+			if (clan == null)
++			try
 +			{
-+				clan = ClanTable.getInstance().createClan(fakePlayer, clanName);
-+				if (clan != null)
-+					LOGGER.info("Clan " + clanName + " has been created. Clan leader is " + fakePlayer.getName() + ".");
++				final String clanName = _botClans.get(rnd.nextInt(_botClans.size())).getName();
++				final long cet = fakePlayer.getClanCreateExpiryTime();
++				
++				fakePlayer.setClanCreateExpiryTime(0);
++				
++				Clan clan = ClanTable.getInstance().getClanByName(clanName);
++				if (clan == null)
++				{
++					clan = ClanTable.getInstance().createClan(fakePlayer, clanName);
++					if (clan != null)
++						LOGGER.info("Clan " + clanName + " has been created. Clan leader is " + fakePlayer.getName() + ".");
++					else
++					{
++						fakePlayer.setClanCreateExpiryTime(cet);
++						LOGGER.info("There was a problem while creating the clan.");
++					}
++				}
 +				else
 +				{
-+					fakePlayer.setClanCreateExpiryTime(cet);
-+					LOGGER.info("There was a problem while creating the clan.");
++					fakePlayer.setClan(clan);
++					clan.addClanMember(fakePlayer);
++					// fakePlayer.sendPacket(new UserInfo(fakePlayer));
++					fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
++					// Save player clan info to database
++					// fakePlayer.store();
 +				}
 +			}
-+			else
++			catch (Exception e)
 +			{
-+				fakePlayer.setClan(clan);
-+				clan.addClanMember(fakePlayer);
-+				// fakePlayer.sendPacket(new UserInfo(fakePlayer));
-+				fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
-+				// Save player clan info to database
-+				// fakePlayer.store();
++				LOGGER.info("Invalid string parameter for //pledge create.");
 +			}
-+		}
-+		catch (Exception e)
-+		{
-+			LOGGER.info("Invalid string parameter for //pledge create.");
 +		}
 +		
 +		equipFakePlayer(fakePlayer);
@@ -1770,7 +1785,7 @@ index 00000000..78c2b95a
 +					if ((castle != null) && (clan.getLevel() >= Config.MINIMUM_CLAN_LEVEL))
 +					{
 +						castle.setOwner(clan);
-+						Random rndTaxPerc = new Random(clan.getClanId());
++						Random rndTaxPerc = new Random(clan.getClanId() << 7); // seeds should not be too close together
 +						castle.setCurrentTaxPercent(castleID == 3 ? 15 : rndTaxPerc.nextInt(16), true);
 +					}
 +					
