@@ -619,10 +619,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..00348dc1
+index 00000000..9d43daee
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1387 @@
+@@ -0,0 +1,1389 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -799,9 +799,9 @@ index 00000000..00348dc1
 +			spawnRndFakeTrader("Floran Village");
 +		LOGGER.info("Successfuly populated with random trade bots: Floran Village");
 +		
-+		for (int i = 0; i < 20; i++)
++		for (int i = 0; i < 19; i++)
 +			spawnRndFakeTrader("Monsters Derby");
-+		for (int i = 0; i < 7; i++)
++		for (int i = 0; i < 6; i++)
 +			spawnRndFakeTrader("Monsters Derby 2");
 +		LOGGER.info("Successfuly populated with random trade bots: Monsters Derby Track");
 +		
@@ -917,6 +917,8 @@ index 00000000..00348dc1
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
++		BANNED_ITEMS[6716] = true; // Monster Only(Silenos Shaman)
++		BANNED_ITEMS[6718] = true; // Monster Only(Einhasad Shaman)
 +		BANNED_ITEMS[6719] = true; // Monster Only(Ketra Orc Chieftain)
 +		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
 +		BANNED_ITEMS[6721] = true; // Monster Only(Shield of Imperial Warlord Zombie)
@@ -1470,7 +1472,7 @@ index 00000000..00348dc1
 +				
 +				iName = itemTemplate.getName().toLowerCase();
 +			} // throw out shadow, monster items, high level keys etc., only B,A,S grade crystals allowed, 1458 - 1459
-+			while ((itemTemplate.getReferencePrice() == 0 && rndItem != 5575) || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || itemTemplate.getName().contains("(Not used)") || itemTemplate.getName().contains("Alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone") || iName.contains("Crystal Scroll"));
++			while ((itemTemplate.getReferencePrice() == 0 && rndItem != 5575) || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || iName.contains("(not used)") || iName.contains("alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone") || iName.contains("crystal scroll"));
 +			
 +			ItemType iT = itemTemplate.getItemType();
 +			String iN = itemTemplate.getName();
