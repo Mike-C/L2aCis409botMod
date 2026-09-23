@@ -619,10 +619,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..a6ff5279
+index 00000000..00348dc1
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1433 @@
+@@ -0,0 +1,1387 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -1187,6 +1187,33 @@ index 00000000..a6ff5279
 +		while (findAllNearbyObjects(fakePlayer, 50));
 +	}
 +	
++	private static void createClanOrAssign(Player fakePlayer, String clanName)
++	{
++		final long cet = fakePlayer.getClanCreateExpiryTime();
++		fakePlayer.setClanCreateExpiryTime(0);
++		Clan clan = ClanTable.getInstance().getClanByName(clanName);
++		if (clan == null)
++		{
++			clan = ClanTable.getInstance().createClan(fakePlayer, clanName);
++			if (clan != null)
++				LOGGER.info("Clan " + clanName + " has been created. Clan leader is " + fakePlayer.getName() + ".");
++			else
++			{
++				fakePlayer.setClanCreateExpiryTime(cet);
++				LOGGER.warn("There was a problem while creating the clan: " + clanName);
++			}
++		}
++		else
++		{
++			fakePlayer.setClan(clan);
++			clan.addClanMember(fakePlayer);
++			// fakePlayer.sendPacket(new UserInfo(fakePlayer));
++			fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
++			// Save player clan info to database
++			// fakePlayer.store();
++		}
++	}
++	
 +	private void spawnRndFakeTrader(String loc)
 +	{
 +		List<Integer> classIdList = List.of(0, 10, 18, 31, 44, 53);
@@ -1340,41 +1367,9 @@ index 00000000..a6ff5279
 +		
 +		fakePlayer.getStatus().setMp(fakePlayer.getStatus().getMaxMp());
 +		
-+		if (rnd.nextInt(2) == 0) // 50% chance that fake trader has a clan
++		if (rnd.nextInt(10) <= 6) // 70% chance that fake trader has a clan
 +		{
-+			try
-+			{
-+				final String clanName = _botClans.get(rnd.nextInt(_botClans.size())).getName();
-+				final long cet = fakePlayer.getClanCreateExpiryTime();
-+				
-+				fakePlayer.setClanCreateExpiryTime(0);
-+				
-+				Clan clan = ClanTable.getInstance().getClanByName(clanName);
-+				if (clan == null)
-+				{
-+					clan = ClanTable.getInstance().createClan(fakePlayer, clanName);
-+					if (clan != null)
-+						LOGGER.info("Clan " + clanName + " has been created. Clan leader is " + fakePlayer.getName() + ".");
-+					else
-+					{
-+						fakePlayer.setClanCreateExpiryTime(cet);
-+						LOGGER.info("There was a problem while creating the clan.");
-+					}
-+				}
-+				else
-+				{
-+					fakePlayer.setClan(clan);
-+					clan.addClanMember(fakePlayer);
-+					// fakePlayer.sendPacket(new UserInfo(fakePlayer));
-+					fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
-+					// Save player clan info to database
-+					// fakePlayer.store();
-+				}
-+			}
-+			catch (Exception e)
-+			{
-+				LOGGER.info("Invalid string parameter for //pledge create.");
-+			}
++			createClanOrAssign(fakePlayer, _botClans.get(rnd.nextInt(_botClans.size())).getName());
 +		}
 +		
 +		equipFakePlayer(fakePlayer);
@@ -1756,45 +1751,36 @@ index 00000000..a6ff5279
 +		
 +		fakePlayer.getStatus().setLevel(19);
 +		
-+		try
++		final long cet = fakePlayer.getClanCreateExpiryTime();
++		fakePlayer.setClanCreateExpiryTime(0);
++		Clan clan = ClanTable.getInstance().getClanByName(name);
++		if (clan == null)
 +		{
-+			final long cet = fakePlayer.getClanCreateExpiryTime();
-+			
-+			fakePlayer.setClanCreateExpiryTime(0);
-+			
-+			Clan clan = ClanTable.getInstance().getClanByName(name);
-+			if (clan == null)
-+			{
-+				clan = ClanTable.getInstance().createClan(fakePlayer, name);
-+				if (clan != null)
-+					LOGGER.info("Bot clan " + name + " has been created. Clan leader is " + fakePlayer.getName() + ".");
-+				else
-+				{
-+					fakePlayer.setClanCreateExpiryTime(cet);
-+					LOGGER.info("There was a problem while creating the clan.");
-+				}
-+			}
++			clan = ClanTable.getInstance().createClan(fakePlayer, name);
 +			if (clan != null)
++				LOGGER.info("Bot clan " + name + " has been created. Clan leader is " + fakePlayer.getName() + ".");
++			else
 +			{
-+				clan.setLevel(lvl);
-+				
-+				if (castleID > 0)
-+				{
-+					// Assign castle owners for loaded clans with random tax percentage, Giran tax stays at 15%
-+					Castle castle = CastleManager.getInstance().getCastleById(castleID);
-+					if ((castle != null) && (clan.getLevel() >= Config.MINIMUM_CLAN_LEVEL))
-+					{
-+						castle.setOwner(clan);
-+						Random rndTaxPerc = new Random(clan.getClanId() << 7); // seeds should not be too close together
-+						castle.setCurrentTaxPercent(castleID == 3 ? 15 : rndTaxPerc.nextInt(16), true);
-+					}
-+					
-+				}
++				fakePlayer.setClanCreateExpiryTime(cet);
++				LOGGER.warn("There was a problem while creating the clan: " + name);
 +			}
 +		}
-+		catch (Exception e)
++		if (clan != null)
 +		{
-+			LOGGER.info("Invalid string parameter for //pledge create.");
++			clan.setLevel(lvl);
++			
++			if (castleID > 0)
++			{
++				// Assign castle owners for loaded clans with random tax percentage, Giran tax stays at 15%
++				Castle castle = CastleManager.getInstance().getCastleById(castleID);
++				if ((castle != null) && (clan.getLevel() >= Config.MINIMUM_CLAN_LEVEL))
++				{
++					castle.setOwner(clan);
++					Random rndTaxPerc = new Random(castleID << 7); // seeds should not be too close together
++					castle.setCurrentTaxPercent(castleID == 3 ? 15 : rndTaxPerc.nextInt(16), true);
++				}
++				
++			}
 +		}
 +		
 +		// Spawn into the game world
@@ -1864,39 +1850,7 @@ index 00000000..a6ff5279
 +		
 +		fakePlayer.getStatus().setMp(fakePlayer.getStatus().getMaxMp());
 +		
-+		try
-+		{
-+			final String clanName = rs.getString("clanName");
-+			final long cet = fakePlayer.getClanCreateExpiryTime();
-+			
-+			fakePlayer.setClanCreateExpiryTime(0);
-+			
-+			Clan clan = ClanTable.getInstance().getClanByName(clanName);
-+			if (clan == null)
-+			{
-+				clan = ClanTable.getInstance().createClan(fakePlayer, clanName);
-+				if (clan != null)
-+					LOGGER.info("Clan " + clanName + " has been created. Clan leader is " + fakePlayer.getName() + ".");
-+				else
-+				{
-+					fakePlayer.setClanCreateExpiryTime(cet);
-+					LOGGER.info("There was a problem while creating the clan.");
-+				}
-+			}
-+			else
-+			{
-+				fakePlayer.setClan(clan);
-+				clan.addClanMember(fakePlayer);
-+				// fakePlayer.sendPacket(new UserInfo(fakePlayer));
-+				fakePlayer.sendPacket(new PledgeShowMemberListAdd(fakePlayer));
-+				// Save player clan info to database
-+				// fakePlayer.store();
-+			}
-+		}
-+		catch (Exception e)
-+		{
-+			LOGGER.info("Invalid string parameter for //pledge create.");
-+		}
++		createClanOrAssign(fakePlayer, rs.getString("clanName"));
 +		
 +		equipFakePlayer(fakePlayer);
 +		
