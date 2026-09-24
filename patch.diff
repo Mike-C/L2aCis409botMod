@@ -255,14 +255,14 @@ index 0021f33a..3c12dfd4 100644
  	<aCar name="admin_camera" accessLevel="7" params="" desc="Toggle the CameraMode."/>
 diff --git a/aCis_datapack/data/xml/botClans.xml b/aCis_datapack/data/xml/botClans.xml
 new file mode 100644
-index 00000000..cfd2577b
+index 00000000..bf47ec2c
 --- /dev/null
 +++ b/aCis_datapack/data/xml/botClans.xml
 @@ -0,0 +1,13 @@
 +<?xml version='1.0' encoding='utf-8'?>
 +<list>
 +	<clan id="CrescentNebula" name="CrescentNebula" lvl="4" castleID="8" alli="alse" crest=""/>
-+	<clan id="Fellowship" name="Fellowship" lvl="4" castleID="2" alli="" crest=""/>
++	<clan id="Fellowship" name="Fellowship" lvl="4" castleID="1" alli="" crest=""/>
 +	<clan id="TradeEmpire" name="TradeEmpire" lvl="4" castleID="3" alli="alse" crest=""/>
 +	<clan id="KyrieElei" name="KyrieElei" lvl="4" castleID="4" alli="" crest=""/>
 +	<clan id="ShadowBrook" name="ShadowBrook" lvl="4" castleID="0" alli="" crest=""/>
@@ -272,12 +272,11 @@ index 00000000..cfd2577b
 +	<clan id="RoaringLion" name="RoaringLion" lvl="4" castleID="0" alli="" crest=""/>
 +	<clan id="Yzop" name="Yzop" lvl="4" castleID="9" alli="" crest=""/>
 +</list>
-\ No newline at end of file
 diff --git a/aCis_datapack/sql/castle_manor_procure.sql b/aCis_datapack/sql/castle_manor_procure.sql
-index 3688607b..eda637fc 100644
+index 3688607b..3fd15f5d 100644
 --- a/aCis_datapack/sql/castle_manor_procure.sql
 +++ b/aCis_datapack/sql/castle_manor_procure.sql
-@@ -7,4 +7,43 @@ CREATE TABLE IF NOT EXISTS `castle_manor_procure` (
+@@ -7,4 +7,75 @@ CREATE TABLE IF NOT EXISTS `castle_manor_procure` (
   `reward_type` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
   `next_period` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
    PRIMARY KEY (`castle_id`,`crop_id`,`next_period`)
@@ -286,6 +285,38 @@ index 3688607b..eda637fc 100644
 +);
 +
 +INSERT INTO `castle_manor_procure` (`castle_id`, `crop_id`, `amount`, `start_amount`, `price`, `reward_type`, `next_period`) VALUES
++(1, 5073, 8000, 8000, 127, 2, 0), -- Gludio crop Dark Coda, revard Braided Hemp, current period
++(1, 5073, 8000, 8000, 127, 2, 1),
++(1, 5068, 7500, 7500, 127, 2, 0),
++(1, 5068, 7500, 7500, 127, 2, 1),
++(1, 5065, 7500, 7500, 127, 2, 0),
++(1, 5065, 7500, 7500, 127, 2, 1),
++(1, 5067, 3500, 3500, 110, 2, 0),
++(1, 5067, 3500, 3500, 110, 2, 1),
++(1, 5069, 2100, 2100, 400, 2, 0),
++(1, 5069, 2100, 2100, 400, 2, 1),
++(1, 5071, 1500, 1500, 240, 2, 0),
++(1, 5071, 1500, 1500, 240, 2, 1),
++(1, 5070, 2200, 2200, 400, 1, 0),
++(1, 5070, 2200, 2200, 400, 1, 1),
++(1, 5078, 2200, 2200, 300, 2, 0),
++(1, 5078, 2200, 2200, 300, 2, 1),
++(1, 5075, 1800, 1800, 250, 2, 0),
++(1, 5075, 1800, 1800, 250, 2, 1),
++(1, 5077, 900, 900, 600, 2, 0),
++(1, 5077, 900, 900, 600, 2, 1),
++(1, 5085, 1100, 1100, 240, 2, 0),
++(1, 5085, 1100, 1100, 240, 2, 1),
++(1, 5087, 900, 900, 500, 1, 0),
++(1, 5087, 900, 900, 500, 1, 1),
++(1, 5092, 900, 900, 350, 2, 0),
++(1, 5092, 900, 900, 350, 2, 1),
++(1, 5094, 600, 600, 450, 2, 0),
++(1, 5094, 600, 600, 450, 2, 1),
++(1, 5090, 450, 450, 600, 2, 0),
++(1, 5090, 450, 450, 600, 2, 1),
++(1, 6541, 360, 360, 800, 2, 0),
++(1, 6541, 360, 360, 800, 2, 1),
 +(4, 5073, 8000, 8000, 125, 2, 0), -- Oren crop Dark Coda, revard Braided Hemp, current period
 +(4, 5073, 8000, 8000, 125, 2, 1),
 +(4, 5068, 7200, 7200, 125, 1, 0), 
@@ -324,10 +355,10 @@ index 3688607b..eda637fc 100644
 +(4, 6545, 160, 160, 2250, 2, 1);
 +
 diff --git a/aCis_datapack/sql/castle_manor_production.sql b/aCis_datapack/sql/castle_manor_production.sql
-index 0015929e..fb8f3064 100644
+index 0015929e..efbbf51f 100644
 --- a/aCis_datapack/sql/castle_manor_production.sql
 +++ b/aCis_datapack/sql/castle_manor_production.sql
-@@ -6,4 +6,43 @@ CREATE TABLE IF NOT EXISTS `castle_manor_production` (
+@@ -6,4 +6,75 @@ CREATE TABLE IF NOT EXISTS `castle_manor_production` (
   `price` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `next_period` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
   PRIMARY KEY (`castle_id`, `seed_id`, `next_period`)
@@ -336,6 +367,38 @@ index 0015929e..fb8f3064 100644
 +);
 +
 +INSERT INTO `castle_manor_production` (`castle_id`, `seed_id`, `amount`, `start_amount`, `price`, `next_period`) VALUES
++(1, 5016, 6000, 6000, 50, 0), -- Gludio seed Dark Coda, current period
++(1, 5016, 5500, 5500, 50, 1), -- Gludio seed Dark Coda, next period
++(1, 5017, 6000, 6000, 50, 0), -- entries ordered by seed lvl
++(1, 5017, 5500, 5500, 50, 1),
++(1, 5018, 6000, 6000, 50, 0),
++(1, 5018, 5500, 5500, 50, 1),
++(1, 5019, 3000, 3000, 100, 0),
++(1, 5019, 3500, 3500, 100, 1),
++(1, 5020, 2000, 2000, 200, 0),
++(1, 5020, 2000, 2000, 200, 1),
++(1, 5021, 1000, 1000, 300, 0),
++(1, 5021, 1000, 1000, 300, 1),
++(1, 5022, 2000, 2000, 200, 0),
++(1, 5022, 2000, 2000, 200, 1),
++(1, 7051, 2000, 2000, 200, 0),
++(1, 7051, 2000, 2000, 200, 1),
++(1, 7019, 1500, 1500, 250, 0),
++(1, 7019, 1500, 1500, 250, 1),
++(1, 5023, 800, 800, 500, 0),
++(1, 5023, 800, 800, 500, 1),
++(1, 7021, 1000, 1000, 400, 0),
++(1, 7021, 1000, 1000, 400, 1),
++(1, 7017, 800, 800, 500, 0),
++(1, 7017, 800, 800, 500, 1),
++(1, 7057, 800, 800, 500, 0),
++(1, 7057, 800, 800, 500, 1),
++(1, 7028, 500, 500, 750, 0),
++(1, 7028, 500, 500, 750, 1),
++(1, 7023, 400, 400, 1000, 0),
++(1, 7023, 400, 400, 1000, 1),
++(1, 6768, 300, 300, 1250, 0),
++(1, 6768, 300, 300, 1250, 1),
 +(4, 5042, 6000, 6000, 50, 0), -- Oren seed Dark Coda, current period
 +(4, 5042, 5500, 5500, 50, 1), -- entries ordered by seed lvl
 +(4, 5043, 4000, 4000, 50, 0), 
@@ -375,10 +438,10 @@ index 0015929e..fb8f3064 100644
 +
 diff --git a/aCis_datapack/sql/fake_traders.sql b/aCis_datapack/sql/fake_traders.sql
 new file mode 100644
-index 00000000..1dc615ca
+index 00000000..7457694c
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders.sql
-@@ -0,0 +1,28 @@
+@@ -0,0 +1,30 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders` (
 +  `id` INT NOT NULL AUTO_INCREMENT,
 +  `name` VARCHAR(35) NOT NULL,
@@ -405,14 +468,16 @@ index 00000000..1dc615ca
 +(4, 'Mata', 53, 0, 0, 1, 1, 82561, 147621, -3464, 0, 1, 'Shots & Crystals', 40, 'TradeEmpire'),
 +(5, 'Matare', 53, 1, 6, 2, 1, 82559, 147547, -3464, 0, 5, 'Crafting Shots', 40, 'TradeEmpire'),
 +(6, 'Cirmus', 53, 1, 6, 2, 1, 82495, 147619, -3464, 0, 1, 'WTS AA 3a', 40, 'TradeEmpire'),
-+(7, 'Rarae', 53, 1, 6, 2, 1, 80419, 145625, -3528, 0, 1, 'Crystals Dx, Cx', 40, 'TradeEmpire');
++(7, 'Rarae', 53, 1, 6, 2, 1, 80419, 145625, -3528, 0, 1, 'Crystals Dx, Cx', 40, 'TradeEmpire'),
++(8, 'Lilac', 53, 1, 0, 2, 1, -83184, 150964, -3120, 0, 5, 'Crafting D Shots', 40, 'TradeEmpire'),
++(9, 'Amanita', 53, 1, 0, 2, 1, -13954, 122294, -2984, 49152, 5, 'Crafting D Shots', 40, 'TradeEmpire');
 +
 diff --git a/aCis_datapack/sql/fake_traders_items.sql b/aCis_datapack/sql/fake_traders_items.sql
 new file mode 100644
-index 00000000..e28eaef2
+index 00000000..01a7f235
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders_items.sql
-@@ -0,0 +1,33 @@
+@@ -0,0 +1,39 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders_items` (
 +  `trader_id` INT NOT NULL AUTO_INCREMENT,
 +  `item_id` INT NOT NULL,
@@ -444,7 +509,13 @@ index 00000000..e28eaef2
 +(5, 3954, 1, 200),     -- Recipe: Blessed Spiritshot C
 +(6, 5575, 1999999, 3), -- Ancient Adena
 +(7, 1458, 5000, 649),  -- Crystal: D-grade
-+(7, 1459, 4000, 3049); -- Crystal: C-grade
++(7, 1459, 4000, 3049), -- Crystal: C-grade
++(8, 1804, 1, 20),      -- Recipe: Soulshot: D-grade
++(8, 3032, 1, 30),      -- Recipe: Spiritshot D
++(8, 3953, 1, 70),      -- Recipe: Blessed Spiritshot D
++(9, 1804, 1, 20),      -- Recipe: Soulshot: D-grade
++(9, 3032, 1, 30),      -- Recipe: Spiritshot D
++(9, 3953, 1, 70);      -- Recipe: Blessed Spiritshot D
 +
 diff --git a/aCis_gameserver/config/server.properties b/aCis_gameserver/config/server.properties
 index d3985051..a557133e 100644
@@ -619,10 +690,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..9d43daee
+index 00000000..0b0b945f
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1389 @@
+@@ -0,0 +1,1395 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -1009,6 +1080,12 @@ index 00000000..9d43daee
 +		// DESIRED_ITEMS[1893] = true; // Oriharukon
 +		DESIRED_ITEMS[1894] = true; // Crafted Leather
 +		DESIRED_ITEMS[1895] = true; // Metallic Fiber
++		DESIRED_ITEMS[4039] = true; // Mold Glue
++		DESIRED_ITEMS[4040] = true; // Mold Lubricant
++		DESIRED_ITEMS[4041] = true; // Mold Hardener
++		DESIRED_ITEMS[4042] = true; // Enria
++		DESIRED_ITEMS[4043] = true; // Asofe
++		DESIRED_ITEMS[4044] = true; // Thons
 +	}
 +	
 +	public static void loadItemsUpToGrade()
