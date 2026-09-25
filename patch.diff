@@ -690,10 +690,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..cd7d76fe
+index 00000000..30168b63
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1404 @@
+@@ -0,0 +1,1407 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -993,12 +993,14 @@ index 00000000..cd7d76fe
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
++		BANNED_ITEMS[251] = true; // Human Mystic Fist
 +		BANNED_ITEMS[6716] = true; // Monster Only(Silenos Shaman)
 +		BANNED_ITEMS[6718] = true; // Monster Only(Einhasad Shaman)
 +		BANNED_ITEMS[6719] = true; // Monster Only(Ketra Orc Chieftain)
 +		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
 +		BANNED_ITEMS[6721] = true; // Monster Only(Shield of Imperial Warlord Zombie)
 +		BANNED_ITEMS[6919] = true; // Monster Only (Shield of Ketra Orc)
++		BANNED_ITEMS[7014] = true; // Monster Only (Shield of Dark Dragon)
 +		
 +		BANNED_ITEMS[749] = true; // 0
 +		BANNED_ITEMS[1471] = true; // Silenos Blowgun
@@ -1866,6 +1868,7 @@ index 00000000..cd7d76fe
 +					castle.setOwner(clan);
 +					Random rndTaxPerc = new Random(castleID << 7); // seeds should not be too close together
 +					castle.setCurrentTaxPercent(castleID == 3 ? 15 : rndTaxPerc.nextInt(16), true);
++					castle.setTreasury(1000000000); // for Manor to load to the next period
 +				}
 +				
 +			}
