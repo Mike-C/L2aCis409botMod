@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..1a3638d5
+index 00000000..19e02b61
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,237 @@
+@@ -0,0 +1,240 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -241,18 +241,28 @@ index 00000000..1a3638d5
 +Dixit
 +Garland
 +Aelius
++Tinga
++Lime
++Bowls
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
-index 0021f33a..3c12dfd4 100644
+index 0021f33a..56fe6391 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
 +++ b/aCis_datapack/data/xml/adminCommands.xml
 @@ -1,6 +1,7 @@
  <?xml version='1.0' encoding='utf-8'?>
  <list>
  	<!-- ADMIN -->
-+	<aCar name="admin_spawnbot" accessLevel="7" params="" desc="Spawn aCis 409 bot near Elven Village."/>
++	<aCar name="admin_spawnbot" accessLevel="7" params="" desc="Spawns aCis 409 bot."/>
  	<aCar name="admin_admin" accessLevel="7" params="[1-4]" desc="Go through the different admin panels."/>
  	<aCar name="admin_buy" accessLevel="7" params="[id]" desc="Open the GM Shop panel, or the associated BuyList."/>
  	<aCar name="admin_camera" accessLevel="7" params="" desc="Toggle the CameraMode."/>
+@@ -158,4 +159,4 @@
+ 
+ 	<!-- ZONE -->
+ 	<aCar name="admin_zone" accessLevel="7" params="[show - all|clear|id]" desc="Show the zone panel, or the zone visually."/>
+-</list>
+\ No newline at end of file
++</list>
 diff --git a/aCis_datapack/data/xml/botClans.xml b/aCis_datapack/data/xml/botClans.xml
 new file mode 100644
 index 00000000..bf47ec2c
@@ -690,10 +700,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..30168b63
+index 00000000..235fa0d6
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1407 @@
+@@ -0,0 +1,1423 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -752,7 +762,7 @@ index 00000000..30168b63
 +{
 +	private static boolean[] BANNED_ITEMS = new boolean[9299];
 +	private static boolean[] RARE_ITEMS = new boolean[9299];
-+	private static boolean[] THREE_TIMES_PRICE_TIER = new boolean[9299];
++	private static boolean[] THREE_TIMES_PRICE_ITEMS = new boolean[9299];
 +	private static boolean[] RARE_ARMOR_ITEMS = new boolean[9299];
 +	private static boolean[] DESIRED_ITEMS = new boolean[9299];
 +	
@@ -762,6 +772,13 @@ index 00000000..30168b63
 +		1.15f,
 +		1.20f,
 +		1.25f
++	};
++	
++	private static float[] BUY_MULTIPLIER =
++	{
++		1.0f,
++		1.1f,
++		1.15f
 +	};
 +	
 +	private static final CLogger LOGGER = new CLogger(FakeTraderManager.class.getName());
@@ -900,13 +917,13 @@ index 00000000..30168b63
 +	
 +	public static void log3xPriceItems()
 +	{
-+		THREE_TIMES_PRICE_TIER[1874] = true; // Oriharukon Ore
-+		THREE_TIMES_PRICE_TIER[2411] = true; // Brigandine Helmet
-+		THREE_TIMES_PRICE_TIER[2424] = true; // Manticore Skin Boots
-+		THREE_TIMES_PRICE_TIER[2493] = true; // Brigandine Shield
-+		THREE_TIMES_PRICE_TIER[2922] = true; // Brigandine Helmet Design
-+		THREE_TIMES_PRICE_TIER[2923] = true; // Manticore Skin Boot Lining
-+		THREE_TIMES_PRICE_TIER[2929] = true; // Brigandine Shield Fragment
++		THREE_TIMES_PRICE_ITEMS[1874] = true; // Oriharukon Ore
++		THREE_TIMES_PRICE_ITEMS[2411] = true; // Brigandine Helmet
++		THREE_TIMES_PRICE_ITEMS[2424] = true; // Manticore Skin Boots
++		THREE_TIMES_PRICE_ITEMS[2493] = true; // Brigandine Shield
++		THREE_TIMES_PRICE_ITEMS[2922] = true; // Brigandine Helmet Design
++		THREE_TIMES_PRICE_ITEMS[2923] = true; // Manticore Skin Boot Lining
++		THREE_TIMES_PRICE_ITEMS[2929] = true; // Brigandine Shield Fragment
 +	}
 +	
 +	// Overal price is 2x reference price
@@ -1486,6 +1503,7 @@ index 00000000..30168b63
 +		
 +		// getRandomDGradeItemId
 +		final float rndRefPriceMultiplier = REFERENCE_PRICE_MULTIPLIER[rnd.nextInt(4)];
++		final float buyMultiplier = BUY_MULTIPLIER[rnd.nextInt(3)];
 +		int j = rnd.nextInt(4), recipeLevel = 1;
 +		for (int rndItem, i = 0; i <= j; i++)
 +		{
@@ -1594,7 +1612,7 @@ index 00000000..30168b63
 +			{
 +				if (DESIRED_ITEMS[rndItem])
 +				{
-+					if (!THREE_TIMES_PRICE_TIER[rndItem]) // exclude oriharukon ore
++					if (!THREE_TIMES_PRICE_ITEMS[rndItem]) // exclude oriharukon ore
 +						price <<= 1;
 +					if (rndItem == 5575) // ancient adena
 +					{
@@ -1627,14 +1645,22 @@ index 00000000..30168b63
 +			if (iN.contains("Dye"))
 +				count = rnd.nextInt(10) + 1;
 +			
++			if (iN.contains("Seal Stone"))
++				count = rnd.nextInt(100000) + 1;
++			
 +			if (rndItem >= 1458 && rndItem <= 1459) // D, C Crystals
 +				count = rnd.nextInt(5000) + 1;
 +			
-+			if (THREE_TIMES_PRICE_TIER[rndItem])
++			if (THREE_TIMES_PRICE_ITEMS[rndItem])
 +				price *= 3;
 +			
 +			if (RARE_ARMOR_ITEMS[rndItem])
 +				price <<= 1;
++			
++			if (storeType == 3) // set random price-range for buying
++			{
++				price = (int) (buyMultiplier * price);
++			}
 +			
 +			genFakeTraderItems(fakePlayer, rndItem, price, count, storeType, tradeList, manufactureList);
 +		}
