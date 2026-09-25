@@ -283,18 +283,9 @@ index 00000000..bf47ec2c
 +	<clan id="Yzop" name="Yzop" lvl="4" castleID="9" alli="" crest=""/>
 +</list>
 diff --git a/aCis_datapack/data/xml/manorAreas.xml b/aCis_datapack/data/xml/manorAreas.xml
-index d20f5e06..635418e8 100644
+index d20f5e06..daec2c05 100644
 --- a/aCis_datapack/data/xml/manorAreas.xml
 +++ b/aCis_datapack/data/xml/manorAreas.xml
-@@ -12,7 +12,7 @@
- 		<node x="112747" y="-173"/>
- 		<node x="108637" y="-3399"/>
- 		<node x="115372" y="-13695"/>
--	</area>
-+	</area>glud
- 	<area name="aden_2317_002" castleId="5" minZ="-4188" maxZ="3812">
- 		<node x="112124" y="-2649"/>
- 		<node x="112704" y="-240"/>
 @@ -299,7 +299,7 @@
  		<node x="-32996" y="196452"/>
  		<node x="-65532" y="196488"/>
