@@ -282,6 +282,35 @@ index 00000000..bf47ec2c
 +	<clan id="RoaringLion" name="RoaringLion" lvl="4" castleID="0" alli="" crest=""/>
 +	<clan id="Yzop" name="Yzop" lvl="4" castleID="9" alli="" crest=""/>
 +</list>
+diff --git a/aCis_datapack/data/xml/manorAreas.xml b/aCis_datapack/data/xml/manorAreas.xml
+index d20f5e06..635418e8 100644
+--- a/aCis_datapack/data/xml/manorAreas.xml
++++ b/aCis_datapack/data/xml/manorAreas.xml
+@@ -12,7 +12,7 @@
+ 		<node x="112747" y="-173"/>
+ 		<node x="108637" y="-3399"/>
+ 		<node x="115372" y="-13695"/>
+-	</area>
++	</area>glud
+ 	<area name="aden_2317_002" castleId="5" minZ="-4188" maxZ="3812">
+ 		<node x="112124" y="-2649"/>
+ 		<node x="112704" y="-240"/>
+@@ -299,7 +299,7 @@
+ 		<node x="-32996" y="196452"/>
+ 		<node x="-65532" y="196488"/>
+ 	</area>
+-	<area name="gludio_1824_001" castleId="1" minZ="-4880" maxZ="1120">
++	<area name="gludio_1824_001" castleId="1" minZ="-5080" maxZ="1120">
+ 		<node x="-65368" y="196732"/>
+ 		<node x="-33032" y="196776"/>
+ 		<node x="-33076" y="229244"/>
+@@ -755,4 +755,4 @@
+ 		<node x="196804" y="-163821"/>
+ 		<node x="163881" y="-163870"/>
+ 	</area>
+-</list>
+\ No newline at end of file
++</list>
 diff --git a/aCis_datapack/sql/castle_manor_procure.sql b/aCis_datapack/sql/castle_manor_procure.sql
 index 3688607b..3fd15f5d 100644
 --- a/aCis_datapack/sql/castle_manor_procure.sql
