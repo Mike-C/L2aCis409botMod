@@ -2860,3 +2860,21 @@ index 00000000..7b2b3d88
 +		return true;
 +	}
 +}
+diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/container/monster/SeedState.java b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/container/monster/SeedState.java
+index aee53331..c81703ee 100644
+--- a/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/container/monster/SeedState.java
++++ b/aCis_gameserver/java/net/sf/l2j/gameserver/model/actor/container/monster/SeedState.java
+@@ -93,6 +93,13 @@ public class SeedState
+ 				count = skill.getId() - 4301;
+ 				break;
+ 			}
++			
++			// Multiply the count by the HP Increased mobs
++			if (skill.getId() == 4408)
++			{
++				count = skill.getLevel() >= 10 ? skill.getLevel() - 8 : 1;
++				break;
++			}
+ 		}
+ 		
+ 		// Calculate monster and seed level modifier.
