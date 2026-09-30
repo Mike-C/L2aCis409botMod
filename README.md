@@ -3,7 +3,7 @@ Lineage 2 aCis 409 modified java server with Fake Players, Traders &amp; bots.
 
 <img width="1440" height="834" alt="Example" src="https://github.com/user-attachments/assets/f4a6ed87-f9ca-4106-8111-7aec4110c5e7" />
 
-**Usage example:**
+## Usage example:
 
 Patch the aCis 409 repository with given patch.diff.
 First clone the aCis 409 repository and than copy the patch.diff 
@@ -90,11 +90,11 @@ Move this file into ~/L2aCisMod/gameserver/config directory as hexid.txt
 You can see the login/ and gameserver/logs server directories, if there are any errors.
 * Connect with Interlude client, which connects to localhost, 127.0.0.1
 
-**Troubleshooting**
+## Troubleshooting
 
-**Manor schedules**
+**Manor schedules issues**
 
-Manor schedule has passed, yet the Manor has not switched the mode or passed to the new interval?
+Manor schedule has passed, yet the Manor has not switched the mode or passed to the new period?
 Make sure, if you are playing on a laptop, that when you close the lid, that laptop is not 
 being suspended, yet keep the CPU awake.
 
@@ -113,7 +113,12 @@ sudo systemctl restart systemd
 Than make the screen blank when you close the lid,
 follow the manual to your specific desktop environment.
 
-**Release notes**
+**Seven Signs schedules issues**
+
+Seven Signs period has passed, yet the new period has not started? Or similar problems.
+The same should apply as for Manor schedules issues.
+
+## Release notes
 
 **L2aCis409botMod v0.03**
 * Random fake player shops have been added to all villages and cities. (just Buy & Sell).
