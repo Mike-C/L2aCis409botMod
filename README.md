@@ -20,7 +20,7 @@ cd acis_public
 git apply patch.diff
 ```
 
-* Than build the source as normally. i.e. through Eclipse Ant build.xml (import the project first).
+Than build the source as normally, i.e. through Eclipse Ant build.xml (import the project first).
 Both projects aCis_datapack and aCis_gameserver have to be build.
 Copy the build files into ~/L2aCisMod/ directory.
 ```
