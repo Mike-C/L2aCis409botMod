@@ -605,7 +605,7 @@ index bf24b43b..be25eccc 100644
  		LOGGER.info("Loaded {} admin command handlers.", AdminCommandHandler.getInstance().size());
  		LOGGER.info("Loaded {} chat handlers.", ChatHandler.getInstance().size());
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
-index c5897e36..95b17535 100644
+index c5897e36..94b5aefa 100644
 --- a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
 @@ -132,13 +132,39 @@ public class CastleManorManager implements IXmlReader
@@ -652,15 +652,10 @@ index c5897e36..95b17535 100644
  			_mode = ManorStatus.MAINTENANCE;
  		
  		// Schedule mode change
-@@ -191,13 +217,22 @@ public class CastleManorManager implements IXmlReader
- 				break;
- 			
+@@ -193,11 +219,19 @@ public class CastleManorManager implements IXmlReader
  			case MAINTENANCE:
--				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.MANOR_REFRESH_TIME);
--				_nextModeChange.set(Calendar.MINUTE, Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN);
-+				int maintenanceMin = Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN;
-+				_nextModeChange.set(Calendar.HOUR_OF_DAY, (Config.MANOR_REFRESH_TIME + (maintenanceMin / 60)) % 24);
-+				_nextModeChange.set(Calendar.MINUTE, maintenanceMin % 60);
+ 				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.MANOR_REFRESH_TIME);
+ 				_nextModeChange.set(Calendar.MINUTE, Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN);
 +				if (_nextModeChange.before(Calendar.getInstance()))
 +				{
 +					_nextModeChange.add(Calendar.DATE, 1);
