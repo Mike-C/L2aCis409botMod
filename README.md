@@ -116,7 +116,7 @@ follow the manual to your specific desktop environment.
 **Seven Signs schedules issues**
 
 Seven Signs period has passed, yet the new period has not started? Or similar problems.
-The same should apply as for Manor schedules issues.
+The same should apply as for **Manor schedules issues**.
 
 ## Release notes
 
