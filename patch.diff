@@ -604,6 +604,79 @@ index bf24b43b..be25eccc 100644
  		StringUtil.printSection("Handlers");
  		LOGGER.info("Loaded {} admin command handlers.", AdminCommandHandler.getInstance().size());
  		LOGGER.info("Loaded {} chat handlers.", ChatHandler.getInstance().size());
+diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
+index c5897e36..95b17535 100644
+--- a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
++++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/CastleManorManager.java
+@@ -132,13 +132,39 @@ public class CastleManorManager implements IXmlReader
+ 		
+ 		// Set mode and start timer
+ 		final Calendar currentTime = Calendar.getInstance();
+-		final int hour = currentTime.get(Calendar.HOUR_OF_DAY);
+-		final int min = currentTime.get(Calendar.MINUTE);
+ 		final int maintenanceMin = Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN;
++		final int maintenanceHour = ( Config.MANOR_REFRESH_TIME + (maintenanceMin / 60) ) % 24;
++		Calendar calRefresh = Calendar.getInstance(), calMaint = Calendar.getInstance(), calApprove = Calendar.getInstance();
+ 		
+-		if ((hour >= Config.MANOR_REFRESH_TIME && min >= maintenanceMin) || hour < Config.MANOR_APPROVE_TIME || (hour == Config.MANOR_APPROVE_TIME && min <= Config.MANOR_APPROVE_MIN))
++		calRefresh.set(Calendar.HOUR_OF_DAY, Config.MANOR_REFRESH_TIME);
++		calRefresh.set(Calendar.MINUTE, Config.MANOR_REFRESH_MIN);
++		calRefresh.set(Calendar.SECOND, 0);
++		calRefresh.set(Calendar.MILLISECOND, 0); // for interval checking - before, after
++		
++		calMaint.set(Calendar.HOUR_OF_DAY, maintenanceHour);
++		calMaint.set(Calendar.MINUTE, maintenanceMin % 60);
++		calMaint.set(Calendar.SECOND, 0);
++		calMaint.set(Calendar.MILLISECOND, 0);
++		
++		calApprove.set(Calendar.HOUR_OF_DAY, Config.MANOR_APPROVE_TIME);
++		calApprove.set(Calendar.MINUTE, Config.MANOR_APPROVE_MIN);
++		calApprove.set(Calendar.SECOND, 0);
++		calApprove.set(Calendar.MILLISECOND, 0);
++		
++		if(calApprove.before(calMaint))
++		{
++			if(currentTime.after(calMaint) || currentTime.before(calApprove))
++				_mode = ManorStatus.MODIFIABLE;
++		}
++		else if(currentTime.after(calMaint) && currentTime.before(calApprove))
+ 			_mode = ManorStatus.MODIFIABLE;
+-		else if (hour == Config.MANOR_REFRESH_TIME && (min >= Config.MANOR_REFRESH_MIN && min < maintenanceMin))
++		
++		if(calMaint.before(calRefresh))
++		{
++			if(currentTime.after(calRefresh) || currentTime.before(calMaint))
++				_mode = ManorStatus.MAINTENANCE;
++		}
++		else if(currentTime.after(calRefresh) && currentTime.before(calMaint))
+ 			_mode = ManorStatus.MAINTENANCE;
+ 		
+ 		// Schedule mode change
+@@ -191,13 +217,22 @@ public class CastleManorManager implements IXmlReader
+ 				break;
+ 			
+ 			case MAINTENANCE:
+-				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.MANOR_REFRESH_TIME);
+-				_nextModeChange.set(Calendar.MINUTE, Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN);
++				int maintenanceMin = Config.MANOR_REFRESH_MIN + Config.MANOR_MAINTENANCE_MIN;
++				_nextModeChange.set(Calendar.HOUR_OF_DAY, (Config.MANOR_REFRESH_TIME + (maintenanceMin / 60)) % 24);
++				_nextModeChange.set(Calendar.MINUTE, maintenanceMin % 60);
++				if (_nextModeChange.before(Calendar.getInstance()))
++				{
++					_nextModeChange.add(Calendar.DATE, 1);
++				}
+ 				break;
+ 			
+ 			case APPROVED:
+ 				_nextModeChange.set(Calendar.HOUR_OF_DAY, Config.MANOR_REFRESH_TIME);
+ 				_nextModeChange.set(Calendar.MINUTE, Config.MANOR_REFRESH_MIN);
++				if (_nextModeChange.before(Calendar.getInstance()))
++				{
++					_nextModeChange.add(Calendar.DATE, 1);
++				}
+ 				break;
+ 		}
+ 		
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeNameManager.java
 new file mode 100644
 index 00000000..452b03d6

@@ -90,6 +90,29 @@ Move this file into ~/L2aCisMod/gameserver/config directory as hexid.txt
 You can see the login/ and gameserver/logs server directories, if there are any errors.
 * Connect with Interlude client, which connects to localhost, 127.0.0.1
 
+**Troubleshooting**
+
+**Manor schedules**
+
+Manor schedule has passed, yet the Manor has not switched the mode or passed to the new interval?
+Make sure, if you are playing on a laptop, that when you close the lid, that laptop is not 
+being suspended, yet keep the CPU awake.
+
+On CachyOS, edit /etc/systemd/logind.conf,
+uncomment HandleLidSwitch and HandleLidSwitchExternalPower and put there ignore:
+```
+sudo nano /etc/systemd/logind.conf
+
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+```
+Save the changes Ctrl+o, Ctrl+x than call:
+```
+sudo systemctl restart systemd
+```
+Than make the screen blank when you close the lid,
+follow the manual to your specific desktop environment.
+
 **Release notes**
 
 **L2aCis409botMod v0.03**
