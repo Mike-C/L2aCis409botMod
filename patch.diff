@@ -303,10 +303,10 @@ index d20f5e06..daec2c05 100644
 \ No newline at end of file
 +</list>
 diff --git a/aCis_datapack/sql/castle_manor_procure.sql b/aCis_datapack/sql/castle_manor_procure.sql
-index 3688607b..12de8e7b 100644
+index 3688607b..321b6273 100644
 --- a/aCis_datapack/sql/castle_manor_procure.sql
 +++ b/aCis_datapack/sql/castle_manor_procure.sql
-@@ -7,4 +7,99 @@ CREATE TABLE IF NOT EXISTS `castle_manor_procure` (
+@@ -7,4 +7,135 @@ CREATE TABLE IF NOT EXISTS `castle_manor_procure` (
   `reward_type` TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
   `next_period` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
    PRIMARY KEY (`castle_id`,`crop_id`,`next_period`)
@@ -406,13 +406,49 @@ index 3688607b..12de8e7b 100644
 +(4, 6544, 180, 180, 3000, 2, 0), 
 +(4, 6544, 180, 180, 3000, 2, 1), 
 +(4, 6545, 160, 160, 2250, 2, 0), 
-+(4, 6545, 160, 160, 2250, 2, 1);
++(4, 6545, 160, 160, 2250, 2, 1),
++(9, 5073, 8500, 8500, 150, 2, 0), -- Schuttgart crop Dark Coda, reward Braided Hemp, current period
++(9, 5073, 8500, 8500, 150, 2, 1),
++(9, 5068, 8500, 8500, 200, 2, 0),
++(9, 5068, 8500, 8500, 200, 2, 1),
++(9, 5065, 8500, 8500, 190, 2, 0),
++(9, 5065, 8500, 8500, 190, 2, 1),
++(9, 5067, 4400, 4400, 220, 1, 0),
++(9, 5067, 4400, 4400, 220, 1, 1),
++(9, 5069, 2200, 2200, 480, 2, 0),
++(9, 5069, 2200, 2200, 480, 2, 1),
++(9, 5071, 1400, 1400, 720, 1, 0),
++(9, 5071, 1400, 1400, 720, 1, 1),
++(9, 5070, 2200, 2200, 120, 2, 0),
++(9, 5070, 2200, 2200, 120, 2, 1),
++(9, 5078, 2200, 2200, 480, 2, 0),
++(9, 5078, 2200, 2200, 480, 2, 1),
++(9, 5075, 1700, 1700, 1000, 2, 0),
++(9, 5075, 1700, 1700, 1000, 2, 1),
++(9, 5077, 850, 850, 1200, 1, 0),
++(9, 5077, 850, 850, 1200, 1, 1),
++(9, 5082, 850, 850, 1200, 2, 0),
++(9, 5082, 850, 850, 1200, 2, 1),
++(9, 5079, 850, 850, 1200, 2, 0),
++(9, 5079, 850, 850, 1200, 2, 1),
++(9, 5084, 850, 850, 1200, 2, 0),
++(9, 5084, 850, 850, 1200, 2, 1),
++(9, 5088, 1100, 1100, 1500, 2, 0),
++(9, 5088, 1100, 1100, 1500, 2, 1),
++(9, 5091, 850, 850, 1200, 2, 0),
++(9, 5091, 850, 850, 1200, 2, 1),
++(9, 5085, 1100, 1100, 1000, 2, 0),
++(9, 5085, 1100, 1100, 1000, 2, 1),
++(9, 5087, 850, 850, 1200, 1, 0),
++(9, 5087, 850, 850, 1200, 1, 1),
++(9, 5092, 850, 850, 1200, 2, 0),
++(9, 5092, 850, 850, 1200, 2, 1);
 +
 diff --git a/aCis_datapack/sql/castle_manor_production.sql b/aCis_datapack/sql/castle_manor_production.sql
-index 0015929e..d51d398c 100644
+index 0015929e..30ab7957 100644
 --- a/aCis_datapack/sql/castle_manor_production.sql
 +++ b/aCis_datapack/sql/castle_manor_production.sql
-@@ -6,4 +6,99 @@ CREATE TABLE IF NOT EXISTS `castle_manor_production` (
+@@ -6,4 +6,135 @@ CREATE TABLE IF NOT EXISTS `castle_manor_production` (
   `price` INT(11) UNSIGNED NOT NULL DEFAULT '0',
   `next_period` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
   PRIMARY KEY (`castle_id`, `seed_id`, `next_period`)
@@ -512,7 +548,43 @@ index 0015929e..d51d398c 100644
 +(4, 6762, 150, 150, 2000, 0), 
 +(4, 6762, 150, 150, 2000, 1), 
 +(4, 6754, 150, 150, 2250, 0), 
-+(4, 6754, 150, 150, 2250, 1);
++(4, 6754, 150, 150, 2250, 1),
++(9, 8237, 2000, 2000, 50, 0), -- Schuttgart seed Dark Coda, current period
++(9, 8237, 2000, 2000, 50, 1),
++(9, 8238, 2000, 2000, 50, 0),
++(9, 8238, 2000, 2000, 50, 1),
++(9, 8239, 3500, 3500, 50, 0),
++(9, 8239, 3500, 3500, 50, 1),
++(9, 8240, 2000, 2000, 100, 0),
++(9, 8240, 2000, 2000, 100, 1),
++(9, 8241, 2000, 2000, 200, 0),
++(9, 8241, 2000, 2000, 200, 1),
++(9, 8242, 1000, 1000, 300, 0),
++(9, 8242, 1000, 1000, 300, 1),
++(9, 8243, 2000, 2000, 200, 0),
++(9, 8243, 2000, 2000, 200, 1),
++(9, 8244, 1000, 1000, 200, 0),
++(9, 8244, 1000, 1000, 200, 1),
++(9, 8245, 1600, 1600, 250, 0),
++(9, 8245, 1600, 1600, 250, 1),
++(9, 8246, 500, 500, 500, 0),
++(9, 8246, 500, 500, 500, 1),
++(9, 8247, 200, 200, 500, 0),
++(9, 8247, 200, 200, 500, 1),
++(9, 8248, 500, 500, 500, 0),
++(9, 8248, 500, 500, 500, 1),
++(9, 8249, 200, 200, 500, 0),
++(9, 8249, 200, 200, 500, 1),
++(9, 8250, 200, 200, 400, 0),
++(9, 8250, 200, 200, 400, 1),
++(9, 8251, 200, 200, 500, 0),
++(9, 8251, 200, 200, 500, 1),
++(9, 8252, 1000, 1000, 400, 0),
++(9, 8252, 1000, 1000, 400, 1),
++(9, 8253, 800, 800, 500, 0),
++(9, 8253, 800, 800, 500, 1),
++(9, 8254, 800, 800, 500, 0),
++(9, 8254, 800, 800, 500, 1);
 +
 diff --git a/aCis_datapack/sql/fake_traders.sql b/aCis_datapack/sql/fake_traders.sql
 new file mode 100644
@@ -834,10 +906,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..eefac416
+index 00000000..8bff18cb
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1423 @@
+@@ -0,0 +1,1433 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -897,6 +969,7 @@ index 00000000..eefac416
 +	private static boolean[] BANNED_ITEMS = new boolean[9299];
 +	private static boolean[] RARE_ITEMS = new boolean[9299];
 +	private static boolean[] THREE_TIMES_PRICE_ITEMS = new boolean[9299];
++	private static boolean[] SIX_TIMES_PRICE_ITEMS = new boolean[9299];
 +	private static boolean[] RARE_ARMOR_ITEMS = new boolean[9299];
 +	private static boolean[] DESIRED_ITEMS = new boolean[9299];
 +	
@@ -937,6 +1010,7 @@ index 00000000..eefac416
 +		excludeItems();
 +		logRareItems();
 +		log3xPriceItems();
++		log6xPriceItems();
 +		logRareArmorItems();
 +		
 +		for (BotClan clan : _botClans)
@@ -1049,6 +1123,13 @@ index 00000000..eefac416
 +		
 +	}
 +	
++	public static void log6xPriceItems()
++	{
++		SIX_TIMES_PRICE_ITEMS[486] = true; // Tattoo of Fire
++		SIX_TIMES_PRICE_ITEMS[487] = true; // Tattoo of Resolve
++		SIX_TIMES_PRICE_ITEMS[492] = true; // Tattoo of Soul
++	}
++	
 +	public static void log3xPriceItems()
 +	{
 +		THREE_TIMES_PRICE_ITEMS[1874] = true; // Oriharukon Ore
@@ -1069,9 +1150,6 @@ index 00000000..eefac416
 +		RARE_ARMOR_ITEMS[107] = true; // Composite Shield
 +		RARE_ARMOR_ITEMS[398] = true; // Plated Leather
 +		RARE_ARMOR_ITEMS[418] = true; // Plated Leather Gaiters
-+		RARE_ARMOR_ITEMS[486] = true; // Tattoo of Fire
-+		RARE_ARMOR_ITEMS[487] = true; // Tattoo of Resolve
-+		RARE_ARMOR_ITEMS[492] = true; // Tattoo of Soul
 +		RARE_ARMOR_ITEMS[517] = true; // Composite Helmet
 +		RARE_ARMOR_ITEMS[607] = true; // Ogre Power Gauntlets
 +		RARE_ARMOR_ITEMS[1958] = true; // Mithril Boots Design
@@ -1143,6 +1221,7 @@ index 00000000..eefac416
 +	{
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
++		BANNED_ITEMS[249] = true; // Elven Mystic Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
 +		BANNED_ITEMS[251] = true; // Human Mystic Fist
 +		BANNED_ITEMS[6716] = true; // Monster Only(Silenos Shaman)
@@ -1751,7 +1830,7 @@ index 00000000..eefac416
 +					if (rndItem == 5575) // ancient adena
 +					{
 +						count = rnd.nextInt(2000000) + 1;
-+						price = (storeType == 1 ? 3 : 2);
++						price = (storeType == 1 ? 3 : rnd.nextInt(2) + 2);
 +					}
 +					if (iT == EtcItemType.MATERIAL)
 +						count = rnd.nextInt(1000) + 1;
@@ -1787,6 +1866,9 @@ index 00000000..eefac416
 +			
 +			if (THREE_TIMES_PRICE_ITEMS[rndItem])
 +				price *= 3;
++			
++			if (SIX_TIMES_PRICE_ITEMS[rndItem])
++				price *= 6;
 +			
 +			if (RARE_ARMOR_ITEMS[rndItem])
 +				price <<= 1;
