@@ -970,10 +970,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..8bff18cb
+index 00000000..6b822258
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1433 @@
+@@ -0,0 +1,1439 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -1284,6 +1284,7 @@ index 00000000..8bff18cb
 +	public static void excludeItems()
 +	{
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
++		BANNED_ITEMS[247] = true; // Dwarven Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
 +		BANNED_ITEMS[249] = true; // Elven Mystic Fist
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
@@ -1781,6 +1782,8 @@ index 00000000..8bff18cb
 +		// getRandomDGradeItemId
 +		final float rndRefPriceMultiplier = REFERENCE_PRICE_MULTIPLIER[rnd.nextInt(4)];
 +		final float buyMultiplier = BUY_MULTIPLIER[rnd.nextInt(3)];
++		final float buyMultiplierCrystals = BUY_MULTIPLIER[rnd.nextInt(2)];
++		
 +		int j = rnd.nextInt(4), recipeLevel = 1;
 +		for (int rndItem, i = 0; i <= j; i++)
 +		{
@@ -1850,7 +1853,7 @@ index 00000000..8bff18cb
 +				}
 +				
 +				iName = itemTemplate.getName().toLowerCase();
-+			} // throw out shadow, monster items, high level keys etc., only B,A,S grade crystals allowed, 1458 - 1459
++			} // throw out shadow, monster items, high level keys etc., only D,C grade crystals allowed, 1458 - 1459
 +			while ((itemTemplate.getReferencePrice() == 0 && rndItem != 5575) || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || iName.contains("(not used)") || iName.contains("alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone") || iName.contains("crystal scroll"));
 +			
 +			ItemType iT = itemTemplate.getItemType();
@@ -1925,7 +1928,7 @@ index 00000000..8bff18cb
 +			if (iN.contains("Seal Stone"))
 +				count = rnd.nextInt(100000) + 1;
 +			
-+			if (rndItem >= 1458 && rndItem <= 1459) // D, C Crystals
++			if (rndItem >= 1458 && rndItem <= 1462) // D, C Crystals
 +				count = rnd.nextInt(5000) + 1;
 +			
 +			if (THREE_TIMES_PRICE_ITEMS[rndItem])
@@ -1939,7 +1942,10 @@ index 00000000..8bff18cb
 +			
 +			if (storeType == 3) // set random price-range for buying
 +			{
-+				price = (int) (buyMultiplier * price);
++				if ((rndItem < 1458) || (rndItem > 1462))
++					price = (int) (buyMultiplier * price);
++				else
++					price = (int) (buyMultiplierCrystals * price);
 +			}
 +			
 +			genFakeTraderItems(fakePlayer, rndItem, price, count, storeType, tradeList, manufactureList);
