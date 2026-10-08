@@ -650,11 +650,11 @@ index 0015929e..5b7c1aec 100644
 +(9, 8254, 800, 800, 500, 0),
 +(9, 8254, 800, 800, 500, 1);
 +
-diff --git a/aCis_datapack/sql/fake_traders.sql b/aCis_datapack/sql/fake_traders.sql
+diff --git a/aCis_datapack/sql/fake_traders_1.sql b/aCis_datapack/sql/fake_traders_1.sql
 new file mode 100644
 index 00000000..7457694c
 --- /dev/null
-+++ b/aCis_datapack/sql/fake_traders.sql
++++ b/aCis_datapack/sql/fake_traders_1.sql
 @@ -0,0 +1,30 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders` (
 +  `id` INT NOT NULL AUTO_INCREMENT,
@@ -686,11 +686,11 @@ index 00000000..7457694c
 +(8, 'Lilac', 53, 1, 0, 2, 1, -83184, 150964, -3120, 0, 5, 'Crafting D Shots', 40, 'TradeEmpire'),
 +(9, 'Amanita', 53, 1, 0, 2, 1, -13954, 122294, -2984, 49152, 5, 'Crafting D Shots', 40, 'TradeEmpire');
 +
-diff --git a/aCis_datapack/sql/fake_traders_items.sql b/aCis_datapack/sql/fake_traders_items.sql
+diff --git a/aCis_datapack/sql/fake_traders_2_items.sql b/aCis_datapack/sql/fake_traders_2_items.sql
 new file mode 100644
 index 00000000..3e193a67
 --- /dev/null
-+++ b/aCis_datapack/sql/fake_traders_items.sql
++++ b/aCis_datapack/sql/fake_traders_2_items.sql
 @@ -0,0 +1,39 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders_items` (
 +  `trader_id` INT NOT NULL AUTO_INCREMENT,
