@@ -266,6 +266,8 @@ Set there IP address you obtained for your Wi-Fi device.
 
 Than save the ini file and run L2.exe.
 
+(For camera spinning issues, or high mouse sensitivity, see the Troubleshooting.)
+
 ## Troubleshooting
 
 **Manor schedules issues**
@@ -293,6 +295,12 @@ follow the manual to your specific desktop environment.
 
 Seven Signs period has passed, yet the new period has not started? Or similar problems.
 The same should apply as for **Manor schedules issues**.
+
+**Camera spinning issue, or mouse sensitivity on MacOS, VMware Fusion Win 11 Arm64**
+
+If the camera is spinning uncontrollably, when you right click with your mouse and move.
+Open up VMware Fusion menu and click Settings, under General settings tab
+select Gaming: Always optimize mouse for games
 
 ## Release notes
 
