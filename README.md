@@ -9,7 +9,7 @@ Patch the aCis 409 repository with given patch.diff.
 First clone the aCis 409 repository and than copy the patch.diff 
 file into the root of your repository and apply patch.diff:
 
-**Guide on Linux:**
+### Guide on Linux
 
 ```
 cd ~
@@ -92,7 +92,7 @@ Move this file into ~/aCis/gameserver/config directory as hexid.txt
 You can see the login/ and gameserver/logs server directories, if there are any errors.
 * Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
 
-**Guide on MacOS:**
+### Guide on MacOS
 
 **Install JDK**, visit ([java.com](https://www.java.com/en/)) and download JDK 27, macOS ARM64 version, install it.
 
@@ -100,7 +100,7 @@ After that open the terminal and write java —version, you should see the new j
 
 Still in terminal, write **git** and press return.
 
-After a while new window will open, asking you to download Xcode developer tools, install it, if you are on a newer Mac OS version, download will succeed, otherwise upgrade your system first.
+After a while new window will open, asking you to download Xcode developer tools, install them, if you are on a newer Mac OS version, download will succeed, otherwise upgrade your system first.
 
 
 Once you have the git installed, **install Homebrew**.
@@ -115,14 +115,14 @@ When the Homebrew is fully set up, call in terminal:
 brew install ant
 ```
 
-Than call
+Than call:
 ```
 brew install mariadb
 
 brew services start mariadb
 ```
 
-Than call
+Than do the following:
 ```
 cd ~
 mkdir git aCis
@@ -140,7 +140,7 @@ ant
 cp -r build/ ~/aCis/
 ```
 
-Than copy the geodata, follow the Linux instructions get the link to L2OFF GEO - 11-21.zip, download it.
+Than copy the geodata, follow the Linux instructions to get the link to L2OFF GEO - 11-21.zip, download it.
 
 ```
 cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/ ~/aCis/gameserver/data/geodata
@@ -156,7 +156,7 @@ mariadb
 
 Than copy the database creation script as in previous guide, don’t forget to change your password.
 
-Than in terminal apply database scripts as in Linux instructions., don’t forget to change your password
+Than in terminal apply database scripts as in Linux instructions.
 
 ```
 cd ~/aCis/sql
@@ -164,12 +164,12 @@ cat *.sql > all.sql
 mariadb -u l2database -p l2aCismoddb < all.sql
 ```
 
-When this is all done call
+When this is all done call:
 ```
 networksetup -getinfo Wi-Fi
 ```
 
-And remember your Wi-Fi IP address.
+And remember your Wi-Fi **IP address**.
 
 
 Than use the nano tool to edit configuration files: 
@@ -177,7 +177,7 @@ Than use the nano tool to edit configuration files:
 nano ~/aCis/login/config/loginserver.properties
 ```
 
-Put there database information and user, as in Linux instructions. In login server Hostname put IP you previously get for your Wi-Fi.
+Put there database information and user, as in Linux instructions. In login server Hostname put IP you previously got for your Wi-Fi device.
 
 i.e.
 ```
@@ -189,7 +189,7 @@ Than edit
 ```
 nano ~/aCis/gameserver/config/server.properties
 ```
-Put there again database information and user, as in Linux instructions. In gameserver LoginHost put again IP you previously get for your Wi-Fi.
+Put there again database information and user, as in Linux instructions. In gameserver LoginHost put again IP you previously get for your Wi-Fi device.
 ```
 LoginHost = 192.168.0.141
 ```
@@ -224,7 +224,7 @@ cd ~/aCis/gameserver/
 cd log/
 cat stdout.log
 ```
-To run the Lineage 2 Client on the MacOS, there is no any other playable option on Silicon Macs, than to download the VMware Fusion Pro from the internet. And Win 11 Arm64 iso image from Microsoft.
+To run the **Lineage 2 Client** on the MacOS, there is no any other playable option on Silicon Macs, than to download the VMware Fusion Pro from the internet. And Win 11 Arm64 iso image from Microsoft.
 
 
 When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and than write
