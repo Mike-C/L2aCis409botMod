@@ -28,8 +28,8 @@ Copy the build files into ~/aCis/ directory.
 ```
 cd ~
 mkdir aCis
-cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis
-cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis
+cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis/
+cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis/
 ```
 * Than copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)),
 into ~/aCis/gameserver/data/geodata directory.
@@ -91,6 +91,180 @@ Move this file into ~/aCis/gameserver/config directory as hexid.txt
 * And ./startGameServer.sh in ~/aCis/gameserver/ directory
 You can see the login/ and gameserver/logs server directories, if there are any errors.
 * Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
+
+**Guide on MacOS:**
+
+**Install JDK**, visit ([java.com](https://www.java.com/en/)) and download JDK 27, macOS ARM64 version, install it.
+
+After that open the terminal and write java —version, you should see the new java 27 version.
+
+Still in terminal, write **git** and press return.
+
+After a while new window will open, asking you to download Xcode developer tools, install it, if you are on a newer Mac OS version, download will succeed, otherwise upgrade your system first.
+
+
+Once you have the git installed, **install Homebrew**.
+
+Visit website ([https://brew.sh](https://brew.sh)) for more details.
+
+Once you have the Homebrew installed, add it to your PATH, as the instructions say.
+
+
+When the Homebrew is fully set up, call in terminal:
+```
+brew install ant
+```
+
+Than call
+```
+brew install mariadb
+
+brew services start mariadb
+```
+
+Than call
+```
+cd ~
+mkdir git aCis
+cd git
+git clone https://gitlab.com/Tryskell/acis_public/
+git clone https://github.com/Mike-C/L2aCis409botMod
+cp L2aCis409botMod/patch.diff acis_public
+cd acis_public
+git apply patch.diff
+cd aCis_gameserver/
+ant
+cp -r build/dist/ ~/aCis/
+cd ../aCis_datapack/
+ant
+cp -r build/ ~/aCis/
+```
+
+Than copy the geodata, follow the Linux instructions get the link to L2OFF GEO - 11-21.zip, download it.
+
+```
+cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/ ~/aCis/gameserver/data/geodata
+```
+
+After that follow the Linux instructions to create database l2aCismoddb
+
+On terminal write the following command
+
+```
+mariadb
+```
+
+Than copy the database creation script as in previous guide, don’t forget to change your password.
+
+Than in terminal apply database scripts as in Linux instructions., don’t forget to change your password
+
+```
+cd ~/aCis/sql
+cat *.sql > all.sql
+mariadb -u l2database -p l2aCismoddb < all.sql
+```
+
+When this is all done call
+```
+networksetup -getinfo Wi-Fi
+```
+
+And remember your Wi-Fi IP address.
+
+
+Than use the nano tool to edit configuration files: 
+```
+nano ~/aCis/login/config/loginserver.properties
+```
+
+Put there database information and user, as in Linux instructions. In login server Hostname put IP you previously get for your Wi-Fi.
+
+i.e.
+```
+Hostname = 192.168.0.141
+```
+Save the files Control + o, Control + x
+
+Than edit
+```
+nano ~/aCis/gameserver/config/server.properties
+```
+Put there again database information and user, as in Linux instructions. In gameserver LoginHost put again IP you previously get for your Wi-Fi.
+```
+LoginHost = 192.168.0.141
+```
+Save the files Control + o, Control + x
+
+Than call, as in Linux instructions
+
+```
+cd ~/aCis/gameserver/
+chmod +x *.sh
+cd ~/aCis/login/
+chmod +x *.sh
+./RegisterGameServer.sh
+```
+
+Pick a number, i.e. 1 and press return, than write ’exit’ and press return.
+
+Than call:
+```
+mv hexid\(server\ 1\).txt ../gameserver/config/hexid.txt
+```
+Than start servers:
+```
+./startLoginServer.sh
+cd log/
+cat stdout.log 
+```
+See the logs, if there are any errors, than call
+```
+cd ~/aCis/gameserver/
+./startGameServer.sh
+cd log/
+cat stdout.log
+```
+To run the Lineage 2 Client on the MacOS, there is no any other playable option on Silicon Macs, than to download the VMware Fusion Pro from the internet. And Win 11 Arm64 iso image from Microsoft.
+
+
+When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and than write
+```
+OOBE\BYPASSNRO
+```
+
+All with big o, not zeros, press return and part of the installation process will run once more, yet when on Wi-Fi configuration page again, select the: I don’t have Internet option.
+
+
+Finish the installation, than connect the VMware Tools.
+
+When the VMware Fusion window is active, open the Virtual Machine menu and select the option to install VMware Tools. CD will connect to the virtual machine. Open the File Explorer and DVD Drive (D:) from it, than run setup.exe to make full VMware Tools installation.
+
+
+When VMware Tools are fully installed, you can connect to internet using Microsoft Edge. 
+
+Open up ([aCis webpage](https://anothercrappyinterludeserver.com/files/client/)).
+
+And download the Lineage_II_Interlude_p746_win10_071212.rar from it, than right click on it and select Extract All.
+
+
+Open the Lineage II Interlude folder and in it, rename the 'system' folder to '_system'. 
+
+Download the ([patched system folder](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file)).
+
+Extract it again and put the extracted system folder into Lineage II Interlude folder.
+
+
+Then use the L2FileEdit tool, to modify l2.ini in your downloaded system folder.
+
+
+Download the L2FileEdit tool. ([https://github.com/l2miko/l2fileedit](https://github.com/l2miko/l2fileedit))
+
+
+In L2FileEdit Open the l2.ini and modify ServerAddr=192.168.0.141
+
+Set there IP address you obtained for your Wi-Fi device.
+
+Than save the ini file and run L2.exe.
 
 ## Troubleshooting
 
