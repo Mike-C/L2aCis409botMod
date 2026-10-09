@@ -16,23 +16,25 @@ cd ~
 mkdir git
 cd git
 git clone https://gitlab.com/Tryskell/acis_public/
+git clone https://github.com/Mike-C/L2aCis409botMod
+mv L2aCis409botMod/patch.diff acis_public/
 cd acis_public
 git apply patch.diff
 ```
 
 Than build the source as normally, i.e. through Eclipse Ant build.xml (import the project first).
 Both projects aCis_datapack and aCis_gameserver have to be build.
-Copy the build files into ~/L2aCisMod/ directory.
+Copy the build files into ~/aCis/ directory.
 ```
 cd ~
-mkdir L2aCisMod
-cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/L2aCisMod
-cp -r ~/git/acis_public/aCis_datapack/build/ ~/L2aCisMod
+mkdir aCis
+cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis
+cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis
 ```
 * Than copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)),
-into ~/L2aCisMod/gameserver/data/geodata directory.
+into ~/aCis/gameserver/data/geodata directory.
 If you want to use L2J geodata, configure it in
-~/L2aCisMod/gameserver/config/geoengine.properties Set: GeoDataType = L2J
+~/aCis/gameserver/config/geoengine.properties Set: GeoDataType = L2J
 
 * You need MariaDB to run the server, on Ubuntu Linux:
 ```
@@ -60,35 +62,35 @@ EXIT;
 ```
 After that apply all sql scripts:
 ```
-cd ~/L2aCisMod/sql
+cd ~/aCis/sql
 cat *.sql > all.sql
 sudo mariadb -u l2database -p l2aCismoddb < all.sql
 ```
-Than modify ~/L2aCisMod/gameserver/config/server.properties
+Than modify ~/aCis/gameserver/config/server.properties
 In the section "Database informations", put this (don't forget to change the pasword you set for l2database user):
 ```
 URL = jdbc:mariadb://localhost:3306/l2aCismoddb
 Login = l2database
 Password = password
 ```
-Than modify ~/L2aCisMod/login/config/loginserver.properties
+Than modify ~/aCis/login/config/loginserver.properties
 In the section "Database informations", put the same.
-After this update all scripts rights in ~/L2aCisMod/login/ 
-and after that also in ~/L2aCisMod/gameserver/ server directories.
+After this update all scripts rights in ~/aCis/login/ 
+and after that also in ~/aCis/gameserver/ server directories.
 ```
-cd ~/L2aCisMod/login/
+cd ~/aCis/login/
 chmod +x *.sh
-cd ~/L2aCisMod/gameserver/
+cd ~/aCis/gameserver/
 chmod +x *.sh
 ```
-* Than run ./RegisterGameServer.sh in ~/L2aCisMod/login/
+* Than run ./RegisterGameServer.sh in ~/aCis/login/
 choose server number and press enter, hexid(server x).txt will be generated
-in ~/L2aCisMod/login/ directory.
-Move this file into ~/L2aCisMod/gameserver/config directory as hexid.txt
-* Than run ./startLoginServer.sh in ~/L2aCisMod/login/ directory.
-* And ./startGameServer.sh in ~/L2aCisMod/gameserver/ directory
+in ~/aCis/login/ directory.
+Move this file into ~/aCis/gameserver/config directory as hexid.txt
+* Than run ./startLoginServer.sh in ~/aCis/login/ directory.
+* And ./startGameServer.sh in ~/aCis/gameserver/ directory
 You can see the login/ and gameserver/logs server directories, if there are any errors.
-* Connect with Interlude client, which connects to localhost, 127.0.0.1
+* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
 
 ## Troubleshooting
 
