@@ -96,6 +96,7 @@ Move this file into ~/aCis/gameserver/config directory as hexid.txt
 * And ./startGameServer.sh in ~/aCis/gameserver/ directory
 You can see the login/ and gameserver/logs server directories, if there are any errors.
 * Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
+* Play for example via **faugus-launcher**, adding l2.exe path in system folder, through **GE-Proton**.
 
 ### Guide on MacOS
 
