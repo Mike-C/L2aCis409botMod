@@ -652,14 +652,14 @@ index 0015929e..5b7c1aec 100644
 +
 diff --git a/aCis_datapack/sql/fake_traders_1.sql b/aCis_datapack/sql/fake_traders_1.sql
 new file mode 100644
-index 00000000..7457694c
+index 00000000..f0606890
 --- /dev/null
 +++ b/aCis_datapack/sql/fake_traders_1.sql
 @@ -0,0 +1,30 @@
 +CREATE TABLE IF NOT EXISTS `fake_traders` (
 +  `id` INT NOT NULL AUTO_INCREMENT,
-+  `name` VARCHAR(35) NOT NULL,
-+  `title` VARCHAR(35) DEFAULT '',
++  `name` VARCHAR(16) NOT NULL,
++  `title` VARCHAR(16) DEFAULT '',
 +  `class_id` INT NOT NULL,
 +  `face` TINYINT UNSIGNED DEFAULT NULL,
 +  `hairStyle` TINYINT UNSIGNED DEFAULT NULL,
@@ -670,7 +670,7 @@ index 00000000..7457694c
 +  `z` INT NOT NULL,
 +  `heading` MEDIUMINT DEFAULT NULL,
 +  `store_type` TINYINT NOT NULL DEFAULT 1, -- 1: Sell, 8: Package Sell, 3: Buy, 5: Craft
-+  `store_msg` VARCHAR(30) DEFAULT '',
++  `store_msg` VARCHAR(29) DEFAULT '',
 +  `level` TINYINT UNSIGNED DEFAULT 1,
 +  `clanName` VARCHAR(16) DEFAULT '',
 +  PRIMARY KEY (`id`)

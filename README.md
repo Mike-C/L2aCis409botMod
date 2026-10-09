@@ -20,7 +20,7 @@ mkdir git
 cd git
 git clone https://gitlab.com/Tryskell/acis_public/
 git clone https://github.com/Mike-C/L2aCis409botMod
-mv L2aCis409botMod/patch.diff acis_public/
+cp L2aCis409botMod/patch.diff acis_public/
 cd acis_public
 git apply patch.diff
 ```
