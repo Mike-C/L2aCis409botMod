@@ -22,6 +22,8 @@ cd acis_public
 git apply patch.diff
 ```
 
+Download and install OpenJDK and ([Eclipse](https://www.eclipse.org/downloads/)). Newest versions if possible.
+
 Than build the source as normally, i.e. through Eclipse Ant build.xml (import the project first).
 Both projects aCis_datapack and aCis_gameserver have to be build.
 Copy the build files into ~/aCis/ directory.
@@ -285,6 +287,9 @@ HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 ```
 Save the changes Ctrl+o, Ctrl+x than call:
+
+
+
 ```
 sudo systemctl restart systemd
 ```
@@ -296,7 +301,7 @@ follow the manual to your specific desktop environment.
 Seven Signs period has passed, yet the new period has not started? Or similar problems.
 The same should apply as for **Manor schedules issues**.
 
-**Camera spinning issue, or mouse sensitivity on MacOS, VMware Fusion Win 11 Arm64**
+**Camera spinning issue, or mouse sensitivity on MacOS, VMware Fusion, Win 11 Arm64**
 
 If the camera is spinning uncontrollably, when you right click with your mouse and move.
 Open up VMware Fusion menu and click Settings, under General settings tab
