@@ -11,6 +11,9 @@ file into the root of your repository and apply patch.diff:
 
 ### Guide on Linux
 
+Download and install **git**, if you already don't have it.
+Than run the following commands:
+
 ```
 cd ~
 mkdir git
@@ -22,7 +25,7 @@ cd acis_public
 git apply patch.diff
 ```
 
-Download and install OpenJDK and ([Eclipse](https://www.eclipse.org/downloads/)). Newest versions if possible.
+Download and install **OpenJDK** and ([Eclipse](https://www.eclipse.org/downloads/)). Newest versions if possible.
 
 Than build the source as normally, i.e. through Eclipse Ant build.xml (import the project first).
 Both projects aCis_datapack and aCis_gameserver have to be build.
@@ -38,7 +41,7 @@ into ~/aCis/gameserver/data/geodata directory.
 If you want to use L2J geodata, configure it in
 ~/aCis/gameserver/config/geoengine.properties Set: GeoDataType = L2J
 
-* You need MariaDB to run the server, on Ubuntu Linux:
+* You need **MariaDB** to run the server, on Ubuntu Linux:
 ```
 sudo apt install mariadb-server mariadb-client galera-4
 sudo mariadb-secure-installation
