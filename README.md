@@ -6,13 +6,13 @@ Lineage 2 aCis 409 modified java server with Fake Players, Traders &amp; bots.
 ## Usage example:
 
 Patch the aCis 409 repository with given patch.diff.
-First clone the aCis 409 repository and than copy the patch.diff 
+First clone the aCis 409 repository and then copy the patch.diff 
 file into the root of your repository and apply patch.diff:
 
 ### Guide on Linux
 
 Download and install **git**, if you already don't have it.
-Than run the following commands:
+Then run the following commands:
 
 ```
 cd ~
@@ -27,16 +27,19 @@ git apply patch.diff
 
 Download and install **OpenJDK** and ([Eclipse](https://www.eclipse.org/downloads/)). Newest versions if possible.
 
-Than build the source as normally, i.e. through Eclipse Ant build.xml (import the project first).
-Both projects aCis_datapack and aCis_gameserver have to be build.
-Copy the build files into ~/aCis/ directory.
+Then build the source as normally, (import the project first into Eclipse Package Explorer,
+click File, Import, General, Existing Projects.., Next, into Select root directory write /home/yourUser/git/acis_public)
+Then build the projects i.e. through Eclipse Ant build.xml. Both projects aCis_datapack and aCis_gameserver have to be build.
+Expand the aCis project in the Package Explorer, then expand both projects aCis_datapack and aCis_gameserver.
+Right click the build.xml files and select Run As, Ant Build.
+When the projects are built, copy the build files into ~/aCis/ directory.
 ```
 cd ~
 mkdir aCis
 cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis/
 cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis/
 ```
-* Than copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)),
+* Then copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)),
 into ~/aCis/gameserver/data/geodata directory.
 If you want to use L2J geodata, configure it in
 ~/aCis/gameserver/config/geoengine.properties Set: GeoDataType = L2J
@@ -53,11 +56,11 @@ sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 sudo systemctl start mariadb.service
 sudo systemctl enable mariadb.service
 ```
-Than create l2aCismoddb database on MariaDB server:
+Then create l2aCismoddb database on MariaDB server:
 ```
 sudo mariadb
 ```
-Than run the following sql script, don't forget to change database user 'password':
+Then run the following sql script, don't forget to change database user 'password':
 ```
 CREATE DATABASE l2aCismoddb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'l2database'@'localhost' IDENTIFIED BY 'password';
@@ -71,14 +74,14 @@ cd ~/aCis/sql
 cat *.sql > all.sql
 sudo mariadb -u l2database -p l2aCismoddb < all.sql
 ```
-Than modify ~/aCis/gameserver/config/server.properties
+Then modify ~/aCis/gameserver/config/server.properties
 In the section "Database informations", put this (don't forget to change the pasword you set for l2database user):
 ```
 URL = jdbc:mariadb://localhost:3306/l2aCismoddb
 Login = l2database
 Password = password
 ```
-Than modify ~/aCis/login/config/loginserver.properties
+Then modify ~/aCis/login/config/loginserver.properties
 In the section "Database informations", put the same.
 After this update all scripts rights in ~/aCis/login/ 
 and after that also in ~/aCis/gameserver/ server directories.
@@ -88,13 +91,13 @@ chmod +x *.sh
 cd ~/aCis/gameserver/
 chmod +x *.sh
 ```
-* Than run ./RegisterGameServer.sh in ~/aCis/login/
+* Then run ./RegisterGameServer.sh in ~/aCis/login/
 choose server number and press enter, hexid(server x).txt will be generated
 in ~/aCis/login/ directory.
 Move this file into ~/aCis/gameserver/config directory as hexid.txt
-* Than run ./startLoginServer.sh in ~/aCis/login/ directory.
+* Then run ./startLoginServer.sh in ~/aCis/login/ directory.
 * And ./startGameServer.sh in ~/aCis/gameserver/ directory
-You can see the login/ and gameserver/logs server directories, if there are any errors.
+You can see the login/log/stdout.log and gameserver/log/stdout.log, if there are any errors.
 * Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
 * Play for example via **faugus-launcher**, adding l2.exe path in system folder, through **GE-Proton**.
 
@@ -121,14 +124,14 @@ When the Homebrew is fully set up, call in terminal:
 brew install ant
 ```
 
-Than call:
+Then call:
 ```
 brew install mariadb
 
 brew services start mariadb
 ```
 
-Than do the following:
+Then do the following:
 ```
 cd ~
 mkdir git aCis
@@ -146,7 +149,7 @@ ant
 cp -r build/ ~/aCis/
 ```
 
-Than copy the geodata, follow the Linux instructions to get the link to L2OFF GEO - 11-21.zip, download it.
+Then copy the geodata, follow the Linux instructions to get the link to L2OFF GEO - 11-21.zip, download it.
 
 ```
 cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/ ~/aCis/gameserver/data/geodata
@@ -160,9 +163,9 @@ On terminal write the following command
 mariadb
 ```
 
-Than copy the database creation script as in previous guide, don’t forget to change your password.
+Then copy the database creation script as in previous guide, don’t forget to change your password.
 
-Than in terminal apply database scripts as in Linux instructions.
+Then in terminal apply database scripts as in Linux instructions.
 
 ```
 cd ~/aCis/sql
@@ -178,7 +181,7 @@ networksetup -getinfo Wi-Fi
 And remember your Wi-Fi **IP address**.
 
 
-Than use the nano tool to edit configuration files: 
+Then use the nano tool to edit configuration files: 
 ```
 nano ~/aCis/login/config/loginserver.properties
 ```
@@ -191,7 +194,7 @@ Hostname = 192.168.0.141
 ```
 Save the files Control + o, Control + x
 
-Than edit
+Then edit
 ```
 nano ~/aCis/gameserver/config/server.properties
 ```
@@ -201,7 +204,7 @@ LoginHost = 192.168.0.141
 ```
 Save the files Control + o, Control + x
 
-Than call, as in Linux instructions
+Then call, as in Linux instructions
 
 ```
 cd ~/aCis/gameserver/
@@ -211,19 +214,19 @@ chmod +x *.sh
 ./RegisterGameServer.sh
 ```
 
-Pick a number, i.e. 1 and press return, than write ’exit’ and press return.
+Pick a number, i.e. 1 and press return, then write ’exit’ and press return.
 
-Than call:
+Then call:
 ```
 mv hexid\(server\ 1\).txt ../gameserver/config/hexid.txt
 ```
-Than start servers:
+Then start servers:
 ```
 ./startLoginServer.sh
 cd log/
 cat stdout.log 
 ```
-See the logs, if there are any errors, than call
+See the logs, if there are any errors, then call
 ```
 cd ~/aCis/gameserver/
 ./startGameServer.sh
@@ -233,7 +236,7 @@ cat stdout.log
 To run the **Lineage 2 Client** on the MacOS, there is no any other playable option on Silicon Macs, than to download the VMware Fusion Pro from the internet. And Win 11 Arm64 iso image from Microsoft.
 
 
-When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and than write
+When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and then write
 ```
 OOBE\BYPASSNRO
 ```
@@ -241,16 +244,16 @@ OOBE\BYPASSNRO
 All with big o, not zeros, press return and part of the installation process will run once more, yet when on Wi-Fi configuration page again, select the: I don’t have Internet option.
 
 
-Finish the installation, than connect the VMware Tools.
+Finish the installation, then connect the VMware Tools.
 
-When the VMware Fusion window is active, open the Virtual Machine menu and select the option to install VMware Tools. CD will connect to the virtual machine. Open the File Explorer and DVD Drive (D:) from it, than run setup.exe to make full VMware Tools installation.
+When the VMware Fusion window is active, open the Virtual Machine menu and select the option to install VMware Tools. CD will connect to the virtual machine. Open the File Explorer and DVD Drive (D:) from it, then run setup.exe to make full VMware Tools installation.
 
 
 When VMware Tools are fully installed, you can connect to internet using Microsoft Edge. 
 
 Open up ([aCis webpage](https://anothercrappyinterludeserver.com/files/client/)).
 
-And download the Lineage_II_Interlude_p746_win10_071212.rar from it, than right click on it and select Extract All.
+And download the Lineage_II_Interlude_p746_win10_071212.rar from it, then right click on it and select Extract All.
 
 
 Open the Lineage II Interlude folder and in it, rename the 'system' folder to '_system'. 
@@ -270,9 +273,74 @@ In L2FileEdit Open the l2.ini and modify ServerAddr=192.168.0.141
 
 Set there IP address you obtained for your Wi-Fi device.
 
-Than save the ini file and run L2.exe.
+Then save the ini file and run L2.exe.
 
 (For camera spinning issues, or high mouse sensitivity, see the Troubleshooting.)
+
+### Guide on Windows
+
+**Install JDK**, visit ([java.com](https://www.java.com/en/)) and click on Developer Downloads, then download JDK 27, Windows x64 MSI version, install it.
+
+**Install Eclipse**, ([https://www.eclipse.org/downloads](https://www.eclipse.org/downloads/)) Newest version if possible.
+
+**Install Git**, ([https://git-scm.com/install/windows](https://git-scm.com/install/windows)) Git for Windows/x64
+
+**Install MariaDB**, ([https://mariadb.org/download](https://mariadb.org/download/))
+
+Open Command Prompt as Administrator and write
+(replace MariaDB 13.0 version with the one you have downloaded):
+```
+setx /M PATH "%PATH%;C:\Program Files\MariaDB 13.0\bin"
+```
+In normal Command Prompt, not as Administrator:
+```
+cd %userprofile%
+if not exist git mkdir git
+if not exist aCis mkdir aCis
+cd git
+git clone https://gitlab.com/Tryskell/acis_public/
+git clone https://github.com/Mike-C/L2aCis409botMod
+copy L2aCis409botMod\patch.diff acis_public
+cd acis_public
+git apply patch.diff
+```
+
+Then build the source as normally, (import the project first into Eclipse Package Explorer,
+click File, Import, General, Existing Projects.., Next, into Select root directory write C:\Users\YoursUser\git\acis_public)
+Then build the projects i.e. through Eclipse Ant build.xml. Both projects aCis_datapack and aCis_gameserver have to be build.
+Expand the aCis project in the Package Explorer, then expand both projects aCis_datapack and aCis_gameserver.
+Right click the build.xml files and select Run As, Ant Build.
+When the projects are built, copy the build files into %userprofile%\aCis directory.
+```
+robocopy %userprofile%\git\acis_public\aCis_gameserver\build\dist %userprofile%\aCis /E
+robocopy %userprofile%\git\acis_public\aCis_datapack\build %userprofile%\aCis /E
+```
+Then copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)), into %userprofile%\aCis\gameserver\data\geodata directory. If you want to use L2J geodata, configure it in %userprofile%\aCis\gameserver\config\geoengine.properties Set: GeoDataType = L2J
+
+Then create l2aCismoddb database on MariaDB server:
+```
+mariadb -u root -p
+```
+Then insert the same database l2aCismoddb creation script that is present in Linux guide, don't forget to change database user 'password'.
+
+After that apply all other sql scripts:
+```
+cd %userprofile%\aCis\sql
+copy /b *.sql all.sql
+mariadb -u l2database -p l2aCismoddb < all.sql
+```
+Then modify server.properties and loginserver.properties files in 
+%userprofile%\aCis\gameserver\config\server.properties 
+%userprofile%\aCis\login\config\loginserver.properties 
+In the section "Database informations", put the same, as in Linux guide.
+
+Then run RegisterGameServer.bat in %userprofile%\aCis\login choose server number and press enter, hexid(server x).txt will be generated in %userprofile%\aCis\login directory. Move this file into %userprofile%\aCis\gameserver\config directory as hexid.txt, replace the x with the number you chosen for your gameserver.
+```
+copy "%userprofile%\aCis\login\hexid(server x).txt" %userprofile%\aCis\gameserver\config\hexid.txt
+```
+* Then run startLoginServer.bat in %userprofile%\aCis\login directory.
+* And startGameServer.bat in %userprofile%\aCis\gameserver directory. You can see the login and gameserver logs, if there are any errors.
+* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
 
 ## Troubleshooting
 
@@ -290,14 +358,12 @@ sudo nano /etc/systemd/logind.conf
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 ```
-Save the changes Ctrl+o, Ctrl+x than call:
-
-
+Save the changes Ctrl+o, Ctrl+x then call:
 
 ```
 sudo systemctl restart systemd
 ```
-Than make the screen blank when you close the lid,
+Then make the screen blank when you close the lid,
 follow the manual to your specific desktop environment.
 
 **Seven Signs schedules issues**
@@ -319,7 +385,7 @@ select Gaming: Always optimize mouse for games
   They sell only No, D & C grade at the moment.
 * Fixed disconnect bug with Fermata client.
 * You need to recompile whole project, so the changes take effect.
-  Including recreating database if so, "sudo mariadb" and than
+  Including recreating database if so, "sudo mariadb" and then
   "drop database l2aCismoddb;" And re-create it again with the new patch.diff applied.
   If you don't want to recreate database, you can just drop tables fake_traders_items
   and fake_traders and apply again new scrips fake_traders.sql & fake_traders_items.sql
@@ -329,7 +395,7 @@ select Gaming: Always optimize mouse for games
   Fake players have random names, from gameserver/data/fake_names.txt
   They sell only D-grade equipment at the moment.
 * You need to recompile whole project if so, so the changes take effect.
-  Including database, "sudo mariadb" and than "drop database l2aCismoddb;"
+  Including database, "sudo mariadb" and then "drop database l2aCismoddb;"
   And re-create it again with the new patch.diff applied.
 
 **L2aCis409botMod v0.01**
