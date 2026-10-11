@@ -35,8 +35,8 @@ cd ~/git/acis_public/aCis_gameserver/
 ant
 cd ~
 mkdir -p aCis
-cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis/
-cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis/
+cp -r ~/git/acis_public/aCis_gameserver/build/dist/* ~/aCis/
+cp -r ~/git/acis_public/aCis_datapack/build/* ~/aCis/
 ```
 * Then copy L2OFF Interlude geodata ([can be found on the internet](http://anothercrappyinterludeserver.com/files/geodata/)),
 into ~/aCis/gameserver/data/geodata directory.
@@ -142,16 +142,16 @@ cd acis_public
 git apply patch.diff
 cd aCis_gameserver/
 ant
-cp -r build/dist/ ~/aCis/
+cp -r build/dist/* ~/aCis/
 cd ../aCis_datapack/
 ant
-cp -r build/ ~/aCis/
+cp -r build/* ~/aCis/
 ```
 
 Then copy the geodata, follow the Linux instructions to get the link to L2OFF GEO - 11-21.zip, download it.
 
 ```
-cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/ ~/aCis/gameserver/data/geodata
+cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/* ~/aCis/gameserver/data/geodata
 ```
 
 After that follow the Linux instructions to create database l2aCismoddb
