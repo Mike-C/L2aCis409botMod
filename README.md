@@ -11,12 +11,12 @@ file into the root of your repository and apply patch.diff:
 
 ### Guide on Linux
 
-Download and install **git**, if you already don't have it.
+Download and install **Git**, if you already don't have it.
 Then run the following commands:
 
 ```
 cd ~
-mkdir git
+mkdir -p git
 cd git
 git clone https://gitlab.com/Tryskell/acis_public/
 git clone https://github.com/Mike-C/L2aCis409botMod
@@ -25,17 +25,16 @@ cd acis_public
 git apply patch.diff
 ```
 
-Download and install **OpenJDK** and ([Eclipse](https://www.eclipse.org/downloads/)). Newest versions if possible.
+Download and install **OpenJDK** and **Ant**. Newest versions if possible.
 
-Then build the source as normally, (import the project first into Eclipse Package Explorer,
-click File, Import, General, Existing Projects.., Next, into Select root directory write /home/yourUser/git/acis_public)
-Then build the projects i.e. through Eclipse Ant build.xml. Both projects aCis_datapack and aCis_gameserver have to be build.
-Expand the aCis project in the Package Explorer, then expand both projects aCis_datapack and aCis_gameserver.
-Right click the build.xml files and select Run As, Ant Build.
-When the projects are built, copy the build files into ~/aCis/ directory.
+Then build the source as normally. When the projects are built, copy the build files into ~/aCis/ directory.
 ```
+cd ~/git/acis_public/aCis_datapack/
+ant
+cd ~/git/acis_public/aCis_gameserver/
+ant
 cd ~
-mkdir aCis
+mkdir -p aCis
 cp -r ~/git/acis_public/aCis_gameserver/build/dist/ ~/aCis/
 cp -r ~/git/acis_public/aCis_datapack/build/ ~/aCis/
 ```
