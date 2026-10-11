@@ -27,7 +27,7 @@ git apply patch.diff
 
 Download and install **OpenJDK** and **Ant**. Newest versions if possible.
 
-Then build the source as normally. When the projects are built, copy the build files into ~/aCis/ directory.
+Then build the source through Ant. When the projects are built, copy the build files into ~/aCis/ directory.
 ```
 cd ~/git/acis_public/aCis_datapack/
 ant
