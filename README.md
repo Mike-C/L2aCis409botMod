@@ -156,7 +156,7 @@ cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/* ~/aCis/gameserver/data/geodata
 
 After that follow the Linux instructions to create database l2aCismoddb
 
-On terminal write the following command
+On terminal write the following command:
 
 ```
 mariadb
@@ -193,17 +193,17 @@ Hostname = 192.168.0.141
 ```
 Save the files Control + o, Control + x
 
-Then edit
+Then edit server.properties
 ```
 nano ~/aCis/gameserver/config/server.properties
 ```
-Put there again database information and user, as in Linux instructions. In gameserver LoginHost put again IP you previously get for your Wi-Fi device.
+Put there again database information and user, as in Linux instructions. In gameserver LoginHost put again IP you previously got for your Wi-Fi device.
 ```
 LoginHost = 192.168.0.141
 ```
 Save the files Control + o, Control + x
 
-Then call, as in Linux instructions
+Then call, as in Linux instructions:
 
 ```
 cd ~/aCis/gameserver/
@@ -215,7 +215,7 @@ chmod +x *.sh
 
 Pick a number, i.e. 1 and press return, then write ’exit’ and press return.
 
-Then call:
+Then call (replace the number 1 with the number you picked for your server):
 ```
 mv hexid\(server\ 1\).txt ../gameserver/config/hexid.txt
 ```
@@ -225,7 +225,7 @@ Then start servers:
 cd log/
 cat stdout.log 
 ```
-See the logs, if there are any errors, then call
+See the logs, if there are any errors, then call:
 ```
 cd ~/aCis/gameserver/
 ./startGameServer.sh
@@ -235,7 +235,7 @@ cat stdout.log
 To run the **Lineage 2 Client** on the MacOS, there is no any other playable option on Silicon Macs, than to download the VMware Fusion Pro from the internet. And Win 11 Arm64 iso image from Microsoft.
 
 
-When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and then write
+When installing the Win 11 Arm64 on VMware Fusion Pro, when prompted for Wi-Fi driver, press fn + shift + F10 to bring in the command prompt and then write:
 ```
 OOBE\BYPASSNRO
 ```
