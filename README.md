@@ -148,7 +148,7 @@ ant
 cp -r build/* ~/aCis/
 ```
 
-Then copy the geodata, follow the Linux instructions to get the link to L2OFF GEO - 11-21.zip, download it.
+Then copy the geodata, ([L2OFF GEO - 11-21.zip](https://anothercrappyinterludeserver.com/files/geodata/L2OFF%20GEO%20-%2011-21.zip)), download it.
 
 ```
 cp -r ~/downloads/L2OFF\ GEO\ -\ 11-21/* ~/aCis/gameserver/data/geodata
@@ -178,7 +178,6 @@ networksetup -getinfo Wi-Fi
 ```
 
 And remember your Wi-Fi **IP address**.
-
 
 Then use the nano tool to edit configuration files: 
 ```
