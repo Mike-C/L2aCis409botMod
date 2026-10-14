@@ -97,7 +97,7 @@ Move this file into ~/aCis/gameserver/config directory as hexid.txt
 * Then run ./startLoginServer.sh in ~/aCis/login/ directory.
 * And ./startGameServer.sh in ~/aCis/gameserver/ directory
 You can see the login/log/stdout.log and gameserver/log/stdout.log, if there are any errors.
-* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
+* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/cdl3pdt537fy288/Lineage_II.7z/file))
 * Play for example via **faugus-launcher**, adding l2.exe path in system folder, through **GE-Proton**.
 
 ### Guide on MacOS
@@ -256,7 +256,7 @@ And download the Lineage_II_Interlude_p746_win10_071212.rar from it, then right 
 
 Open the Lineage II Interlude folder and in it, rename the 'system' folder to '_system'. 
 
-Download the ([patched system folder](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file)).
+Download the ([patched folders](https://www.mediafire.com/file/cdl3pdt537fy288/Lineage_II.7z/file)).
 
 Extract it again and put the extracted system folder into Lineage II Interlude folder.
 
@@ -338,7 +338,7 @@ copy "%userprofile%\aCis\login\hexid(server x).txt" %userprofile%\aCis\gameserve
 ```
 * Then run startLoginServer.bat in %userprofile%\aCis\login directory.
 * And startGameServer.bat in %userprofile%\aCis\gameserver directory. You can see the login and gameserver logs, if there are any errors.
-* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/4w0u91fqc61vtj5/system.7z/file))
+* Connect with ([Interlude client](https://anothercrappyinterludeserver.com/files/client/Lineage_II_Interlude_p746_win10_071212.rar)), which connects to ([localhost, 127.0.0.1](https://www.mediafire.com/file/cdl3pdt537fy288/Lineage_II.7z/file))
 
 ## Troubleshooting
 

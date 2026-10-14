@@ -970,10 +970,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..6b822258
+index 00000000..a872d2f6
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1439 @@
+@@ -0,0 +1,1440 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -1290,6 +1290,7 @@ index 00000000..6b822258
 +		BANNED_ITEMS[250] = true; // Dark Mystic Fist
 +		BANNED_ITEMS[251] = true; // Human Mystic Fist
 +		BANNED_ITEMS[6716] = true; // Monster Only(Silenos Shaman)
++		BANNED_ITEMS[6717] = true; // Monster Only(Einhasad Warrior)
 +		BANNED_ITEMS[6718] = true; // Monster Only(Einhasad Shaman)
 +		BANNED_ITEMS[6719] = true; // Monster Only(Ketra Orc Chieftain)
 +		BANNED_ITEMS[6720] = true; // Monster Only(Shadow of Halisha)
