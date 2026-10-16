@@ -244,6 +244,279 @@ index 00000000..19e02b61
 +Tinga
 +Lime
 +Bowls
+diff --git a/aCis_datapack/data/html/admin/tele/hz/innadril.htm b/aCis_datapack/data/html/admin/tele/hz/innadril.htm
+index 0ee741b8..119c0b99 100644
+--- a/aCis_datapack/data/html/admin/tele/hz/innadril.htm
++++ b/aCis_datapack/data/html/admin/tele/hz/innadril.htm
+@@ -20,6 +20,10 @@
+ 			<td><a action="bypass admin_teleport 115583 192261 -3488">Alligator Island</a></td>
+ 			<td>Fields</td>
+ 			<td>40+</td>
++		</tr><tr>
++			<td><a action="bypass admin_teleport 84413 234334 -3656">Elven Garden</a></td>
++			<td>Fields</td>
++			<td>40+</td>
+ 		</tr><tr>
+ 			<td><a action="bypass admin_teleport 91088 182384 -3192">Field of Silence</a></td>
+ 			<td>Dungeon</td>
+@@ -28,10 +32,6 @@
+ 			<td><a action="bypass admin_teleport 74592 207656 -3032">Field of Whispers</a></td>
+ 			<td>Fields</td>
+ 			<td>35+</td>
+-		</tr><tr>
+-			<td><a action="bypass admin_teleport 84413 234334 -3656">Garden of Eva</a></td>
+-			<td>Fields</td>
+-			<td>40+</td>
+ 		</tr><tr>
+ 			<td><a action="bypass admin_teleport 107514 174329 -3704">Necropolis of Worship</a></td>
+ 			<td>Dungeon</td>
+@@ -42,4 +42,4 @@
+ 			<td>70+</td>
+ 		</tr>
+ 	</table>
+-</body></html>
+\ No newline at end of file
++</body></html>
+diff --git a/aCis_datapack/data/html/admin/tele/other.htm b/aCis_datapack/data/html/admin/tele/other.htm
+index bdfdf9d2..37834a6c 100644
+--- a/aCis_datapack/data/html/admin/tele/other.htm
++++ b/aCis_datapack/data/html/admin/tele/other.htm
+@@ -10,7 +10,7 @@
+ 	
+ 	<a action="bypass admin_link tele/others/arenas.htm">Arenas</a><br1>
+ 	<a action="bypass admin_link tele/others/fortress.htm">Fortresses</a><br1>
+-	<a action="bypass admin_link tele/others/goe.htm">Garden of Eva</a><br1>
++	<a action="bypass admin_link tele/others/goe.htm">Elven Garden</a><br1>
+ 	<a action="bypass admin_link tele/others/rift.htm">Dimensional Rift</a><br1>
+ 	<a action="bypass admin_link tele/others/toi.htm">Tower of Insolence</a><br>
+ 	
+diff --git a/aCis_datapack/data/html/admin/tele/others/goe.htm b/aCis_datapack/data/html/admin/tele/others/goe.htm
+index 3a13461a..1c6b0fbe 100644
+--- a/aCis_datapack/data/html/admin/tele/others/goe.htm
++++ b/aCis_datapack/data/html/admin/tele/others/goe.htm
+@@ -2,22 +2,22 @@
+ 	<table width=270>
+ 		<tr>
+ 			<td><button value="Main" action="bypass admin_admin" width=45 height=15 back="sek.cbui94" fore="sek.cbui92"></td>
+-			<td width=180 align=center>Garden of Eva</td>
++			<td width=180 align=center>Elven Garden</td>
+ 			<td><button value="Back" action="bypass admin_link tele/other.htm" width=45 height=15 back="sek.cbui94" fore="sek.cbui92"></td>
+ 		</tr>
+ 	</table><br>
+ 	</center>
+ 	
+-	<a action="bypass admin_teleport 85170 241576 -6848">GoE Entrance</a><br1>
+-	<a action="bypass admin_teleport 80688 245566 -8926">GoE 1st Floor</a><br1>
+-	<a action="bypass admin_teleport 80629 246420 -9331">GoE 2nd Floor</a><br1>
+-	<a action="bypass admin_teleport 87750 252422 -9851">GoE 3rd Floor</a><br1>
+-	<a action="bypass admin_teleport 82506 255978 -10363">GoE 4th Floor</a><br1>
+-	<a action="bypass admin_teleport 82158 252376 -10592">GoE 5th Floor</a><br1>
+-	<a action="bypass admin_teleport 85531 256976 -11671">GoE Basement</a><br1>
+-	<a action="bypass admin_teleport 82586 252206 -7714">GoE Core Crystal</a><br1>
+-	<a action="bypass admin_teleport 88361 258187 -10378">GoE Hidden Room 1</a><br1>
+-	<a action="bypass admin_teleport 88745 245802 -10378">GoE Hidden Room 2</a><br1>
+-	<a action="bypass admin_teleport 76667 245769 -10378">GoE Hidden Room 3</a><br1>
+-	<a action="bypass admin_teleport 77262 258216 -10378">GoE Hidden Room 4</a>
++	<a action="bypass admin_teleport 85170 241576 -6848">EG Entrance</a><br1>
++	<a action="bypass admin_teleport 80688 245566 -8926">EG 1st Floor</a><br1>
++	<a action="bypass admin_teleport 80629 246420 -9331">EG 2nd Floor</a><br1>
++	<a action="bypass admin_teleport 87750 252422 -9851">EG 3rd Floor</a><br1>
++	<a action="bypass admin_teleport 82506 255978 -10363">EG 4th Floor</a><br1>
++	<a action="bypass admin_teleport 82158 252376 -10592">EG 5th Floor</a><br1>
++	<a action="bypass admin_teleport 85531 256976 -11671">EG Basement</a><br1>
++	<a action="bypass admin_teleport 82586 252206 -7714">EG Core Crystal</a><br1>
++	<a action="bypass admin_teleport 88361 258187 -10378">EG Hidden Room 1</a><br1>
++	<a action="bypass admin_teleport 88745 245802 -10378">EG Hidden Room 2</a><br1>
++	<a action="bypass admin_teleport 76667 245769 -10378">EG Hidden Room 3</a><br1>
++	<a action="bypass admin_teleport 77262 258216 -10378">EG Hidden Room 4</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30925.htm b/aCis_datapack/data/html/default/30925.htm
+index 46a32b6d..c06473a0 100644
+--- a/aCis_datapack/data/html/default/30925.htm
++++ b/aCis_datapack/data/html/default/30925.htm
+@@ -1,5 +1,5 @@
+ <html><body>High Priestess Morelyn:<br>
+-Welcome! I am Morelyn, the high priestess of Eva. I supervise the priests in this temple. We have plenty of space here. If you wish to stay and rest for a while you are welcome.<br>
++Welcome! I am Morelyn, the high priestess. I supervise the priests in this temple. We have plenty of space here. If you wish to stay and rest for a while you are welcome.<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">"What are your responsibilities?"</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30926-1.htm b/aCis_datapack/data/html/default/30926-1.htm
+index 743f9ad6..e9e922c3 100644
+--- a/aCis_datapack/data/html/default/30926-1.htm
++++ b/aCis_datapack/data/html/default/30926-1.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priestess Restina:<br>
+-The Elves of Innadril originally came here from the Elven Forest around ED. 1200. Tetrarch Terestien and his young followers settled in the Emerald Forest near Innadril Lake. This was the beginning of the Elven migration to Innadril. Since our peoples share a devotion to the goddess we have always gotten along well. Over time intermarriage between the races has given most of the people of this area some Elven ancestry. This has enhanced both their beauty and lifespan.<br>
++The Elves of Innadril originally came here from the Elven Forest around ED. 1200. Tetrarch Terestien and his young followers settled in the Emerald Forest near Innadril Lake. This was the beginning of the Elven migration to Innadril. Over time intermarriage between the races has given most of the people of this area some Elven ancestry. This has enhanced both their beauty and lifespan.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30926-2.htm b/aCis_datapack/data/html/default/30926-2.htm
+index 776773be..2d45bf9e 100644
+--- a/aCis_datapack/data/html/default/30926-2.htm
++++ b/aCis_datapack/data/html/default/30926-2.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priestess Restina:<br>
+-The "Lady of the Lake" is Eva, the mother of all Elves. Even before the Elven migration, the people of Innadril knew the goddess of water well. There was a time when Elves regarded Eva as unapproachable and sacred, and this is still true in most parts of the Elven Forest. But due to the influence of the indigenous religion of this area, Eva is a much more accessible and personal goddess to us.<br>
++The "Lady of the Lake" is Eva. Even before the Elven migration, the people of Innadril knew her. There was a time when Elves regarded Eva as unapproachable, and this is still true in most parts of the Elven Forest. But due to the influence of the indigenous religion of this area, Eva is silent to us.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30927.htm b/aCis_datapack/data/html/default/30927.htm
+index 2dbd58cd..698ec04d 100644
+--- a/aCis_datapack/data/html/default/30927.htm
++++ b/aCis_datapack/data/html/default/30927.htm
+@@ -1,5 +1,5 @@
+ <html><body>Priestess Alicia:<br>
+-Welcome to the Temple of Eva. All who seek rest are welcomed here! I am the Priestess Alicia. Have you met High Priestess Morelyn over there?<br>
++Welcome to the Temple. All who seek rest are welcomed here! I am the Priestess Alicia. Have you met High Priestess Morelyn over there?<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">"Yes, I've met her."</a><br>
+ <a action="bypass -h npc_%objectId%_Chat 2">"Tell me more about High Priestess Morelyn."</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+diff --git a/aCis_datapack/data/html/default/30929.htm b/aCis_datapack/data/html/default/30929.htm
+index 193f8a4c..9b275c24 100644
+--- a/aCis_datapack/data/html/default/30929.htm
++++ b/aCis_datapack/data/html/default/30929.htm
+@@ -1,5 +1,5 @@
+ <html><body>Antique Dealer Patrin:<br>
+ It's nice to meet you, young traveler! My name is Patrin. I am a dealer of antiques.<br>
+-I've become quite busy lately due to the many excavations going on in the Ruins, the Tower of Insolence and the Garden of Eva. Adventurers are constantly coming to me for appraisals...<br>
++I've become quite busy lately due to the many excavations going on in the Ruins, the Tower of Insolence and the Elven Garden. Adventurers are constantly coming to me for appraisals...<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30917-1.htm b/aCis_datapack/data/html/guard/30917-1.htm
+index 7daca5a0..c6085cb2 100644
+--- a/aCis_datapack/data/html/guard/30917-1.htm
++++ b/aCis_datapack/data/html/guard/30917-1.htm
+@@ -1,5 +1,5 @@
+ <html><body>Guard Dupuis:<br>
+-Human and Elves have lived alongside each other peacefully for years in this land. Here, Eva is more revered than Einhasad and the rest of us worship Eva. Our special name for her is "The Lady of the Lake". This term incorporates the old religion of the indigenous people from this area.<br>
++Human and Elves have lived alongside each other peacefully for years in this land.<br>
+ Am I boring you...?<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30917.htm b/aCis_datapack/data/html/guard/30917.htm
+index ea0c656b..452a0ced 100644
+--- a/aCis_datapack/data/html/guard/30917.htm
++++ b/aCis_datapack/data/html/guard/30917.htm
+@@ -1,6 +1,6 @@
+ <html><body>Guard Dupuis:<br>
+-You look exhausted! You have chosen the most beautiful and peaceful place on earth to brush the dust from your boots. If you present a flower to the Lady of the Lake, she may bestow upon you a kiss of blessing.<br>
+-<a action="bypass -h npc_%objectId%_Chat 1">"Tell me more about the Lady of the Lake."</a><br>
++You look exhausted! You have chosen the most beautiful and peaceful place on earth to brush the dust from your boots.<br>
++<a action="bypass -h npc_%objectId%_Chat 1">"Tell me more about this area."</a><br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">See the Lord and get the tax rate information.</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
+index fc8ab68b..4220fd8d 100644
+--- a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
+@@ -1,7 +1,7 @@
+ <html><body>Priestess Restina:<br>
+-Have you heard of the <font color="LEVEL">Garden of Eva</font>? You may occasionally find the goddess herself resting there.<br>
+-She doesn't like to be disturbed, so her garden is in the deepest part of the sea, with entry gained only through an elaborate labyrinth.<br>
+-Recently, <font color="LEVEL">some who wish to harm her</font> have invaded her sanctuary. She's not there at the moment, and we, her priests and guards, are trying our best to drive out the invaders. However, this task is proving more than we can handle.<br>
++Have you heard of the <font color="LEVEL">Elven Garden</font>?<br>
++The garden is in the deepest part of the sea, with entry gained only through an elaborate labyrinth.<br>
++Recently, <font color="LEVEL">some</font> have invaded it. And we, priests and guards, are trying our best to drive out the invaders. However, this task is proving more than we can handle.<br>
+ We're enlisting the help of outsiders to defeat them. Will you help us?<br>
+ <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-02.htm">"I will help."</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01a.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01a.htm
+index 1e64410a..86f0df1b 100644
+--- a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01a.htm
++++ b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01a.htm
+@@ -1,7 +1,7 @@
+ <html><body>Priestess Restina:<br>
+-Have you heard of the <font color="LEVEL">Garden of Eva</font>? You may occasionally find the goddess herself resting there.<br>
+-She doesn't like to be disturbed, so her garden is in the deepest part of the sea, with entry gained only through an elaborate labyrinth.<br>
+-Recently, <font color="LEVEL">some who wish to harm her</font> have invaded her sanctuary. She's not there at the moment, and we, her priests and guards, are trying our best to drive out the invaders. However, this task is proving more than we can handle.<br>
++Have you heard of the <font color="LEVEL">Elven Garden</font>?<br>
++The garden is in the deepest part of the sea, with entry gained only through an elaborate labyrinth.<br>
++Recently, <font color="LEVEL">some</font> have invaded it. And we, priests and guards, are trying our best to drive out the invaders. However, this task is proving more than we can handle.<br>
+ We need help desperately, but I'm afraid you're not yet up to the task.<br>
+ (This quest may only be undertaken by a character of level 36 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-02.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-02.htm
+index 64edf64d..9cf54dda 100644
+--- a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-02.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priestess Restina:<br>
+-Thank you. You should know that it is forbidden for outsiders to enter the Garden of Eva. We are breaking the rules, but these are desperate times.<br>
+-Go to the <font color="LEVEL">Garden of Eva</font> and slay the <font color="LEVEL">blade stakato, the blade stakato worker, the blade stakato warrior and the blade stakato drone</font>. As proof of your victory, bring back their <font color="LEVEL">fangs</font>. You'll be well rewarded for your efforts.
++Thank you. You should know that it is forbidden for outsiders to enter the Elven Garden. We are breaking the rules, but these are desperate times.<br>
++Go to the <font color="LEVEL">Elven Garden</font> and slay the <font color="LEVEL">blade stakato, the blade stakato worker, the blade stakato warrior and the blade stakato drone</font>. As proof of your victory, bring back their <font color="LEVEL">fangs</font>. You'll be well rewarded for your efforts.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-03.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-03.htm
+index 6fb15a4a..03a63879 100644
+--- a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Priestess Restina:<br>
+-As I said, go to the <font color="LEVEL">Garden of Eva</font> and slay the <font color="LEVEL">blade stakato, the blade stakato worker, the blade stakato warrior and the blade stakato drone</font>. As proof of your victory bring back their <font color="LEVEL">fangs</font>. You'll be well rewarded for your efforts.<br>
++As I said, go to the <font color="LEVEL">Elven Garden</font> and slay the <font color="LEVEL">blade stakato, the blade stakato worker, the blade stakato warrior and the blade stakato drone</font>. As proof of your victory bring back their <font color="LEVEL">fangs</font>. You'll be well rewarded for your efforts.<br>
+ <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-05.htm">"No, I quit."</a><br>
+ <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-06.htm">"I will continue to hunt the stakatos."</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-04.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-04.htm
+index c467a2c7..7f6f7cc3 100644
+--- a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-04.htm
+@@ -1,6 +1,6 @@
+ <html><body>Priestess Restina:<br>
+ Thank you for helping us. As promised, you shall receive a reward <font color="LEVEL">commensurate with your performance</font>.<br>
+-Your brave efforts have spelled the doom of all who have invaded the Garden of Eva! Will you stay and help us finish them off?<br>
++Your brave efforts have spelled the doom of all who have invaded the Elven Garden! Will you stay and help us finish them off?<br>
+ <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-05.htm">"I must be going."</a><br>
+ <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-06.htm">"Death to the blade stakatos!"</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm b/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm
+index e80cda70..1cb14a1e 100644
+--- a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm
++++ b/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm
+@@ -3,5 +3,5 @@ Which area's monsters in the Innadril territory would you like to see?<br>
+ <a action="bypass -h Quest Q426_QuestForFishingShot 35.htm">Field of Silence</a><br>
+ <a action="bypass -h Quest Q426_QuestForFishingShot 36.htm">Field of Whispers</a><br>
+ <a action="bypass -h Quest Q426_QuestForFishingShot 37.htm">Alligator Island</a><br>
+-<a action="bypass -h Quest Q426_QuestForFishingShot 38.htm">Garden of Eva</a>
++<a action="bypass -h Quest Q426_QuestForFishingShot 38.htm">Elven Garden</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/38.htm b/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/38.htm
+index 08c299a7..9f18cba3 100644
+--- a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/38.htm
++++ b/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/38.htm
+@@ -1,4 +1,4 @@
+ <html><body>Fishermen's Guild Member:<br>
+-In the Garden of Eva, if you hunt <font color="LEVEL">Blade Stakatos, Blade Stakato Warriors, Water Giants, Eva's Seekers, Theeder Mages, Light Worms, or Garden Guard Leaders</font>, you can get the sweet aromatic fluid the water spirits love.<br>
++In the Elven Garden, if you hunt <font color="LEVEL">Blade Stakatos, Blade Stakato Warriors, Water Giants, Eva's Seekers, Theeder Mages, Light Worms, or Garden Guard Leaders</font>, you can get the sweet aromatic fluid the water spirits love.<br>
+ <a action="bypass -h Quest Q426_QuestForFishingShot 06.htm">Back</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/villagemaster/30900.htm b/aCis_datapack/data/html/villagemaster/30900.htm
+index 606f2ade..054c5631 100644
+--- a/aCis_datapack/data/html/villagemaster/30900.htm
++++ b/aCis_datapack/data/html/villagemaster/30900.htm
+@@ -1,5 +1,5 @@
+ <html><body>Grand Master Marcus:<br>
+-Heine is certainly a beautiful aquatic city -- perhaps the most beautiful city in all Innadril. But you must never let your guard down, despite its beauty. In this area, remember, you will also find Devil's Isle and the Garden of Eva. Ah, and Fafurion's Island as well... They say that long ago, after being wounded by young Lionel Hunter, Fafurion was filled with hate for every stone in Innadril... How can even the grand master of a warrior guild not be afraid?<br>
++Heine is certainly a beautiful aquatic city -- perhaps the most beautiful city in all Innadril. But you must never let your guard down, despite its beauty. In this area, remember, you will also find Devil's Isle and the Elven Garden. Ah, and Fafurion's Island as well... They say that long ago, after being wounded by young Lionel Hunter, Fafurion was filled with hate for every stone in Innadril... How can even the grand master of a warrior guild not be afraid?<br>
+ <a action="bypass -h npc_%objectId%_Quest SecondClassChange">Listen to information about second class transfer</a><br>
+ <a action="bypass -h npc_%objectId%_Link villagemaster/SubClass.htm">Sub Class</a><br>
+ <a action="bypass -h npc_%objectId%_Quest Clan">Clan</a><br>
 diff --git a/aCis_datapack/data/xml/adminCommands.xml b/aCis_datapack/data/xml/adminCommands.xml
 index 0021f33a..56fe6391 100644
 --- a/aCis_datapack/data/xml/adminCommands.xml
@@ -302,6 +575,82 @@ index d20f5e06..daec2c05 100644
 -</list>
 \ No newline at end of file
 +</list>
+diff --git a/aCis_datapack/data/xml/teleports.xml b/aCis_datapack/data/xml/teleports.xml
+index 0b69d05b..b33e31f4 100644
+--- a/aCis_datapack/data/xml/teleports.xml
++++ b/aCis_datapack/data/xml/teleports.xml
+@@ -393,28 +393,28 @@
+ 		<loc desc="Field of Silence" type="STANDARD" priceId="57" priceCount="2500" x="91088" y="182384" z="-3192" />
+ 		<loc desc="Field of Whispers" type="STANDARD" priceId="57" priceCount="2300" x="74592" y="207656" z="-3032" />
+ 		<loc desc="Alligator Island" type="STANDARD" priceId="57" priceCount="2100" x="115583" y="192261" z="-3488" />
+-		<loc desc="Garden of Eva" type="STANDARD" priceId="57" priceCount="2400" x="84413" y="234334" z="-3656" />
++		<loc desc="Elven Garden" type="STANDARD" priceId="57" priceCount="2400" x="84413" y="234334" z="-3656" />
+ 		<loc desc="Gludin Arena" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="-87328" y="142266" z="-3640" />
+ 		<loc desc="Giran Arena" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="73579" y="142709" z="-3768" />
+ 		<loc desc="Field of Silence (Western Section)" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="69748" y="186111" z="-2872" />
+ 		<loc desc="Field of Whispers (Eastern Section)" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="97786" y="209303" z="-3040" />
+ 		<loc desc="The Center of Alligator Island" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="113708" y="178387" z="-3232" />
+-		<loc desc="Inside the Garden of Eva" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="82693" y="242220" z="-6712" />
+-		<loc desc="Garden of Eva - 2nd level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="79248" y="247390" z="-8816" />
+-		<loc desc="Garden of Eva - 3rd level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="77868" y="250400" z="-9328" />
+-		<loc desc="Garden of Eva - 4th level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="78721" y="253309" z="-9840" />
+-		<loc desc="Garden of Eva - 5th level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="82570" y="252464" z="-10592" />
++		<loc desc="Inside the Elven Garden" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="82693" y="242220" z="-6712" />
++		<loc desc="Elven Garden - 2nd level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="79248" y="247390" z="-8816" />
++		<loc desc="Elven Garden - 3rd level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="77868" y="250400" z="-9328" />
++		<loc desc="Elven Garden - 4th level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="78721" y="253309" z="-9840" />
++		<loc desc="Elven Garden - 5th level" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="82570" y="252464" z="-10592" />
+ 		<loc desc="Coliseum" type="NOBLE_HUNTING_ZONE_PASS" priceId="6651" priceCount="1" x="146440" y="46723" z="-3400" />
+ 		<loc desc="Gludin Arena" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="-87328" y="142266" z="-3640" />
+ 		<loc desc="Giran Arena" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="73579" y="142709" z="-3768" />
+ 		<loc desc="Field of Silence (Western Section)" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="69748" y="186111" z="-2872" />
+ 		<loc desc="Field of Whispers (Eastern Section)" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="97786" y="209303" z="-3040" />
+ 		<loc desc="The Center of Alligator Island" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="113708" y="178387" z="-3232" />
+-		<loc desc="Inside the Garden of Eva" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="82693" y="242220" z="-6712" />
+-		<loc desc="Garden of Eva - 2nd level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="79248" y="247390" z="-8816" />
+-		<loc desc="Garden of Eva - 3rd level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="77868" y="250400" z="-9328" />
+-		<loc desc="Garden of Eva - 4th level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="78721" y="253309" z="-9840" />
+-		<loc desc="Garden of Eva - 5th level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="82570" y="252464" z="-10592" />
++		<loc desc="Inside the Elven Garden" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="82693" y="242220" z="-6712" />
++		<loc desc="Elven Garden - 2nd level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="79248" y="247390" z="-8816" />
++		<loc desc="Elven Garden - 3rd level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="77868" y="250400" z="-9328" />
++		<loc desc="Elven Garden - 4th level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="78721" y="253309" z="-9840" />
++		<loc desc="Elven Garden - 5th level" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="82570" y="252464" z="-10592" />
+ 		<loc desc="Coliseum" type="NOBLE_HUNTING_ZONE_ADENA" priceId="57" priceCount="1000" x="146440" y="46723" z="-3400" />
+ 	</telPosList>
+ 	<telPosList npcId="31078">
+@@ -588,16 +588,16 @@
+ 		<loc desc="West of Field of Silence" type="STANDARD" priceId="57" priceCount="1000" x="69748" y="186111" z="-2872" />
+ 		<loc desc="East of Field of Whispers" type="STANDARD" priceId="57" priceCount="1000" x="97786" y="209303" z="-3040" />
+ 		<loc desc="Field of Whispers" type="STANDARD" priceId="57" priceCount="1000" x="74592" y="207656" z="-3032" />
+-		<loc desc="Garden of Eva" type="STANDARD" priceId="57" priceCount="1000" x="84413" y="234334" z="-3656" />
++		<loc desc="Elven Garden" type="STANDARD" priceId="57" priceCount="1000" x="84413" y="234334" z="-3656" />
+ 		<loc desc="Alligator Island" type="STANDARD" priceId="57" priceCount="1000" x="115583" y="192261" z="-3488" />
+ 		<loc desc="Alligator Beach" type="STANDARD" priceId="57" priceCount="1000" x="116132" y="202102" z="-3312" />
+ 		<loc desc="North of Alligator Island" type="STANDARD" priceId="57" priceCount="1000" x="116732" y="165938" z="-2448" />
+ 		<loc desc="Entrance to Alligator Island" type="STANDARD" priceId="57" priceCount="1000" x="113708" y="178387" z="-3232" />
+-		<loc desc="Garden of Eva 2nd Room" type="STANDARD" priceId="57" priceCount="1000" x="79248" y="247390" z="-8816" />
+-		<loc desc="Garden of Eva 3rd Room" type="STANDARD" priceId="57" priceCount="1000" x="77868" y="250400" z="-9328" />
+-		<loc desc="Garden of Eva 4th Room" type="STANDARD" priceId="57" priceCount="1000" x="78721" y="253309" z="-9840" />
+-		<loc desc="Garden of Eva 5th Room" type="STANDARD" priceId="57" priceCount="1000" x="82570" y="252464" z="-10592" />
+-		<loc desc="Garden of Eva Lobby" type="STANDARD" priceId="57" priceCount="1000" x="82693" y="242220" z="-6712" />
++		<loc desc="Elven Garden 2nd Room" type="STANDARD" priceId="57" priceCount="1000" x="79248" y="247390" z="-8816" />
++		<loc desc="Elven Garden 3rd Room" type="STANDARD" priceId="57" priceCount="1000" x="77868" y="250400" z="-9328" />
++		<loc desc="Elven Garden 4th Room" type="STANDARD" priceId="57" priceCount="1000" x="78721" y="253309" z="-9840" />
++		<loc desc="Elven Garden 5th Room" type="STANDARD" priceId="57" priceCount="1000" x="82570" y="252464" z="-10592" />
++		<loc desc="Elven Garden Lobby" type="STANDARD" priceId="57" priceCount="1000" x="82693" y="242220" z="-6712" />
+ 	</telPosList>
+ 	<telPosList npcId="31223">
+ 		<loc desc="Northern Pathway of the Enchanted Valley" type="STANDARD" priceId="57" priceCount="1000" x="104426" y="33746" z="-3825" />
+@@ -902,7 +902,7 @@
+ 		<loc desc="The Center of Alligator Island" type="CHF_LEVEL_2" priceId="57" priceCount="500" x="113708" y="178387" z="-3232" />
+ 		<loc desc="Field of Silence (Western Section)" type="CHF_LEVEL_2" priceId="57" priceCount="500" x="75387" y="195263" z="-3000" />
+ 		<loc desc="Field of Whispers (Eastern Section)" type="CHF_LEVEL_2" priceId="57" priceCount="500" x="97786" y="209303" z="-3040" />
+-		<loc desc="Inside the Garden of Eva" type="CHF_LEVEL_2" priceId="57" priceCount="500" x="82693" y="242220" z="-6712" />
++		<loc desc="Inside the Elven Garden" type="CHF_LEVEL_2" priceId="57" priceCount="500" x="82693" y="242220" z="-6712" />
+ 	</telPosList>
+ 	<telPosList npcId="35363">
+ 		<loc desc="Front of the Goddard Castle" type="CHF_LEVEL_1" priceId="57" priceCount="0" x="153996" y="-50182" z="-2992" />
 diff --git a/aCis_datapack/sql/castle_manor_procure.sql b/aCis_datapack/sql/castle_manor_procure.sql
 index 3688607b..a5c8fd4f 100644
 --- a/aCis_datapack/sql/castle_manor_procure.sql
@@ -3145,3 +3494,87 @@ index aee53331..c81703ee 100644
  		}
  		
  		// Calculate monster and seed level modifier.
+diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java b/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
+index 30820098..62f1b255 100644
+--- a/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
++++ b/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
+@@ -7849,22 +7849,22 @@ public final class NpcStringId
+ 	@NpcString(id = 1000263, message = "The past goes by... Is a new era beginning?...")
+ 	public static NpcStringId ID_1000263;
+ 	
+-	@NpcString(id = 1000264, message = "This is the garden of Eva.")
++	@NpcString(id = 1000264, message = "This is the Elven Garden.")
+ 	public static NpcStringId ID_1000264;
+ 	
+-	@NpcString(id = 1000265, message = "The garden of Eva is a sacred place.")
++	@NpcString(id = 1000265, message = "The Elven Garden is a sacred place.")
+ 	public static NpcStringId ID_1000265;
+ 	
+-	@NpcString(id = 1000266, message = "Do you mean to insult Eva?")
++	@NpcString(id = 1000266, message = "Do you mean to insult?")
+ 	public static NpcStringId ID_1000266;
+ 	
+-	@NpcString(id = 1000267, message = "How rude!  Eva's love is available to all, even to an ill-mannered lout like yourself!")
++	@NpcString(id = 1000267, message = "How rude!  Love is available to all, even to an ill-mannered lout like yourself!")
+ 	public static NpcStringId ID_1000267;
+ 	
+ 	@NpcString(id = 1000268, message = "This place once belonged to Lord Shilen.")
+ 	public static NpcStringId ID_1000268;
+ 	
+-	@NpcString(id = 1000269, message = "Leave this palace to us, spirits of Eva.")
++	@NpcString(id = 1000269, message = "Leave this palace to us, spirits.")
+ 	public static NpcStringId ID_1000269;
+ 	
+ 	@NpcString(id = 1000270, message = "Why are you getting in our way?")
+@@ -9037,7 +9037,7 @@ public final class NpcStringId
+ 	@NpcString(id = 1010152, message = "Devil's Isle")
+ 	public static NpcStringId ID_1010152;
+ 	
+-	@NpcString(id = 1010153, message = "Garden of Eva")
++	@NpcString(id = 1010153, message = "Elven Garden")
+ 	public static NpcStringId ID_1010153;
+ 	
+ 	@NpcString(id = 1010154, message = "Talking Island Village")
+@@ -9172,7 +9172,7 @@ public final class NpcStringId
+ 	@NpcString(id = 1010197, message = "Tower of Insolence - 13th Floor")
+ 	public static NpcStringId ID_1010197;
+ 	
+-	@NpcString(id = 1010198, message = "Garden of Eva")
++	@NpcString(id = 1010198, message = "Elven Garden")
+ 	public static NpcStringId ID_1010198;
+ 	
+ 	@NpcString(id = 1010199, message = "Goddard Castle Town")
+@@ -10129,7 +10129,7 @@ public final class NpcStringId
+ 	@NpcString(id = 1010516, message = "West side of Field of Silence")
+ 	public static NpcStringId ID_1010516;
+ 	
+-	@NpcString(id = 1010517, message = "Eva's water garden entrance")
++	@NpcString(id = 1010517, message = "Elven water garden entrance")
+ 	public static NpcStringId ID_1010517;
+ 	
+ 	@NpcString(id = 1010518, message = "Alligator island entrance")
+@@ -10144,19 +10144,19 @@ public final class NpcStringId
+ 	@NpcString(id = 1010521, message = "Alligator island central")
+ 	public static NpcStringId ID_1010521;
+ 	
+-	@NpcString(id = 1010522, message = "Eva's water garden 2")
++	@NpcString(id = 1010522, message = "Elven water garden 2")
+ 	public static NpcStringId ID_1010522;
+ 	
+-	@NpcString(id = 1010523, message = "Eva's water garden 3")
++	@NpcString(id = 1010523, message = "Elven water garden 3")
+ 	public static NpcStringId ID_1010523;
+ 	
+-	@NpcString(id = 1010524, message = "Eva's water garden 4")
++	@NpcString(id = 1010524, message = "Elven water garden 4")
+ 	public static NpcStringId ID_1010524;
+ 	
+-	@NpcString(id = 1010525, message = "Eva's water garden 5")
++	@NpcString(id = 1010525, message = "Elven water garden 5")
+ 	public static NpcStringId ID_1010525;
+ 	
+-	@NpcString(id = 1010526, message = "Enter to Garden of Eva")
++	@NpcString(id = 1010526, message = "Enter to Elven Garden")
+ 	public static NpcStringId ID_1010526;
+ 	
+ 	@NpcString(id = 1010527, message = "The Four Sepulchers")
