@@ -277,6 +277,19 @@ index 0ee741b8..119c0b99 100644
 -</body></html>
 \ No newline at end of file
 +</body></html>
+diff --git a/aCis_datapack/data/html/admin/tele/hz/oren.htm b/aCis_datapack/data/html/admin/tele/hz/oren.htm
+index 760e2efc..ddee3155 100644
+--- a/aCis_datapack/data/html/admin/tele/hz/oren.htm
++++ b/aCis_datapack/data/html/admin/tele/hz/oren.htm
+@@ -65,7 +65,7 @@
+ 			<td>Fields</td>
+ 			<td>1+</td>
+ 		</tr><tr>
+-			<td><a action="bypass admin_teleport 23863 11068 -3720">Shilen's Garden</a></td>
++			<td><a action="bypass admin_teleport 23863 11068 -3720">Dark Garden</a></td>
+ 			<td>Fields</td>
+ 			<td>1+</td>
+ 		</tr><tr>
 diff --git a/aCis_datapack/data/html/admin/tele/other.htm b/aCis_datapack/data/html/admin/tele/other.htm
 index bdfdf9d2..37834a6c 100644
 --- a/aCis_datapack/data/html/admin/tele/other.htm
@@ -331,6 +344,107 @@ index 3a13461a..1c6b0fbe 100644
 +	<a action="bypass admin_teleport 77262 258216 -10378">EG Hidden Room 4</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30130-1.htm b/aCis_datapack/data/html/default/30130-1.htm
+index fff639c7..83d39e45 100644
+--- a/aCis_datapack/data/html/default/30130-1.htm
++++ b/aCis_datapack/data/html/default/30130-1.htm
+@@ -1,5 +1,5 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-The Shilen Temple is a cultural treasure, with a history of more than 2,000 years. In the days when our race lived underground, the Harnea of the Arachne race spun silver spider webs and protected the temple by spinning a curtain around it.<br>
+-Here, all young Dark Elves undergo rites to receive Shilen's blessing before beginning their new lives as Dark Fighters or Dark Mystics.<br>
++The Dark Temple is a cultural treasure, with a history of more than 2,000 years. In the days when our race lived underground, the Harnea of the Arachne race spun silver spider webs and protected the temple by spinning a curtain around it.<br>
++Here, all young Dark Elves undergo rites before beginning their new lives as Dark Fighters or Dark Mystics.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30130.htm b/aCis_datapack/data/html/default/30130.htm
+index 7e78d4e4..3ae74056 100644
+--- a/aCis_datapack/data/html/default/30130.htm
++++ b/aCis_datapack/data/html/default/30130.htm
+@@ -1,7 +1,6 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-May the blessing of the abyss be with you!<br>
+-The massive structure you see behind me is the <font color="LEVEL">Temple of Shilen</font> where we serve Shilen, mother of the abyss. I am the Abyssal Celebrant Undrias who serves our goddess.<br>
+-<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Shilen Temple</a><br>
++The massive structure you see behind me is the <font color="LEVEL">Dark Temple</font> where we serve. I am the Abyssal Celebrant Undrias who serves there.<br>
++<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Dark Temple</a><br>
+ <a action="bypass -h npc_%objectId%_Chat 2">Ask about the Dark Elf village</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30132.htm b/aCis_datapack/data/html/default/30132.htm
+index cbf9d11e..468898d3 100644
+--- a/aCis_datapack/data/html/default/30132.htm
++++ b/aCis_datapack/data/html/default/30132.htm
+@@ -1,4 +1,4 @@
+ <html><body>Abyssal Celebrant Cecktinon:<br>
+-May you have the blessing of Abyss... Here is the birthplace of all Dark Elves, the temple of the goddess Shilen. Please enter with a solemn mind.<br>
++Here is the birthplace of all Dark Elves, the Dark Temple. Please enter with a solemn mind.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30133.htm b/aCis_datapack/data/html/default/30133.htm
+index e5a94079..1d6596b1 100644
+--- a/aCis_datapack/data/html/default/30133.htm
++++ b/aCis_datapack/data/html/default/30133.htm
+@@ -1,4 +1,4 @@
+ <html><body>Abyssal Celebrant Kartia:<br>
+-All things are temporal. Never forget that no matter how powerful one becomes, he must always eventually return to Shilen.<br>
++All things are temporal. Never forget that no matter how powerful one becomes, he must always eventually return to the ground.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a> 
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30305.htm b/aCis_datapack/data/html/default/30305.htm
+index d7ff7ff0..e3ba3d91 100644
+--- a/aCis_datapack/data/html/default/30305.htm
++++ b/aCis_datapack/data/html/default/30305.htm
+@@ -1,5 +1,4 @@
+ <html><body>Tetrarch Vellior:<br>
+-May the mercy of Shilen shade you from the light.<br>
+ I am Tetrarch Vellior of the Dark Elves, heir of the dark truth of the sacred book Icarus, envoy to the other world, and highest Mystic to wield black magic in the place of Patriarch Mitraell, who is now sealed away.<br>
+ <font color="LEVEL">Black magic</font> is the source of our power and the revelation of dark truth. It is forbidden among other races. They do not understand darkness and fear it, so therefore they exclude it. However, if there is light, there is shadow, and we can control the true power of black magic because we confront darkness with no fear.<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about black magic</a><br>
+diff --git a/aCis_datapack/data/html/default/30400.htm b/aCis_datapack/data/html/default/30400.htm
+index 3530f739..664ad23d 100644
+--- a/aCis_datapack/data/html/default/30400.htm
++++ b/aCis_datapack/data/html/default/30400.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Helper:<br>
+-I bid you welcome, young one. I am a guardian of the Mother Tree Glade, and serve the Mother of all Elves. I will be teaching you the basics of combat.<br>
++I bid you welcome, young one. I am a guardian of the Mother Tree Glade. I will be teaching you the basics of combat.<br>
+ To begin, click on <font color="LEVEL">Quest</font> in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30401.htm b/aCis_datapack/data/html/default/30401.htm
+index 28096bb7..cd41db03 100644
+--- a/aCis_datapack/data/html/default/30401.htm
++++ b/aCis_datapack/data/html/default/30401.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Helper:<br>
+-I bid you welcome, young one. I am a guardian of the Mother Tree Glade, and serve the Mother of all Elves. I will be teaching you the basics of combat.<br>
++I bid you welcome, young one. I am a guardian of the Mother Tree Glade. I will be teaching you the basics of combat.<br>
+ To begin click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30402.htm b/aCis_datapack/data/html/default/30402.htm
+index 28096bb7..cd41db03 100644
+--- a/aCis_datapack/data/html/default/30402.htm
++++ b/aCis_datapack/data/html/default/30402.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Helper:<br>
+-I bid you welcome, young one. I am a guardian of the Mother Tree Glade, and serve the Mother of all Elves. I will be teaching you the basics of combat.<br>
++I bid you welcome, young one. I am a guardian of the Mother Tree Glade. I will be teaching you the basics of combat.<br>
+ To begin click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30403.htm b/aCis_datapack/data/html/default/30403.htm
+index 28096bb7..cd41db03 100644
+--- a/aCis_datapack/data/html/default/30403.htm
++++ b/aCis_datapack/data/html/default/30403.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Helper:<br>
+-I bid you welcome, young one. I am a guardian of the Mother Tree Glade, and serve the Mother of all Elves. I will be teaching you the basics of combat.<br>
++I bid you welcome, young one. I am a guardian of the Mother Tree Glade. I will be teaching you the basics of combat.<br>
+ To begin click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
 diff --git a/aCis_datapack/data/html/default/30566-1.htm b/aCis_datapack/data/html/default/30566-1.htm
 index 27d559ce..de1755cf 100644
 --- a/aCis_datapack/data/html/default/30566-1.htm
@@ -505,6 +619,17 @@ index 193f8a4c..9b275c24 100644
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/31359.htm b/aCis_datapack/data/html/default/31359.htm
+index a3fc95b4..ae3cf2d5 100644
+--- a/aCis_datapack/data/html/default/31359.htm
++++ b/aCis_datapack/data/html/default/31359.htm
+@@ -1,4 +1,4 @@
+ <html><body>Mother Tree Guardian Jaradine:<br>
+-I am sworn to protect the Mother Tree, the mother of all Elves.<br>
++I am sworn to protect the Mother Tree.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/default/31554.htm b/aCis_datapack/data/html/default/31554.htm
 index 5522b82b..ad8420ba 100644
 --- a/aCis_datapack/data/html/default/31554.htm
@@ -536,6 +661,71 @@ index 1c67553f..9dadbf34 100644
 -Pa'agrio Amare Oites! A weak soul is encroached by the darkness, but a strong soul is hardened and blooms beautifully within the flames.<br>
 +Amare Oites! A weak soul is encroached by the darkness, but a strong soul is hardened and blooms beautifully within the flames.<br>
  You have a courage and purity! You kissed the flames while a beautiful soul slept within! Now you have awakened!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30216-1.htm b/aCis_datapack/data/html/guard/30216-1.htm
+index 68ffd65f..62127910 100644
+--- a/aCis_datapack/data/html/guard/30216-1.htm
++++ b/aCis_datapack/data/html/guard/30216-1.htm
+@@ -1,5 +1,5 @@
+ <html><body>Sentinel Wheeler:<br>
+-In the beginning, Einhasad created the Elves, and the union of the world's oldest tree and the first Elf became the Mother Tree. All the Elves afterwards were born from the leaves of the Mother Tree Glade.<br>
+-Perhaps that is why, when we rest under the shade of the Mother Tree Glade, our bodies and souls all feel at ease. When we are tired and weary, there is nothing better than resting under the shade of the Mother Tree Glade.<br>
++In the beginning the union of the world's oldest tree and the first Elf became the Mother Tree.<br>
++When we rest under the shade of the Mother Tree Glade, our bodies and souls all feel at ease. When we are tired and weary, there is nothing better than resting under the shade of the Mother Tree Glade.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30284-2.htm b/aCis_datapack/data/html/guard/30284-2.htm
+index e80c6e84..17ec6544 100644
+--- a/aCis_datapack/data/html/guard/30284-2.htm
++++ b/aCis_datapack/data/html/guard/30284-2.htm
+@@ -1,4 +1,4 @@
+ <html><body>Sentinel Knight Alberius:<br>
+-Guardians are guardian spirits of the forest. When the god Einhasad created the Elves from the leaves of the Mother Tree Glade, she also created the guardians to protect the forest which would be the Elves' home. They are still loyal to their first purpose, and are very hostile to other races that invade the forest. Even Elves, if they injure their own kind, are dealt with ferociously.<br>
++Guardians are guardian spirits of the forest. Guardians protect the forest which would be the Elves' home. They are still loyal to their first purpose, and are very hostile to other races that invade the forest. Even Elves, if they injure their own kind, are dealt with ferociously.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30349.htm b/aCis_datapack/data/html/guard/30349.htm
+index 12ef8ff7..6e2e14cc 100644
+--- a/aCis_datapack/data/html/guard/30349.htm
++++ b/aCis_datapack/data/html/guard/30349.htm
+@@ -1,6 +1,6 @@
+ <html><body>Sentry Jenna:<br>
+ I am Sentry Jenna. I am on duty now so I cannot talk long.<br>
+-If you go into this cave, you will come to the Dark Elf village. The grand building you see in front of you is the Shilen Temple.<br>
++If you go into this cave, you will come to the Dark Elf village. The grand building you see in front of you is the Dark Temple.<br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">See the Lord and get the tax rate information.</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30355-1.htm b/aCis_datapack/data/html/guard/30355-1.htm
+index 9304a537..b5d0225e 100644
+--- a/aCis_datapack/data/html/guard/30355-1.htm
++++ b/aCis_datapack/data/html/guard/30355-1.htm
+@@ -1,4 +1,4 @@
+ <html><body>Sentry Roselyn:<br>
+-The temple serves Shilen, mother of the abyss. It is not only a sacred temple where rituals are held for the goddess, but also a place where young Dark Elves learn discipline, basic combat skills and magic.<br>
+-Within the deepest parts of the temple lies Patriarch Mitraell. To get to the temple, go up to the surface and then just a bit to the left.
++It is not only a temple where rituals are held, but also a place where young Dark Elves learn discipline, basic combat skills and magic.<br>
++Within the deepest parts of the Dark Temple lies Patriarch Mitraell. To get to the temple, go up to the surface and then just a bit to the left.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30355.htm b/aCis_datapack/data/html/guard/30355.htm
+index ef62ace4..0ef82aa4 100644
+--- a/aCis_datapack/data/html/guard/30355.htm
++++ b/aCis_datapack/data/html/guard/30355.htm
+@@ -1,7 +1,7 @@
+ <html><body>Sentry Roselyn:<br>
+-May the blessing of darkness shelter you. I am Sentry Roselyn, one of the members of the glorious corps of sentries, who protect the Temple of Shilen and guard her people.<br>
+-This path that I am in charge of leads to the surface. Follow the path and go outside to get to the most sacred site for our race, the <font color="LEVEL">Temple of Shilen.</font><br>
+-<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Shilen Temple.</a><br>
++May the darkness shelter you. I am Sentry Roselyn, one of the members of the glorious corps of sentries, who protect the Dark Temple and guard people.<br>
++This path that I am in charge of leads to the surface. Follow the path and go outside to get to the most sacred site for our race, the <font color="LEVEL">Dark Temple.</font><br>
++<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Dark Temple.</a><br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">See the Lord and get the tax rate information.</a><br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 \ No newline at end of file
@@ -656,6 +846,17 @@ index e49ceb8d..124d913a 100644
  <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/merchant/30147-bought.htm b/aCis_datapack/data/html/merchant/30147-bought.htm
+index 43bdb1af..90d3326b 100644
+--- a/aCis_datapack/data/html/merchant/30147-bought.htm
++++ b/aCis_datapack/data/html/merchant/30147-bought.htm
+@@ -1,5 +1,5 @@
+ <html><body>Trader Unoren:<br>
+-Thank you, my friend. Your payment will be used in the service of our mother, the Mother Tree.<br>
++Thank you, my friend. Your payment will be used resourcefully.<br>
+ <a action="bypass -h npc_%objectId%_Buy 37">Buy Fighter equipment</a><br>
+ <a action="bypass -h npc_%objectId%_Buy 38">Buy Mystic equipment</a><br>
+ <a action="bypass -h npc_%objectId%_Newbie_Exc_Multisell 003">Exchange Equipment</a><br>
 diff --git a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm b/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
 index 79202523..83b83464 100644
 --- a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
@@ -666,6 +867,177 @@ index 79202523..83b83464 100644
 +I am Lord Kakai. I am the leader of the great Orc race. Why has someone like you come to this remote place, the Immortal Plateau -- the home of the Orcs?
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/30129-02.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/30129-02.htm
+index ee5b86a9..3371a203 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/30129-02.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/30129-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Hierarch Mitraell:<br>
+-I, the Hierarch of all Dark Elves offer you the blessings of the abyss. I am the prisoner of a magic seal, barely able to function, but I still manage to teach my students.<br>
++I, the Hierarch of all Dark Elves offer you something. I am the prisoner of a magic seal, barely able to function, but I still manage to teach my students.<br>
+ Have you brought the blood of Mitraell from the Newbie Helper?<br>
+ <a action="bypass -h Quest NewbieHelper 30129-03.htm">"I brought the blood of Mitraell."</a><br>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/30131-04.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/30131-04.htm
+index cb548017..e9626c71 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/30131-04.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/30131-04.htm
+@@ -1,4 +1,3 @@
+ <html><body>Newbie Helper:<br>
+-Speak with <font color="LEVEL">Hierarch Mitraell</font> over there. He has a gift for you.<br>
+-May the goddess of luck be with you!
++Speak with <font color="LEVEL">Hierarch Mitraell</font> over there. He has a gift for you.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/30400-04.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/30400-04.htm
+index 614351f7..ba41206f 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/30400-04.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/30400-04.htm
+@@ -1,4 +1,3 @@
+ <html><body>Newbie Helper:<br>
+-Speak with <font color="LEVEL">Nerupa</font> over there. She has a gift for you.<br>
+-May the goddess of luck be with you!
++Speak with <font color="LEVEL">Nerupa</font> over there. She has a gift for you.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_02.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_02.htm
+index 3028da36..7b4ad41e 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_02.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Guide:<br>
+-If you have powerful companions, they may purchase equipment for you. Otherwise, equipment for novices is provided by the Temple of Shilen.<br>
++If you have powerful companions, they may purchase equipment for you. Otherwise, equipment for novices is provided by the Temple.<br>
+ For now, you should seek to master the arms and armor you already possess. You will sometimes obtain arms and armor from the monsters you hunt. With some luck, you may acquire <font color="LEVEL">Cloth Shoes, Apprentice's Shoes, or a Cloth Cap</font>.<br>
+ The temple will provide you with two different blades, a dagger and a Squire's Sword. The <font color="LEVEL">dagger</font> is swift, but its accuracy suffers, while the <font color="LEVEL">Squire's Sword (one-handed sword)</font> is noticeably slower than the dagger, but strikes with greater accuracy. Remember that different weapons may call upon different skills in their use.<br>
+ Return to me when you have achieved <font color="LEVEL">level 6</font>, and I will teach you more about weapons.<br>
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_04.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_04.htm
+index a25d17ca..6308da1f 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_04.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_04.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Guide:<br>
+-You may begin to learn skills when you reach level 5. Training in skills may be obtained at the Temple of Shilen, where the masters and elders stay. The Temple is the largest building in the village, north of the village square. The masters there will teach you. First, however, you will need to acquire <font color="LEVEL">SP</font> before you can obtain skills. SP stands for <font color="LEVEL">skill points</font>, and like experience, they are earned by defeating monsters. SP are deducted when you learn a new skill. If you are curious about your SP, click the <font color="LEVEL">Character Status</font> button and view the <font color="LEVEL">Status</font> tab on the window. You must expend SP for each individual skill you acquire.<br>
++You may begin to learn skills when you reach level 5. Training in skills may be obtained at the Temple, where the masters and elders stay. The Temple is the largest building in the village, north of the village square. The masters there will teach you. First, however, you will need to acquire <font color="LEVEL">SP</font> before you can obtain skills. SP stands for <font color="LEVEL">skill points</font>, and like experience, they are earned by defeating monsters. SP are deducted when you learn a new skill. If you are curious about your SP, click the <font color="LEVEL">Character Status</font> button and view the <font color="LEVEL">Status</font> tab on the window. You must expend SP for each individual skill you acquire.<br>
+ <a action="bypass -h Quest NewbieHelper darkelf/guide_delf_frankia_f05_041.htm">I want to know more about skills.</a><br>
+ <a action="bypass -h Quest NewbieHelper darkelf/guide_delf_frankia_f05.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_051.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_051.htm
+index 489e31eb..e1af9f29 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_051.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_f05_051.htm
+@@ -1,7 +1,7 @@
+ <html><body>Newbie Guide:<br>
+ I am pleased to tell you what I know, but I do not know everything. You should speak to as many of the villagers as you can.<br>
+-Have you already spoken to <font color="LEVEL">Abyssal Celebrant Undrias</font> at the gate of the Temple of Shilen? He may want to ask a favor of you.<br>
+-Also, seek out <font color="LEVEL">Sentry Nelsya</font> at the north entrance of the village. 'Tis the season of Shilen's Hunting Ceremony, and they are looking for volunteers.<br>
++Have you already spoken to <font color="LEVEL">Abyssal Celebrant Undrias</font> at the gate of the Dark Temple? He may want to ask a favor of you.<br>
++Also, seek out <font color="LEVEL">Sentry Nelsya</font> at the north entrance of the village. 'Tis the season of Hunting Ceremony, and they are looking for volunteers.<br>
+ Let's see ... ah, yes! See that you speak to <font color="LEVEL">Carlon</font> and to <font color="LEVEL">Trader Payne</font> as well.<br>
+ <a action="bypass -h Quest NewbieHelper darkelf/guide_delf_frankia_f05.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_m07_051.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_m07_051.htm
+index 72a02c0f..6e93e7b9 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_m07_051.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/darkelf/guide_delf_frankia_m07_051.htm
+@@ -1,7 +1,7 @@
+ <html><body>Newbie Guide:<br>
+ I am pleased to tell you what I know, but I do not know everything. You should speak to as many of the villagers as you can.<br>
+-Have you already spoken to <font color="LEVEL">Abyssal Celebrant Undrias</font> at the gate of the Temple of Shilen? He may want to ask a favor of you.<br>
+-Also, seek out <font color="LEVEL">Sentry Nelsya</font> at the north entrance of the village. 'Tis the season of Shilen's Hunting Ceremony, and they are looking for volunteers.<br>
++Have you already spoken to <font color="LEVEL">Abyssal Celebrant Undrias</font> at the gate of the Dark Temple? He may want to ask a favor of you.<br>
++Also, seek out <font color="LEVEL">Sentry Nelsya</font> at the north entrance of the village. 'Tis the season of Hunting Ceremony, and they are looking for volunteers.<br>
+ Let's see ... ah, yes! See that you speak to <font color="LEVEL">Carlon</font> and to <font color="LEVEL">Trader Payne</font> as well.<br>
+ <a action="bypass -h Quest NewbieHelper darkelf/guide_delf_frankia_m07.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/NewbieHelper/elf/guide_elf_roios_f05_03.htm b/aCis_datapack/data/html/script/feature/NewbieHelper/elf/guide_elf_roios_f05_03.htm
+index d4ea5ba1..ac5289a4 100644
+--- a/aCis_datapack/data/html/script/feature/NewbieHelper/elf/guide_elf_roios_f05_03.htm
++++ b/aCis_datapack/data/html/script/feature/NewbieHelper/elf/guide_elf_roios_f05_03.htm
+@@ -2,6 +2,6 @@
+ Begin by hunting <font color="LEVEL">red keltirs</font> or <font color="LEVEL">wolves</font> near the village but the wolves are the more dangerous.<br>
+ Around Level 6 you should be able to challenge the <font color="LEVEL">Kaboo Orcs</font> that lurk beyond the southwestern edge of the village, or past the southeastern gate. Remember, though, that orcs are more dangerous than they seem, for if you attack one several others may come to its aid.<br>
+ When you target a monster, the monster's name appears in the upper central portion of the screen. <font color="LEVEL">The color of the name tells you the monster's difficulty</font>. For now, hunt those that appear in white or sky blue. Those that appear in red or yellow are much stronger than you, so leave them alone.<br>
+-Finally, for now hunt near the <font color="LEVEL">shadow of the Mother Tree</font>. Your strength will recover quickly when you stand beneath the Mother's nurturing branches.<br>
++Finally, for now hunt near the <font color="LEVEL">shadow of the Mother Tree</font>. Your strength will recover quickly when you stand beneath the Mother Tree's nurturing branches.<br>
+ <a action="bypass -h Quest NewbieHelper elf/guide_elf_roios_f05.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/SecondClassChange/master_human_elf_fighter-02.htm b/aCis_datapack/data/html/script/feature/SecondClassChange/master_human_elf_fighter-02.htm
+index 9c770e70..5cf36b3c 100644
+--- a/aCis_datapack/data/html/script/feature/SecondClassChange/master_human_elf_fighter-02.htm
++++ b/aCis_datapack/data/html/script/feature/SecondClassChange/master_human_elf_fighter-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>
+-The Temple Knights are Elven knights of the highest order, expert swordsmen who guard the forest and the headwaters of the river. They serve Eva, the goddess of water, and the Mother Tree Glade.<br>
++The Temple Knights are Elven knights of the highest order, expert swordsmen who guard the forest and the headwaters of the river. They serve Mother Tree Glade.<br>
+ <a action="bypass -h Quest SecondClassChange master_human_elf_fighter-03.htm">Description of the Temple Knight</a><br>
+ <a action="bypass -h Quest SecondClassChange TK">Change occupations to a Temple Knight.</a><br>
+ <a action="bypass -h Quest SecondClassChange master_human_elf_fighter-01.htm">Return</a>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf008.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf008.htm
+index 06e16113..eee439ad 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf008.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf008.htm
+@@ -1,5 +1,5 @@
+ <html><body><center><font color="LEVEL">Quest</font></center><br>
+-Speak to the <font color="LEVEL">Abyssal Celebrants</font> of the Temple of Shilen. They will give you profitable assignments.<br>
++Speak to the <font color="LEVEL">Abyssal Celebrants</font> of the Dark Temple. They will give you profitable assignments.<br>
+ They are marked in yellow on the radar, in the upper-right corner of the screen. You must visit them if you want to advance.<br>
+ <a action="link TE00">Close Window</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_fighter001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_fighter001.htm
+index cf9dc0a5..254cde2d 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_fighter001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_fighter001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the Temple of Shilen, where Shilen, the goddess of darkness is worshipped. This is the place where young dark elves are trained to grow their skills and strength.<br>
++This is the Dark Temple. This is the place where young dark elves are trained to grow their skills and strength.<br>
+ Now, you are taking your first step to becoming a Dark Fighter. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_mage001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_mage001.htm
+index c95e4de3..8008279c 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_mage001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_delf_mage001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the Temple of Shilen, where Shilen, the goddess of darkness is worshipped. This is the place where young dark elves are trained to grow their skills and strength.<br>Now, you are taking your first step to becoming a Dark Mystic. First, I will explain the basic operation of the game.<br>
++This is the Dark Temple. This is the place where young dark elves are trained to grow their skills and strength.<br>Now, you are taking your first step to becoming a Dark Mystic. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
+ <td valign=top><img src="L2UI_CH3.tutorial_pointer" width=32 height= 16></td></tr></table>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_fighter001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_fighter001.htm
+index 4ecbd6d7..03653dfe 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_fighter001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_fighter001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the sacred spring where the Mother Tree, the mother of all Elves, is worshipped. Before journeying forth to the outside world, young elves begin their training in this place.<br>
++This is the sacred spring where the Mother Tree, is located. Before journeying forth to the outside world, young elves begin their training in this place.<br>
+ Now, you are taking your first step to becoming an Elven Fighter. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_mage001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_mage001.htm
+index bf415618..30c3ee98 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_mage001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_elven_mage001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the sacred spring where the Mother Tree, the mother of all Elves, is worshipped. Before journeying forth to the outside world, young elves begin their training in this place.<br>
++This is the sacred spring where the Mother Tree, is located. Before journeying forth to the outside world, young elves begin their training in this place.<br>
+ Now, you are taking your first step to becoming an Elven Mystic. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
 diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm
 index ca2da860..45047e53 100644
 --- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm
@@ -712,6 +1084,288 @@ index 6d770d4e..1431a136 100644
  (This quest may only be undertaken by an Orcish character of level 2 and above.)
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm b/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm
+index b165e6d6..6dbdfdc9 100644
+--- a/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm
+@@ -2,6 +2,6 @@
+ Countless thoughts beyond comprehension sear painfully into your brain. It seems that I heard someone laughing.<br>
+ The man said. "One more hero you wanted is born here again."<br>
+ A lady with blue clothes answered. "No, he is just a baby who starts toddling. But, he won't be only under his mother's protection anymore"<br>
+-A goddess engraved on the way of pilgrimage like this: You are free beings. Yoke called Race, Negligence called Stability. The Elf that got hurt by betrayal,closed the door to the world and stopped breathing. The Mother Tree being rotten.<br>
++You are free beings. Yoke called Race, Negligence called Stability. The Elf that got hurt by betrayal,closed the door to the world and stopped breathing. The Mother Tree being rotten.<br>
+ A voice is heard from the head.<br>
+-<font color="LEVEL">Baby, you are now ready to help me. Then, go back to Aden and put an end to your pilgrimage. In my Temple, you will keep my honor.</font></body></html>
+\ No newline at end of file
++<font color="LEVEL">Baby, you are now ready to help me. Then, go back to Aden and put an end to your pilgrimage.</font></body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-01.htm b/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-01.htm
+index b8a4413b..4183c1fe 100644
+--- a/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Grand Magister Fairen:<br>
+- Well, shall I check your records? Let's see, you were educated at the Temple of Shilen, obtained a certificate of Dark Wizard from the Altar of Rites in the Dark Forest, passed the Test of the Summoner with flying colors, and even attained the Recommendation of Galatea!<br>
++ Well, shall I check your records? Let's see, you were educated at the Dark Temple, obtained a certificate of Dark Wizard from the Altar of Rites in the Dark Forest, passed the Test of the Summoner with flying colors, and even attained the Recommendation of Galatea!<br>
+ Your records are awesome! You won't have any problem! In fact, I've got you in mind for a very special position...<br>
+ I'm thinking of recommending that you be made a <font color="LEVEL">Spectral Master</font>! It won't be easy, but your skills are extraordinary! Will you take the challenge?<br>
+ <a action="bypass -h Quest Q093_SagaOfTheSpectralMaster 0-1">"I'll do it."</a></body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-02.htm b/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-02.htm
+index 345dec32..0ff72762 100644
+--- a/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q093_SagaOfTheSpectralMaster/0-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Grand Magister Fairen:<br>
+- Well, shall I check your records? Let's see, you were educated at the Temple of Shilen, obtained a certificate of Dark Wizard from the Altar of Rites in the Dark Forest, passed the Test of the Summoner with flying colors, and even obtained a Recommendation from Galatea!<br>
++ Well, shall I check your records? Let's see, you were educated at the Dark Temple, obtained a certificate of Dark Wizard from the Altar of Rites in the Dark Forest, passed the Test of the Summoner with flying colors, and even obtained a Recommendation from Galatea!<br>
+ Your records are awesome! Unfortunately, it's come to our attention that your research activities have slowed down since you were promoted to Phantom Summoner. Work harder! Eventually, I'll recommend that you become a candidate for <font color="LEVEL">Spectral Master</font>, the ultimate summoner! Do your best!<br>
+ (This quest may only be undertaken by a Phantom Summoner of level 76 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm
+index 22271e49..bbeef6d8 100644
+--- a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Abyssal Celebrant Cecktinon:<br>
+-A letter for me from Blacksmith Karrod ...? Hmm, what use does he have for the soul of a Dwarf slave who is already dead ... Whatever the reason may be, I cannot refuse my friend's request. It has been less than ten years since Steelbender died, and I don't think it would be difficult to call his spirit up from the kingdom of Shilen.<br>
+-This <font color="LEVEL">Well of Souls</font> in the middle of the temple is connected to the kingdom of the dead, where Shilen rules. Shall we call it, say, a sort of mirror that lets us see into the kingdom of death? We abyssal celebrants call upon the spirits of our ancestors to seek their advice, or enemy generals that have been killed on the battlefield to learn their secrets, through this well of souls.<br>
++A letter for me from Blacksmith Karrod ...? Hmm, what use does he have for the soul of a Dwarf slave who is already dead ... Whatever the reason may be, I cannot refuse my friend's request. It has been less than ten years since Steelbender died, and I don't think it would be difficult to call his spirit up from the kingdom of dead.<br>
++This <font color="LEVEL">Well of Souls</font> in the middle of the temple is connected to the kingdom of the dead. Shall we call it, say, a sort of mirror that lets us see into the kingdom of death? We abyssal celebrants call upon the spirits of our ancestors to seek their advice, or enemy generals that have been killed on the battlefield to learn their secrets, through this well of souls.<br>
+ But to call upon a spirit of the dead from the well of souls and capture it in this world, something called a <font color="LEVEL">Soul Catcher</font> is required. Sadly, I don't have a Soul Catcher with me, but you should be able to obtain one by going to <font color="LEVEL">Magister Harne</font> in the village. I purchase all of my materials for spell casting or rituals from Harne. I will write you a Letter of Introduction, so go to Magister Harne and ask about the Soul Catcher.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-01.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-01.htm
+index 1846a3a5..8b24558c 100644
+--- a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Magister Harne:<br>
+-You need a Soul Catcher? Planning on an exorcism ritual or something? The Abyssal Celebrants have conducted rituals to call the dead up from Shilen's kingdom for hundreds of years now, but I am always nervous -- long ago, the celebrants once called upon a dangerous entity that could not be sent back. Eventually, the elders were called upon to take care of the matter and the spirit was finally restrained, but as a result of that event many Celebrants lost their lives. The dead should be left dead. I do not attempt dangerous magic such as exorcism.<br>
++You need a Soul Catcher? Planning on an exorcism ritual or something? The Abyssal Celebrants have conducted rituals to call the dead up from dead's' kingdom for hundreds of years now, but I am always nervous -- long ago, the celebrants once called upon a dangerous entity that could not be sent back. Eventually, the elders were called upon to take care of the matter and the spirit was finally restrained, but as a result of that event many Celebrants lost their lives. The dead should be left dead. I do not attempt dangerous magic such as exorcism.<br>
+ Anyhow, it seems that Cecktinon needs a Soul Catcher, so I guess I must make one. For that, I will need the bones of the dead. The older the bones, the better. Please do me a favor -- go to the abandoned <font color="LEVEL">School of Dark Arts</font> and hunt the undead that take the form of skeletons. Gather ten <font color="LEVEL">undead Bone Fragments</font> and come back to me. I will make you the Soul Catcher with those bones.<br>
+ The School of Dark Arts is located southwest of the village. If you do not know the way there, ask Sentry Kayleen for directions.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-04.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-04.htm
+index c67ca78c..67fc5645 100644
+--- a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30144-04.htm
+@@ -1,3 +1,3 @@
+ <html><body>Magister Harne:<br>
+-Take the Soul Catcher that I have made to <font color="LEVEL">Cecktinon</font> at the Temple of Shilen. Hurry! We shouldn't keep the Abyssal Celebrant waiting.
++Take the Soul Catcher that I have made to <font color="LEVEL">Cecktinon</font> at the Dark Temple. Hurry! We shouldn't keep the Abyssal Celebrant waiting.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-05.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-05.htm
+index 57234e8d..b3eb4660 100644
+--- a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-05.htm
+@@ -1,3 +1,3 @@
+ <html><body>Blacksmith Karrod:<br>
+-First, head to the <font color="LEVEL">Temple of Shilen</font> and give this letter to <font color="LEVEL">Abyssal Celebrant Cecktinon</font>. Thank you. He is a friend of mine. He will gladly help. He will tell you about the exorcism spell to call the soul of Steelbender from the abyss.
++First, head to the <font color="LEVEL">Dark Temple</font> and give this letter to <font color="LEVEL">Abyssal Celebrant Cecktinon</font>. Thank you. He is a friend of mine. He will gladly help. He will tell you about the exorcism spell to call the soul of Steelbender from the abyss.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-06.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-06.htm
+index 918c0327..2d938255 100644
+--- a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30307-06.htm
+@@ -1,3 +1,3 @@
+ <html><body>Blacksmith Karrod:<br>
+-Go and deliver my letter to the Abyssal Celebrant Cecktinon at the temple of Shilen. Hurry! Tetrarch Thifiell is an impatient man.
++Go and deliver my letter to the Abyssal Celebrant Cecktinon at the Dark Temple. Hurry! Tetrarch Thifiell is an impatient man.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-04.htm b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-04.htm
+index a59faa39..d5904c1b 100644
+--- a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-04.htm
+@@ -1,5 +1,5 @@
+ <html><body>Tetrarch Thifiell:<br>
+-It is believed that at Honorius' execution by burning at the stake, the documents he had been translating were all burned, but there were also rumors that a portion of them had been stolen. The sheepskin scrolls were never found, and thus the rumors were believed to be false, but actually, they were hidden in the School of Dark Arts. That they found their way to me can only be considered Shilen's will.<br>
+-It's a shame that I cannot read the Revelations properly, because I do not know the language of the giants of ere. So I have asked <font color="LEVEL">Abyssal Celebrant Kartia</font>, who is well learned in the ancient languages, to translate them for me. It has been four days, and I think that they should have been finished by now. I'd like you to go to the temple of Shilen, seek Abyssal Celebrant Kartia, and bring back the <font color="LEVEL">translated revelations</font> to me. I'm sure it will be a learning experience for you also.<br>
++It is believed that at Honorius' execution by burning at the stake, the documents he had been translating were all burned, but there were also rumors that a portion of them had been stolen. The sheepskin scrolls were never found, and thus the rumors were believed to be false, but actually, they were hidden in the School of Dark Arts. That they found their way to me can only be considered positive.<br>
++It's a shame that I cannot read the Revelations properly, because I do not know the language of the giants of ere. So I have asked <font color="LEVEL">Abyssal Celebrant Kartia</font>, who is well learned in the ancient languages, to translate them for me. It has been four days, and I think that they should have been finished by now. I'd like you to go to the Dark Temple, seek Abyssal Celebrant Kartia, and bring back the <font color="LEVEL">translated revelations</font> to me. I'm sure it will be a learning experience for you also.<br>
+ <a action="bypass -h Quest Q106_ForgottenTruth 30358-05.htm">Say you will take the task</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-05.htm b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-05.htm
+index c7c3de70..fcbf2bc9 100644
+--- a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-05.htm
+@@ -1,4 +1,4 @@
+ <html><body>Tetrarch Thifiell:<br>
+-Go and seek <font color="LEVEL">Abyssal Celebrant Kartia</font> in the <font color="LEVEL">Temple of Shilen</font>. This black Onyx necklace was promised to Kartia in return for the translation, so go deliver it to him, and return to me with the translated revelations.<br>
++Go and seek <font color="LEVEL">Abyssal Celebrant Kartia</font> in the <font color="LEVEL">Dark Temple</font>. This black Onyx necklace was promised to Kartia in return for the translation, so go deliver it to him, and return to me with the translated revelations.<br>
+ Take care that no one hears about Kaysha's Revelations. There are many dangerous characters who would stop at nothing to get their hands on that ancient scroll. For your safety and for mine, it would be best to take care of this matter quietly. Do you understand what I'm saying?
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-06.htm b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-06.htm
+index a19d859f..f30aa42d 100644
+--- a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-06.htm
+@@ -1,3 +1,3 @@
+ <html><body>Tetrarch Thifiell:<br>
+-What are you doing, you haven't gone to the temple yet?! Go immediately to the Temple of Shilen and seek Kartia. Give him the onyx talisman and return to me with the translated revelations.
++What are you doing, you haven't gone to the temple yet?! Go immediately to the Dark Temple and seek Kartia. Give him the onyx talisman and return to me with the translated revelations.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-07.htm b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-07.htm
+index 431442cb..97efa092 100644
+--- a/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q106_ForgottenTruth/30358-07.htm
+@@ -1,6 +1,6 @@
+ <html><body>Tetrarch Thifiell:<br>
+ Well done! I was just getting anxious that you were not returning ... So, is this the Kaysha's Revelation that Kartia has translated? This ancient writing contains the dark inheritance passed on to our race, the truths that have been until now hidden by the Elves of Light and the Humans. Would you like to hear?<br>
+-In the beginning Gran Kain of the darkness and Einhasad of the light decreed us their children the lords of all creatures and had us rule all the earth ... Of the four children that were produced from the union of these two gods, the goddess born with the destiny to rule water was Shilen ... Later Einhasad borrowed the power of water from Shilen and created new life. The Treants, race of the trees. Shilen looked after this newly born race as a mother takes care of her child ...<br>
+-The Elves of light seek the origin of our race from the goddess Eva, but before she became the goddess of water, the title belonged to Shilen. Now the queen of death, Shilen is the true mother of our race. If you seek the path of darkness, keep this story deeply engraved in your mind. If you have studied the basics of the dark arts, you would know that the gods are the origin of the magic power that makes up this universe; thus the deeper the understanding of the gods, the greater the power of the one walking the path of darkness becomes.<br>
++In the beginning Gran Kain of the darkness and Einhasad of the light decreed us their children the lords of all creatures and had us rule all the earth ... Of the four children that were produced from the union of these two gods, ... Later Einhasad borrowed the power of water and created new life. The Treants, race of the trees.<br>
++The Elves of light seek the origin of our race according to themselves. If you seek the path of darkness, keep this story deeply engraved in your mind. If you have studied the basics of the dark arts, you would know that the gods are the origin of the magic power that makes up this universe; thus the deeper the understanding, the greater the power of the one walking the path of darkness becomes.<br>
+ In honor of your new revelation, I will give you this weapon. It is a sharp blade that contains the magic power of the spirits. It will be useful in the future. But take care not to rely too heavily on such small tools. Never forget that the true power of magic lies within the Mystic.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm
+index c405e524..29cfc0fe 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm
+@@ -1,4 +1,4 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness and Shilen, the mother of the abyss. This mass is the most sacred religious ceremony of our race. The clergy of the sanctuary are very busy with preparations. We are suffering from lack of help, but I cannot possibly ask a favor of our guests!<br>
++Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness. This mass is the religious ceremony of our race. The clergy of the sanctuary are very busy with preparations. We are suffering from lack of help, but I cannot possibly ask a favor of our guests!<br>
+ (This quest may only be undertaken by a Dark Elven character.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-02.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-02.htm
+index 63049ea8..1e475c3e 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-02.htm
+@@ -1,4 +1,4 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness and Shilen, the mother of the abyss. This mass is the most sacred religious ceremony of our race. The Human Mystics of the Ivory Tower who attended last year's mass were awed at the size and magnificence of the mass. This year's mass will be no less grand. The clergy of the temple are very busy with preparations. There are a few items needed for the mass that must be fetched from the village. If we are short on help later, I may need you to deliver those items for me.<br>
++Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness. This mass is the religious ceremony of our race. The Human Mystics of the Ivory Tower who attended last year's mass were awed at the size and magnificence of the mass. This year's mass will be no less grand. The clergy of the temple are very busy with preparations. There are a few items needed for the mass that must be fetched from the village. If we are short on help later, I may need you to deliver those items for me.<br>
+ (This quest may only be undertaken by a Dark Elven character of level 2 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-03.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-03.htm
+index 38575844..fcbaff5e 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness and Shilen, the mother of the abyss. This mass is the most sacred religious ceremony of our race. The Human Mystics of the Ivory Tower who attended last year's mass were awed at the size and magnificence of the mass. This year's mass will be no less grand. The clergy of the temple are very busy with preparations.<br>
++Soon we will hold the <font color="LEVEL">mass of darkness</font> in honor of Gran Kain of the darkness. This mass is the most sacred religious ceremony of our race. The Human Mystics of the Ivory Tower who attended last year's mass were awed at the size and magnificence of the mass. This year's mass will be no less grand. The clergy of the temple are very busy with preparations.<br>
+ We must fetch a few things from the village that are needed during the mass. We are short on help, so I would like to ask you to deliver those items for me. Do you think you could spare the time?<br>
+ <a action="bypass -h Quest Q166_MassOfDarkness 30130-04.htm">Say you will take the task</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-06.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-06.htm
+index f5eeff41..badff2af 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-06.htm
+@@ -1,3 +1,3 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-The ceremonial dagger, holy wine, and Garmiel's Scripture, which contains the truth of the darkness ... You have brought them all. It will be a mass that will please the gods more than ever. Good job. I will pay you as promised. May the shelter of the abyss defend you.
++The ceremonial dagger, holy wine, and Garmiel's Scripture, which contains the truth of the darkness ... You have brought them all. It will be a mass that will be remembered more than ever. Good job. I will pay you as promised.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30139-02.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30139-02.htm
+index 83792eee..9dca29d5 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30139-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30139-02.htm
+@@ -1,3 +1,3 @@
+ <html><body>Warehouse Keeper Dorankus:<br>
+-You haven't left for the sanctuary of Shilen yet? Hurry and deliver the wine I have given you to Abyssal Celebrant Undrias! It is a very precious wine, so take care that you do not break the bottle!
++You haven't left for the dark sanctuary yet? Hurry and deliver the wine I have given you to Abyssal Celebrant Undrias! It is a very precious wine, so take care that you do not break the bottle!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30143-02.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30143-02.htm
+index fbcd951a..ad4415af 100644
+--- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30143-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30143-02.htm
+@@ -1,3 +1,3 @@
+ <html><body>Master Trudy:<br>
+-I see that you haven't gone to the sanctuary yet. Deliver Garmiel's Scripture that I have given you to Abyssal Celebrant Undrias. Please hurry. You don't want the mass to be delayed on your account, do you?
++I see that you haven't gone to the dark sanctuary yet. Deliver Garmiel's Scripture that I have given you to Abyssal Celebrant Undrias. Please hurry. You don't want the mass to be delayed on your account, do you?
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm b/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm
+index 7d7cb1ad..9730a933 100644
+--- a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm
+@@ -2,6 +2,6 @@
+ Trust... How dare you ask for such a thing from us... Remember the infamous betrayer Dasparion? He was of your race! And it was Human Wizards who sealed our leader! How could we possibly trust the Humans? Do you think that all the past injustices can be forgotten with a simple letter? You fool! I will never understand Humans!<br>
+ ...However, we have been expecting the <font color="LEVEL">Chaotic Chronicle</font> as have you. When that dark time arrives we may have to cooperate in order to survive... I suppose that, for such reasons, we should try to recover the trust between our races.<br>
+ But trust is not something that can be given freely. If you exhibit true sincerity, I'll consider your proposal.<br>
+-We have tried for centuries to break the magic spell on our Hierarch Mitraell. He is privy to the secrets of Shilen and the <font color="LEVEL">Queen of Destruction</font>, more than anyone else. It is no exaggeration to say that he holds a vital clue to the upcoming Chaotic Chronicle.<br>
++We have tried for centuries to break the magic spell on our Hierarch Mitraell. He is privy to the dark secrets, more than anyone else. It is no exaggeration to say that he holds a vital clue to the upcoming Chaotic Chronicle.<br>
+ <font color="LEVEL">You must collect the research materials regarding the release of our leader.</font> I don't feel bad about asking for your help, since it was your ancestors who sealed our Hierarch. Take this letter to <font color="LEVEL">Magister Clayton of Dion Castle Town</font>. He will give you the list of materials to collect.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm
+index c7a0a7ae..bb3f751d 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm
+@@ -1,6 +1,6 @@
+ <html><body>Hierarch Asterios:<br>
+-The Mother Tree is the origin of life and a shelter for spirits. Rays of heaven shine through her branches and life branches forth from her roots. She is the center of the universe where the sky and earth become as one.<br>
+-The Elves and the Mother Tree have been inextricably linked from the very beginning... After death our spirits return to the shelter of the Mother Tree.<br>
+-Our mother of souls is dying.<br>
++Rays of heaven shine through Mother Tree's' branches and life branches forth from her roots.<br>
++The Elves and the Mother Tree have been inextricably linked from the very beginning...<br>
++Our Mother Tree is dying.<br>
+ <a action="bypass -h Quest Q218_TestimonyOfLife 30154-05.htm">"Why is the Mother Tree dying?"</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-07.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-07.htm
+index 35c5cda2..b3fc21d2 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-07.htm
+@@ -1,5 +1,5 @@
+ <html><body>Hierarch Asterios:<br>
+ I apologize for putting such a heavy burden on your young shoulders, but it is your fate so you must deal with it.<br>
+-You must find the Water of Life and save the Mother Tree! Finding the water will be a painful task that will require patience and sacrifice. I give you this amulet which contains the blessings of the Mother Tree guardians, keep it safe.<br>
++You must find the Water of Life and save the Mother Tree! Finding the water will be a painful task that will require patience and sacrifice. I give you this amulet from Mother Tree guardians, keep it safe.<br>
+ <font color="LEVEL">Thalia</font> and her sisters know more than anyone else about the Water of Life. Take this letter and meet Thalia. You can find her in the <font color="LEVEL">eastern part of the Iris Lake</font>.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm
+index 5d6a3a9e..f85b59f9 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm
+@@ -1,6 +1,6 @@
+ <html><body>Thalia:<br>
+ May the blessings of the starlight be upon you. You have recovered Talin's Spear! Thank you very much for your trouble.<br>
+ Now that we have both the <font color="LEVEL">Grail of Purity</font> and <font color="LEVEL">Talin's Spear</font>, we can set off in search of the Water of Life. This will bring the utmost sacrifice and the greatest sorrow...<br>
+-We must pierce <font color="LEVEL">Eva's Unicorn</font>, the guardian of our forest, with Talin's Spear and collect its <font color="LEVEL">tears</font> in the Grail of Purity. That is the 'Water of Life' itself. In order to recover the life of the Mother Tree, we must sacrifice the life of Eva's dearest incarnation, the unicorn...<br>
+-Do you understand what I have asked of you? May the Goddess forgive us for what we are about to do...
++We must pierce <font color="LEVEL">Eva's Unicorn</font>, the guardian of our forest, with Talin's Spear and collect its <font color="LEVEL">tears</font> in the Grail of Purity. That is the 'Water of Life' itself. In order to recover the life of the Mother Tree, we must sacrifice the life of the unicorn...<br>
++Do you understand what I have asked of you?
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30460-07.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30460-07.htm
+index 66aa9584..38969c90 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30460-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30460-07.htm
+@@ -1,5 +1,5 @@
+ <html><body>Master Cardien:<br>
+ You have returned! Your eyes tell the tale -- you have learned much in such a short time. I perceive that you have experienced a deep sorrow, but I see you have also grown in wisdom.<br>
+ This is the Camomile Charm that Hierarch gave you to fight for the tribe's survival. But I think you are ready for more advanced teaching now.<br>
+-Here is the <font color="LEVEL">Mark of Life</font>. Keep it with you -- it will assist you wherever your path leads you in the future. No matter what trials you must face, never forget the sacred time you spent in the shadow of Mother Tree, learning our timeless lessons of balance and beauty. May Eva's peace be with you always!
++Here is the <font color="LEVEL">Mark of Life</font>. Keep it with you -- it will assist you wherever your path leads you in the future. No matter what trials you must face, never forget the sacred time you spent in the shadow of Mother Tree, learning our timeless lessons of balance and beauty. May peace be with you always!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm
+index 505773ea..8e6ad3fc 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm
+@@ -1,3 +1,3 @@
+ <html><body>Isael Silvershadow:<br>
+-Please find the Water of Life so that the Mother Tree may become green and healthy once more. May the Goddess guide your path...
++Please find the Water of Life so that the Mother Tree may become green and healthy once more.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm b/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm
 index 359c64ab..3cfb9041 100644
 --- a/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm
@@ -736,6 +1390,119 @@ index b835d4ae..dd7b43ab 100644
 +I am jealous in a way... He was so tragically young. His name will be inscribed forever in the Orc Temple.<br>
  Now only bitter sorrow is left for this old man...<br>
  I must send reinforcements to Elder Balanki. Well done!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm b/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm
+index b1f1f57e..46b99ad1 100644
+--- a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Atuba Chief Varkees:<br>
+-The almighty Flame Lord has ordered me, Varkees, to defeat the disgusting <font color="LEVEL">Rakeclaw Imps.</font> Young Orc, have you experience in fighting against Rakeclaw Imps? They are creatures created from the power of black magic. These blasphemous creatures are defiling our Holy Land even as we speak!<br>
++The Flame Lord has ordered me, Varkees, to defeat the disgusting <font color="LEVEL">Rakeclaw Imps.</font> Young Orc, have you experience in fighting against Rakeclaw Imps? They are creatures created from the power of black magic. These blasphemous creatures are defiling our Holy Land even as we speak!<br>
+ I do not think that these petty creatures are brave enough to face us Orcs. There must be someone behind them! I will find out the secret powers controlling them, no matter what!<br>
+ (This quest may only be undertaken by a character of level 6 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-02.htm b/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-02.htm
+index e6ed58c6..4c226ae9 100644
+--- a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Atuba Chief Varkees:<br>
+-The almighty Flame Lord has ordered me, Varkees, to defeat these foreigners called the <font color="LEVEL">Rakeclaw Imps</font>! Young Orc, have you experience in fighting against the Rakeclaw Imps? They are magical creatures created from the power of dark magic. These blasphemous creatures are defiling our Holy Land even as we speak!<br>
++The Flame Lord has ordered me, Varkees, to defeat these foreigners called the <font color="LEVEL">Rakeclaw Imps</font>! Young Orc, have you experience in fighting against the Rakeclaw Imps? They are magical creatures created from the power of dark magic. These blasphemous creatures are defiling our Holy Land even as we speak!<br>
+ I, Varkees, do not think that these petty creatures are brave enough to face Orcs on their own. According to the seers, a jewel called <font color="LEVEL">the soulstone</font> is embedded in the hearts of Rakeclaw Imps. This soulstone attaches itself to its host and steals the host's spirit, allowing dark magicians to bend the creatures to their will!<br>
+ The seers have revealed this truth to me, Varkees. That if we gather enough soulstones, we will be able to turn their own powers against them and find out who is controlling the imps. I, the Atuba Chief Varkees, command you! Defeat the foreigners who have invaded our Holy Land, and bring the soulstones embedded in their hearts!<br>
+ <a action="bypass -h Quest Q273_InvadersOfTheHolyLand 30566-03.htm">Say you will take his orders</a>
+diff --git a/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm b/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm
+index f5e1a288..034dd120 100644
+--- a/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm
++++ b/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm
+@@ -1,3 +1,3 @@
+ <html><body>Master Ellenia:<br>
+-I understand. You too, need rest. Rest under the shade of the Mother Tree and recover the strength of both your body and soul. Well then, may Eva's blessings be with you.
++I understand. You too, need rest. Rest under the shade of the Mother Tree and recover the strength of both your body and soul. Well.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm
+index cab21008..52c7140b 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm
+@@ -1,4 +1,4 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-This sacred shrine is the only one of its kind on the entire continent. Yet the Humans spread lies about the goddess Shilen, denying that she is the giver of both life and death.<br>
+-When they invaded the Temple alongside those filthy Elves, many sacred objects were plundered. I especially mourn the loss of some exquisitely-crafted statues of Shilen. In fact, I have offered a sizable reward to anyone who recovers them...
++This sacred shrine is the only one of its kind on the entire continent. Yet the Humans spread lies about us.<br>
++When they invaded the Temple alongside those filthy Elves, many sacred objects were plundered. I especially mourn the loss of some exquisitely-crafted statues. In fact, I have offered a sizable reward to anyone who recovers them...
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-02.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-02.htm
+index 2a647b67..95917f9a 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-02.htm
+@@ -1,3 +1,3 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-Is this a piece from one of the lost statues of Shilen? Where did you find it? If you can recover enough pieces to reconstruct a whole statue, you will be richly rewarded!
++Is this a piece from one of the lost statues? Where did you find it? If you can recover enough pieces to reconstruct a whole statue, you will be richly rewarded!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-03.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-03.htm
+index da49d4ba..ba880143 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-One of the lost statues of Shilen! Give it to me and you will be richly rewarded, that I promise you!<br>
++One of the lost statues! Give it to me and you will be richly rewarded, that I promise you!<br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30130-04.htm">Give him the statue.</a><br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30130-05.htm">Refuse to give him the statue.</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-04.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-04.htm
+index 3b47452d..0a4571f6 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-04.htm
+@@ -1,3 +1,3 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-You have helped restore some of the splendor of the Temple of Shilen that was robbed from it by those Human and Elven vermin. Take this reward with my thanks. I will give you even more if you are able to recover any other lost statues. Go and serve your goddess faithfully!
++You have helped restore some of the splendor of the Dark Temple that was robbed from it by those Human and Elven vermin. Take this reward with my thanks. I will give you even more if you are able to recover any other lost statues.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-05.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-05.htm
+index 3014967d..b1464192 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-05.htm
+@@ -1,3 +1,3 @@
+ <html><body>Abyssal Celebrant Undrias:<br>
+-This statue is sacred to us! It is of no use to you. In fact, the Humans would burn you at the stake if they found it in your possession! Now come to your senses and give me the statue. As I told you, you will be richly rewarded for your efforts.
++This statue is of no use to you. In fact, the Humans would burn you at the stake if they found it in your possession! Now come to your senses and give me the statue. As I told you, you will be richly rewarded for your efforts.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm
+index 5b1325ba..d40fcb89 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm
+@@ -1,5 +1,5 @@
+ <html><body>Mercenary Redfoot:<br>
+-One time while talking with some friends in the Dark Elf Guild, I learned that Dark Elves worship the Goddess Shilen! You say everyone already knows that? Well I find it shocking. <br>
+-Why would anyone want to worship a goddess of death? It doesn't make sense! I have heard that the Dark Elves' Shilen Temple in the Dark Forest is spectacular. There are rumors that abyssal celebrants there are gathering fragments of the statue of Goddess Shilen from everywhere!<br>
++One time while talking with some friends in the Dark Elf Guild, I learned that Dark Elves have advantages attacking at night! You say everyone already knows that? Well I find it shocking. <br>
++Also I have heard that the Dark Elves' Dark Temple in the Dark Forest is spectacular. There are rumors that abyssal celebrants there are gathering fragments of it's' statues from everywhere!<br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30736-09.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08n.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08n.htm
+index 96e55199..1687ff85 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08n.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08n.htm
+@@ -1,5 +1,5 @@
+ <html><body>Mercenary Redfoot:<br>
+-One time while talking with some friends in the Dark Elf Guild, I learned that Dark Elves worship the Goddess Shilen! You say everyone already knows that? Well I find it shocking.<br>
+-Why would anyone want to worship a goddess of death?  It doesn't make sense! I have heard that the Dark Elves' Shilen Temple in the Dark Forest is spectacular. There are rumors that abyssal celebrants there are gathering fragments of the statue of Goddess Shilen from everywhere!<br>
++One time while talking with some friends in the Dark Elf Guild, I learned that Dark Elves have advantages attacking at night! You say everyone already knows that? Well I find it shocking.<br>
++Also I have heard that the Dark Elves' Dark Temple in the Dark Forest is spectacular. There are rumors that abyssal celebrants there are gathering fragments of it's' statues from everywhere!<br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30736-09.htm">Return</a>
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
@@ -807,6 +1574,33 @@ index c467a2c7..7f6f7cc3 100644
  <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-06.htm">"Death to the blade stakatos!"</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm b/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm
+index 4544973b..eeeb1d31 100644
+--- a/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm
+@@ -1,6 +1,6 @@
+ <html><body>Priest Manuel:<br>
+-If you want to be an Elven Oracle who fulfills that holy will of Eva, you must listen carefully to what I am about to say.<br>
+-Between us Elven Priests, there has been a prophecy that has been handed down for hundreds of years. This is a prophecy given by the Mother Tree, mother of all woods and Elves. It speaks of one girl that will purify the forces of darkness that prevail in the world, whose birth will save all those that are persecuted by the powers of the darkness.<br>
+-We call this the <font color="LEVEL">prophecy of the sacred flame</font> according to the original text. However, there have been rumors that the girl mentioned in the prophecy has appeared. I would like you to confirm the truth of this rumor.<br>
++If you want to be an Elven Oracle, you must listen carefully to what I am about to say.<br>
++Between us Elven Priests, there has been a saying that has been handed down for hundreds of years. This is a saying given by the Mother Tree, mother of all woods. It speaks of one girl that will purify the forces of darkness that prevail in the world, whose birth will save all those that are persecuted by the powers of the darkness.<br>
++We call this the <font color="LEVEL">saying of the sacred flame</font> according to the original text. However, there have been rumors that the girl mentioned in the prophecy has appeared. I would like you to confirm the truth of this rumor.<br>
+ <a action="bypass -h Quest Q409_PathToAnElvenOracle 30293-05.htm">Say you will take the task</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q410_PathToAPalusKnight/30329-11.htm b/aCis_datapack/data/html/script/quest/Q410_PathToAPalusKnight/30329-11.htm
+index a49b0c72..c48e2820 100644
+--- a/aCis_datapack/data/html/script/quest/Q410_PathToAPalusKnight/30329-11.htm
++++ b/aCis_datapack/data/html/script/quest/Q410_PathToAPalusKnight/30329-11.htm
+@@ -1,5 +1,5 @@
+ <html><body>Master Virgil:<br>
+-You have brought the Coffin of Eternal Rest with your name inscribed within it. I will send this to the Priests of the Temple of Shilen. This completes your trial.<br>
++You have brought the Coffin of Eternal Rest with your name inscribed within it. I will send this to the Priests of the Dark Temple. This completes your trial.<br>
+ A Knight's destiny is always to face death on the battlefield! We do not know when it will come, but it is an end we cannot escape. By entrusting the Coffin of Eternal Rest made by your own hands to the Celebrants of your funeral, you are accepting death as your fate and laying down all fear. This is what the ritual of the red coffin is for.<br>
+ Palus Knights do not fear death, and so they do not hesitate or stand back. They are the strongest Knights, that have already seen the darkness of the abyss and know not fear nor hesitation. Since you passed both trials, you have the ability to enter the glorious ranks. This <font color="LEVEL">Gaze of Abyss</font> is the token you have earned. If you take this to <font color="LEVEL">Grand Master Tobias</font> of our guild, he will change your occupation. He is the one right over there.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm b/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm
 index f4f50526..d08ff4aa 100644
 --- a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm
@@ -853,6 +1647,19 @@ index 08c299a7..9f18cba3 100644
  <a action="bypass -h Quest Q426_QuestForFishingShot 06.htm">Back</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/villagemaster/30154.htm b/aCis_datapack/data/html/villagemaster/30154.htm
+index abdffb9a..5ba7dca8 100644
+--- a/aCis_datapack/data/html/villagemaster/30154.htm
++++ b/aCis_datapack/data/html/villagemaster/30154.htm
+@@ -1,6 +1,6 @@
+ <html><body>Hierarch Asterios:<br>
+-May the blessings of Eva flood the deepest recesses of your soul.<br>
+-I am Tetrarch Asterios, representative of Eva, chosen by the mother of all forests and spirits! I alone remain among the 12 Tetrarchs chosen by the Mother Tree. Why have you sought me out?<br>
++May the recesses of your soul be done away with.<br>
++I am Tetrarch Asterios, chosen by the mother of all forests and spirits! I alone remain among the 12 Tetrarchs chosen by the Mother Tree. Why have you sought me out?<br>
+ <a action="bypass -h npc_%objectId%_Quest FirstClassChange">Listen to information about first class transfer</a><br>
+ <a action="bypass -h npc_%objectId%_Quest Clan">Clan</a><br>
+ <a action="bypass -h npc_%objectId%_Quest Alliance">Alliance</a><br>
 diff --git a/aCis_datapack/data/html/villagemaster/30565-1.htm b/aCis_datapack/data/html/villagemaster/30565-1.htm
 index 36a92f37..a72a2f33 100644
 --- a/aCis_datapack/data/html/villagemaster/30565-1.htm
@@ -3864,7 +4671,7 @@ index aee53331..c81703ee 100644
  		
  		// Calculate monster and seed level modifier.
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java b/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
-index 30820098..62f1b255 100644
+index 30820098..6ab005fc 100644
 --- a/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/network/NpcStringId.java
 @@ -7849,22 +7849,22 @@ public final class NpcStringId
@@ -3895,6 +4702,15 @@ index 30820098..62f1b255 100644
  	public static NpcStringId ID_1000269;
  	
  	@NpcString(id = 1000270, message = "Why are you getting in our way?")
+@@ -8521,7 +8521,7 @@ public final class NpcStringId
+ 	@NpcString(id = 1000518, message = "Newbie Travel Token")
+ 	public static NpcStringId ID_1000518;
+ 	
+-	@NpcString(id = 1000519, message = "Arrogant fool! You dare to challenge me, the Ruler of Flames? Here is your reward!")
++	@NpcString(id = 1000519, message = "Arrogant fool! You dare to challenge me, the Ruler? Here is your reward!")
+ 	public static NpcStringId ID_1000519;
+ 	
+ 	@NpcString(id = 1000520, message = "You cannot hope to defeat me with your meager strength.")
 @@ -9037,7 +9037,7 @@ public final class NpcStringId
  	@NpcString(id = 1010152, message = "Devil's Isle")
  	public static NpcStringId ID_1010152;
