@@ -331,6 +331,30 @@ index 3a13461a..1c6b0fbe 100644
 +	<a action="bypass admin_teleport 77262 258216 -10378">EG Hidden Room 4</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30573.htm b/aCis_datapack/data/html/default/30573.htm
+index 6bd7e263..22b27e42 100644
+--- a/aCis_datapack/data/html/default/30573.htm
++++ b/aCis_datapack/data/html/default/30573.htm
+@@ -1,5 +1,5 @@
+-<html><body>Pa'agrio Guardian Vulkus:<br>
+-It is a pleasure to meet you. I am Pa'agrio Guardian Vulkus in the Temple of Pa'agrio. Orcs once ruled the world and all its races, but now we live on the plateau, because of the power of the Humans.<br>
+-Yet it is inevitable that the Orcs will rise again, just as it is inevitable that the everlasting flame of Pa'agrio will continue to burn.<br>
++<html><body>Guardian Vulkus:<br>
++It is a pleasure to meet you. I am Guardian Vulkus in the Temple. Orcs once ruled the world and all its races, but now we live on the plateau, because of the power of the Humans.<br>
++Yet it is inevitable that the Orcs will rise again, just as it is inevitable that the sun will continue to burn.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30575.htm b/aCis_datapack/data/html/default/30575.htm
+index 23f688ec..e475a864 100644
+--- a/aCis_datapack/data/html/default/30575.htm
++++ b/aCis_datapack/data/html/default/30575.htm
+@@ -1,5 +1,5 @@
+ <html><body>Newbie Helper:<br>
+-Welcome, young Orc. Stripling Orcs take their first steps toward becoming fighters in the Temple of Pa'agrio, where we worship Pa'agrio, god of fire and creator of all Orcs. I will teach you the basics of combat.<br>
++Welcome, young Orc. Stripling Orcs take their first steps toward becoming fighters in the Temple. I will teach you the basics of combat.<br>
+ To begin, click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
 diff --git a/aCis_datapack/data/html/default/30925.htm b/aCis_datapack/data/html/default/30925.htm
 index 46a32b6d..c06473a0 100644
 --- a/aCis_datapack/data/html/default/30925.htm
@@ -388,6 +412,54 @@ index 193f8a4c..9b275c24 100644
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30573.htm b/aCis_datapack/data/html/guard/30573.htm
+index 39b679ac..09a6021f 100644
+--- a/aCis_datapack/data/html/guard/30573.htm
++++ b/aCis_datapack/data/html/guard/30573.htm
+@@ -1,5 +1,5 @@
+ <html><body>Flame Guardian Vulkus:<br>
+-It is a pleasure to meet you. I am Pa'agrio Guardian Vulkus in the Temple of Pa'agrio. Orcs once ruled the world and all its races, but now we live on the plateau, because of the power of the Humans.<br>
+-Yet it is inevitable that the Orcs will rise again, just as it is inevitable that the everlasting flame of Pa'agrio will continue to burn.<br>
++It is a pleasure to meet you. I am Guardian Vulkus in the Temple. Orcs once ruled the world and all its races, but now we live on the plateau, because of the power of the Humans.<br>
++Yet it is inevitable that the Orcs will rise again, just as it is inevitable that the sun will continue to burn.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30578-1.htm b/aCis_datapack/data/html/guard/30578-1.htm
+index 56e13e44..dbd044e5 100644
+--- a/aCis_datapack/data/html/guard/30578-1.htm
++++ b/aCis_datapack/data/html/guard/30578-1.htm
+@@ -1,4 +1,4 @@
+ <html><body>Centurion Nakusin:<br>
+-The Temple of Pa'agrio is a sacred place for worshipping Pa'agrio, the god of flame, creator of the Orcs. Every newborn Orc is raised to be proud of the Orc heroes here. Do you understand?<br>
++Every newborn Orc is raised to be proud of the Orc heroes here. Do you understand?<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30578.htm b/aCis_datapack/data/html/guard/30578.htm
+index c9170bf5..805da3cb 100644
+--- a/aCis_datapack/data/html/guard/30578.htm
++++ b/aCis_datapack/data/html/guard/30578.htm
+@@ -1,5 +1,5 @@
+ <html><body>Centurion Nakusin:<br>
+-I, Centurion Nakusin, protect the <font color="LEVEL">Temple of Pa'agrio</font> and the Orc town. I will not be merciful to anyone who disgraces this sacred place. Especially not those who harm my people -- I will hunt them down and punish them!<br>
+-<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Temple of Pa'agrio</a><br>
++I, Centurion Nakusin, protect the <font color="LEVEL">Temple</font> and the Orc town. I will not be merciful to anyone who disgraces this place. Especially not those who harm my people -- I will hunt them down and punish them!<br>
++<a action="bypass -h npc_%objectId%_Chat 1">Ask about the Temple</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30579.htm b/aCis_datapack/data/html/guard/30579.htm
+index 19b01765..784d8729 100644
+--- a/aCis_datapack/data/html/guard/30579.htm
++++ b/aCis_datapack/data/html/guard/30579.htm
+@@ -1,4 +1,4 @@
+ <html><body>Centurion Tamai:<br>
+-I am Centurion Tamai, who protects the Temple of Pa'agrio and Orc Village with Nakusin. If you have complaints about the temple, talk to me!<br>
++I am Centurion Tamai, who protects the Temple and Orc Village with Nakusin. If you have complaints about the temple, talk to me!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/guard/30917-1.htm b/aCis_datapack/data/html/guard/30917-1.htm
 index 7daca5a0..c6085cb2 100644
 --- a/aCis_datapack/data/html/guard/30917-1.htm
@@ -412,6 +484,75 @@ index ea0c656b..452a0ced 100644
 +<a action="bypass -h npc_%objectId%_Chat 1">"Tell me more about this area."</a><br>
  <a action="bypass -h npc_%objectId%_TerritoryStatus">See the Lord and get the tax rate information.</a><br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm b/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
+index 79202523..83b83464 100644
+--- a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
++++ b/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
+@@ -1,3 +1,3 @@
+ <html><body>Flame Lord Kakai:<br>
+-I am Pa'agrio Lord Kakai. I have been given the authority of Pa'agrio, the father of eternal Flame, and am the leader of the great Orc race. Why has someone like you come to this remote place, the Immortal Plateau -- the home of the Orcs?
++I am Lord Kakai. I am the leader of the great Orc race. Why has someone like you come to this remote place, the Immortal Plateau -- the home of the Orcs?
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm
+index ca2da860..45047e53 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc008.htm
+@@ -1,5 +1,5 @@
+ <html><body><center><font color="LEVEL">Quest</font></center><br>
+-Speak to the <font color="LEVEL">Pa'agrio Priests </font> of the Temple of Pa'agrio. They will explain the basics of combat through quests.<br>
++Speak to the <font color="LEVEL">Priests </font> of the Temple. They will explain the basics of combat through quests.<br>
+ You must visit them, for they will give you a useful gift after you complete a quest.<br>
+ They are marked in yellow on the radar, at the upper-right corner of the screen. You must visit them if you wish to advance.<br>
+ <a action="link TE00">Close Window</a>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_fighter001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_fighter001.htm
+index e9d9040d..fbe8428d 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_fighter001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_fighter001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the Temple of Pa'agrio, the sacred place where we worship Pa'agrio, the god of flame. It is here that young Orcs begin their training.<br>
++This is the Temple. It is here that young Orcs begin their training.<br>
+ Now you are taking your first step to becoming an Orc Fighter. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
+diff --git a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_mage001.htm b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_mage001.htm
+index e00b0c31..ae983224 100644
+--- a/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_mage001.htm
++++ b/aCis_datapack/data/html/script/feature/Tutorial/tutorial_orc_mage001.htm
+@@ -1,6 +1,6 @@
+ <html><body>
+ <font color="LEVEL">Welcome to Lineage II!</font><br>
+-This is the Temple of Pa'agrio, the sacred place where we worship Pa'agrio, the god of flame. It is here that young Orcs begin their training.<br>
++This is the Temple. It is here that young Orcs begin their training.<br>
+ Now, you are taking your first step to becoming an Orc Mystic. First, I will explain the basic operation of the game.<br>
+ <table border=0 cellpadding=0 cellspacing=0><tr><td>
+ <a action="link TE02">If you click here, you will move to the next topic of this tutorial.</a></td>
+diff --git a/aCis_datapack/data/html/script/quest/Q004_LongliveThePaagrioLord/30578-01.htm b/aCis_datapack/data/html/script/quest/Q004_LongliveThePaagrioLord/30578-01.htm
+index 6d770d4e..1431a136 100644
+--- a/aCis_datapack/data/html/script/quest/Q004_LongliveThePaagrioLord/30578-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q004_LongliveThePaagrioLord/30578-01.htm
+@@ -1,4 +1,4 @@
+ <html><body>Centurion Nakusin:<br>
+-Dekara Lamchar Kakai! Pa'agrio Lord Kakai, has not been well recently. The tribal elders have decided that each tribe should offer him <font color="LEVEL">something that is good for his health</font>. Think of what you can do for the Pa'agrio Lord.<br>
++Dekara Lamchar Kakai! Lord Kakai, has not been well recently. The tribal elders have decided that each tribe should offer him <font color="LEVEL">something that is good for his health</font>. Think of what you can do for the Lord.<br>
+ (This quest may only be undertaken by an Orcish character of level 2 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm b/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm
+index 359c64ab..3cfb9041 100644
+--- a/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q220_TestimonyOfGlory/30565-02.htm
+@@ -1,6 +1,6 @@
+ <html><body>Flame Lord Kakai:<br>
+ You have found the Scepter of the Tantos tribe! I hope this appeases the angry souls of the Tantos ancestors, even if it does not entirely wash away all our sins.<br>
+ I have heard that the Ragna tribe was behind this whole thing. Is this true? First they betrayed us; now they challenge my authority. Soon the rivers will run red with their traitorous blood!<br>
+-You took this from one of the lower tribes, did you not? Did you first extract an oath of loyalty from them -- or punish them for their refusal? Ah, well done, Warrior! I remember how naive you were when we met after the completion of your training at the Temple of Pa'agrio. Now you have grown into a mighty champion!<br>
++You took this from one of the lower tribes, did you not? Did you first extract an oath of loyalty from them -- or punish them for their refusal? Ah, well done, Warrior! I remember how naive you were when we met after the completion of your training at the Temple. Now you have grown into a mighty champion!<br>
+ Your reward is my personal gratitude and this <font color="LEVEL">Mark of Glory</font>, which you can use to transfer to a higher class. Now return to the Human lands and seek out your destiny! I am confident that you will bring great glory to our tribe, and that our paths will cross again.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
@@ -483,6 +624,29 @@ index c467a2c7..7f6f7cc3 100644
  <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-06.htm">"Death to the blade stakatos!"</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm b/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm
+index f4f50526..d08ff4aa 100644
+--- a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm
++++ b/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-08.htm
+@@ -1,5 +1,5 @@
+ <html><body>Tataru Zu Hestui:<br>
+ Now I will make you a totem mask from the Kasha Bear Pelt and Kasha Bladespider Husk you brought. It will enable you to learn the language of flame when you meet our Hestui Totem Spirit.<br>
+-The Fiery Egg you obtained from the Scarlet Salamander contains an unborn spirit whose existence is not yet ordained. It is truly a valuable item, fit to offer to the Totem Spirit as a gift.<br>
+-Now go to the Ruins south of the Temple of Pa'agrio and seek the <font color="LEVEL">Hestui Totem Spirit</font>. Dejakyar Lamme! May the eternal flame guide your path.
++The Fiery Egg you obtained from the Scarlet Salamander contains an unborn spirit whose existence is not yet ordained. It is truly a valuable item.<br>
++Now go to the Ruins south of the Temple and seek the <font color="LEVEL">Hestui Totem Spirit</font>. Dejakyar Lamme! May the eternal flame guide your path.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-09.htm b/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-09.htm
+index 24101368..6a3fefc2 100644
+--- a/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-09.htm
++++ b/aCis_datapack/data/html/script/quest/Q416_PathToAnOrcShaman/30585-09.htm
+@@ -1,3 +1,3 @@
+ <html><body>Tataru Zu Hestui:<br>
+-Now that you have prepared the Hestui Mask and the Fiery Egg, seek the <font color="LEVEL">Hestui Totem Spirit</font> at the Ruins south of the Temple of Pa'agrio. Dejakyar Lamme! May the eternal flame guide your path.
++Now that you have prepared the Hestui Mask and the Fiery Egg, seek the <font color="LEVEL">Hestui Totem Spirit</font> at the Ruins south of the Temple. Dejakyar Lamme! May the eternal flame guide your path.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm b/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm
 index e80cda70..1cb14a1e 100644
 --- a/aCis_datapack/data/html/script/quest/Q426_QuestForFishingShot/17.htm
@@ -506,6 +670,28 @@ index 08c299a7..9f18cba3 100644
  <a action="bypass -h Quest Q426_QuestForFishingShot 06.htm">Back</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/villagemaster/30565-1.htm b/aCis_datapack/data/html/villagemaster/30565-1.htm
+index 36a92f37..a72a2f33 100644
+--- a/aCis_datapack/data/html/villagemaster/30565-1.htm
++++ b/aCis_datapack/data/html/villagemaster/30565-1.htm
+@@ -1,5 +1,5 @@
+ <html><body>Flame Lord Kakai:<br> 
+ Originally, we Orcs consisted of seven powerful tribes and reigned over the entire world. But about 2,000 years ago, we engaged in a large scale war against those despicable Elves. Of course, the superiority of our race over any other was unquestionable -- which is undoubtedly why the Elves allied themselves with those shrewd and cunning humans. Their combined treachery defeated us and drove us far from our lands. Ah, but those arrogant Elves were also betrayed by the humans and driven deep into the woods. "The hand that parries can also thrust," as the saying goes.<br>
+-After the war, our people built a new home here on the <font color="LEVEL">Immortal Plateau</font>, which was once Pa'agro's sacred ground, and we have been steadily preparing to reclaim our former glory. But <font color="LEVEL">the Ragna Tribe</font>, one of the seven original tribes, betrayed the rest. Their shameful act has tainted our people's honor. It is unforgivable! They do not even deserve to be called "Orcs."<br> 
++After the war, our people built a new home here on the <font color="LEVEL">Immortal Plateau</font>, and we have been steadily preparing to reclaim our former glory. But <font color="LEVEL">the Ragna Tribe</font>, one of the seven original tribes, betrayed the rest. Their shameful act has tainted our people's honor. It is unforgivable! They do not even deserve to be called "Orcs."<br> 
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a> 
+ </body></html>
+diff --git a/aCis_datapack/data/html/villagemaster/30565.htm b/aCis_datapack/data/html/villagemaster/30565.htm
+index 25e48501..0595ed54 100644
+--- a/aCis_datapack/data/html/villagemaster/30565.htm
++++ b/aCis_datapack/data/html/villagemaster/30565.htm
+@@ -1,5 +1,5 @@
+ <html><body>Flame Lord Kakai:<br> 
+-Hear me! I am Flame Lord Kakai, invested with the authority of Pa'agrio, the father of ethernal flame, to lead the great Orc race. Young warrior, you are to my eyes like a flame of hope, hope that our race may yet achieve its former glory. What do you wish from me?<br> 
++Hear me! I am Flame Lord Kakai, invested with the authority to lead the great Orc race. Young warrior, you are to my eyes like a flame of hope, hope that our race may yet achieve its former glory. What do you wish from me?<br> 
+ <a action="bypass -h npc_%objectId%_Quest FirstClassChange">Listen to information about first class transfer</a><br> 
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about the current situation</a><br> 
+ <a action="bypass -h npc_%objectId%_Quest Clan">Clan</a><br>
 diff --git a/aCis_datapack/data/html/villagemaster/30900.htm b/aCis_datapack/data/html/villagemaster/30900.htm
 index 606f2ade..054c5631 100644
 --- a/aCis_datapack/data/html/villagemaster/30900.htm
