@@ -331,6 +331,29 @@ index 3a13461a..1c6b0fbe 100644
 +	<a action="bypass admin_teleport 77262 258216 -10378">EG Hidden Room 4</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30566-1.htm b/aCis_datapack/data/html/default/30566-1.htm
+index 27d559ce..de1755cf 100644
+--- a/aCis_datapack/data/html/default/30566-1.htm
++++ b/aCis_datapack/data/html/default/30566-1.htm
+@@ -1,4 +1,4 @@
+ <html><body>Atuba Chief Varkees:<br> 
+-Dekara Lamchar Kakai! Praise great Flame Lord Kakai! He is the king of the Orcs chosen by Pa'agrio! He is also the chief of the brave Hestui and the true ruler of the flame, approved by the totem of the gray bear!<br> 
++Dekara Lamchar Kakai! Praise great Flame Lord Kakai! He is the king of the Orcs! He is also the chief of the brave Hestui and the true ruler of the flame!<br> 
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a> 
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30567.htm b/aCis_datapack/data/html/default/30567.htm
+index 83736a71..08cc40ac 100644
+--- a/aCis_datapack/data/html/default/30567.htm
++++ b/aCis_datapack/data/html/default/30567.htm
+@@ -1,6 +1,6 @@
+ <html><body>Neruga Chief Tantus:<br>
+-Tejakar Pa'agrio! Praise the name of the Flame! This Immortal Plateau has been our sacred ground from ancient times, but while I, Tantus, was living among the humans of the <font color="LEVEL">Kingdom of Elmore</font>, foreign invaders and Orc traitors brought disgrace to this land!<br>
+-Now I am back, and I will not forgive those who disgraced our sacred place!<br>
++Tejakar! Praise the name of the Flame! This Immortal Plateau has been our ground from ancient times, but while I, Tantus, was living among the humans of the <font color="LEVEL">Kingdom of Elmore</font>, foreign invaders and Orc traitors brought disgrace to this land!<br>
++Now I am back, and I will not forgive those who disgraced our place!<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about foreign invasions</a><br>
+ <a action="bypass -h npc_%objectId%_Chat 2">Ask about the Kingdom of Elmore</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
 diff --git a/aCis_datapack/data/html/default/30573.htm b/aCis_datapack/data/html/default/30573.htm
 index 6bd7e263..22b27e42 100644
 --- a/aCis_datapack/data/html/default/30573.htm
@@ -353,6 +376,76 @@ index 23f688ec..e475a864 100644
 -Welcome, young Orc. Stripling Orcs take their first steps toward becoming fighters in the Temple of Pa'agrio, where we worship Pa'agrio, god of fire and creator of all Orcs. I will teach you the basics of combat.<br>
 +Welcome, young Orc. Stripling Orcs take their first steps toward becoming fighters in the Temple. I will teach you the basics of combat.<br>
  To begin, click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30585.htm b/aCis_datapack/data/html/default/30585.htm
+index 07556fcf..d52f5e8e 100644
+--- a/aCis_datapack/data/html/default/30585.htm
++++ b/aCis_datapack/data/html/default/30585.htm
+@@ -1,5 +1,5 @@
+ <html><body>Tataru Zu Hestui:<br>
+-Tejakar Oroka! Nice to meet you, young traveler. I am the Tataru of the Hestui Tribe! I am one of the Shamans who passes on the teachings of flame from the god Pa'agrio!<br>
+-The spells of the Orcs are to control the spirits through the authority of fire! We are entirely of a different level than the Elves who worship spirits like they were divinities and Humans, who misunderstand magic as science!<br>
++Tejakar Oroka! Nice to meet you, young traveler. I am the Tataru of the Hestui Tribe! I am one of the Shamans who passes on the teachings of flame!<br>
++The spells of the Orcs are to control the spirits through the authority of fire! We are entirely of a different level than the Elves and Humans, who misunderstand magic as science!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30587.htm b/aCis_datapack/data/html/default/30587.htm
+index 557a788f..dfcae358 100644
+--- a/aCis_datapack/data/html/default/30587.htm
++++ b/aCis_datapack/data/html/default/30587.htm
+@@ -1,5 +1,5 @@
+ <html><body>Gantaki Zu Urutu:<br>
+-Hear, young Orc!! Let me explain the origin of our race! In the beginning, there was Pa'agrio of the flame, and from the hot flame Pa'agrio brought forth the the father of the Orcs. His hair was a red blaze, his eyes a pure white flame, ashen smoke rushed out of his nose and mouth as he breathed, and in his veins boiled blood hotter than lava! Because of all this, he was mightier than any other living thing!<br>
+-But when he came down from the heavens, the heat of his body began to cool, because of the force of the water. His lava blood began to harden, because of the force of the earth. His smoke was scattered, because of the force of the wind. The father of the Orcs was miserable because he had lost his original strength, but the god Pa'agrio taught him that if he continuously trained his body through discipline and combat, he could become strong again. From then on, his descendants have been pursuing strength and power and the glory of our bloody history begins!<br>
++Hear, young Orc!! Let me explain the origin of our race! In the beginning, there was brought forth the father of the Orcs. His hair was a red blaze, his eyes a pure white flame, ashen smoke rushed out of his nose and mouth as he breathed, and in his veins boiled blood hotter than lava! Because of all this, he was mightier than any other living thing!<br>
++But when he came down from the heavens, the heat of his body began to cool, because of the force of the water. His lava blood began to harden, because of the force of the earth. His smoke was scattered, because of the force of the wind. The father of the Orcs was miserable because he had lost his original strength, if he continuously trained his body through discipline and combat, he could become strong again. From then on, his descendants have been pursuing strength and power and the glory of our bloody history begins!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30590.htm b/aCis_datapack/data/html/default/30590.htm
+index b597324a..0540990a 100644
+--- a/aCis_datapack/data/html/default/30590.htm
++++ b/aCis_datapack/data/html/default/30590.htm
+@@ -1,6 +1,6 @@
+ <html><body>Khavatari Rosheek:<br>
+ What brings you to this desolate snowfield, young traveler? I am Rosheek, who trains Kabart, the traditional martial art of the Orcs.<br>
+-As the god Pa'agrio has taught us, we must continuously make an effort to strengthen ourselves above all the other creatures that live. I have stayed in this place for the past month, fasting and meditating, to discipline myself in order to reach a higher level of strength.<br>
++We must continuously make an effort to strengthen ourselves above all the other creatures that live. I have stayed in this place for the past month, fasting and meditating, to discipline myself in order to reach a higher level of strength.<br>
+ When my mind concentrates to fight the severe cold and hunger, I can feel the heat of the combative spirit that burns like a flame within me. How would you like to meditate here with me?<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30591.htm b/aCis_datapack/data/html/default/30591.htm
+index d70dd743..cdda588b 100644
+--- a/aCis_datapack/data/html/default/30591.htm
++++ b/aCis_datapack/data/html/default/30591.htm
+@@ -1,5 +1,5 @@
+ <html><body>Khavatari Toruku:<br>
+ Tejakar Oroka! I am Toruku. I teach Kabart, the Orcs' martial art. Kabart is a martial art that trains your body to become a deadly weapon. Orcs that train in this do not depend on common weapons such as swords or spears, but learn combat skills that involve only swift movements and precise blows.<br>
+-Pa'agrio of the flame teaches that we must continuously strive to strengthen ourselves to become stronger than all life which has breath. I have broken ties with the world and come to this isolated wasteland to fulfill these teachings and concentrate on the further training of Kabart.<br>
++We must continuously strive to strengthen ourselves to become stronger than all life which has breath. I have broken ties with the world and come to this isolated wasteland to fulfill these teachings and concentrate on the further training of Kabart.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30641.htm b/aCis_datapack/data/html/default/30641.htm
+index 0067cdd7..5cfc81e4 100644
+--- a/aCis_datapack/data/html/default/30641.htm
++++ b/aCis_datapack/data/html/default/30641.htm
+@@ -1,4 +1,4 @@
+ <html><body>Duda-Mara Chief Takuna:<br>
+-Tejakar Oroka! Hooray to the glory of the great Orcs! I am the Chieftain Takuna, leading the Duda-Mara tribe! I've been sent to this land by order of the Pa'agrio Lord to find the tribes who betrayed us, seceding from the kingdom of Orcs long ago, and give them the ruthless punishment they deserve!<br>
++Tejakar Oroka! Hooray to the glory of the great Orcs! I am the Chieftain Takuna, leading the Duda-Mara tribe! I've been sent to this land by order of the Lord to find the tribes who betrayed us, seceding from the kingdom of Orcs long ago, and give them the ruthless punishment they deserve!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30643.htm b/aCis_datapack/data/html/default/30643.htm
+index 1b22623b..ea37d520 100644
+--- a/aCis_datapack/data/html/default/30643.htm
++++ b/aCis_datapack/data/html/default/30643.htm
+@@ -1,4 +1,4 @@
+ <html><body>First Orc:<br>
+-I am the first and the last, the only one created from the sacred flames of the God, Pa'agrio! Though I do not have a body and my soul hangs on by a thread, I stay here to watch over my proud Orc descendants!<br>
++I am the first! Though I do not have a body and my soul hangs on by a thread, I stay here to watch over my proud Orc descendants!<br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 diff --git a/aCis_datapack/data/html/default/30925.htm b/aCis_datapack/data/html/default/30925.htm
@@ -412,6 +505,40 @@ index 193f8a4c..9b275c24 100644
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/31554.htm b/aCis_datapack/data/html/default/31554.htm
+index 5522b82b..ad8420ba 100644
+--- a/aCis_datapack/data/html/default/31554.htm
++++ b/aCis_datapack/data/html/default/31554.htm
+@@ -1,5 +1,5 @@
+ <html><body>Mercenary Kahman:<br>
+-We're the Golden Ram Mercenary Force who fought at the Tower of Insolence along with Sieghardt! My brother, Kamoon Zu Neruga, died there. His soul lights up Pa'agrio's Flame now.<br>
++We're the Golden Ram Mercenary Force who fought at the Tower of Insolence along with Sieghardt! My brother, Kamoon Zu Neruga, died there. His soul rests now.<br>
+ I continue the fight in his name. Will you fight alongside us as a brother?<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/31744.htm b/aCis_datapack/data/html/default/31744.htm
+index db62f81c..30c2420f 100644
+--- a/aCis_datapack/data/html/default/31744.htm
++++ b/aCis_datapack/data/html/default/31744.htm
+@@ -1,4 +1,4 @@
+ <html><body>Ogmar:<br>
+-Kassandra was born with the soul of dreaming flames... It's that ability that's passed down to the prophets of the Duda-mara Orcs. I can't imagine why such a blessing was given to a child of Dwarves, but it is surely the will of Pa'agrio. Until her fate becomes known, I'll protect Kassandra with my life!<br>
++Kassandra was born with the soul of dreaming flames... It's that ability that's passed down to the Duda-mara Orcs. I can't imagine why such a blessing was given to a child of Dwarves, but it is surely the will of God. Until her fate becomes known, I'll protect Kassandra with my life!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/32057.htm b/aCis_datapack/data/html/default/32057.htm
+index 1c67553f..9dadbf34 100644
+--- a/aCis_datapack/data/html/default/32057.htm
++++ b/aCis_datapack/data/html/default/32057.htm
+@@ -1,5 +1,5 @@
+ <html><body>Totem Spirit of Gandi:<br>
+-Pa'agrio Amare Oites! A weak soul is encroached by the darkness, but a strong soul is hardened and blooms beautifully within the flames.<br>
++Amare Oites! A weak soul is encroached by the darkness, but a strong soul is hardened and blooms beautifully within the flames.<br>
+ You have a courage and purity! You kissed the flames while a beautiful soul slept within! Now you have awakened!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/guard/30573.htm b/aCis_datapack/data/html/guard/30573.htm
 index 39b679ac..09a6021f 100644
 --- a/aCis_datapack/data/html/guard/30573.htm
@@ -460,6 +587,28 @@ index 19b01765..784d8729 100644
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30580-1.htm b/aCis_datapack/data/html/guard/30580-1.htm
+index 2f8c35ce..a95b92f5 100644
+--- a/aCis_datapack/data/html/guard/30580-1.htm
++++ b/aCis_datapack/data/html/guard/30580-1.htm
+@@ -1,3 +1,3 @@
+ <html><body>Centurion Parugon:<br>
+-I only know what I've heard. Abnormal weather has been a problem recently, and the harbors in the northern part of Kingdom of Elmore are frozen. This could be the beginning of the everlasting winter, a prophecy handed down among Orcs from ancient times. When the everlasting winter comes, all lands will be frozen, and all races will be wiped out. Then, Lord Pa'agrio will come down and save the world, it is said.
++I only know what I've heard. Abnormal weather has been a problem recently, and the harbors in the northern part of Kingdom of Elmore are frozen. This could be the beginning of the everlasting winter, a prophecy handed down among Orcs from ancient times. When the everlasting winter comes, all lands will be frozen, and all races will be wiped out. Then, Lord will come down and save the world, it is said.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/30875.htm b/aCis_datapack/data/html/guard/30875.htm
+index 9c51f60e..5e75e90a 100644
+--- a/aCis_datapack/data/html/guard/30875.htm
++++ b/aCis_datapack/data/html/guard/30875.htm
+@@ -1,5 +1,5 @@
+ <html><body>Guard Carlton:<br>
+-The swamp to the north of Aden Castle is called the Blazing Swamp. The name makes one think of some hellish sea of fire that is covered in molten rock or something... But looking at it from the outside, it really doesn't seem much different than any other marsh. However, the monsters that come out of it are a bit peculiar. Pa'agrio did something there... And so they are all masters of the fire line of magic... King Raoul gave the order that a waterway be dug at the edge of the marsh to prevent the spreading of fires to the area around. But the most famous thing about the Blazing Swamp happened when King Amadeo was attacked by Elmore... Oh, right. It wouldn't be good for you to know about this long-winded story.<br>
++The swamp to the north of Aden Castle is called the Blazing Swamp. The name makes one think of some hellish sea of fire that is covered in molten rock or something... But looking at it from the outside, it really doesn't seem much different than any other marsh. However, the monsters that come out of it are a bit peculiar. God did something there... And so they are all masters of the fire line of magic... King Raoul gave the order that a waterway be dug at the edge of the marsh to prevent the spreading of fires to the area around. But the most famous thing about the Blazing Swamp happened when King Amadeo was attacked by Elmore... Oh, right. It wouldn't be good for you to know about this long-winded story.<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about monsters.</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/guard/30917-1.htm b/aCis_datapack/data/html/guard/30917-1.htm
 index 7daca5a0..c6085cb2 100644
 --- a/aCis_datapack/data/html/guard/30917-1.htm
@@ -484,6 +633,27 @@ index ea0c656b..452a0ced 100644
 +<a action="bypass -h npc_%objectId%_Chat 1">"Tell me more about this area."</a><br>
  <a action="bypass -h npc_%objectId%_TerritoryStatus">See the Lord and get the tax rate information.</a><br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/31036.htm b/aCis_datapack/data/html/guard/31036.htm
+index ef258c98..ea1c6bc9 100644
+--- a/aCis_datapack/data/html/guard/31036.htm
++++ b/aCis_datapack/data/html/guard/31036.htm
+@@ -1,3 +1,3 @@
+ <html><body>Guard:<br>
+-I am sworn by the will of Pa'agrio to destroy all evildoers! If you see any of them, tell me. My bow will put an end to their treachery!
++I am sworn by the will of God to destroy all evildoers! If you see any of them, tell me. My bow will put an end to their treachery!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/guard/31986-1.htm b/aCis_datapack/data/html/guard/31986-1.htm
+index e49ceb8d..124d913a 100644
+--- a/aCis_datapack/data/html/guard/31986-1.htm
++++ b/aCis_datapack/data/html/guard/31986-1.htm
+@@ -1,4 +1,4 @@
+ <html><body>Guard Erstack:<br>
+-Hmm, how to explain it.... Basically, the ruins are haunted! At one time it was a thriving Orcish city, but now it's just a shell of its former self. Only inhabitants you'll find out there are evil spirits and insects! They say that if you bury a bottle of liquor under the ruins, you'll get an amazing Kofporch! I've heard there's even an old Kofporch jug buried under the Beacon Mound of Pa'agrio! If I could have a glass of that, I'd die a warm and happy man!<br>
++Hmm, how to explain it.... Basically, the ruins are haunted! At one time it was a thriving Orcish city, but now it's just a shell of its former self. Only inhabitants you'll find out there are evil spirits and insects! They say that if you bury a bottle of liquor under the ruins, you'll get an amazing Kofporch! I've heard there's even an old Kofporch jug buried under the Beacon Mound! If I could have a glass of that, I'd die a warm and happy man!<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm b/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
@@ -553,6 +723,19 @@ index 359c64ab..3cfb9041 100644
 -You took this from one of the lower tribes, did you not? Did you first extract an oath of loyalty from them -- or punish them for their refusal? Ah, well done, Warrior! I remember how naive you were when we met after the completion of your training at the Temple of Pa'agrio. Now you have grown into a mighty champion!<br>
 +You took this from one of the lower tribes, did you not? Did you first extract an oath of loyalty from them -- or punish them for their refusal? Ah, well done, Warrior! I remember how naive you were when we met after the completion of your training at the Temple. Now you have grown into a mighty champion!<br>
  Your reward is my personal gratitude and this <font color="LEVEL">Mark of Glory</font>, which you can use to transfer to a higher class. Now return to the Human lands and seek out your destiny! I am confident that you will bring great glory to our tribe, and that our paths will cross again.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm b/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
+index b835d4ae..dd7b43ab 100644
+--- a/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
+@@ -1,6 +1,6 @@
+ <html><body>Chief Croto:<br>
+ I see. My nephew died a hero's death.<br>
+-I am jealous in a way... He was so tragically young. His name will be inscribed forever in Pa'agrio's temple.<br>
++I am jealous in a way... He was so tragically young. His name will be inscribed forever in the Orc Temple.<br>
+ Now only bitter sorrow is left for this old man...<br>
+ I must send reinforcements to Elder Balanki. Well done!
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
