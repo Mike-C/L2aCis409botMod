@@ -1,9 +1,9 @@
 diff --git a/aCis_datapack/data/fake_names.txt b/aCis_datapack/data/fake_names.txt
 new file mode 100644
-index 00000000..19e02b61
+index 00000000..dcae214a
 --- /dev/null
 +++ b/aCis_datapack/data/fake_names.txt
-@@ -0,0 +1,240 @@
+@@ -0,0 +1,244 @@
 +SnowyLeopard
 +Crescent
 +Horizon
@@ -244,6 +244,10 @@ index 00000000..19e02b61
 +Tinga
 +Lime
 +Bowls
++Kutgult
++Kutguit
++Gult
++Guit
 diff --git a/aCis_datapack/data/html/admin/tele/hz/innadril.htm b/aCis_datapack/data/html/admin/tele/hz/innadril.htm
 index 0ee741b8..119c0b99 100644
 --- a/aCis_datapack/data/html/admin/tele/hz/innadril.htm
@@ -445,6 +449,106 @@ index 28096bb7..cd41db03 100644
  To begin click on <font color="LEVEL">Quest</font>, in the Chat window.<br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
+diff --git a/aCis_datapack/data/html/default/30534.htm b/aCis_datapack/data/html/default/30534.htm
+index 71fdf5fa..cdcb16b2 100644
+--- a/aCis_datapack/data/html/default/30534.htm
++++ b/aCis_datapack/data/html/default/30534.htm
+@@ -1,5 +1,5 @@
+ <html><body>Elder Keef:<br>
+-May the abundance of Maphr be with you! Young traveler, welcome to the most boring place in the Dwarven town! I am Keef, a member of the <font color="LEVEL">Bronze Key Guild</font>! I was forced to be the chief of the guild by my brothers.<br>
++Young traveler, welcome to the most boring place in the Dwarven town! I am Keef, a member of the <font color="LEVEL">Bronze Key Guild</font>! I was forced to be the chief of the guild by my brothers.<br>
+ I hate this boring office work. I can't wait to complete my term and start traveling again. But until then, I am spending time doing business.<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about the Bronze Key Guild</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+diff --git a/aCis_datapack/data/html/default/30535-1.htm b/aCis_datapack/data/html/default/30535-1.htm
+index 7adaba27..66ccdc61 100644
+--- a/aCis_datapack/data/html/default/30535-1.htm
++++ b/aCis_datapack/data/html/default/30535-1.htm
+@@ -1,5 +1,5 @@
+ <html><body>Filaur of the Gray Pillar:<br>
+-The Gray Column Guild is an association of architects and miners, who hold the secrets of geometry, measurement, construction and mechanics that our ancestors learned from Maphr. Our mine engineers developed the enormous mining region of the Spine Mountains, and our architects built the great underground labyrinth of Mlan. Our guild also runs strip mines in this village and in the Mithril Mines.<br>
++The Gray Column Guild is an association of architects and miners, who hold the secrets of geometry, measurement, construction and mechanics that our ancestors learned. Our mine engineers developed the enormous mining region of the Spine Mountains, and our architects built the great underground labyrinth of Mlan. Our guild also runs strip mines in this village and in the Mithril Mines.<br>
+ But if you think that we just build tunnels all the time, you are mistaken. Our guild also dispatches scouts to find new veins, and we cross the ocean to import precious metals like oriharukon and chrisolites from Gracia.<br>
+ <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30537.htm b/aCis_datapack/data/html/default/30537.htm
+index 9ddcdb44..e9a0d9e5 100644
+--- a/aCis_datapack/data/html/default/30537.htm
++++ b/aCis_datapack/data/html/default/30537.htm
+@@ -1,7 +1,7 @@
+ <html><body>Daichir, Priest of the Earth:<br>
+-Abundance! Prosperity! These are what the Goddess brings forth. Trust! Then you will be blessed! This is the sanctuary of <font color="LEVEL">Maphr, Goddess of Earth.</font><br>
+-Your talent and ability are gifts from the Goddess. Your success and fame too are her blessings. Sacrifice! And be thankful. Although you are in adversity, do not hold a grudge or be sad. Everything is as the Goddess means it to be. Trust, then you will receive! Receive what? Blessings!<br>
+-Do not forget that the Goddess of Earth is always around you and you should return her favor. Try hard. The Goddess is always watching over us. Just believe and follow her. Everything is as the Goddess means it to be.<br>
+-Repeat this deep down in your heart if you want her blessing! <font color="LEVEL">Carna Maphra,</font> must not be forgotten. This is the holy name of the Goddess. <font color="LEVEL">Carna Maphra.</font><br>
++Abundance! Prosperity! Trust! Then you will be blessed! This is <font color="LEVEL">the sanctuary.</font><br>
++Your talent and ability are noted. Your success and fame are too. And be thankful. Although you are in adversity, do not hold a grudge or be sad. Everything is as its meant to be. Trust, then you will receive! Receive what? Blessings!<br>
++Try hard. Everything is as it is meant to be.<br>
++Repeat this deep down in your heart!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30538.htm b/aCis_datapack/data/html/default/30538.htm
+index ee15245a..b24a0069 100644
+--- a/aCis_datapack/data/html/default/30538.htm
++++ b/aCis_datapack/data/html/default/30538.htm
+@@ -1,7 +1,7 @@
+ <html><body>Priest of the Earth Zimenf:<br>
+-<font color="LEVEL">Carna Maphr</font>, I am Priest Zimenf.<br>
+-Great <font color="LEVEL">Maphr, the goddess of the earth</font> created us Dwarves by infusing the power of the earth and the spirit of the light of Einhasad. It is also said that the goddess gave us the ability to create anything in accordance with the law of the universe. Always acknowledge her gift and be thankful. All of our abilities are gifts of grace given by the great Maphr.<br>
+-We should never become arrogant. If you want to return the grace of the goddess, you should take this beautiful idol of the goddess to your house. This idol was handmade by faithful Capuni! The Maphr Temple specially ordered and manufactured this for exemplary believers who donate ten million adena or more! With this, everything is well! Health and longevity!! And harmonious family!<br>
+-You should not forget this! We are the chosen race of Maphr, a crafter of heaven and the goddess of the earth. <font color="LEVEL">Carna Maphra.</font><br>
++I am Priest Zimenf.<br>
++We were created by infusing the power of the earth and the spirit of the light. It is also said that we were given ability to create anything in accordance with the law of the universe. Always acknowledge this gift and be thankful. All of our abilities are gifts of grace given to us.<br>
++We should never become arrogant. If you want to return the grace, you should take this beautiful thing. This was handmade by faithful Capuni! The Temple specially ordered and manufactured this for exemplary believers who donate ten million adena or more! With this, everything is well! Health and longevity!! And harmonious family!<br>
++You should not forget this! We are the chosen race, of the crafter of heaven and the earth.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30539-1.htm b/aCis_datapack/data/html/default/30539-1.htm
+index 5d8e9017..f3f5b8f4 100644
+--- a/aCis_datapack/data/html/default/30539-1.htm
++++ b/aCis_datapack/data/html/default/30539-1.htm
+@@ -1,6 +1,6 @@
+ <html><body>Priestess of the Earth Chichirin:<br>
+-<font color="LEVEL">Earth Wyrm Trasken</font> was one of the wicked devils created by <font color="LEVEL">Shilen</font>, the goddess of darkness and death. Long ago, when Shunaiman, the king of Elmoreden, was building the Seal of Shilen, Earth Worm Trasken escaped from King Shunaiman, the tales tell us. It is said that Trasken settled here, and was sleeping deep within the Spine Mountains, where we live now.<br>
++<font color="LEVEL">Earth Wyrm Trasken</font> was one of the wicked devils, who were created. Long ago, when Shunaiman, the king of Elmoreden, was building some Seal, Earth Worm Trasken escaped from King Shunaiman, the tales tell us. It is said that Trasken settled here, and was sleeping deep within the Spine Mountains, where we live now.<br>
+ So our ancestors, who had no idea about the sleeping Trasken, made a tragic mistake, and awoke the Earth Worm while collecting mithril. That devil, newly roused from deep slumber, was too powerful for the armies of the Dwarves. The Earth Worm destroyed the village and killed Dwarves mercilessly.<br>
+-We Dwarves were about to be massacred! However, Hero Lucien, who was born with the blessing of Maphr, suddenly appeared with his people! <font color="LEVEL">Carna Maphr!</font> Praise the goddess -- she did not abandon us! Hero Lucien defeated the wicked Earth Worm with his fighting skills and divine courage.<br>
+-But listen, for this must always be remembered! Although Earth Worm Trasken has died, <font color="LEVEL">Trasken's egg</font> is still alive somewhere deep in the Spine Mountains. Shilen's followers are, even now, trying to revive the Earth Worm. <font color="LEVEL">Carna Maphr</font> We must arm ourselves with faith and train harder to prepare for that day!
++We Dwarves were about to be massacred! However, Hero Lucien, who was born with the blessing, suddenly appeared with his people! Hero Lucien defeated the wicked Earth Worm with his fighting skills and courage.<br>
++But listen, for this must always be remembered! Although Earth Worm Trasken has died, <font color="LEVEL">Trasken's egg</font> is still alive somewhere deep in the Spine Mountains. Dark followers are, even now, trying to revive the Earth Worm. We must arm ourselves with faith and train harder to prepare for that day!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30539.htm b/aCis_datapack/data/html/default/30539.htm
+index 703963e0..f51d3700 100644
+--- a/aCis_datapack/data/html/default/30539.htm
++++ b/aCis_datapack/data/html/default/30539.htm
+@@ -1,8 +1,7 @@
+ <html><body>Priestess of the Earth Chichirin:<br>
+-<font color="LEVEL">Carna Maphr!</font> May the blessing of the Goddess of the Earth be with you.<br>
+-The venerated <font color="LEVEL">Hero Lucien</font> had enormous strength and willpower when he fought against the wicked <font color="LEVEL">Earth Wyrm Trasken,</font> saving us Dwarves from the evil creature. Lucien once said, "I, Lucien, have always believed that the Goddess of the Earth is forever with me. Today s victory was only possible because of the blessing of the Goddess of the Earth!" What a wise remark!<br>
+-We can learn a valuable lesson from Lucien, only those who truly believe in the Goddess's bounty will find what they seek!<br>
+-<font color="LEVEL">Carna Maphr,</font> I'm sure that you too will be blessed if you keep true to your faith.<br>
++The venerated <font color="LEVEL">Hero Lucien</font> had enormous strength and willpower when he fought against the wicked <font color="LEVEL">Earth Wyrm Trasken,</font> saving us Dwarves from the evil creature. Lucien once said, "I, Lucien, have always believed that the I am not alone. Today s victory was only possible because of the blessing!" What a wise remark!<br>
++We can learn a valuable lesson from Lucien, only those who truly believe in such bounty will find what they seek!<br>
++I'm sure that you too will be blessed if you keep true to your faith.<br>
+ <a action="bypass -h npc_%objectId%_Chat 1">Ask about the Earth Wyrm.</a><br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/default/30554.htm b/aCis_datapack/data/html/default/30554.htm
+index 13323549..7d0fb4ba 100644
+--- a/aCis_datapack/data/html/default/30554.htm
++++ b/aCis_datapack/data/html/default/30554.htm
+@@ -1,5 +1,5 @@
+ <html><body>Miner Bolter:<br>
+-May Maphr, god of abundance, bless you today! Nice to meet you, young friend! How come you're in such a hurry?<br>
++Nice to meet you, young friend! How come you're in such a hurry?<br>
+ Did you come to the strip mine to receive training? Or are you on your way to the village? If you're going to the village, I've got a favor to ask.<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
 diff --git a/aCis_datapack/data/html/default/30566-1.htm b/aCis_datapack/data/html/default/30566-1.htm
 index 27d559ce..de1755cf 100644
 --- a/aCis_datapack/data/html/default/30566-1.htm
@@ -562,6 +666,29 @@ index 1b22623b..ea37d520 100644
 +I am the first! Though I do not have a body and my soul hangs on by a thread, I stay here to watch over my proud Orc descendants!<br>
  <a action="bypass -h npc_%objectId%_Quest">Quest</a>
  </body></html>
+diff --git a/aCis_datapack/data/html/default/30650.htm b/aCis_datapack/data/html/default/30650.htm
+index 8b931c4c..461ab8a1 100644
+--- a/aCis_datapack/data/html/default/30650.htm
++++ b/aCis_datapack/data/html/default/30650.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-May the abundance of Maphr be with you! If you would like to receive the graces of abundance, make your donations! It shall be returned to you tenfold, hundredfold!<br>
++If you would like to receive the graces of abundance, make your donations! It shall be returned to you tenfold, hundredfold!<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+diff --git a/aCis_datapack/data/html/default/30651.htm b/aCis_datapack/data/html/default/30651.htm
+index 4b2d1357..a8cf081e 100644
+--- a/aCis_datapack/data/html/default/30651.htm
++++ b/aCis_datapack/data/html/default/30651.htm
+@@ -1,5 +1,5 @@
+ <html><body>Wanderer Dorf:<br>
+-Maphr as the goddess of abundance and prosperity?! Foolish people, they don't know anything! Just look at the silly Dwarves of this town! They are literally crazy and they are always dashing here and there to collect more money... Ridiculous! Miserable creatures who would even venture to scrape out their goddess's heart if it were for money! And they won't hesitate to uncover things that were never meant to be in this world!<br>
+-Maphr is indeed the goddess of abundance and prosperity, but that also means that she is responsible for all poverty and downfalls! Why can't you see this simple fact? They have already experienced bankruptcy once before... Tsk tsk...<br>
++Foolish people, they don't know anything! Just look at the silly Dwarves of this town! They are literally crazy and they are always dashing here and there to collect more money... Ridiculous! Miserable creatures who would even venture to scrape out their heart if it were for money! And they won't hesitate to uncover things that were never meant to be in this world!<br>
++Why can't you see this simple fact? They have already experienced bankruptcy once before... Tsk tsk...<br>
+ <a action="bypass -h npc_%objectId%_Quest">Quest</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/default/30925.htm b/aCis_datapack/data/html/default/30925.htm
 index 46a32b6d..c06473a0 100644
 --- a/aCis_datapack/data/html/default/30925.htm
@@ -846,6 +973,30 @@ index e49ceb8d..124d913a 100644
  <a action="bypass -h npc_%objectId%_Chat 0">Return</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/help/classchange/7108-4.htm b/aCis_datapack/data/html/help/classchange/7108-4.htm
+index 34da0269..c0aa1492 100644
+--- a/aCis_datapack/data/html/help/classchange/7108-4.htm
++++ b/aCis_datapack/data/html/help/classchange/7108-4.htm
+@@ -1,5 +1,5 @@
+ <html><body>Confidential Report of the Guild:<br>
+  Iconoclasis reacts to physical and magical attacks in the same manner as other evil spirits...<br>
+ (Omission)... to summarize, Iconoclasis can be very dangerous. But, if the proper strategy is applied, you have a good chance of defeating him. The best weapon against him is a blunt weapon. Of course, you must defend yourself against the Bead of Holy Flame before you can attack Iconoclasis...<br>
+-...I pray for my brothers who read this report. May the divine blessing of Maphr be with you always... (Omission of what follows)<br>
++...I pray for my brothers who read this report. May the divine blessing be with you always... (Omission of what follows)<br>
+  - Tajif Goldgatherer, Year of Empire 1499</body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/help/classchange/7109-4.htm b/aCis_datapack/data/html/help/classchange/7109-4.htm
+index ce4e7aae..c2125482 100644
+--- a/aCis_datapack/data/html/help/classchange/7109-4.htm
++++ b/aCis_datapack/data/html/help/classchange/7109-4.htm
+@@ -1,5 +1,5 @@
+ <html><body>Confidential Report of the Guild:<br>
+  Iconoclasis reacts to physical and magical attacks in the same manner as other evil spirits...<br>
+ (Omission)... to summarize, Iconoclasis can be very dangerous. But, if the proper strategy is applied, you have a good chance of defeating him. The best weapon against him is a blunt weapon. Of course, you must defend yourself against the Bead of Holy Flame before you can attack Iconoclasis...<br>
+-...I pray for my brothers who read this report. May the divine blessing of Maphr be with you always... (Omission of what follows)<br>
++...I pray for my brothers who read this report. May the divine blessing be with you always... (Omission of what follows)<br>
+  - Piriel Aurura, Year of Empire 1499</body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/merchant/30147-bought.htm b/aCis_datapack/data/html/merchant/30147-bought.htm
 index 43bdb1af..90d3326b 100644
 --- a/aCis_datapack/data/html/merchant/30147-bought.htm
@@ -857,6 +1008,49 @@ index 43bdb1af..90d3326b 100644
  <a action="bypass -h npc_%objectId%_Buy 37">Buy Fighter equipment</a><br>
  <a action="bypass -h npc_%objectId%_Buy 38">Buy Mystic equipment</a><br>
  <a action="bypass -h npc_%objectId%_Newbie_Exc_Multisell 003">Exchange Equipment</a><br>
+diff --git a/aCis_datapack/data/html/merchant/31435-pk.htm b/aCis_datapack/data/html/merchant/31435-pk.htm
+index 830949f5..d476b2ed 100644
+--- a/aCis_datapack/data/html/merchant/31435-pk.htm
++++ b/aCis_datapack/data/html/merchant/31435-pk.htm
+@@ -1,3 +1,3 @@
+ <html><body>Blueprint Seller Daeger:<br>
+-You're an outlaw! No self-respecting Dwarf who serves Maphr would conduct business with a murderer like you!
++You're an outlaw! No self-respecting Dwarf who serves us would conduct business with a murderer like you!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/merchant/31437-sold.htm b/aCis_datapack/data/html/merchant/31437-sold.htm
+index 217a1ec7..e5abc1e1 100644
+--- a/aCis_datapack/data/html/merchant/31437-sold.htm
++++ b/aCis_datapack/data/html/merchant/31437-sold.htm
+@@ -1,5 +1,5 @@
+ <html><body>Blueprint Seller Luka:<br>
+-Did you find this hunting? If you  find another one, bring it to me!  May the divine protection of Maphr be with you always...<br>
++Did you find this hunting? If you  find another one, bring it to me!  May the divine protection be with you always...<br>
+ <a action="bypass -h npc_%objectId%_Buy 173">Buy</a><br>
+ <a action="bypass -h npc_%objectId%_Sell">Sell</a><br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">"Who is the lord of the manor and what is the tax rate?"</a>
+diff --git a/aCis_datapack/data/html/merchant/31437.htm b/aCis_datapack/data/html/merchant/31437.htm
+index 20094285..d2616f54 100644
+--- a/aCis_datapack/data/html/merchant/31437.htm
++++ b/aCis_datapack/data/html/merchant/31437.htm
+@@ -1,5 +1,5 @@
+ <html><body>Blueprint Seller Luka:<br>
+-May the divine protection of Maphr follow you to the ends of the earth... What brings you to Oren? Are you here to look at the golem blueprint? It's our most popular item!<br>
++What brings you to Oren? Are you here to look at the golem blueprint? It's our most popular item!<br>
+ <a action="bypass -h npc_%objectId%_Buy 173">Buy</a><br>
+ <a action="bypass -h npc_%objectId%_Sell">Sell</a><br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">"Who is the lord of the manor and what is the tax rate?"</a><br>
+diff --git a/aCis_datapack/data/html/merchant/31669-sold.htm b/aCis_datapack/data/html/merchant/31669-sold.htm
+index 5f2f61a4..da65b70d 100644
+--- a/aCis_datapack/data/html/merchant/31669-sold.htm
++++ b/aCis_datapack/data/html/merchant/31669-sold.htm
+@@ -1,5 +1,5 @@
+ <html><body>Mineral Trader Onyx:<br>
+-Oh no! May Maphr follow you on your journeys and bring you better fortune next time.<br>
++Oh no! May you have better fortune next time.<br>
+ <a action="bypass -h npc_%objectId%_Buy 157">Buy</a><br>
+ <a action="bypass -h npc_%objectId%_Sell">Sell</a><br>
+ <a action="bypass -h npc_%objectId%_TerritoryStatus">"Who is the lord of the manor and what is the tax rate?"</a>
 diff --git a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm b/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
 index 79202523..83b83464 100644
 --- a/aCis_datapack/data/html/script/feature/FirstClassChange/30565-11.htm
@@ -1084,6 +1278,65 @@ index 6d770d4e..1431a136 100644
  (This quest may only be undertaken by an Orcish character of level 2 and above.)
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-02.htm b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-02.htm
+index 5db65a2b..4344d9e1 100644
+--- a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-02.htm
+@@ -1,6 +1,6 @@
+ <html><body>Balanki:<br>
+ You've got some nerve addressing an elder like that!<br>
+-So, you want to broaden your horizons, eh? Ha! Even if you could afford to travel, Maphr couldn't keep you safe out there!<br>
++So, you want to broaden your horizons, eh? Ha! Even if you could afford to travel, we couldn't keep you safe out there!<br>
+ I admire your courage and ambition, but it takes more than those things to travel, my friend! I'll tell you what!<br>
+ Pass a <font color="LEVEL">Test</font> that I give you and I'll pay your way to Giran. Do you understand?<br>
+ All I ask is that you obtain the endorsement of <font color="LEVEL">Warehouse Chief Reed</font>. I must warn you, he's not easily impressed. Now get going!
+diff --git a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-05.htm b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-05.htm
+index 84eb1052..347237ef 100644
+--- a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30533-05.htm
+@@ -2,5 +2,5 @@
+ Damn that Reed! He knows better than that...<br>
+ Well, I suppose I'll do it since I gave you my word. Your abilities may be suspect, but your luck is certainly holding out!<br>
+ I've given you a scroll called <font color="LEVEL">Scroll of Escape: Giran</font>. Have you ever used a Scroll of Escape? Double-click the scroll and it will take you to the village. I've been saving this one for a special occasion! This scroll allows you to go directly to Giran Castle Town, but it will only work once, so use it carefully! I know you can't wait to get to the thriving metropolis of Giran, right? Ha!<br>
+-I've also given you <font color="LEVEL">the Mark of the Traveler</font>. When you're ready to return to this village, visit <font color="LEVEL">Trader Galladucci at the Prestigious Items Hall</font>. Show him this and he'll help you return here. I pray that Maphr is always watching over you!
++I've also given you <font color="LEVEL">the Mark of the Traveler</font>. When you're ready to return to this village, visit <font color="LEVEL">Trader Galladucci at the Prestigious Items Hall</font>. Show him this and he'll help you return here. I pray for you!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-01.htm b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-01.htm
+index e6ab6bf5..bdf5b759 100644
+--- a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-01.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-Why? Are you here to make a contribution to Maphr?<br>
++Why? Are you here to make a contribution?<br>
+ <a action="bypass -h Quest Q010_IntoTheWorld 30650-02.htm">"Here's the gift. Who has the right to strip mine?"</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-02.htm b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-02.htm
+index f3bc3579..27e067ae 100644
+--- a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-Very nice! Maphr should be pleased.<br>
+-It's not from you, eh? I think I know who would send me this kind of gift and ask you to find out such a thing. Well, thanks for the gift, but I can't tell you who has the right to strip mine. However, I will give you a hint for the person who gave me this gift. Tell him that the right to strip mine goes to whoever can afford to make enough contributions to Maphr, and whoever has enough wealth, popularity and virtue to operate the mine.<br>
+-Thank him for the gift and tell him to bring by contributions for Maphr anytime.
++Very nice!<br>
++It's not from you, eh? I think I know who would send me this kind of gift and ask you to find out such a thing. Well, thanks for the gift, but I can't tell you who has the right to strip mine. However, I will give you a hint for the person who gave me this gift. Tell him that the right to strip mine goes to whoever can afford to make enough contributions, and whoever has enough wealth, popularity and virtue to operate the mine.<br>
++Thank him for the gift and tell him to bring by contributions anytime.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-03.htm b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-03.htm
+index 34b78812..9699b1b3 100644
+--- a/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q010_IntoTheWorld/30650-03.htm
+@@ -1,3 +1,3 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-Where's the gift? I don't see one. Do you dare to trifle with a priest of the earth? What kind of person would ask about the right to strip mine without giving a gift to Maphr?
++Where's the gift? I don't see one. Do you dare to trifle with a priest of the earth? What kind of person would ask about the right to strip mine without giving a gift to us?
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm b/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm
 index b165e6d6..6dbdfdc9 100644
 --- a/aCis_datapack/data/html/script/quest/Q071_SagaOfEvasTemplar/10-06.htm
@@ -1121,6 +1374,68 @@ index 345dec32..0ff72762 100644
 + Well, shall I check your records? Let's see, you were educated at the Dark Temple, obtained a certificate of Dark Wizard from the Altar of Rites in the Dark Forest, passed the Test of the Summoner with flying colors, and even obtained a Recommendation from Galatea!<br>
  Your records are awesome! Unfortunately, it's come to our attention that your research activities have slowed down since you were promoted to Phantom Summoner. Work harder! Eventually, I'll recommend that you become a candidate for <font color="LEVEL">Spectral Master</font>, the ultimate summoner! Do your best!<br>
  (This quest may only be undertaken by a Phantom Summoner of level 76 and above.)
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-03.htm b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-03.htm
+index 77f78d0f..413ddd79 100644
+--- a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-03.htm
+@@ -1,4 +1,4 @@
+ <html><body>Chief Inspector Mond:<br>
+ First you must speak with <font color="LEVEL">Pamela Aprodia</font>, the agent dispatched to Goddard. Although she's not a Dwarf, she's an excellent agent who's been working with us for a long time. She's probably investigating the six tablets in <font color="LEVEL">Goddard Castle Town</font> right now. You'd better go there and meet her.<br>
+ One more thing. Before you leave, read this report. It's an Investigative Report on the spirit protecting one of the tablets. If you follow the Benandantis, you will probably come across this spirit. You should read it now.<br>
+-You'd better get going! May Maphr be with you!</body></html>
+\ No newline at end of file
++You'd better get going!</body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-05.htm b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-05.htm
+index 4c5c6e96..491746e7 100644
+--- a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-05.htm
+@@ -1,6 +1,6 @@
+ <html><body>Chief Inspector Mond:<br>
+-Well then, let's spit on the ground and shake hands! The trust between us has been established while Maphr has watched over us.<br>
++Well then, let's spit on the ground and shake hands! The trust between us has been established.<br>
+ Now I'll tell you what to do. The Benandanti cartel is searching for a legendary relic known as the Grail of Splendor. They would have found it by now if it were a real object, but it's not! It is actually the knowledge that reaches into the domain of the gods! It may be a part of the absolute geometry that elders of our guild have searched for since ancient times!<br>
+-There is nothing to be learned in books or scrolls about the grail. The gods wrote their secrets on six ancient stone tablets, and put them in secluded places, guarded by fearsome monsters! If you absorb the knowledge held in the six tablets, you'll attain the level of <font color="LEVEL">Fortune Seeker</font>, one who controls disasters and even the flow of destiny!<br>
++There is nothing to be learned in books or scrolls about the grail. Secrets were ritten on six ancient stone tablets, and put in secluded places, guarded by fearsome monsters! If you absorb the knowledge held in the six tablets, you'll attain the level of <font color="LEVEL">Fortune Seeker</font>, one who controls disasters!<br>
+  We must not let this valuable legacy slip into the hands of Benandantis! You must get the grail before they do!<br>
+ <a action="bypass -h Quest Q099_SagaOfTheFortuneSeeker accept">"What do I have to do?"</a></body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-07.htm b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-07.htm
+index eb50e73b..d13edd14 100644
+--- a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-07.htm
+@@ -1,4 +1,4 @@
+ <html><body>Chief Inspector Mond:<br>
+ You've drunk from the Grail of Splendor and learned the ultimate absolute geometry! You've acheived the sacred knowledge! My only role is to confer an appropriate title on the person who has that knowledge. I hereby confer upon you the title of Fortune Seeker!<br>
+ Congratulations! I can't believe that a young Dwarf like you has become the Fortune Seeker of our time! Am I witnessing the beginning of the new destiny?<br>
+- I expect great things from you in the future! Please work hard to become a positive role model for all the Dwarves! May Maphr's abundance be with you!</body></html>
+\ No newline at end of file
++ I expect great things from you in the future! Please work hard to become a positive role model for all the Dwarves!</body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-09.htm b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-09.htm
+index 04075384..c0e51baf 100644
+--- a/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-09.htm
++++ b/aCis_datapack/data/html/script/quest/Q099_SagaOfTheFortuneSeeker/0-09.htm
+@@ -1,4 +1,4 @@
+ <html><body>Chief Inspector Mond:<br>
+ You've drunk from the Grail of Splendor and learned the ultimate absolute geometry! You've acheived the sacred knowledge! My only role is to confer an appropriate title on the person who has that knowledge. I hereby confer upon you the title of Fortune Seeker!<br>
+ Congratulations! I can't believe that a young Dwarf like you has become the Fortune Seeker of our time! Am I witnessing the beginning of a new destiny?<br>
+- I expect great things from you in the future! Please work hard to become a positive role model for all the Dwarves! May Maphr's abundance be with you!</body></html>
+\ No newline at end of file
++ I expect great things from you in the future! Please work hard to become a positive role model for all the Dwarves!</body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q101_SwordOfSolidarity/30283-06.htm b/aCis_datapack/data/html/script/quest/Q101_SwordOfSolidarity/30283-06.htm
+index e11825ee..67b7b31a 100644
+--- a/aCis_datapack/data/html/script/quest/Q101_SwordOfSolidarity/30283-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q101_SwordOfSolidarity/30283-06.htm
+@@ -1,5 +1,5 @@
+ <html><body>Blacksmith Altran:<br>
+ Ta da, it's finished! This is the legendary <font color="LEVEL">Sword of Solidarity</font>. Isn't it beautiful? The blade has been crafted of Mithril and hasn't lost its sharpness yet!<br>
+ As my ancestors created this Sword of Solidarity for the Humans of this island a thousand years ago, I will now present you with this sword. Please do not refuse, and accept it as a gift. For your information, Dwarves are happiest when the weapons they create have been placed in the hands of a skilled user. The way I see it, you are qualified to receive this sword.<br>
+-I hope that you will perform a mighty deed appropriate for a sword with such a great history. And if anyone should ask, tell them that Blacksmith Altran reconstructed this sword! May the grace of Maphr be with you!
++I hope that you will perform a mighty deed appropriate for a sword with such a great history. And if anyone should ask, tell them that Blacksmith Altran reconstructed this sword!
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm b/aCis_datapack/data/html/script/quest/Q103_SpiritOfCraftsman/30132-01.htm
@@ -1226,6 +1541,18 @@ index 431442cb..97efa092 100644
  In honor of your new revelation, I will give you this weapon. It is a sharp blade that contains the magic power of the spirits. It will be useful in the future. But take care not to rely too heavily on such small tools. Never forget that the true power of magic lies within the Mystic.
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q163_LegacyOfThePoet/30220-03.htm b/aCis_datapack/data/html/script/quest/Q163_LegacyOfThePoet/30220-03.htm
+index 3dad9926..4b85fafb 100644
+--- a/aCis_datapack/data/html/script/quest/Q163_LegacyOfThePoet/30220-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q163_LegacyOfThePoet/30220-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Sentinel Starden:<br>
+-According to legend, the Eldarin of the beginning of the world -- or the 'Gods,' as the Humans call them, created various races and gave each race different knowledge. The Orcs received the art of war from Pa'agrio, the Dwarves trade and craftsmanship from Maphr, and we received poetry and songs from Eva. The other races hold our Elven magic and archery in high regard, but I think that the greatest achievement of the brothers of the forest is the culture and music that we have developed over thousands of years.<br>
++According to legend, the Eldarin of the beginning of the world -- or the 'God,' as the Humans call, created various races and gave each race different knowledge. The Orcs received the art of war, the Dwarves trade and craftsmanship, and we received poetry and songs. The other races hold our Elven magic and archery in high regard, but I think that the greatest achievement of the brothers of the forest is the culture and music that we have developed over thousands of years.<br>
+ I have been trained as a Sentinel, protector of the forest, but I spend my spare time composing and writing poetry. Though my poems are not good enough to recite to others. But it was a different case for my old time friend and colleague, <font color="LEVEL">Rumiel Moonshine</font>. He was a warrior with the heart of a poet. The short poems that he recorded in the life and death situations of the battlefield were a great comfort to our sentinel brothers who were weary of fighting. His voice, which sang of the beauty of the forest, the wind and the springs, made us remember what we were fighting for.<br>
+ <a action="bypass -h Quest Q163_LegacyOfThePoet 30220-04.htm">Ask about Rumiel</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm b/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm
 index c405e524..29cfc0fe 100644
 --- a/aCis_datapack/data/html/script/quest/Q166_MassOfDarkness/30130-00.htm
@@ -1290,6 +1617,116 @@ index fbcd951a..ad4415af 100644
 +I see that you haven't gone to the dark sanctuary yet. Deliver Garmiel's Scripture that I have given you to Abyssal Celebrant Undrias. Please hurry. You don't want the mass to be delayed on your account, do you?
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q167_DwarvenKinship/30210-02.htm b/aCis_datapack/data/html/script/quest/Q167_DwarvenKinship/30210-02.htm
+index 44832b56..4d02243b 100644
+--- a/aCis_datapack/data/html/script/quest/Q167_DwarvenKinship/30210-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q167_DwarvenKinship/30210-02.htm
+@@ -1,5 +1,4 @@
+ <html><body>Warehouse Keeper Norman:<br>
+ Tsk tsk. Did you know already ...? My, how embarrassing ... We did not mean any harm, so please don't be offended. Actually, it's such an urgent letter ... I'm sure Haprock had no choice but to ask you. Usually, he would have delivered it through the guild carriage that travels regularly between the villages ... Please forgive us.<br>
+-Now! Please take this. It is a long standing tradition for us Dwarves to always pay when receiving aid from others. So don't refuse, just accept it!<br>
+-May the grace of Maphr be with you!
++Now! Please take this. It is a long standing tradition for us Dwarves to always pay when receiving aid from others. So don't refuse, just accept it!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm
+index 7800aa5b..89972315 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Gauri Twinklerock:<br>
+-Ah, you wish to learn the ways of Maphr? <font color="LEVEL">Priest of the Earth Gerald</font> is regarded as one of the best theologians around...<br>
+-The vagabond named <font color="LEVEL">Dorf</font> has been overheard saying that he knows the secret of Maphr.<br>
++Ah, you wish to learn the sacred ways? <font color="LEVEL">Priest of the Earth Gerald</font> is regarded as one of the best theologians around...<br>
++The vagabond named <font color="LEVEL">Dorf</font> has been overheard saying that he knows the secret.<br>
+ You should speak with both of them...
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30571-03.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30571-03.htm
+index b6b1214d..b0364cd9 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30571-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30571-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Seer Tanapi:<br>
+-That is quite a surprise! You say that you felt the flames of Pa'agrio? Amazing!<br>
++That is quite a surprise! You say that you felt the flames? Amazing!<br>
+ To tell you the truth, I wasn't very hopeful when I sent you to the Cave of Trials. These days, success seems rare from one so young as you... I shall remember this.<br>
+-So you want to learn about Maphr? You should go and see <font color="LEVEL">Gauri Twinklerock of the Dwarven Village</font>! I hope that you will find the light of truth at the end of your journey! Tejakar Pa'agrio!
++So you want to learn about Dwarven sacred ways? You should go and see <font color="LEVEL">Gauri Twinklerock of the Dwarven Village</font>! I hope that you will find the light of truth at the end of your journey! Tejakar!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-06.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-06.htm
+index 28ca729c..347000dd 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-06.htm
+@@ -1,4 +1,4 @@
+ <html><body>Hermit Santiago:<br>
+-Next, go to <font color="LEVEL">the land of the Dwarves</font> and meet with <font color="LEVEL">Gauri Twinklerock</font>. Ask her how you may learn the teachings of Maphr.<br>
++Next, go to <font color="LEVEL">the land of the Dwarves</font> and meet with <font color="LEVEL">Gauri Twinklerock</font>. Ask her how you may learn the sacred teachings.<br>
+ <a action="bypass -h Quest Q215_TrialOfThePilgrim 30648-07.htm">Continue listening to the explanation</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-07.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-07.htm
+index 161c311b..b4fec75c 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30648-07.htm
+@@ -1,4 +1,4 @@
+ <html><body>Hermit Santiago:<br>
+-After you have completed your studies of Maphr, you must return to the land of the Humans and go to <font color="LEVEL">Giran Castle Town</font>. Seek out <font color="LEVEL">Priest Primos</font>, and he will lead you to a greater understanding of Einhasad.<br>
++After you have completed your studies of sacred ways of Dwarves, you must return to the land of the Humans and go to <font color="LEVEL">Giran Castle Town</font>. Seek out <font color="LEVEL">Priest Primos</font>, and he will lead you to a greater understanding.<br>
+ <a action="bypass -h Quest Q215_TrialOfThePilgrim 30648-08.htm">Continue listening to the explanation</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-01.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-01.htm
+index ba32bd71..67ab53a1 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-You have come to the right place! Maphr is my specialty! 6 years in the seminary, and 10 years of self-guided research after that... I feel that I have learned practically all there is to know about Maphr. I could use additional funds to further my research... Would you consider making a small donation? I will teach you everything I know about Maphr for a mere <font color="LEVEL">100,000 adena</font>. What a deal, er, I mean, blessing it is!<br>
++You have come to the right place! Sacred ways is my specialty! 6 years in the seminary, and 10 years of self-guided research after that... I feel that I have learned practically all there is to know about it. I could use additional funds to further my research... Would you consider making a small donation? I will teach you everything I know about it for a mere <font color="LEVEL">100,000 adena</font>. What a deal, er, I mean, it is!<br>
+ <a action="bypass -h Quest Q215_TrialOfThePilgrim 30650-02.htm">Donate 100,000 adena.</a><br>
+ <a action="bypass -h Quest Q215_TrialOfThePilgrim 30650-03.htm">Do not make a donation.</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-02.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-02.htm
+index c6e6d770..c7ba67f9 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30650-02.htm
+@@ -1,4 +1,4 @@
+ <html><body>Priest of the Earth Gerald:<br>
+-What a generous donation! Maphr will surely be pleased, and the world will be a better place thanks to you. What a wonderful investment, er, I mean, offering!<br>
+-Here is a book I wrote regarding the will of Maphr. Study it diligently! May the grace of Maphr be with you!
++What a generous donation! The world will be a better place thanks to you. What a wonderful investment, er, I mean, donation!<br>
++Here is a book I wrote regarding the sacred will. Study it diligently!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-01.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-01.htm
+index 52cfe1ef..02c8f9c2 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Wanderer Dorf:<br>
+-Maphr, the goddess of abundance and prosperity?! Foolish cattle, they don't know anything! Just look at the silly Dwarves in this town. They are mentally unbalanced, always dashing here and there to collect some more money. They are simply ridiculous! Miserable creatures who would even rip out their goddess' heart if it were worth money! And they don't hesitate to unearth things that should not be part of this world!<br>
+-Maphr is indeed the goddess of abundance and prosperity, but that also means that she is responsible for all poverty and downfalls! Why can't you see this simple fact? They have already experienced bankruptcy once before... Tsk tsk...<br>
++Foolish cattle, they don't know anything! Just look at the silly Dwarves in this town. They are mentally unbalanced, always dashing here and there to collect some more money. They are simply ridiculous! Miserable creatures who would even rip out their heart if it were worth money! And they don't hesitate to unearth things that should not be part of this world!<br>
++Why can't you see this simple fact? They have already experienced bankruptcy once before... Tsk tsk...<br>
+ Take this badge and take heed. Prosperity and poverty are just like the two sides of one coin!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-02.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-02.htm
+index c9c70aab..daf642f9 100644
+--- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30651-02.htm
+@@ -1,5 +1,5 @@
+ <html><body>Wanderer Dorf:<br>
+-Maphr, the goddess of abundance and prosperity?! Foolish cattle, they don't know anything! Just look at the silly Dwarves in this town. They are mentally unbalanced, always dashing here and there to collect some more money. They are simply ridiculous! Miserable creatures who would even rip out their goddess' heart if it were worth money! And they don't hesitate to unearth things that should not be part of this world!<br>
+-<font color="LEVEL">Maphr is indeed the goddess of abundance and prosperity, but that also means that she is responsible for all poverty and downfalls! Why can't you see this simple fact!</font> They have already experienced bankruptcy once before... Tsk tsk...<br>
++Foolish cattle, they don't know anything! Just look at the silly Dwarves in this town. They are mentally unbalanced, always dashing here and there to collect some more money. They are simply ridiculous! Miserable creatures who would even rip out their heart if it were worth money! And they don't hesitate to unearth things that should not be part of this world!<br>
++<font color="LEVEL">Why can't you see this simple fact!</font> They have already experienced bankruptcy once before... Tsk tsk...<br>
+ By the way, what is that book you are holding? You bought it from Gerald? <font color="LEVEL">You fool! You have been deceived by him!</font> Show him this badge. You might be able to get your money back.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm b/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm
 index 7d7cb1ad..9730a933 100644
 --- a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30358-02.htm
@@ -1301,6 +1738,16 @@ index 7d7cb1ad..9730a933 100644
 -We have tried for centuries to break the magic spell on our Hierarch Mitraell. He is privy to the secrets of Shilen and the <font color="LEVEL">Queen of Destruction</font>, more than anyone else. It is no exaggeration to say that he holds a vital clue to the upcoming Chaotic Chronicle.<br>
 +We have tried for centuries to break the magic spell on our Hierarch Mitraell. He is privy to the dark secrets, more than anyone else. It is no exaggeration to say that he holds a vital clue to the upcoming Chaotic Chronicle.<br>
  <font color="LEVEL">You must collect the research materials regarding the release of our leader.</font> I don't feel bad about asking for your help, since it was your ancestors who sealed our Hierarch. Take this letter to <font color="LEVEL">Magister Clayton of Dion Castle Town</font>. He will give you the list of materials to collect.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30531-04.htm b/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30531-04.htm
+index f4cda44a..b9c37661 100644
+--- a/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30531-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q217_TestimonyOfTrust/30531-04.htm
+@@ -1,3 +1,3 @@
+ <html><body>First Elder Lockirin:<br>
+-Nikola says that you were a great help. Hopefully this will lay a foundation for further inroads of commerce and trust between our races. Please take this letter to the Elder of your race. May the blessings of Maphr be upon you and your family.
++Nikola says that you were a great help. Hopefully this will lay a foundation for further inroads of commerce and trust between our races. Please take this letter to the Elder of your race.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30154-04.htm
@@ -1330,6 +1777,42 @@ index 35c5cda2..b3fc21d2 100644
  <font color="LEVEL">Thalia</font> and her sisters know more than anyone else about the Water of Life. Take this letter and meet Thalia. You can find her in the <font color="LEVEL">eastern part of the Iris Lake</font>.
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-09.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-09.htm
+index 69b309e5..7690fd19 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-09.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-09.htm
+@@ -1,7 +1,7 @@
+ <html><body>Blacksmith Pushkin:<br>
+-Clang! Clang! Smash with Maphr's hammer! Like smashing her window! Clang! Clang!<br>
+-Burn it with Pa'agrio's flame! Like sweet nothings to my lover!<br>
+-Clang! Clang! Dip it in Eva's water! Like drying her tears! Clang! Clang!<br>
++Clang! Clang! Smash with hammer! Like smashing the window! Clang! Clang!<br>
++Burn it with a flame! Like sweet nothings to my lover!<br>
++Clang! Clang! Dip it in the water! Like drying the tears! Clang! Clang!<br>
+ Call it with Sylph's wind! Her laughter in my ears! Clang! Clang!<br>
+ Bright Mithril, you light up the sky! Like love growing in my heart!<br>
+ Clang! Clang!<br>
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-10.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-10.htm
+index af3aa231..30e06b1e 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-10.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-10.htm
+@@ -1,4 +1,4 @@
+ <html><body>Blacksmith Pushkin:<br>
+ Finished at last! It was well worth the wait, wasn't it? Not to brag, but this would fetch hundreds of adena if you were to sell it in a store.<br>
+-I will put it in this sturdy box for you, handle it with care! Even though our time together was short, it was enjoyable! I can work with an Elf like you. May the fertility of Maphr be with you and your family!
++I will put it in this sturdy box for you, handle it with care! Even though our time together was short, it was enjoyable! I can work with an Elf like you.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-12.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-12.htm
+index 0690d752..25ffa3fa 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-12.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30300-12.htm
+@@ -1,3 +1,3 @@
+ <html><body>Blacksmith Pushkin:<br>
+-May the grace of Maphr bestow wealth on you and your race!
++May the grace of God bestow wealth on you and your race!
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm
 index 5d6a3a9e..f85b59f9 100644
 --- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30371-16.htm
@@ -1356,6 +1839,28 @@ index 66aa9584..38969c90 100644
 +Here is the <font color="LEVEL">Mark of Life</font>. Keep it with you -- it will assist you wherever your path leads you in the future. No matter what trials you must face, never forget the sacred time you spent in the shadow of Mother Tree, learning our timeless lessons of balance and beauty. May peace be with you always!
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-03.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-03.htm
+index a57ab383..b9d95e69 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-03.htm
+@@ -1,4 +1,4 @@
+ <html><body>Isael Silvershadow:<br>
+ Please, you must hurry and find <font color="LEVEL">the blade, shaft, and four jewels</font> of Talin's Spear that were stolen from us by the <font color="LEVEL">Leto Lizardman Shamans and Chiefs</font>.<br>
+-Time is of the essence. May Sayha of the winds guide your footsteps...
++Time is of the essence.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-04.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-04.htm
+index 3e9e86b9..5fc6a0f9 100644
+--- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-04.htm
+@@ -1,4 +1,4 @@
+ <html><body>Isael Silvershadow:<br>
+ You have found all of the pieces of Talin's spear! Reassembling this will be easy for me! I studied the art of weaponry with Hierarch Terestian of the lake fairies.<br>
+-Now! Take this spear and return to <font color="LEVEL">Thalia</font>. Please find the Water of Life so that the Mother Tree may become green and healthy once more. May Sayha of the Winds guide you safely home...
++Now! Take this spear and return to <font color="LEVEL">Thalia</font>. Please find the Water of Life so that the Mother Tree may become green and healthy once more.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm b/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm
 index 505773ea..8e6ad3fc 100644
 --- a/aCis_datapack/data/html/script/quest/Q218_TestimonyOfLife/30655-06.htm
@@ -1379,6 +1884,143 @@ index 359c64ab..3cfb9041 100644
  Your reward is my personal gratitude and this <font color="LEVEL">Mark of Glory</font>, which you can use to transfer to a higher class. Now return to the Human lands and seek out your destiny! I am confident that you will bring great glory to our tribe, and that our paths will cross again.
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm
+index 579b0029..26c8b5a1 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm
+@@ -1,6 +1,6 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-As you know, all Dwarves serve Maphr, the God of fertility. Fertility and goodness are one! It is the greatest virtue and the standard of right or wrong! The word 'fertility' derives from the ancient words for wealth, profit, rich soil and a healthy body. You must discover for yourself the true meaning of <font color="LEVEL">fertility</font>. First you must find the <font color="LEVEL">4 Tokens of Fertility</font>.<br>
+-Wear this ring while you are taking the test. This will tell other union members that you are taking the test and they will help you. When you submit all 4 marks to the union, you have passed the first test. I wish you luck and that Maphr's will be done.<br>
++As you know, all Dwarves serve the God of fertility. Fertility and goodness are one! It is the greatest virtue and the standard of right or wrong! The word 'fertility' derives from the ancient words for wealth, profit, rich soil and a healthy body. You must discover for yourself the true meaning of <font color="LEVEL">fertility</font>. First you must find the <font color="LEVEL">4 Tokens of Fertility</font>.<br>
++Wear this ring while you are taking the test. This will tell other union members that you are taking the test and they will help you. When you submit all 4 marks to the union, you have passed the first test. I wish you luck and that divine will be done.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04a.htm">Ask about the Token of Wealth</a><br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04b.htm">Ask about the Token of Fertile Lands</a><br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04c.htm">Ask about the Token of Fecundity.</a><br>
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
+index 449f0240..0d1bb93d 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
+@@ -1,7 +1,7 @@
+ <html><body>Warehouse Freightman Parman:<br>
+-As you know, Dwarves worship Maphr, the god of prosperity. Prosperity is not only the highest virtue, it is the measure of morality! For your first test, you will discover what <font color="LEVEL">"prosperity"</font> really means.<br>
++As you know, Dwarves worship God of prosperity. Prosperity is not only the highest virtue, it is the measure of morality! For your first test, you will discover what <font color="LEVEL">"prosperity"</font> really means.<br>
+ Bring back 4 proofs of prosperity. Prosperity traditionally has 4 components: wealth, fertile lands, fertility and sound body. To pass the test, find all <font color="LEVEL">4 proofs of prosperity</font>.<br>
+-While performing the test, carry this ring with you. Other guildsmen will recognize it and render assistance to you. When you have found all the proofs, submit them to the guild and you will pass the first test. May Maphr grant you luck!<br>
++While performing the test, carry this ring with you. Other guildsmen will recognize it and render assistance to you. When you have found all the proofs, submit them to the guild and you will pass the first test. May God grant you luck!<br>
+ Take this <font color="LEVEL">Dimension Diamond</font>. You can trade it to the village gatekeeper for something special that may help you on your journey.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04a.htm">Ask about the proof of wealth.</a><br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04b.htm">Ask about the proof of fertile lands.</a><br>
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-06.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-06.htm
+index cefb9223..57b11d91 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-06.htm
+@@ -2,7 +2,7 @@
+ So, you have found all 4 of the tokens? Let's see...<br>
+ The account book of the first elder Lockirin. This is indeed a suitable token of wealth!<br>
+ The recipe of Emily? Ah, this was given to you by the woman who bore and raised 12 children, the secret recipe passed down through her family that is traditionally eaten after giving birth to a child. It is perfect as the proof of fertility!<br>
+-Is the next a seed? Yes, I can smell the scent of a matured seed. I guess it must be a seed which Maphr, the God of earth has blessed. Good!<br>
++Is the next a seed? Yes, I can smell the scent of a matured seed. I guess it must be a seed which the God of earth has blessed. Good!<br>
+ Oh! Isn't this an Elven wafer? I guess it is from the Elf on Talking Island that has lived for more than a millennia. At one time wafers were common, but they have been rarely seen in modern times. I'm surprised you were able to get one, as wafers are known for not being sold nor given to other races.<br>
+ Well, you have gathered the 4 Tokens of Fertility. Congratulations! You have passed the first portion of test! However... It is not over yet. Now you must take the <font color="LEVEL">second test</font>.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-07.htm">Ask about the second test.</a>
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
+index c9eb71c9..26bca319 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
+@@ -1,5 +1,5 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Absolute Geometry is an ancient science passed down to us by Maphr. It is the explanation of everything, the laws of space and motion for all things. <font color="LEVEL">He who understands Absolute Geometry can control the world</font>.<br>
++Absolute Geometry is an ancient science passed down to us. It is the explanation of everything, the laws of space and motion for all things. <font color="LEVEL">He who understands Absolute Geometry can control the world</font>.<br>
+ Our ancestors pursued the study of Absolute Geometry, which led to discoveries in mathematics, thermodynamics, measurement, architecture, astronomy, navigation and economics. This knowledge enabled us to build great architecture such as the sky garden of Shootguart and the great palace of Harnark. We were able to replace the barter system with the concept of monetary economy, and to develop warrior golems and such.<br>
+ But since the downfall of Giants, most of this technology has been lost. What a pity...<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08b.htm">Ask about Maphr's Tablet</a>
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
+index 3a407cbe..c5f9a311 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
+@@ -1,6 +1,6 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Maphr's Tablet is written in the language of the Giants, but we <font color="LEVEL">Dwarves are the true owners of the tablet</font>. It was the Dwarves who learned directly from Maphr and to this day we retain our traditions of manufacturing, trading, and architecture! Other races, ignorant to our advances in math, dynamics, measurement and architecture won't even be able to follow the basics of Absolute Geometry.<br>
++Maphr's Tablet is written in the language of the Giants, but we <font color="LEVEL">Dwarves are the true owners of the tablet</font>. It was the Dwarves who learned it and to this day we retain our traditions of manufacturing, trading, and architecture! Other races, ignorant to our advances in math, dynamics, measurement and architecture won't even be able to follow the basics of Absolute Geometry.<br>
+ Obtaining Maphr's Tablet has always been our greatest wish and long-cherished dream. If only we could recover the secrets of Absolute Geometry, we would be able to rebuild our kingdom of Dwarves, and eventually control the entire continent! We could create a world where everything runs smoothly like a well-greased cogwheel...That is our heaven which we will create with our own hands.<br>
+-Unfortunately legend says that Maphr's Tablet was damaged when the war between the Gods and the Giants broke out. It is said that fearing the advanced technology of the Giants, the gods stole the tablet, broke it into 12 pieces and scattered it across the continent.<br>
++Unfortunately legend says that Maphr's Tablet was damaged when the war between the gods and the Giants broke out. It is said that fearing the advanced technology of the Giants, the gods stole the tablet, broke it into 12 pieces and scattered it across the continent.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08c.htm">Ask the whereabouts of Maphr's Tablet</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
+index b2b06a78..afd4ff6c 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
+@@ -1,5 +1,5 @@
+ <html><body>Warehouse Freightman Parman:<br>
+-This is a piece of Maphr's Tablet! What a find you've made! Ah, Parman you old rascal, you've always had an eye for fresh talent. And look at what you've brought in! The elders will be very pleased when I relate this juicy bit of news at the next Centurions meeting. Listen . . . this is for your ears only, you understand . . . I heard that another piece of the tablet was discovered not long ago. Thanks to your discovery, we're even closer to unlocking the secrets of Maphr's mathematics.<br>
++This is a piece of Maphr's Tablet! What a find you've made! Ah, Parman you old rascal, you've always had an eye for fresh talent. And look at what you've brought in! The elders will be very pleased when I relate this juicy bit of news at the next Centurions meeting. Listen . . . this is for your ears only, you understand . . . I heard that another piece of the tablet was discovered not long ago. Thanks to your discovery, we're even closer to unlocking the secrets of mathematics.<br>
+ Now I have to send this piece to the Dwarven village so the elders can decode it. They're the only ones who can still read Titan, you understand -- humble folk like us have no clue what we've unearthed.<br>
+-Again, congratulations! You've passed the second test with flying colors, and I will now reward you with the <font color="LEVEL">Mark of Prosperity</font>. Keep your nose to the grindstone, youngster, and you'll rise high in this guild. May you one day enjoy Maphr's prosperity!
++Again, congratulations! You've passed the second test with flying colors, and I will now reward you with the <font color="LEVEL">Mark of Prosperity</font>. Keep your nose to the grindstone, youngster, and you'll rise high in this guild.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
+index 32db7e20..900ba38e 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
+@@ -1,7 +1,7 @@
+ <html><body>First Elder Lockirin:<br>
+-To a Dwarf, nothing in the world is more important than wealth. We serve the God Maphr because it is he from whom flows all wealth and abundance. Please don't misunderstand me, I mean no disrespect.<br>
++To a Dwarf, nothing in the world is more important than wealth. We serve the God because it is he from whom flows all wealth and abundance. Please don't misunderstand me, I mean no disrespect.<br>
+ My race possesses unfathomable wealth. Personally I could well afford a human estate. In spite of our embarrassment of riches, my race is still unsatisfied...<br>
+-If we could just get our hands on all of the fragments of Maphr's Tablet, we could buy the entire continent...our wealth would finally eclipse that of the humans! Only Maphr knows if I shall live to see this come to pass...<br>
++If we could just get our hands on all of the fragments of Maphr's Tablet, we could buy the entire continent...our wealth would finally eclipse that of the humans! Only God knows if I shall live to see this come to pass...<br>
+ Oh, pardon the idle musings of an old man. We have business to discuss. Let's talk about that Mark of Wealth that you are looking for. I would be happy to oblige, if only you would run a <font color="LEVEL">simple errand</font> for me. Is this acceptable?<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30531-03.htm">Say you will run the errand</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm
+index 3d722138..01fe01d8 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm
+@@ -1,4 +1,4 @@
+ <html><body>Elder Keef:<br>
+-May the abundance of Maphr be with you! Well, look at you! Aren't you the one that hunted blade bats for me? So, how are you doing? I'm sure your situation has improved thanks to the hard work you did back then.. You look good! I wouldn't be surprised to see you get a promotion soon!<br>
++Well, look at you! Aren't you the one that hunted blade bats for me? So, how are you doing? I'm sure your situation has improved thanks to the hard work you did back then.. You look good! I wouldn't be surprised to see you get a promotion soon!<br>
+ Ah! You are collecting guild dues on behalf of the First Elder? Wait a minute. All right... Let's see who has not paid his dues yet! Oh my! That infamous rascal <font color="LEVEL">Carrier Torocco</font> has not yet paid! I knew it. Always the troublemaker, he is! Go and collect the guild dues from Torocco.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm
+index e92c646b..a9509826 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm
+@@ -1,6 +1,6 @@
+ <html><body>Piotur:<br>
+ Hope..., Yes, I suppose there is hope after all...<br>
+ These days the hired troops are taking care of the Orcs while my brothers and I work day and night to reclaim the land. Someday this farm will boast the richest land in the kingdom of Aden!<br>
+-So you seek the <font color="LEVEL">Token of the Fertile Lands</font>? Then you shall have it. I was given this from another Dwarf. He appeared at a time when I had just come to this barren land and was having no luck growing crops. He gave me a seed and said that <font color="LEVEL">the blessings of Maphr were within it</font>.<br>
++So you seek the <font color="LEVEL">Token of the Fertile Lands</font>? Then you shall have it. I was given this from another Dwarf. He appeared at a time when I had just come to this barren land and was having no luck growing crops. He gave me a seed and said that <font color="LEVEL">the blessings of God were within it</font>.<br>
+ When I planted this seed it enriched the soil and my harvests have been improving steadily since then. I put back some of the seeds and have saved them until this day. Now I shall share the seeds with you. This gift from one Dwarf I now give to another.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-03.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-03.htm
+index 27d15b10..284555a2 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-03.htm
+@@ -1,3 +1,3 @@
+ <html><body>Piotur:<br>
+-<font color="LEVEL">The seeds in which the blessings of Maphr dwell</font>... This will be your Token of the Fertile Lands.
++<font color="LEVEL">The seeds in which the blessings of God dwell</font>... This will be your Token of the Fertile Lands.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-04.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-04.htm
+index 0d78927a..6c512037 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-04.htm
+@@ -1,3 +1,3 @@
+ <html><body>Piotur:<br>
+-May the blessings of Maphr shine upon you and your tribe.
++May the blessings of God shine upon you and your tribe.
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm b/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
 index b835d4ae..dd7b43ab 100644
 --- a/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
@@ -1392,6 +2034,24 @@ index b835d4ae..dd7b43ab 100644
  I must send reinforcements to Elder Balanki. Well done!
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q234_FatesWhisper/31002-12.htm b/aCis_datapack/data/html/script/quest/Q234_FatesWhisper/31002-12.htm
+index f0a075f8..7982fc9a 100644
+--- a/aCis_datapack/data/html/script/quest/Q234_FatesWhisper/31002-12.htm
++++ b/aCis_datapack/data/html/script/quest/Q234_FatesWhisper/31002-12.htm
+@@ -1,9 +1,9 @@
+ <html><body>Maestro Reorin:<br>
+ Be patient my young friend! I shall create a marvelous weapon for you, one that will make the earth tremble!<br>
+-Clang! Clang! Behold the power of the hammer of Maphr! Clang! Clang!<br>
+-Boom! Boom! Forged in the flames of Pa'agrio! Clang! Clang!<br>
+-Bang bang! Immersed in the water of Eva! Clang! Clang! Splash!<br>
+-Bang! Bang! Cooled with the wind of Sayha! I hear her laughing in my ear! Bang! Bang!<br>
++Clang! Clang! Behold the power of the hammer! Clang! Clang!<br>
++Boom! Boom! Forged in the flames! Clang! Clang!<br>
++Bang bang! Immersed in the water! Clang! Clang! Splash!<br>
++Bang! Bang! Cooled with the wind! I hear the laughing in my ear! Bang! Bang!<br>
+ Clang! Clang! The flames of passion heat the metal to the core! Such is the love in my heart! Clang! Clang!<br>
+ ...Voila! It is finished! Not to toot my own horn, but I'm one of only a handful of Dwarves capable of creating A grade weapons on this continent! I, Maestro Reorin, present you with this <font color="LEVEL">%weaponname%</font>! Also, take this mark engraved with the Phoenix of Revolution or the Messenger of Dawn. The mysterious woman who foretold your coming asked me to give it to you...<br>
+ I suppose our time together is over. Thank you for your help. If you see that mysterious woman again, give her my regards!
 diff --git a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm b/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm
 index b1f1f57e..46b99ad1 100644
 --- a/aCis_datapack/data/html/script/quest/Q273_InvadersOfTheHolyLand/30566-01.htm
@@ -1415,6 +2075,88 @@ index e6ed58c6..4c226ae9 100644
  I, Varkees, do not think that these petty creatures are brave enough to face Orcs on their own. According to the seers, a jewel called <font color="LEVEL">the soulstone</font> is embedded in the hearts of Rakeclaw Imps. This soulstone attaches itself to its host and steals the host's spirit, allowing dark magicians to bend the creatures to their will!<br>
  The seers have revealed this truth to me, Varkees. That if we gather enough soulstones, we will be able to turn their own powers against them and find out who is controlling the imps. I, the Atuba Chief Varkees, command you! Defeat the foreigners who have invaded our Holy Land, and bring the soulstones embedded in their hearts!<br>
  <a action="bypass -h Quest Q273_InvadersOfTheHolyLand 30566-03.htm">Say you will take his orders</a>
+diff --git a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-04.htm b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-04.htm
+index ab27f47d..db814a10 100644
+--- a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-04.htm
+@@ -1,6 +1,6 @@
+ <html><body>Filaur of the Gray Pillar:<br>
+ I am sorry, but if you come back with empty hands I can't reward you, no matter how hard you tried. As I mentioned before, I will reward you based on the amount of <font color="LEVEL">Chrysolite Ore</font> that you collect after defeating <font color="LEVEL">the Utuku Orcs</font>.<br>
+-And don't forget ... <font color="LEVEL">If you collect four pieces of a torn Map,</font> you should visit Chichirin in the Maphr Temple. If you ask her for help, she will combine those torn pieces and make a complete Map. I will give you a generous reward once you bring me the completed Maps.<br>
++And don't forget ... <font color="LEVEL">If you collect four pieces of a torn Map,</font> you should visit Chichirin in the Temple. If you ask her for help, she will combine those torn pieces and make a complete Map. I will give you a generous reward once you bring me the completed Maps.<br>
+ <a action="bypass -h Quest Q293_TheHiddenVeins 30535-06.htm">Say you will quit</a><br>
+ <a action="bypass -h Quest Q293_TheHiddenVeins 30535-07.htm">Say you will continue</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-05.htm b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-05.htm
+index e6568c7e..c486dd6c 100644
+--- a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30535-05.htm
+@@ -1,6 +1,6 @@
+ <html><body>Filaur of the Gray Pillar:<br>
+ You've done well, young Dwarf. This ore you have brought may look rough, but once it goes through the trained hands of craftsmen, it becomes a precious metal with a brilliant blue luster. True maestros should be able to find the beauty hidden in plain objects.<br>
+-As promised, I will reward you based on the amount of ore you have brought. And, don't forget ... If you collect <font color="LEVEL">four pieces of a torn map,</font> you should visit Chichirin in the Maphr Temple. If you ask her for help, she will combine those torn pieces and make a complete map. I will give you a generous reward once you bring me the completed maps.<br>
++As promised, I will reward you based on the amount of ore you have brought. And, don't forget ... If you collect <font color="LEVEL">four pieces of a torn map,</font> you should visit Chichirin in the Temple. If you ask her for help, she will combine those torn pieces and make a complete map. I will give you a generous reward once you bring me the completed maps.<br>
+ <a action="bypass -h Quest Q293_TheHiddenVeins 30535-06.htm">Say you will quit</a><br>
+ <a action="bypass -h Quest Q293_TheHiddenVeins 30535-07.htm">Say you will continue</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-01.htm b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-01.htm
+index 05046608..cf22afe4 100644
+--- a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-01.htm
+@@ -1,4 +1,4 @@
+-<html><body>Maphr Priestess Chichirin:<br>
++<html><body>Priestess Chichirin:<br>
+ I heard from Elder Filaur. You are trying to recover some old maps, right? I used to be an apprentice for the cartography guild before becoming a seer. I helped Master Diana recover the map that shows the sites of the ancient giants.<br>
+ <a action="bypass -h Quest Q293_TheHiddenVeins 30539-02.htm">Ask her to recover the map</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-02.htm b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-02.htm
+index abf2745d..ec1dcfc6 100644
+--- a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-02.htm
+@@ -1,3 +1,3 @@
+-<html><body>Maphr Priestess Chichirin:<br>
++<html><body>Priestess Chichirin:<br>
+ I'm sorry, but you don't have enough pieces of the torn map. Look here. You don't have this part. See, just there? I think I need <font color="LEVEL">four</font> pieces of the torn map to make a complete map.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-03.htm b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-03.htm
+index a3bb1843..fc9764a1 100644
+--- a/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q293_TheHiddenVeins/30539-03.htm
+@@ -1,4 +1,4 @@
+-<html><body>Maphr Priestess Chichirin:<br>
++<html><body>Priestess Chichirin:<br>
+ Let me see ... This part should be on the upper left-hand corner ... This should be under that piece ... If I put this here ...<br>
+ There! It is a little loose, but I have managed to create a rough map. I have never seen these characters before. These are neither the giants' nor the Elves' writing. Clumsy lines and bad handwriting ... it seems like a race with lousy craftsmanship made this map ... Perhaps the Humans?
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30519-03.htm b/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30519-03.htm
+index 9faf4763..b4e46407 100644
+--- a/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30519-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30519-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Trader Mion:<br>
+-Ohh! Goddess Maphr sent me a savior! Good Lord! What took you so long!<br>
++Ohh! Good Lord! What took you so long!<br>
+ You don't have much time! Now I shall tell you about collecting the Spider Silk. Generally, people think that tarantulas do not make webs, but that is false. They dig holes for their nests and make webs to line them! <font color="LEVEL">Hunt tarantulas and bring all the Spider Silk to me!</font> There are two kinds of tarantulas: <font color="LEVEL">hunter tarantula</font> and <font color="LEVEL">plunder tarantula</font>. If you fulfill this quest, I will reward you!<br>
+ By the way, if you happen to find a <font color="LEVEL">tarantula Spinneret</font> take it to <font color="LEVEL">Defender Nathan</font>. He will spin the silk out of it. He is a very skilled and sensitive Dwarf.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30548-01.htm b/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30548-01.htm
+index dba06ca5..2f0d369d 100644
+--- a/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30548-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q296_TarantulasSpiderSilk/30548-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Defender Nathan:<br>
+-I heard about you from Mion. You're helping her collect the Spider Silks, right? I once learned the craft of spinning from the Golden Wheel Guild. But I gave up being a craftsman, and became a defender instead ... Actually, I once got my fortune told at the Maphr Temple. They said I wouldn't live long if I became a craftsman ... Tsk ...<br>
++I heard about you from Mion. You're helping her collect the Spider Silks, right? I once learned the craft of spinning from the Golden Wheel Guild. But I gave up being a craftsman, and became a defender instead ... Actually, I once got my fortune told at the Temple. They said I wouldn't live long if I became a craftsman ... Tsk ...<br>
+ Anyway, my skills don't compare to a master's, but the village girls once swooned at my spinning skills! So, if you have any tarantula Spinnerets, bring them to me. I'll spin an unbelievable amount of Spider Silk for you!<br>
+ <a action="bypass -h Quest Q296_TarantulasSpiderSilk 30548-02.htm">Ask him to spin the Spider Silk</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm b/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm
 index f5e1a288..034dd120 100644
 --- a/aCis_datapack/data/html/script/quest/Q316_DestroyPlagueCarriers/30155-08.htm
@@ -1423,6 +2165,27 @@ index f5e1a288..034dd120 100644
  <html><body>Master Ellenia:<br>
 -I understand. You too, need rest. Rest under the shade of the Mother Tree and recover the strength of both your body and soul. Well then, may Eva's blessings be with you.
 +I understand. You too, need rest. Rest under the shade of the Mother Tree and recover the strength of both your body and soul. Well.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q328_SenseForBusiness/30436-03.htm b/aCis_datapack/data/html/script/quest/Q328_SenseForBusiness/30436-03.htm
+index 02862564..793355c9 100644
+--- a/aCis_datapack/data/html/script/quest/Q328_SenseForBusiness/30436-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q328_SenseForBusiness/30436-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>Trader Sarien:<br>
+-Deal! Spit on the ground and let's shake on it. With this, our contract is sealed in the eyes of the goddess of earth, Maphr. Now listen to what I have to say.<br>
++Deal! Spit on the ground and let's shake on it. With this, our contract is sealed in our eyes. Now listen to what I have to say.<br>
+ Do you remember the eight basic ingredients used for my magic research that I told you about earlier? We can find some of them in this area. If you'll hunt for<font color="LEVEL">monster eyes</font>, you can get their useful <font color="LEVEL">Monster Eye Carcasses,</font> and once in a while, you may even obtain a <font color="LEVEL">Monster Eye Lens</font>. This is a very valuable item. They say Dwarves use these to make something called "eye glasses."<br>
+ Also, if you hunt the <font color="LEVEL">Basilisk</font>, you can get its gizzard. The Basilisk swallows the pebbles of the wastelands to aid its digestion, but inside, they are mixed with jade shards. So we can obtain jade from the <font color="LEVEL">basilisk gizzard</font>.<br>
+ You can find monster eyes at the bends of the Ruins of Agony or the Ruins of Despair. The basilisk can be found within the Wastelands. There are also monster eyes in the Wastelands, but they are much more dangerous than those at the bends of the Ruins, so you must be careful. But you may be able to find items that are that much more precious, so it is worth taking the challenge.<br>
+diff --git a/aCis_datapack/data/html/script/quest/Q329_CuriosityOfADwarf/30437-06.htm b/aCis_datapack/data/html/script/quest/Q329_CuriosityOfADwarf/30437-06.htm
+index a0500194..e082f294 100644
+--- a/aCis_datapack/data/html/script/quest/Q329_CuriosityOfADwarf/30437-06.htm
++++ b/aCis_datapack/data/html/script/quest/Q329_CuriosityOfADwarf/30437-06.htm
+@@ -1,3 +1,3 @@
+ <html><body>Trader Rolento:<br>
+-I'm sorry that you are quitting, it is too bad. I'll have to ask someone else. Thanks anyway. May the divine blessing of Maphr, our God of the Earth, be with you!
++I'm sorry that you are quitting, it is too bad. I'll have to ask someone else. Thanks anyway. May the divine blessing of our God of the Earth, be with you!
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30130-01.htm
@@ -1479,6 +2242,28 @@ index 3014967d..b1464192 100644
 +This statue is of no use to you. In fact, the Humans would burn you at the stake if they found it in your possession! Now come to your senses and give me the statue. As I told you, you will be richly rewarded for your efforts.
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-02.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-02.htm
+index b3222813..9923f265 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-02.htm
+@@ -1,4 +1,4 @@
+ <html><body>First Elder Lockirin:<br>
+-Oh my! This Clay Tablet... Where in the world did you find this? Of course its just a fragment, but... Maphr...!<br>
++Oh my! This Clay Tablet... Where in the world did you find this? Of course its just a fragment, but... God...!<br>
+ Look at this! If you can obtain the other pieces  and assemble them into a single tablet, I shall reward you handsomely! I promise this in the name of the First Elder of the Guild Federation!
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-03.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-03.htm
+index aeb8f6ef..0d262847 100644
+--- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30531-03.htm
+@@ -1,5 +1,5 @@
+ <html><body>First Elder Lockirin:<br>
+-This Clay Tablet... Where in the world did you find this? It's just one part, but... Maphr...! How did you come across such a precious thing...?<br>
++This Clay Tablet... Where in the world did you find this? It's just one part, but... God...! How did you come across such a precious thing...?<br>
+ Check this out, my friend!  If you will give me this fragment, I will give you a gift!<br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30531-04.htm">Hand over the tablet</a><br>
+ <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30531-05.htm">Don't hand over the tablet</a>
 diff --git a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm b/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm
 index 5b1325ba..d40fcb89 100644
 --- a/aCis_datapack/data/html/script/quest/Q333_HuntOfTheBlackLion/30736-08b.htm
@@ -1503,6 +2288,26 @@ index 96e55199..1687ff85 100644
 +One time while talking with some friends in the Dark Elf Guild, I learned that Dark Elves have advantages attacking at night! You say everyone already knows that? Well I find it shocking.<br>
 +Also I have heard that the Dark Elves' Dark Temple in the Dark Forest is spectacular. There are rumors that abyssal celebrants there are gathering fragments of it's' statues from everywhere!<br>
  <a action="bypass -h Quest Q333_HuntOfTheBlackLion 30736-09.htm">Return</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q337_AudienceWithTheLandDragon/30678-05.htm b/aCis_datapack/data/html/script/quest/Q337_AudienceWithTheLandDragon/30678-05.htm
+index 377a85b7..abb68881 100644
+--- a/aCis_datapack/data/html/script/quest/Q337_AudienceWithTheLandDragon/30678-05.htm
++++ b/aCis_datapack/data/html/script/quest/Q337_AudienceWithTheLandDragon/30678-05.htm
+@@ -1,3 +1,3 @@
+ <html><body>Blacksmith Helton:<br>
+-Thanks to your efforts our columns in Gludin and Oren have been saved. Now go back to <font color="LEVEL">Gabrielle</font>. She will have another task for you. May Maphr smile upon you!
++Thanks to your efforts our columns in Gludin and Oren have been saved. Now go back to <font color="LEVEL">Gabrielle</font>. She will have another task for you.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q354_ConquestOfAlligatorIsland/30895-09.htm b/aCis_datapack/data/html/script/quest/Q354_ConquestOfAlligatorIsland/30895-09.htm
+index e25d530c..39b70305 100644
+--- a/aCis_datapack/data/html/script/quest/Q354_ConquestOfAlligatorIsland/30895-09.htm
++++ b/aCis_datapack/data/html/script/quest/Q354_ConquestOfAlligatorIsland/30895-09.htm
+@@ -1,3 +1,3 @@
+ <html><body>Warehouse Freightman Kluck:<br>
+-What a pity... You won't be easy to replace... I appreciate your contribution to our cause... When the free trade zone on Alligator Island becomes a reality and I have opened my own shop, you must visit me there. May the prosperity of Maphr be with you always...
++What a pity... You won't be easy to replace... I appreciate your contribution to our cause... When the free trade zone on Alligator Island becomes a reality and I have opened my own shop, you must visit me there.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm b/aCis_datapack/data/html/script/quest/Q368_TrespassingIntoTheSacredArea/30926-01.htm
@@ -1572,6 +2377,18 @@ index c467a2c7..7f6f7cc3 100644
 +Your brave efforts have spelled the doom of all who have invaded the Elven Garden! Will you stay and help us finish them off?<br>
  <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-05.htm">"I must be going."</a><br>
  <a action="bypass -h Quest Q368_TrespassingIntoTheSacredArea 30926-06.htm">"Death to the blade stakatos!"</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q408_PathToAnElvenWizard/30414-18.htm b/aCis_datapack/data/html/script/quest/Q408_PathToAnElvenWizard/30414-18.htm
+index bffbc6f4..4f3a6f92 100644
+--- a/aCis_datapack/data/html/script/quest/Q408_PathToAnElvenWizard/30414-18.htm
++++ b/aCis_datapack/data/html/script/quest/Q408_PathToAnElvenWizard/30414-18.htm
+@@ -1,5 +1,5 @@
+ <html><body>Rosella:<br>
+-The <font color="LEVEL">Nobility Amethyst</font> is the symbol of elegance and nobility and at the same time is the symbol of Sayha, the God of Wind. The force of the wind within the jewel is an important material for Mystics who study the magic of storms. Well, if you had studied the basics, you would know all this...<br>
++The <font color="LEVEL">Nobility Amethyst</font> is the symbol of elegance and nobility. The force of the wind within the jewel is an important material for Mystics who study the magic of storms. Well, if you had studied the basics, you would know all this...<br>
+ Meet a person by the name of <font color="LEVEL">Northwind</font> at the entrance to the Underground Fortress. He may know something about the Amethyst. Give this book to him and he will give you aid.<br>
+ To find the Elven Fortress, first go north of the village to the Neutral Zone, cross the bridge, and enter the Elven forest. If you cross the bridge, you will immediately see the grand Elven Fortress. The entrance is at the other side of the mountain.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm b/aCis_datapack/data/html/script/quest/Q409_PathToAnElvenOracle/30293-01.htm
@@ -1647,6 +2464,27 @@ index 08c299a7..9f18cba3 100644
  <a action="bypass -h Quest Q426_QuestForFishingShot 06.htm">Back</a>
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q503_PursuitOfClanAmbition/30763-02.htm b/aCis_datapack/data/html/script/quest/Q503_PursuitOfClanAmbition/30763-02.htm
+index adc3e2de..63713cce 100644
+--- a/aCis_datapack/data/html/script/quest/Q503_PursuitOfClanAmbition/30763-02.htm
++++ b/aCis_datapack/data/html/script/quest/Q503_PursuitOfClanAmbition/30763-02.htm
+@@ -1,3 +1,3 @@
+ <html><body>Corpse of Kurtz:<br>
+-Uhhhh... Luh, luh, look here... I was wrong... Woe is me!... What an awful way to die... Eggs of drake... Tuh, tuh, take them to Martien... And, this brooch... Puh, puh, please... take it to muh, my brother Kusto...! Maphr... welcomes... my... soul... Arghhhh...
++Uhhhh... Luh, luh, look here... I was wrong... Woe is me!... What an awful way to die... Eggs of drake... Tuh, tuh, take them to Martien... And, this brooch... Puh, puh, please... take it to muh, my brother Kusto...! Heavens... welcomes... my... soul... Arghhhh...
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/trainer/30850.htm b/aCis_datapack/data/html/trainer/30850.htm
+index 2566041b..6e0905e3 100644
+--- a/aCis_datapack/data/html/trainer/30850.htm
++++ b/aCis_datapack/data/html/trainer/30850.htm
+@@ -1,5 +1,5 @@
+ <html><body>Master Aiken:<br>
+-A group of Dwarven bandits called Magpie Brothers have abused the divine protection given to Dwarves by Maphr to rob graves within the National Cemetery. As a result, the entire place has become little better than a ruin.<br>
++A group of Dwarven bandits called Magpie Brothers have abused the divine protection given to Dwarves to rob graves within the National Cemetery. As a result, the entire place has become little better than a ruin.<br>
+ Hopefully we will soon put an end to their vandalism, though, since I recently trained the guards in Dwarven capture techniques.<br>
+ <a action="bypass -h npc_%objectId%_SkillList">Learn skills</a><br>
+ <a action="bypass -h npc_%objectId%_EnchantSkillList">Skill Enchantment</a><br>
 diff --git a/aCis_datapack/data/html/villagemaster/30154.htm b/aCis_datapack/data/html/villagemaster/30154.htm
 index abdffb9a..5ba7dca8 100644
 --- a/aCis_datapack/data/html/villagemaster/30154.htm
@@ -2495,10 +3333,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..a872d2f6
+index 00000000..be92d73d
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1440 @@
+@@ -0,0 +1,1444 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -2808,6 +3646,10 @@ index 00000000..a872d2f6
 +	
 +	public static void excludeItems()
 +	{
++		BANNED_ITEMS[144] = true;  // Sword of Occult
++		BANNED_ITEMS[316] = true;  // Blood of Saints
++		BANNED_ITEMS[3245] = true; // Maphr Tablet Fragment
++		
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[247] = true; // Dwarven Fighter Fist
 +		BANNED_ITEMS[248] = true; // Orc Fighter Fist
@@ -3380,7 +4222,7 @@ index 00000000..a872d2f6
 +				
 +				iName = itemTemplate.getName().toLowerCase();
 +			} // throw out shadow, monster items, high level keys etc., only D,C grade crystals allowed, 1458 - 1459
-+			while ((itemTemplate.getReferencePrice() == 0 && rndItem != 5575) || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || iName.contains("(not used)") || iName.contains("alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone") || iName.contains("crystal scroll"));
++			while ((itemTemplate.getReferencePrice() == 0 && rndItem != 5575) || BANNED_ITEMS[rndItem] || (storeType == 3 && (itemTemplate instanceof Weapon || itemTemplate instanceof Armor)) || recipeLevel > 9 || recipeLevel > 4 || (isKeyMat && keyRecipe.level() > 4) || iName.contains("(not used)") || iName.contains("alternative") || (rndItem >= 1460 && rndItem <= 1462) || rndItem == 57 || iName.contains("grade b") || iName.contains("grade a") || iName.contains("grade s") || iName.contains("b-grade") || iName.contains("a-grade") || iName.contains("s-grade") || iName.contains("b grade") || iName.contains("a grade") || iName.contains("s grade") || iName.contains("life stone") || iName.contains("crystal scroll") || iName.contains("holy spirit"));
 +			
 +			ItemType iT = itemTemplate.getItemType();
 +			String iN = itemTemplate.getName();
