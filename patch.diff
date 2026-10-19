@@ -1629,6 +1629,18 @@ index 44832b56..4d02243b 100644
 +Now! Please take this. It is a long standing tradition for us Dwarves to always pay when receiving aid from others. So don't refuse, just accept it!
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q214_TrialOfTheScholar/30610-14.htm b/aCis_datapack/data/html/script/quest/Q214_TrialOfTheScholar/30610-14.htm
+index 6e5d5a7e..119e6893 100644
+--- a/aCis_datapack/data/html/script/quest/Q214_TrialOfTheScholar/30610-14.htm
++++ b/aCis_datapack/data/html/script/quest/Q214_TrialOfTheScholar/30610-14.htm
+@@ -1,5 +1,5 @@
+ <html><body>Elder Cronos:<br>
+ Absolute geometry evolved from the beginning of time. It contains all truth in the universe. Mathematics, dynamics, architecture, astronomy, and navigation were all derived from the absolute geometry. He who truly understands absolute geometry can control the world.<br>
+-The secrets of absolute geometry are contained on <font color="LEVEL">Maphr's Tablet Fragment</font>, written in the ancient language of the Giants. Word has come that the Dwarves have been trying to obtain the tablet... I shudder to think of the consequences if this knowledge should fall into the hands of those greedy creatures!<br>
++The secrets of absolute geometry are contained on <font color="LEVEL">Divine Tablet Fragment</font>, written in the ancient language of the Giants. Word has come that the Dwarves have been trying to obtain the tablet... I shudder to think of the consequences if this knowledge should fall into the hands of those greedy creatures!<br>
+ The Scriptures of Knowledge contains the secrets of absolute geometry written down in understandable language. Do you have any idea how dangerous this knowledge is? You must bring it back. Even though it was only a part that I transcribed... And with only 4 books the knowledge should be safe... We cannot be too careful...
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm b/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm
 index 7800aa5b..89972315 100644
 --- a/aCis_datapack/data/html/script/quest/Q215_TrialOfThePilgrim/30550-01.htm
@@ -1884,6 +1896,16 @@ index 359c64ab..3cfb9041 100644
  Your reward is my personal gratitude and this <font color="LEVEL">Mark of Glory</font>, which you can use to transfer to a higher class. Now return to the Human lands and seek out your destiny! I am confident that you will bring great glory to our tribe, and that our paths will cross again.
  </body></html>
 \ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30005-07.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30005-07.htm
+index d291c130..4e304854 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30005-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30005-07.htm
+@@ -1,3 +1,3 @@
+ <html><body>Warehouse Keeper Wilford:<br>
+-Maphr's Tablet Fragment? You came all the way to Talking Island to find it? Hmmm... I have not heard of any relics from the Giants on this island...
++Divine Tablet Fragment? You came all the way to Talking Island to find it? Hmmm... I have not heard of any relics from the Giants on this island...
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm
 index 579b0029..26c8b5a1 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04.htm
@@ -1898,13 +1920,13 @@ index 579b0029..26c8b5a1 100644
  <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04b.htm">Ask about the Token of Fertile Lands</a><br>
  <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-04c.htm">Ask about the Token of Fecundity.</a><br>
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
-index 449f0240..0d1bb93d 100644
+index 449f0240..98539315 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
 +++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-04e.htm
 @@ -1,7 +1,7 @@
  <html><body>Warehouse Freightman Parman:<br>
 -As you know, Dwarves worship Maphr, the god of prosperity. Prosperity is not only the highest virtue, it is the measure of morality! For your first test, you will discover what <font color="LEVEL">"prosperity"</font> really means.<br>
-+As you know, Dwarves worship God of prosperity. Prosperity is not only the highest virtue, it is the measure of morality! For your first test, you will discover what <font color="LEVEL">"prosperity"</font> really means.<br>
++Prosperity is not only the highest virtue, it is the measure of morality! For your first test, you will discover what <font color="LEVEL">"prosperity"</font> really means.<br>
  Bring back 4 proofs of prosperity. Prosperity traditionally has 4 components: wealth, fertile lands, fertility and sound body. To pass the test, find all <font color="LEVEL">4 proofs of prosperity</font>.<br>
 -While performing the test, carry this ring with you. Other guildsmen will recognize it and render assistance to you. When you have found all the proofs, submit them to the guild and you will pass the first test. May Maphr grant you luck!<br>
 +While performing the test, carry this ring with you. Other guildsmen will recognize it and render assistance to you. When you have found all the proofs, submit them to the guild and you will pass the first test. May God grant you luck!<br>
@@ -1924,46 +1946,111 @@ index cefb9223..57b11d91 100644
  Oh! Isn't this an Elven wafer? I guess it is from the Elf on Talking Island that has lived for more than a millennia. At one time wafers were common, but they have been rarely seen in modern times. I'm surprised you were able to get one, as wafers are known for not being sold nor given to other races.<br>
  Well, you have gathered the 4 Tokens of Fertility. Congratulations! You have passed the first portion of test! However... It is not over yet. Now you must take the <font color="LEVEL">second test</font>.<br>
  <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-07.htm">Ask about the second test.</a>
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08.htm
+index cf35c056..7aea2914 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08.htm
+@@ -1,5 +1,5 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Now the actual trial has begun. . Now you must take part in the Guild Guild's long-cherished project and achieve real results. The project is to excavate <font color="LEVEL">Maphr's Tablet</font> and recover the <font color="LEVEL">Secrets of Absolute Geometry</font>.<br>
+-Recently an ancient relic was unearthed by a team exploring the Cruma Tower. It is thought to be a part of Maphr's Tablet. Take this letter to <font color="LEVEL">Maestro Nikola</font> at the <font color="LEVEL">Cruma Tower</font>. He will tell you more.<br>
++Now the actual trial has begun. . Now you must take part in the Guild Guild's long-cherished project and achieve real results. The project is to excavate <font color="LEVEL">Divine Tablet</font> and recover the <font color="LEVEL">Secrets of Absolute Geometry</font>.<br>
++Recently an ancient relic was unearthed by a team exploring the Cruma Tower. It is thought to be a part of Divine Tablet. Take this letter to <font color="LEVEL">Maestro Nikola</font> at the <font color="LEVEL">Cruma Tower</font>. He will tell you more.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08a.htm">Ask about Absolute Geometry</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
-index c9eb71c9..26bca319 100644
+index c9eb71c9..4bb5cb22 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
 +++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08a.htm
-@@ -1,5 +1,5 @@
+@@ -1,6 +1,6 @@
  <html><body>Warehouse Keeper Parman:<br>
 -Absolute Geometry is an ancient science passed down to us by Maphr. It is the explanation of everything, the laws of space and motion for all things. <font color="LEVEL">He who understands Absolute Geometry can control the world</font>.<br>
 +Absolute Geometry is an ancient science passed down to us. It is the explanation of everything, the laws of space and motion for all things. <font color="LEVEL">He who understands Absolute Geometry can control the world</font>.<br>
  Our ancestors pursued the study of Absolute Geometry, which led to discoveries in mathematics, thermodynamics, measurement, architecture, astronomy, navigation and economics. This knowledge enabled us to build great architecture such as the sky garden of Shootguart and the great palace of Harnark. We were able to replace the barter system with the concept of monetary economy, and to develop warrior golems and such.<br>
  But since the downfall of Giants, most of this technology has been lost. What a pity...<br>
- <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08b.htm">Ask about Maphr's Tablet</a>
+-<a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08b.htm">Ask about Maphr's Tablet</a>
++<a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08b.htm">Ask about Divine Tablet</a>
+ </body></html>
+\ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
-index 3a407cbe..c5f9a311 100644
+index 3a407cbe..f1d93268 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
 +++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08b.htm
 @@ -1,6 +1,6 @@
  <html><body>Warehouse Keeper Parman:<br>
 -Maphr's Tablet is written in the language of the Giants, but we <font color="LEVEL">Dwarves are the true owners of the tablet</font>. It was the Dwarves who learned directly from Maphr and to this day we retain our traditions of manufacturing, trading, and architecture! Other races, ignorant to our advances in math, dynamics, measurement and architecture won't even be able to follow the basics of Absolute Geometry.<br>
-+Maphr's Tablet is written in the language of the Giants, but we <font color="LEVEL">Dwarves are the true owners of the tablet</font>. It was the Dwarves who learned it and to this day we retain our traditions of manufacturing, trading, and architecture! Other races, ignorant to our advances in math, dynamics, measurement and architecture won't even be able to follow the basics of Absolute Geometry.<br>
- Obtaining Maphr's Tablet has always been our greatest wish and long-cherished dream. If only we could recover the secrets of Absolute Geometry, we would be able to rebuild our kingdom of Dwarves, and eventually control the entire continent! We could create a world where everything runs smoothly like a well-greased cogwheel...That is our heaven which we will create with our own hands.<br>
+-Obtaining Maphr's Tablet has always been our greatest wish and long-cherished dream. If only we could recover the secrets of Absolute Geometry, we would be able to rebuild our kingdom of Dwarves, and eventually control the entire continent! We could create a world where everything runs smoothly like a well-greased cogwheel...That is our heaven which we will create with our own hands.<br>
 -Unfortunately legend says that Maphr's Tablet was damaged when the war between the Gods and the Giants broke out. It is said that fearing the advanced technology of the Giants, the gods stole the tablet, broke it into 12 pieces and scattered it across the continent.<br>
-+Unfortunately legend says that Maphr's Tablet was damaged when the war between the gods and the Giants broke out. It is said that fearing the advanced technology of the Giants, the gods stole the tablet, broke it into 12 pieces and scattered it across the continent.<br>
- <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08c.htm">Ask the whereabouts of Maphr's Tablet</a>
+-<a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08c.htm">Ask the whereabouts of Maphr's Tablet</a>
++Divine Tablet is written in the language of the Giants, but we <font color="LEVEL">Dwarves are the true owners of the tablet</font>. It was the Dwarves who learned it and to this day we retain our traditions of manufacturing, trading, and architecture! Other races, ignorant to our advances in math, dynamics, measurement and architecture won't even be able to follow the basics of Absolute Geometry.<br>
++Obtaining Divine Tablet has always been our greatest wish and long-cherished dream. If only we could recover the secrets of Absolute Geometry, we would be able to rebuild our kingdom of Dwarves, and eventually control the entire continent! We could create a world where everything runs smoothly like a well-greased cogwheel...That is our heaven which we will create with our own hands.<br>
++Unfortunately legend says that Divine Tablet was damaged when the war between the gods and the Giants broke out. It is said that fearing the advanced technology of the Giants, the gods stole the tablet, broke it into 12 pieces and scattered it across the continent.<br>
++<a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08c.htm">Ask the whereabouts of Divine Tablet</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08c.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08c.htm
+index d1b67b92..42ba956f 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08c.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-08c.htm
+@@ -1,4 +1,4 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Recently news came to us of an ancient relic thought to be a part of Maphr's Tablet. Since the tablet was made during the era of the Giants, it seems very likely that it will be found somewhere among the Giants' Ruins. <font color="LEVEL">The investigation team exploring the Cruma Tower has reported that they have discovered a box in which they think the fragments of Maphr's Tablet are contained.</font><br>
+-You must go to the site and collect Maphr's Tablet fragments! This will not be an easy task. First, go and meet <font color="LEVEL">Maestro Nikola</font> there. You should find him near the <font color="LEVEL">entrance of the Cruma Tower</font>. He will tell you more.
++Recently news came to us of an ancient relic thought to be a part of Divine Tablet. Since the tablet was made during the era of the Giants, it seems very likely that it will be found somewhere among the Giants' Ruins. <font color="LEVEL">The investigation team exploring the Cruma Tower has reported that they have discovered a box in which they think the fragments of Divine Tablet are contained.</font><br>
++You must go to the site and collect Divine Tablet fragments! This will not be an easy task. First, go and meet <font color="LEVEL">Maestro Nikola</font> there. You should find him near the <font color="LEVEL">entrance of the Cruma Tower</font>. He will tell you more.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-10.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-10.htm
+index a4180525..9005ad35 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-10.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-10.htm
+@@ -1,5 +1,5 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Finally ready to take the second test, are you? Well, let's begin! You must take part in the Guild Guild's long-cherished project to excavate <font color="LEVEL">Maphr's Tablet</font> and recover the <font color="LEVEL">Secrets of Absolute Geometry</font>.<br>
+-Recently some information came to us about an ancient relic, thought to be a part of Maphr's Tablet. The investigative team exploring Cruma Tower have reported the discovery of a box thought to contain fragments of Maphr's Tablet. Take this letter and meet <font color="LEVEL">Maestro Nikola</font> at the <font color="LEVEL">Cruma Tower</font>. He will tell you more.<br>
++Finally ready to take the second test, are you? Well, let's begin! You must take part in the Guild Guild's long-cherished project to excavate <font color="LEVEL">Divine Tablet</font> and recover the <font color="LEVEL">Secrets of Absolute Geometry</font>.<br>
++Recently some information came to us about an ancient relic, thought to be a part of Divine Tablet. The investigative team exploring Cruma Tower have reported the discovery of a box thought to contain fragments of Divine Tablet. Take this letter and meet <font color="LEVEL">Maestro Nikola</font> at the <font color="LEVEL">Cruma Tower</font>. He will tell you more.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08a.htm">Ask about Absolute Geometry</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-11.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-11.htm
+index da81ba11..7578f2f5 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-11.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-11.htm
+@@ -1,4 +1,4 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-Why are you still here? You must take the letter to <font color="LEVEL">Maestro Nikola</font> at <font color="LEVEL">Cruma Tower</font>. He will tell you the details of Maphr's Tablet.<br>
++Why are you still here? You must take the letter to <font color="LEVEL">Maestro Nikola</font> at <font color="LEVEL">Cruma Tower</font>. He will tell you the details of Divine Tablet.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08a.htm">Ask about Absolute Geometry</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-12.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-12.htm
+index 3ce0d643..efe0e108 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-12.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-12.htm
+@@ -1,4 +1,4 @@
+ <html><body>Warehouse Keeper Parman:<br>
+-The recovery of the <font color="LEVEL">secrets of Absolute Geometry</font> hidden within <font color="LEVEL">Maphr's Tablet</font> is the long-cherished wish of our Dwarven Guild. If you can find at least one stone fragment you will pass the second test.<br>
++The recovery of the <font color="LEVEL">secrets of Absolute Geometry</font> hidden within <font color="LEVEL">Divine Tablet</font> is the long-cherished wish of our Dwarven Guild. If you can find at least one stone fragment you will pass the second test.<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30104-08a.htm">Ask about Absolute Geometry</a>
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
-index b2b06a78..afd4ff6c 100644
+index b2b06a78..c79fdb07 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
 +++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30104-13.htm
 @@ -1,5 +1,5 @@
  <html><body>Warehouse Freightman Parman:<br>
 -This is a piece of Maphr's Tablet! What a find you've made! Ah, Parman you old rascal, you've always had an eye for fresh talent. And look at what you've brought in! The elders will be very pleased when I relate this juicy bit of news at the next Centurions meeting. Listen . . . this is for your ears only, you understand . . . I heard that another piece of the tablet was discovered not long ago. Thanks to your discovery, we're even closer to unlocking the secrets of Maphr's mathematics.<br>
-+This is a piece of Maphr's Tablet! What a find you've made! Ah, Parman you old rascal, you've always had an eye for fresh talent. And look at what you've brought in! The elders will be very pleased when I relate this juicy bit of news at the next Centurions meeting. Listen . . . this is for your ears only, you understand . . . I heard that another piece of the tablet was discovered not long ago. Thanks to your discovery, we're even closer to unlocking the secrets of mathematics.<br>
++This is a piece of Divine Tablet! What a find you've made! Ah, Parman you old rascal, you've always had an eye for fresh talent. And look at what you've brought in! The elders will be very pleased when I relate this juicy bit of news at the next Centurions meeting. Listen . . . this is for your ears only, you understand . . . I heard that another piece of the tablet was discovered not long ago. Thanks to your discovery, we're even closer to unlocking the secrets of mathematics.<br>
  Now I have to send this piece to the Dwarven village so the elders can decode it. They're the only ones who can still read Titan, you understand -- humble folk like us have no clue what we've unearthed.<br>
 -Again, congratulations! You've passed the second test with flying colors, and I will now reward you with the <font color="LEVEL">Mark of Prosperity</font>. Keep your nose to the grindstone, youngster, and you'll rise high in this guild. May you one day enjoy Maphr's prosperity!
 +Again, congratulations! You've passed the second test with flying colors, and I will now reward you with the <font color="LEVEL">Mark of Prosperity</font>. Keep your nose to the grindstone, youngster, and you'll rise high in this guild.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
-index 32db7e20..900ba38e 100644
+index 32db7e20..bd64b690 100644
 --- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
 +++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-02.htm
 @@ -1,7 +1,7 @@
@@ -1972,9 +2059,19 @@ index 32db7e20..900ba38e 100644
 +To a Dwarf, nothing in the world is more important than wealth. We serve the God because it is he from whom flows all wealth and abundance. Please don't misunderstand me, I mean no disrespect.<br>
  My race possesses unfathomable wealth. Personally I could well afford a human estate. In spite of our embarrassment of riches, my race is still unsatisfied...<br>
 -If we could just get our hands on all of the fragments of Maphr's Tablet, we could buy the entire continent...our wealth would finally eclipse that of the humans! Only Maphr knows if I shall live to see this come to pass...<br>
-+If we could just get our hands on all of the fragments of Maphr's Tablet, we could buy the entire continent...our wealth would finally eclipse that of the humans! Only God knows if I shall live to see this come to pass...<br>
++If we could just get our hands on all of the fragments of Divine Tablet, we could buy the entire continent...our wealth would finally eclipse that of the humans! Only God knows if I shall live to see this come to pass...<br>
  Oh, pardon the idle musings of an old man. We have business to discuss. Let's talk about that Mark of Wealth that you are looking for. I would be happy to oblige, if only you would run a <font color="LEVEL">simple errand</font> for me. Is this acceptable?<br>
  <a action="bypass -h Quest Q221_TestimonyOfProsperity 30531-03.htm">Say you will run the errand</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-07.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-07.htm
+index f43f87da..a5f49bf8 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-07.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30531-07.htm
+@@ -1,3 +1,3 @@
+ <html><body>First Elder Lockirin:<br>
+-If I could only get my hands on one the fragments of Maphr's Tablet I would be able to buy the entire continent! At last the humans would be subservient to us! Just one fragment!
++If I could only get my hands on one the fragments of Divine Tablet I would be able to buy the entire continent! At last the humans would be subservient to us! Just one fragment!
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30534-01.htm
@@ -1986,6 +2083,18 @@ index 3d722138..01fe01d8 100644
 -May the abundance of Maphr be with you! Well, look at you! Aren't you the one that hunted blade bats for me? So, how are you doing? I'm sure your situation has improved thanks to the hard work you did back then.. You look good! I wouldn't be surprised to see you get a promotion soon!<br>
 +Well, look at you! Aren't you the one that hunted blade bats for me? So, how are you doing? I'm sure your situation has improved thanks to the hard work you did back then.. You look good! I wouldn't be surprised to see you get a promotion soon!<br>
  Ah! You are collecting guild dues on behalf of the First Elder? Wait a minute. All right... Let's see who has not paid his dues yet! Oh my! That infamous rascal <font color="LEVEL">Carrier Torocco</font> has not yet paid! I knew it. Always the troublemaker, he is! Go and collect the guild dues from Torocco.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-01.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-01.htm
+index d936b036..978f0477 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-01.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-01.htm
+@@ -1,5 +1,5 @@
+ <html><body>Piotur:<br>
+-The land around here used to be fertile farmlands before the terrible war with Gracia. It was a peaceful place where simple farmers like myself tilled the land to make a living. When we tilled the land earnestly, mother earth would reward us with a rich harvest.<br>
++The land around here used to be fertile farmlands before the terrible war with Gracia. It was a peaceful place where simple farmers like myself tilled the land to make a living. When we tilled the land earnestly, we would be rewarded with a rich harvest.<br>
+ But, because of the war, all the farms were burned down and the earth was devastated. Moreover, a group of Orcs has invaded our land and have settled here. Fertile lands... Gludio's best granary... Those are stories from long ago, but a memory now...<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30597-02.htm">But, is there not any hope?</a>
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30597-02.htm
@@ -2019,6 +2128,41 @@ index 0d78927a..6c512037 100644
  <html><body>Piotur:<br>
 -May the blessings of Maphr shine upon you and your tribe.
 +May the blessings of God shine upon you and your tribe.
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-03.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-03.htm
+index 13a5f225..1ee88b9f 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-03.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-03.htm
+@@ -1,6 +1,6 @@
+ <html><body>Maestro Nikola:<br>
+ Well, actually, decoding of the Giant's characters is only allowed by the Elders of the guild. They keep all the knowledge from Giant records for themselves. I will probably not be suspected of breaking this rule since I secretly taught myself. It is an unfair rule anyway. I don't know what they are thinking...<br>
+-Anyway, as soon as I saw the stone, I knew that <font color="LEVEL">Maphr's Tablet Fragments</font> were hidden inside the box. Suddenly I heard roars from the creatures all over the tower. I had to run away immediately. As I said earlier, I am not much of a fighter, so if I was attacked by the creatures I would most likely be killed.<br>
++Anyway, as soon as I saw the stone, I knew that <font color="LEVEL">Divine Tablet Fragments</font> were hidden inside the box. Suddenly I heard roars from the creatures all over the tower. I had to run away immediately. As I said earlier, I am not much of a fighter, so if I was attacked by the creatures I would most likely be killed.<br>
+ It has been a week since that day, and still I cannot bring myself to enter the tower. But I have an idea... I know where the box is and have determined that a <font color="LEVEL">special key</font> must be used to open it. I have researched the materials and methods of creating such a key, and am quite sure I can do it!<br>
+ <a action="bypass -h Quest Q221_TestimonyOfProsperity 30621-04.htm">Ask about the key manufacturing</a>
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-09.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-09.htm
+index f2ec0da0..3e942725 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-09.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30621-09.htm
+@@ -1,5 +1,5 @@
+ <html><body>Maestro Nikola:<br>
+-Yes, we have finally obtained Maphr's Tablet Fragment! This is amazing. let me see... Hmm... Could it be?<br>
++Yes, we have finally obtained Divine Tablet Fragment! This is amazing. let me see... Hmm... Could it be?<br>
+ Knowing the characters is not enough to decipher this language. It will be impossible for us to interpret the tablet without the help of the Elders...<br>
+ Very well, then! Now deliver this to <font color="LEVEL">Warehouse Keeper Parman</font>. This is all we can do now. I plan to return to Shootguart after looking around the tower a bit more...
+ </body></html>
+\ No newline at end of file
+diff --git a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30622-04.htm b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30622-04.htm
+index b81fced7..e1d8b1c5 100644
+--- a/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30622-04.htm
++++ b/aCis_datapack/data/html/script/quest/Q221_TestimonyOfProsperity/30622-04.htm
+@@ -1,3 +1,3 @@
+ <html><body>Box of Titan:<br>
+-You have found <font color="LEVEL">'Maphr's Tablet Fragment'</font>.
++You have found <font color="LEVEL">'Divine Tablet Fragment'</font>.
  </body></html>
 \ No newline at end of file
 diff --git a/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm b/aCis_datapack/data/html/script/quest/Q231_TestOfTheMaestro/30671-04.htm
@@ -2569,6 +2713,19 @@ index 00000000..f11ac9a1
 +	<clan id="RoaringLion" name="RoaringLion" lvl="4" castleID="0" alli="" crest=""/>
 +	<clan id="Yzop" name="Yzop" lvl="4" castleID="9" alli="" crest=""/>
 +</list>
+diff --git a/aCis_datapack/data/xml/items/3200-3299.xml b/aCis_datapack/data/xml/items/3200-3299.xml
+index 54e34eae..af9dcb64 100644
+--- a/aCis_datapack/data/xml/items/3200-3299.xml
++++ b/aCis_datapack/data/xml/items/3200-3299.xml
+@@ -405,7 +405,7 @@
+ 		<set name="is_stackable" val="true" />
+ 		<set name="etcitem_type" val="QUEST" />
+ 	</item>
+-	<item id="3245" type="EtcItem" name="Maphr Tablet Fragment">
++	<item id="3245" type="EtcItem" name="Divine Tablet Fragment">
+ 		<set name="material" val="STEEL" />
+ 		<set name="is_tradable" val="false" />
+ 		<set name="is_dropable" val="false" />
 diff --git a/aCis_datapack/data/xml/manorAreas.xml b/aCis_datapack/data/xml/manorAreas.xml
 index d20f5e06..daec2c05 100644
 --- a/aCis_datapack/data/xml/manorAreas.xml
@@ -3333,10 +3490,10 @@ index 00000000..452b03d6
 +}
 diff --git a/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
 new file mode 100644
-index 00000000..be92d73d
+index 00000000..5be06407
 --- /dev/null
 +++ b/aCis_gameserver/java/net/sf/l2j/gameserver/data/manager/FakeTraderManager.java
-@@ -0,0 +1,1444 @@
+@@ -0,0 +1,1443 @@
 +package net.sf.l2j.gameserver.data.manager;
 +
 +import java.sql.Connection;
@@ -3648,7 +3805,6 @@ index 00000000..be92d73d
 +	{
 +		BANNED_ITEMS[144] = true;  // Sword of Occult
 +		BANNED_ITEMS[316] = true;  // Blood of Saints
-+		BANNED_ITEMS[3245] = true; // Maphr Tablet Fragment
 +		
 +		BANNED_ITEMS[245] = true; // Dark Fighter Fist
 +		BANNED_ITEMS[247] = true; // Dwarven Fighter Fist
